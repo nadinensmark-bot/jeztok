@@ -65,7 +65,17 @@ window.JEZTOK_KURZY.push({
           text: "Case study část 1 (popis zaměření, 1 strana / 2–3 slidy): do konce října 2026. Část 2 (report max. 10 stran): do konce kurzu, 27. 11. 2026. Live Q&A s lektorkou: 27. 11. v 10:00, dobrovolné, nenahrává se.",
           vysvetleni: "Case study dělá obvykle zhruba polovina účastníků. Dá se dělat individuálně i ve skupině (uveď členy týmu). Odevzdání přes Moodle → Module 5." },
         { id: "d1", typ: "doplnit", text: "Live Q&A s lektorkou je 27. listopadu v ___ hodin.", odpoved: ["10", "10:00", "deset"],
-          vysvetleni: "27. 11. 2026 v 10:00. Nenahrává se, protože lidé tam přinášejí citlivá témata ze svého byznysu." }
+          vysvetleni: "27. 11. 2026 v 10:00. Nenahrává se, protože lidé tam přinášejí citlivá témata ze svého byznysu." },
+        { id: "k4", typ: "kviz", otazka: "Který modul kurzu označuje lektorka za nejtěžší?",
+          moznosti: ["Modul 1 – úvod do oboru", "Modul 2 – programy NATO a EU", "Modul 3 – BD, marketing a sales"], spravne: 1,
+          vysvetleni: "Modul 2: programů pro průmysl je hodně, video má asi 1 h 15 min. Modul 3 je podle ní nejdůležitější." },
+        { id: "a2", typ: "anone", tvrzeni: "Expertní sessions se nahrávají a záznam je v Moodlu nejpozději druhý den.", spravne: true,
+          vysvetleni: "Ano. Přesto lektorka důrazně doporučuje účast živě kvůli možnosti ptát se." },
+        { id: "d2", typ: "doplnit", text: "Národní kontaktní bod pro EDF propojuje průmysl s generálním ředitelstvím Komise DG ___.", odpoved: ["DEFIS", "defis"],
+          vysvetleni: "DG DEFIS = Directorate-General for Defence Industry and Space, „obranné křídlo“ Evropské komise." },
+        { id: "k5", typ: "kviz", otazka: "Jakou odměnu dostaneš za odevzdanou case study?",
+          moznosti: ["Vyšší známku z kurzu", "30minutovou one-on-one konzultaci s lektorkou", "Certifikát (bez ní ho nedostaneš)"], spravne: 1,
+          vysvetleni: "Bonus je 30minutová online konzultace v prosinci nebo lednu. Certifikát dostaneš i bez case study." }
       ]
     },
     // =================================================================
@@ -305,7 +315,14 @@ window.JEZTOK_KURZY.push({
           vysvetleni: "Nástroje pro firmy: EDA CapTechs (Capability Technology Groups – dobrovolné kolaborativní výzkumné projekty), HEDI (Hub for EU Defence Innovation), EDA Innovation Prize, EDA B2B Platform. Dále ENDR (European Network of Defence-related Regions, 2016) – klastry, dual-use strategie, matchmaking." },
         { id: "k6", typ: "kviz", otazka: "Co jsou EDA CapTechs?",
           moznosti: ["Technologická cena EDA", "Platforma pro dobrovolné kolaborativní výzkumné projekty členských států", "Databáze NATO na úrovni SECRET"], spravne: 1,
-          vysvetleni: "Capability Technology Groups – tailor-made platforma, kde se členské státy dobrovolně zapojují do společných defence research projektů. Cena je EDA Innovation Prize; databáze SECRET je NATO STO." }
+          vysvetleni: "Capability Technology Groups – tailor-made platforma, kde se členské státy dobrovolně zapojují do společných defence research projektů. Cena je EDA Innovation Prize; databáze SECRET je NATO STO." },
+        { id: "k7", typ: "kviz", otazka: "Jaké jsou úvěrové podmínky SAFE?",
+          moznosti: ["Splatnost 10 let, bez odkladu", "Splatnost až 45 let, 10 let odklad, 15 % předfinancování", "Grant bez splácení"], spravne: 1,
+          vysvetleni: "SAFE je půjčka členským státům: až 45 let, 10letá grace period, 15 % pre-financing. V platnosti od 29. 5. 2025." },
+        { id: "a3", typ: "anone", tvrzeni: "Investiční ambice EDPCIs (cca 190 mld. EUR do 2036) jsou granty z rozpočtu EU.", spravne: false,
+          vysvetleni: "Jsou to dlouhodobé investice zúčastněných členských států. Z EDIP je na rozjezd EDPCIs jen 325 mil. EUR." },
+        { id: "d3", typ: "doplnit", text: "Předchůdci EDF byly PADR (2017–2019) a ___ (2019–2020).", odpoved: ["EDIDP", "edidp"],
+          vysvetleni: "EDIDP = European Defence Industrial Development Programme. Oba programy připravily půdu pro EDF 2021–2027." }
       ]
     },
     // =================================================================
@@ -352,7 +369,14 @@ window.JEZTOK_KURZY.push({
           vysvetleni: "SYNC: lepší komunikace s průmyslem, inovace a interoperabilita, škálování výroby." },
         { id: "k4", typ: "kviz", otazka: "Kolik plánují spojenci investovat do counter-drone schopností během pěti let?",
           moznosti: ["přes 1 mld. USD", "přes 40 mld. USD", "přes 190 mld. EUR"], spravne: 1,
-          vysvetleni: "Přes 40 mld. USD za 5 let. (190 mld. EUR do 2036 je investiční ambice EDPCIs, 1 mld. EUR je NATO Innovation Fund.)" }
+          vysvetleni: "Přes 40 mld. USD za 5 let. (190 mld. EUR do 2036 je investiční ambice EDPCIs, 1 mld. EUR je NATO Innovation Fund.)" },
+        { id: "k5", typ: "kviz", otazka: "Kolik návrhů přišlo do výzvy DIANA pro ročník 2026 a kolik firem začalo program v lednu 2026?",
+          moznosti: ["2 600 návrhů, 70 firem", "3 688 návrhů, 150 firem", "10 000 návrhů, 15 firem"], spravne: 1,
+          vysvetleni: "3 688 návrhů z 31 zemí, 150 firem od ledna 2026, 15 postupuje do Mission Track. (2 600 / 70 byl ročník 2025.)" },
+        { id: "d2", typ: "doplnit", text: "Databáze NATO STO je přístupná přes národní zastoupení na úrovni NATO ___.", odpoved: ["SECRET", "secret"],
+          vysvetleni: "NATO SECRET. Proto se k ní firma dostane jen přes národní reprezentaci." },
+        { id: "a2", typ: "anone", tvrzeni: "Většinu defence procurementu provádí NATO centrálně za členské státy.", spravne: false,
+          vysvetleni: "NATO usnadňuje demand signalling a spolupráci s průmyslem, ale většina procurementu zůstává na národních vládách." }
       ]
     },
     // =================================================================
@@ -508,7 +532,27 @@ window.JEZTOK_KURZY.push({
           moznosti: ["3–4 věty", "3–5 minut", "20 minut"], spravne: 1,
           vysvetleni: "3–5 minut je ideální pitch. 3–4 věty jsou minimum pro rozhovor s vysokou delegací, 10 minut maximum na akcích." },
         { id: "a2", typ: "anone", tvrzeni: "Čím odborněji prezentace zní, tím přesvědčivější je pro defence zákazníka.", spravne: false,
-          vysvetleni: "Opak. Nejlepší prezentující umí složité téma rozložit srozumitelně. Lektorka viděla spoustu dobrých řešení bez odezvy, protože jim lidé nerozuměli a báli se zeptat." }
+          vysvetleni: "Opak. Nejlepší prezentující umí složité téma rozložit srozumitelně. Lektorka viděla spoustu dobrých řešení bez odezvy, protože jim lidé nerozuměli a báli se zeptat." },
+        { id: "k6", typ: "kviz", otazka: "Co je World Defence Almanac dobrý zjistit?",
+          moznosti: ["Vojenské výdaje zemí v čase", "Konkrétní technologie ve výzbroji a strukturu ozbrojených sil", "Otevřené tendry v EU"], spravne: 1,
+          vysvetleni: "Almanac = výzbroj a organizační struktura. Výdaje → SIPRI / World Bank, tendry → TED." },
+        { id: "a3", typ: "anone", tvrzeni: "Když tě NSPA osloví s nabídkou, o kterou nemáš zájem, je lepší neodpovídat.", spravne: false,
+          vysvetleni: "Naopak: reaguj vždy, i negativně. Databáze funguje na principu aktivity – kdo nereaguje, toho příště nemusí oslovit." },
+        { id: "d2", typ: "doplnit", text: "Oficiální publikace tendrů v EU se jmenuje TED – Tenders Electronic ___.", odpoved: ["Daily", "daily"],
+          vysvetleni: "Tenders Electronic Daily, filtrovatelné podle typu produktu." },
+        { id: "k7", typ: "kviz", otazka: "Jaká úroveň oficiální reprezentace je podle lektorky na veletrhu nejužitečnější?",
+          moznosti: ["Premiér nebo ministr", "Náměstek ministra, generální ředitel nebo ředitel odboru", "Tiskový mluvčí"], spravne: 1,
+          vysvetleni: "Jednání ministrů bývají povrchní, bez prostoru pro pitch. Náměstek nebo ředitel odboru jsou pracovní a jdou do hloubky." },
+        { id: "k8", typ: "kviz", otazka: "Kolik času máš podle lektorky obvykle maximálně na prezentaci před potenciálním zákazníkem na akci?",
+          moznosti: ["3 minuty", "10 minut", "30 minut"], spravne: 1,
+          vysvetleni: "10 minut je maximum na akcích. Delší prezentace patří až do navazujícího obchodního jednání." },
+        { id: "a4", typ: "anone", tvrzeni: "Dobrý začátek prezentace v defence je stručná historie firmy a organizační struktura.", spravne: false,
+          vysvetleni: "Dělají to všichni a zabere to 5–10 minut, kdy lidé ještě dávají pozor. Začni citátem, otázkou nebo příběhem a mluv o zákazníkovi." },
+        { id: "k9", typ: "kviz", otazka: "Který z veletrhů je podle kurzu regionální, ne jeden z největších světových?",
+          moznosti: ["IDEX", "MSPO", "Eurosatory", "DSEI"], spravne: 1,
+          vysvetleni: "MSPO (Kielce, Polsko) je regionální, stejně jako DSA, IDET nebo KADEX. IDEX, Eurosatory, DSEI a Indo Defence patří mezi největší." },
+        { id: "d3", typ: "doplnit", text: "Obchod uzavřený přímo mezi dvěma vládami se označuje zkratkou ___ (government to government).", odpoved: ["G2G", "g2g"],
+          vysvetleni: "G2G. B2G = business to government, tedy firma prodává přímo státu." }
       ]
     },
     // =================================================================
@@ -600,7 +644,33 @@ window.JEZTOK_KURZY.push({
           vysvetleni: "Kolem celé oblasti jsou etické, právní a politické otázky: co je férové použití, jaké jsou dlouhodobé dopady a morální důsledky zásahů do lidské biologie. Tvůrci politik to musí zapojit do stávajících rámců." },
         { id: "f15", typ: "fakt", titulek: "Velký obraz: EDTs změní i akvizice",
           text: "Rychlé zavádění cyber-physical technologií smaže hranice mezi průmyslovými odvětvími, státními institucemi a infrastrukturou. V obraně nové technologie ovlivní nejen bojiště, ale naruší i způsob, jak se dělají akvizice, obranné plánování a tvorba politik.",
-          vysvetleni: "Globální transformace je teprve na začátku – propojení lidí, strojů a služeb bude růst. Pro firmu to znamená: nestačí sledovat technologie, je třeba sledovat i to, jak kvůli nim zákazník mění nákupní proces." }
+          vysvetleni: "Globální transformace je teprve na začátku – propojení lidí, strojů a služeb bude růst. Pro firmu to znamená: nestačí sledovat technologie, je třeba sledovat i to, jak kvůli nim zákazník mění nákupní proces." },
+        { id: "k6", typ: "kviz", otazka: "Kolik má EU taxonomie environmentálních cílů?",
+          moznosti: ["3", "6", "17"], spravne: 1,
+          vysvetleni: "Šest. Činnost je udržitelná, když splní aspoň jeden a výrazně nepoškodí ostatní. Obrana mezi nimi není." },
+        { id: "k7", typ: "kviz", otazka: "Od kdy funguje Security and Defence Office EIB?",
+          moznosti: ["14. 11. 2023", "1. 5. 2024", "8. 5. 2024"], spravne: 1,
+          vysvetleni: "Od 1. 5. 2024 jako one-stop shop. 8. 5. 2024 byl schválen celý akční plán, 14. 11. 2023 je společné politické prohlášení." },
+        { id: "a3", typ: "anone", tvrzeni: "Po akčním plánu z roku 2024 už EIB financuje i výrobu munice.", spravne: false,
+          vysvetleni: "Ne. Seznam vyloučených činností se nezměnil: munice, zbraně a čistě vojenské či policejní vybavení EIB dál nefinancuje." },
+        { id: "k8", typ: "kviz", otazka: "Kdo spravuje Defence Equity Facility?",
+          moznosti: ["European Defence Agency", "European Investment Fund", "NATO Innovation Fund"], spravne: 1,
+          vysvetleni: "EIF (European Investment Fund) za DG DEFIS, pod programem InvestEU." },
+        { id: "d3", typ: "doplnit", text: "Fondy podpořené z DEF musí do způsobilých firem investovat aspoň ___ částky, kterou dostaly od EIF.", odpoved: ["dvojnásobek", "2x", "dvojnasobek", "dvakrát tolik"],
+          vysvetleni: "Minimálně dvojnásobek – to zajišťuje leverage (pákový efekt) a důvěryhodný závazek fondu." },
+        { id: "k9", typ: "kviz", otazka: "Jak se do obrany podle kurzu dostane AI především?",
+          moznosti: ["Jako samostatné „AI zbraně“", "Jako embedded AI zabudovaná do jiných technologií", "Jen přes kybernetickou obranu"], spravne: 1,
+          vysvetleni: "Embedded AI: v autonomii, simulacích, kvantových výpočtech, logistice, analýze big data a dalších." },
+        { id: "k10", typ: "kviz", otazka: "Která z technologií se v kurzu uvádí jako příklad kinetic bombardment?",
+          moznosti: ["Hypersonický glider", "„Rods from God“ – wolframové tyče shazované z orbity", "Co-orbital ASAT systém"], spravne: 1,
+          vysvetleni: "Kinetic bombardment: orbitální platformy shazují wolframové tyče a ničí cíl čistě kinetickou energií." },
+        { id: "a4", typ: "anone", tvrzeni: "Hypersonické střely musí nést jadernou hlavici, aby byly účinné.", spravne: false,
+          vysvetleni: "Mohou spoléhat na kinetický účinek nebo nést jadernou či konvenční hlavici. Game-changer je rychlost a nepředvídatelná dráha." },
+        { id: "d4", typ: "doplnit", text: "Zbraně určené k vyřazení nebo zničení satelitů se označují zkratkou ___.", odpoved: ["ASAT", "asat"],
+          vysvetleni: "ASAT = anti-satellite weapons: rakety ze země či vesmíru, directed energy weapons nebo co-orbital systémy." },
+        { id: "k11", typ: "kviz", otazka: "Která oblast podle kurzu umožní armádě opravovat vybavení přímo v nasazení?",
+          moznosti: ["Additive manufacturing (3D tisk)", "Kvantová kryptografie", "Human enhancement"], spravne: 0,
+          vysvetleni: "Aditivní výroba: rychlé prototypování, výroba a opravy přímo v poli bez čekání na náhradní díl." }
       ]
     },
     // =================================================================

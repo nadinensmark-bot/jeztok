@@ -51,6 +51,8 @@ Kurzy v `obsah/`:
   z videí 1–4 (bez organizačních informací o kurzu, termínů a přehledu veletrhů). Texty jsou vlastní
   české parafráze pro osobní studium; materiály kurzu jsou © Dr. Kristýna Helm – pokud je repozitář
   veřejný, zvaž, zda soubor nechat v repu.
+- **`kurz-programy.js` – Programy Defence Hubu** – 13 programů NATO, EU a ČR z katalogu defencehub.gov.cz
+  (přes znalostní bázi DH Kompas, stav 2026-09-05): co nabízejí, pro koho jsou, který komu doporučit. Bez termínů.
 - `kurz-anglictina.js` – Angličtina: falešní přátelé (krátký doplňkový kurz).
 - Další kurzy (politologie apod.) se přidávají stejně: jeden soubor v `obsah/`, `<script>` v `index.html`
   a řádek v `sw.js`.

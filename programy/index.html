@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+  <title>DefLearn Hub · Programy – EU a NATO programy pro defence</title>
+  <meta name="description" content="EU a NATO programy pro defence a dual-use firmy + slovníček pojmů. Onboarding konzultanta Defence Hubu ve formě feedu.">
+  <meta name="theme-color" content="#0b0b10">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="DH Programy">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="../img/ikona-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="../img/ikona-192.png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="ve-feedu">
+  <div id="app">
+    <header class="hlava">
+      <div class="logo"><span id="jezek-hlava"></span>DH Programy</div>
+      <div class="chipy"><span class="chip" id="chip-streak">🔥 0</span><span class="chip" id="chip-xp">⚡ 0</span></div>
+    </header>
+
+    <main id="feed" class="obrazovka akt" aria-label="feed"></main>
+    <section id="testy" class="obrazovka"></section>
+    <section id="kurzy" class="obrazovka"></section>
+    <section id="ja" class="obrazovka"></section>
+
+    <div id="jezek-bublina"></div>
+    <div id="toast" role="status"></div>
+    <div id="sheet"></div>
+
+    <div class="hudba">
+      <div id="hudba-disk"></div>
+      <div id="hudba-nazev">☕ Lo-fi klid · ťukni pro hudbu</div>
+      <button id="hudba-btn" aria-label="přehrát / pozastavit">▶</button>
+    </div>
+    <nav class="nav">
+      <button data-o="feed" class="akt"><span>🏠</span>Feed</button>
+      <button data-o="testy"><span>📝</span>Testy</button>
+      <button data-o="kurzy"><span>📚</span>Kurzy</button>
+      <button data-o="ja"><span>🦔</span>Já</button>
+    </nav>
+  </div>
+  <canvas id="konfety"></canvas>
+
+  <script>window.JEZTOK_VERZE = "0.1.0";</script>
+  <script src="config.js"></script>
+  <!-- OBSAH: sdílené soubory kurzů; výběr témat řídí config.js (filtrKurzu). -->
+  <script src="../obsah/kurz-defence.js"></script>
+  <script src="../obsah/kurz-programy.js"></script>
+  <script src="../obsah/kurz-slovnicek.js"></script>
+  <script src="../obsah/kurz-anglictina.js"></script>
+  <!-- aplikace -->
+  <script src="../js/slouceni.js"></script>
+  <script src="../js/jezek.js"></script>
+  <script src="../js/hudba.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

@@ -24,8 +24,9 @@
   // Hubík – obrázky vyrobené z videa (img/hubik-*). Nálada určuje snímek a animaci,
   // úroveň přidá odznak. Funkce se jmenuje svg() kvůli zpětné kompatibilitě volání.
   const ODZNAKY = ["", "🎧", "👟", "🕶️", "🎓"];
-  const OBRAZKY = { klid: "img/hubik-klid.png", radost: "img/hubik-radost.png", party: "img/hubik-salut.webp",
-    smutek: "img/hubik-klid.png", premysli: "img/hubik-salut.png", spi: "img/hubik-klid.png" };
+  const ZAKLAD = (window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.zakladCesty) || "";
+  const OBRAZKY = { klid: ZAKLAD + "img/hubik-klid.png", radost: ZAKLAD + "img/hubik-radost.png", party: ZAKLAD + "img/hubik-salut.webp",
+    smutek: ZAKLAD + "img/hubik-klid.png", premysli: ZAKLAD + "img/hubik-salut.png", spi: ZAKLAD + "img/hubik-klid.png" };
   function jezekSVG(o) {
     o = o || {};
     const nalada = OBRAZKY[o.nalada] ? o.nalada : "klid";

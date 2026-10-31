@@ -21,7 +21,15 @@
   // Obsah
   // ------------------------------------------------------------------
   function nactiKurzy() {
-    const vest = (window.JEZTOK_KURZY || []).filter(k => !k.skryty).map(k => Object.assign({}, k, { vestaveny: true }));
+    const filtr = (window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.filtrKurzu) || null;
+    const vest = (window.JEZTOK_KURZY || []).filter(k => !k.skryty && (!filtr || filtr[k.id] !== false)).map(k => {
+      k = Object.assign({}, k, { vestaveny: true });
+      const f = filtr && filtr[k.id];
+      if (f && typeof f === "object") {
+        k.temata = (k.temata || []).filter(t => !f.temata || f.temata.includes(t.id)).map(t => Object.assign({}, t, { karty: (t.karty || []).filter(c => !(f.bez || []).includes(t.id + ":" + c.id)) }));
+      }
+      return k;
+    });
     const vlastni = API.vlastniKurzyLokalne().map(k => Object.assign({}, k, { vlastni: true }));
     S.kurzy = [...vest, ...vlastni];
     S.karty = {};
@@ -151,7 +159,7 @@
       case "fakt": telo = `<h2>${esc(c.titulek)}</h2><p class="text">${esc(c.text)}</p>${c.zdroj ? `<p class="zdroj">${esc(c.zdroj)}</p>` : ""}`; break;
       case "kviz": telo = `<h2>${esc(c.otazka)}</h2><div class="moznosti">${c.moznosti.map((m, i) => `<button class="moznost" data-i="${i}">${esc(m)}</button>`).join("")}</div><div class="vysledek"></div>`; break;
       case "anone": telo = `<p class="pre">Pravda, nebo lež?</p><h2>${esc(c.tvrzeni)}</h2><div class="moznosti anone"><button class="moznost" data-i="1">✅ Pravda</button><button class="moznost" data-i="0">❌ Lež</button></div><div class="vysledek"></div>`; break;
-      case "doplnit": telo = `<p class="pre">Doplň slovo</p><h2>${esc(c.text).replace(/_{2,}/g, '<span class="mezera">___</span>')}</h2><form class="doplnit"><input type="text" autocomplete="off" autocapitalize="off" placeholder="Napiš odpověď…" aria-label="odpověď"><button class="btn" type="submit">Ověřit</button></form><div class="vysledek"></div>`; break;
+      case "doplnit": telo = `<p class="pre">Doplň slovo</p><h2>${esc(c.text).replace(/_{2,}/g, '<span class="mezera">?</span>')}</h2><form class="doplnit"><input type="text" autocomplete="off" autocapitalize="off" placeholder="Doplň slovo nebo číslo…" aria-label="odpověď"><button class="btn" type="submit">Ověřit</button></form><div class="vysledek"></div>`; break;
       case "lekce": telo = `<p class="pre">Lekce · ${c.kroky.length} kroků</p><h2>${esc(c.titulek)}</h2><div class="kroky">${c.kroky.map((kr, i) => `<p class="krok${i ? "" : " videt"}" data-i="${i}">${esc(kr)}</p>`).join("")}</div><button class="btn krok-dal" data-i="1">${c.kroky.length > 1 ? "Dál →" : "Hotovo ✓"}</button>`; break;
       default: telo = `<p>Neznámý typ karty (${esc(c.typ)})</p>`;
     }
@@ -455,7 +463,7 @@
       case "odhlasit": await API.odhlaseni(); toast("Odhlášeno"); vykresliJa(); break;
       case "sync": try { const s = await API.synchronizuj(S.stav); S.stav = SLOUCENI.sloucStavy(S.stav, s); API.ulozStavLokalne(S.stav); toast("Synchronizováno"); vykresliJa(); } catch (err) { toast("Synchronizace selhala: " + err.message); } break;
       case "export": { const blob = new Blob([JSON.stringify({ stav: S.stav, testy: API.testyLokalne(), kurzy: API.vlastniKurzyLokalne() }, null, 2)], { type: "application/json" }); const u = URL.createObjectURL(blob); const l = document.createElement("a"); l.href = u; l.download = "jeztok-postup.json"; l.click(); setTimeout(() => URL.revokeObjectURL(u), 5000); break; }
-      case "reset": if (confirm("Opravdu smazat veškerý postup v tomto zařízení? (Na serveru zůstane, pokud jsi přihlášen/a.)")) { S.stav = SLOUCENI.prazdnyStav(); API.ulozStavLokalne(S.stav); API.lsSet("jeztok_testy", []); nactiKurzy(); vykresliJa(); vykresliFeed(true); toast("Postup smazán"); } break;
+      case "reset": if (confirm("Opravdu smazat veškerý postup v tomto zařízení? (Na serveru zůstane, pokud jsi přihlášen/a.)")) { S.stav = SLOUCENI.prazdnyStav(); API.ulozStavLokalne(S.stav); API.ulozTestyLokalne([]); nactiKurzy(); vykresliJa(); vykresliFeed(true); toast("Postup smazán"); } break;
     }
   });
   document.addEventListener("change", e => { if (e.target.id === "hudba-auto") { S.stav.hudba.auto = e.target.checked; HUDBA.setAuto(e.target.checked); if (e.target.checked && HUDBA.hraje()) HUDBA.proKartu(S.aktivni && S.aktivni.typ, true); ulozStav(); hudbaBar(); } });
@@ -475,7 +483,7 @@
   async function poPrihlaseni() {
     try { const s = await API.stahniStav(); S.stav = SLOUCENI.sloucStavy(S.stav, s); API.ulozStavLokalne(S.stav); await API.synchronizuj(S.stav); } catch (e) {}
     try { const kurzy = await API.stahniKurzy(); const lok = API.vlastniKurzyLokalne(); const mapa = {}; [...kurzy, ...lok].forEach(k => mapa[k.id] = k); API.ulozVlastniKurzyLokalne(Object.values(mapa)); for (const k of lok) if (!kurzy.some(x => x.id === k.id)) API.ulozKurzNaServer(k).catch(() => {}); } catch (e) {}
-    try { const testy = await API.stahniTesty(); const lok = API.testyLokalne(); const mapa = {}; [...testy, ...lok].forEach(t => mapa[t.id] = t); API.lsSet("jeztok_testy", Object.values(mapa).sort((a, b) => b.kdy - a.kdy)); } catch (e) {}
+    try { const testy = await API.stahniTesty(); const lok = API.testyLokalne(); const mapa = {}; [...testy, ...lok].forEach(t => mapa[t.id] = t); API.ulozTestyLokalne(Object.values(mapa).sort((a, b) => b.kdy - a.kdy)); } catch (e) {}
     nactiKurzy(); vykresliFeed(true); aktualizujChipy();
   }
 

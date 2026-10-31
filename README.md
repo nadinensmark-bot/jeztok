@@ -53,7 +53,12 @@ Kurzy v `obsah/`:
   veřejný, zvaž, zda soubor nechat v repu.
 - **`kurz-programy.js` – Programy Defence Hubu** – 13 programů NATO, EU a ČR z katalogu defencehub.gov.cz
   (přes znalostní bázi DH Kompas, stav 2026-09-05): co nabízejí, pro koho jsou, který komu doporučit. Bez termínů.
+- **`kurz-slovnicek.js` – Slovníček pojmů (EN → CZ)** – termíny z EU a NATO programů (podle onboardingu DH).
 - `kurz-anglictina.js` – Angličtina: falešní přátelé (krátký doplňkový kurz).
+
+**Varianta pro onboarding konzultanta** běží na **https://nadinensmark-bot.github.io/jeztok/programy/**: stejná
+aplikace, ale jen EU a NATO programy + slovníček (bez ČR programů a bez kurzu VŠE), vlastní ikona na ploše
+a oddělený postup. Výběr obsahu řídí `programy/config.js` (`filtrKurzu`).
 - Další kurzy (politologie apod.) se přidávají stejně: jeden soubor v `obsah/`, `<script>` v `index.html`
   a řádek v `sw.js`.
 

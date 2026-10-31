@@ -44,7 +44,7 @@ body:not(.ve-feedu) .hlava { display: none; }
 .stitky { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
 .stitek { font-size: 12px; font-weight: 700; padding: 4px 9px; border-radius: 999px; color: #fff; }
 .stitek-tema { background: rgba(255,255,255,.12); } .stitek-opak { background: rgba(255,255,255,.12); color: #fde68a; }
-.mezera { border-bottom: 3px solid color-mix(in srgb, var(--b) 60%, #fff); color: transparent; padding: 0 10px; }
+.mezera { display: inline-block; min-width: 3.2em; padding: 0 12px; margin: 0 2px; border: 2px dashed color-mix(in srgb, var(--b) 55%, #fff); border-radius: 10px; background: rgba(255,255,255,.08); color: color-mix(in srgb, var(--b) 45%, #fff); font-size: .8em; vertical-align: baseline; line-height: 1.35; white-space: nowrap; }
 
 .moznosti { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
 .moznosti.anone { flex-direction: row; }

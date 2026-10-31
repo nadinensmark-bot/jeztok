@@ -4,8 +4,9 @@
 // =====================================================================
 (function () {
   "use strict";
-  const KLIC = { stav: "jeztok_stav", token: "jeztok_token", uzivatel: "jeztok_uzivatel", testy: "jeztok_testy", kurzy: "jeztok_vlastni_kurzy" };
   const cfg = window.JEZTOK_CONFIG || {};
+  const PX = cfg.prefix || "jeztok_"; // oddělené úložiště pro různé varianty appky na stejné doméně
+  const KLIC = { stav: PX + "stav", token: PX + "token", uzivatel: PX + "uzivatel", testy: PX + "testy", kurzy: PX + "vlastni_kurzy" };
   const base = (cfg.backendUrl || "").replace(/\/+$/, "");
   let zdravi = null; // výsledek /api/health
 
@@ -68,6 +69,7 @@
 
   // ---- testy ----
   function testyLokalne() { return lsGet(KLIC.testy, []); }
+  function ulozTestyLokalne(t) { lsSet(KLIC.testy, t); }
   async function ulozTest(t) {
     const vsechny = testyLokalne(); vsechny.unshift(t); lsSet(KLIC.testy, vsechny.slice(0, 200));
     if (prihlasen()) { try { await volej("/api/testy", "POST", t); } catch (e) {} }
@@ -88,6 +90,6 @@
 
   window.API = { maBackend, prihlasen, uzivatel, health, zdravi: () => zdravi, maAI, registrace, prihlaseni, odhlaseni,
     nactiStav, ulozStavLokalne, naplanujSync, synchronizuj, stahniStav,
-    testyLokalne, ulozTest, stahniTesty, vlastniKurzyLokalne, ulozVlastniKurzyLokalne, ulozKurzNaServer, smazKurzNaServeru, stahniKurzy,
+    testyLokalne, ulozTestyLokalne, ulozTest, stahniTesty, vlastniKurzyLokalne, ulozVlastniKurzyLokalne, ulozKurzNaServer, smazKurzNaServeru, stahniKurzy,
     vysvetli, generujKurz, lsSet, lsGet };
 })();

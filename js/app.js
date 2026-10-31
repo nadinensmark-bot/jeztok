@@ -63,12 +63,15 @@
     const p = postupKarty(c.gid), now = Date.now();
     let xp = 0, karet = 0;
     switch (vysledek) {
-      case "videno": if (!p.videno) { xp = XP.videno; karet = 1; } p.videno = true; if (!p.dalsi) p.dalsi = now + INTERVALY[0]; break;
-      case "lekce": if (!p.videno) { xp = XP.lekce; karet = 1; } p.videno = true; p.sila = Math.max(p.sila, 2); p.dalsi = now + INTERVALY[p.sila]; break;
+      case "videno":
+        if (!p.videno) { xp = XP.videno; karet = 1; p.videno = true; p.dalsi = now + INTERVALY[0]; }
+        else if (p.dalsi <= now) { p.sila = Math.min(INTERVALY.length - 1, p.sila + 1); p.dalsi = now + INTERVALY[p.sila]; xp = 1; karet = 1; } // opakované přečtení = lehké opakování, karta se posune dál
+        break;
+      case "lekce": if (!p.videno) { xp = XP.lekce; karet = 1; } p.videno = true; p.sila = Math.max(Math.min(INTERVALY.length - 1, p.sila + 1), 2); p.dalsi = now + INTERVALY[p.sila]; break;
       case "spravne": p.videno = true; p.spravne++; p.sila = Math.min(INTERVALY.length - 1, p.sila + 1); p.dalsi = now + INTERVALY[p.sila]; xp = XP.spravne; karet = 1; break;
       case "spatne": p.videno = true; p.spatne++; p.sila = Math.max(0, p.sila - 1); p.dalsi = now + 5 * MIN; xp = XP.spatne; karet = 1; break;
       case "umim": if (!p.ulozeno) { xp = XP.umim; } p.ulozeno = true; p.videno = true; p.sila = Math.min(INTERVALY.length - 1, p.sila + 1); p.dalsi = now + INTERVALY[p.sila]; break;
-      case "pozdeji": p.dalsi = now + 10 * MIN; p.pozdeji = true; break;
+      case "pozdeji": p.videno = true; p.dalsi = now + 10 * MIN; p.pozdeji = true; break;
     }
     p.kdy = now; S.stav.karty[c.gid] = p;
     if (xp) pridejXp(xp, karet);
@@ -101,6 +104,8 @@
       const chceDue = due.length && (out.length % 3 === 2 || !nove.length);
       out.push(chceDue ? due.shift() : nove.shift());
     }
+    // zamíchat pořadí opakování (ať nejstarší karty nejsou vždy první) – nové karty zůstávají v autorském pořadí
+    for (let i = out.length - 1; i > 0; i--) { if (!S.stav.karty[out[i].gid] || !S.stav.karty[out[i].gid].videno) continue; const j = Math.floor(Math.random() * (i + 1)); if (S.stav.karty[out[j].gid] && S.stav.karty[out[j].gid].videno) [out[i], out[j]] = [out[j], out[i]]; }
     if (out.length < n) { // doplnit osvěžením už naučených
       const nauc = vse.filter(c => { const p = S.stav.karty[c.gid]; return p && p.videno && !vyl.has(c.gid) && !out.includes(c); });
       for (let i = nauc.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [nauc[i], nauc[j]] = [nauc[j], nauc[i]]; }

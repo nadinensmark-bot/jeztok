@@ -1,0 +1,214 @@
+/* DEFLEARN HUB – styl. Mobile-first, tmavý, full-screen feed jako TikTok. */
+:root {
+  --bg: #0b0b10; --fg: #f5f5f7; --tlum: #a1a1aa; --panel: #17171f; --panel2: #22222c; --ok: #22c55e; --ne: #ef4444;
+  --akcent: #f43f5e; --nav-v: 58px; --hudba-v: 44px; --sab: env(safe-area-inset-bottom, 0px); --sat: env(safe-area-inset-top, 0px);
+  --b: #7c3aed;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); font-family: -apple-system, "Segoe UI", Inter, Roboto, system-ui, sans-serif; overscroll-behavior: none; }
+body { position: fixed; inset: 0; overflow: hidden; -webkit-user-select: none; user-select: none; }
+button, input, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+a { color: #93c5fd; }
+h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: -0.3px; }
+h2 { font-size: 18px; margin: 22px 0 10px; }
+code { background: var(--panel2); padding: 1px 5px; border-radius: 5px; font-size: 0.9em; }
+.tlum { color: var(--tlum); } .maly { font-size: 13.5px; line-height: 1.45; } .stred { text-align: center; } .chyba { color: #fca5a5; font-size: 13px; margin-top: 8px; min-height: 1em; }
+
+/* ---- obrazovky ---- */
+.obrazovka { position: absolute; inset: 0; display: none; }
+.obrazovka.akt { display: block; }
+.stranka { height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: calc(14px + var(--sat)) 16px calc(var(--nav-v) + var(--hudba-v) + var(--sab) + 24px); -webkit-user-select: text; user-select: text; }
+
+/* ---- horní lišta ---- */
+.hlava { position: absolute; top: 0; left: 0; right: 0; z-index: 5; display: flex; align-items: center; gap: 8px; padding: calc(10px + var(--sat)) 14px 8px; pointer-events: none; background: linear-gradient(rgba(0,0,0,.55), transparent); }
+.hlava .logo { font-weight: 900; font-size: 20px; letter-spacing: -0.5px; display: flex; align-items: center; gap: 6px; }
+.hlava .logo .jezek { width: 34px; height: 32px; }
+.hlava .chipy { margin-left: auto; display: flex; gap: 6px; pointer-events: auto; }
+.chip { background: rgba(255,255,255,.14); backdrop-filter: blur(8px); border-radius: 999px; padding: 5px 10px; font-size: 13px; font-weight: 700; }
+.chip.zhasnuto { opacity: .55; }
+body:not(.ve-feedu) .hlava { display: none; }
+
+/* ---- feed ---- */
+#feed { height: 100%; overflow-y: scroll; scroll-snap-type: y mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+#feed::-webkit-scrollbar { display: none; }
+.karta { position: relative; height: 100%; scroll-snap-align: start; scroll-snap-stop: always; overflow: hidden; display: flex; align-items: center; padding: calc(64px + var(--sat)) 72px calc(var(--nav-v) + var(--hudba-v) + var(--sab) + 20px) 20px; }
+.karta .pozadi { position: absolute; inset: 0; background: radial-gradient(120% 90% at 20% 15%, color-mix(in srgb, var(--b) 70%, #000) 0%, #0b0b10 70%), linear-gradient(160deg, color-mix(in srgb, var(--b) 35%, #000), #0b0b10); }
+.pozadi-emoji { position: absolute; right: -10px; bottom: 90px; font-size: 180px; opacity: .08; transform: rotate(-12deg); filter: grayscale(.2); }
+.karta .obsah { position: relative; z-index: 2; width: 100%; max-height: 100%; overflow-y: auto; scrollbar-width: none; -webkit-user-select: text; user-select: text; }
+.karta .obsah::-webkit-scrollbar { display: none; }
+.karta h2 { font-size: clamp(22px, 6.4vw, 30px); line-height: 1.2; margin: 10px 0 14px; letter-spacing: -0.4px; font-weight: 800; }
+.karta .text { font-size: clamp(17px, 4.6vw, 20px); line-height: 1.5; margin: 0; color: #e8e8ee; }
+.karta .pre { margin: 0; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; color: color-mix(in srgb, var(--b) 60%, #fff); font-weight: 700; }
+.karta .zdroj { font-size: 12px; color: var(--tlum); margin-top: 14px; }
+.stitky { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
+.stitek { font-size: 12px; font-weight: 700; padding: 4px 9px; border-radius: 999px; color: #fff; }
+.stitek-tema { background: rgba(255,255,255,.12); } .stitek-opak { background: rgba(255,255,255,.12); color: #fde68a; }
+.mezera { border-bottom: 3px solid color-mix(in srgb, var(--b) 60%, #fff); color: transparent; padding: 0 10px; }
+
+.moznosti { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+.moznosti.anone { flex-direction: row; }
+.moznost { background: rgba(255,255,255,.1); border: 2px solid rgba(255,255,255,.14); border-radius: 16px; padding: 14px 16px; text-align: left; font-size: 17px; font-weight: 600; line-height: 1.3; transition: transform .1s; flex: 1; }
+.moznost:active { transform: scale(.97); }
+.moznost.spravne { background: rgba(34,197,94,.25); border-color: var(--ok); }
+.moznost.spatne { background: rgba(239,68,68,.25); border-color: var(--ne); animation: tres .4s; }
+.moznost:disabled { opacity: .85; }
+@keyframes tres { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+.vysl { margin-top: 14px; padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,.1); font-size: 15px; line-height: 1.45; animation: nahoru .3s; }
+.vysl.ok { border-left: 4px solid var(--ok); } .vysl.ne { border-left: 4px solid var(--ne); }
+.vysl-text { display: block; margin-top: 6px; color: #e4e4e7; }
+@keyframes nahoru { from { opacity: 0; transform: translateY(10px); } }
+form.doplnit { display: flex; gap: 8px; margin-top: 8px; }
+form.doplnit input { flex: 1; min-width: 0; background: rgba(255,255,255,.1); border: 2px solid rgba(255,255,255,.18); border-radius: 14px; padding: 12px 14px; font-size: 17px; outline: none; }
+form.doplnit input:focus { border-color: #fff; }
+form.doplnit input.spravne { border-color: var(--ok); } form.doplnit input.spatne { border-color: var(--ne); }
+.kroky .krok { display: none; font-size: 17px; line-height: 1.5; padding: 12px 14px; background: rgba(255,255,255,.08); border-radius: 14px; margin: 0 0 10px; animation: nahoru .3s; }
+.kroky .krok.videt { display: block; }
+.krok-dal { margin-top: 6px; }
+
+.btn { background: var(--fg); color: #111; border: 0; border-radius: 14px; padding: 12px 18px; font-weight: 800; font-size: 15px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; transition: transform .1s; }
+.btn:active { transform: scale(.96); } .btn:disabled { opacity: .5; }
+.btn-sek { background: rgba(255,255,255,.12); color: var(--fg); }
+.btn-nebezpeci { background: rgba(239,68,68,.2); color: #fca5a5; }
+.tlacitka { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+.rail { position: absolute; right: 10px; bottom: calc(var(--nav-v) + var(--hudba-v) + var(--sab) + 28px); z-index: 3; display: flex; flex-direction: column; gap: 14px; }
+.rail-btn { background: none; border: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; color: #fff; }
+.rail-btn span { font-size: 28px; width: 48px; height: 48px; display: grid; place-items: center; background: rgba(255,255,255,.12); backdrop-filter: blur(6px); border-radius: 50%; transition: transform .15s; }
+.rail-btn:active span { transform: scale(.9); }
+.rail-btn.akt span { background: rgba(244,63,94,.35); }
+.rail-btn.pulz span { animation: pulz .5s; }
+@keyframes pulz { 30% { transform: scale(1.35); } }
+.rail-btn small { font-size: 11px; font-weight: 700; text-shadow: 0 1px 3px #000; }
+
+.karta-prazdna { padding: 20px; justify-content: center; }
+.prazdno { text-align: center; } .prazdno .jezek { width: 160px; } .prazdno .btn { margin: 6px 4px; }
+
+/* ---- navigace + hudba ---- */
+.nav { position: absolute; left: 0; right: 0; bottom: 0; z-index: 10; height: calc(var(--nav-v) + var(--sab)); padding-bottom: var(--sab); display: flex; background: rgba(11,11,16,.92); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,.08); }
+.nav button { flex: 1; background: none; border: 0; color: var(--tlum); font-size: 11px; font-weight: 700; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+.nav button span { font-size: 22px; }
+.nav button.akt { color: var(--fg); }
+.hudba { position: absolute; left: 0; right: 0; bottom: calc(var(--nav-v) + var(--sab)); z-index: 10; height: var(--hudba-v); display: flex; align-items: center; gap: 10px; padding: 0 12px; background: rgba(11,11,16,.85); backdrop-filter: blur(12px); }
+#hudba-disk { width: 30px; height: 30px; border-radius: 50%; background: conic-gradient(#333 0 25%, #111 0 50%, #333 0 75%, #111 0); border: 3px solid #222; position: relative; flex-shrink: 0; }
+#hudba-disk::after { content: ""; position: absolute; inset: 9px; border-radius: 50%; background: var(--akcent); }
+#hudba-disk.toci { animation: toceni 2.4s linear infinite; }
+@keyframes toceni { to { transform: rotate(360deg); } }
+#hudba-nazev { flex: 1; font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #ddd; }
+#hudba-btn { background: rgba(255,255,255,.12); border: 0; color: #fff; width: 34px; height: 30px; border-radius: 10px; font-size: 14px; }
+
+/* ---- ježek a efekty ---- */
+.jezek { width: 100%; height: auto; }
+.jz-telo { transform-origin: 100px 170px; animation: dych 3s ease-in-out infinite; }
+@keyframes dych { 50% { transform: scaleY(1.03) scaleX(.99); } }
+.jezek-radost .jz-telo, .jezek-party .jz-telo { animation: skok .6s ease-in-out infinite; }
+@keyframes skok { 50% { transform: translateY(-8px) rotate(-3deg); } }
+.jezek-smutek .jz-telo { animation: kyv 1.2s ease-in-out infinite; }
+@keyframes kyv { 50% { transform: rotate(3deg); } }
+.jezek-premysli .jz-telo { animation: naklon 2s ease-in-out infinite; }
+@keyframes naklon { 50% { transform: rotate(-4deg) translateX(2px); } }
+.jz-slza { animation: slza 1.2s ease-in infinite; } @keyframes slza { to { transform: translateY(16px); opacity: 0; } }
+.jz-zzz { animation: zzz 2s ease-in-out infinite; } .jz-zzz2 { animation-delay: .6s; } @keyframes zzz { 50% { transform: translateY(-6px); opacity: .4; } }
+.jz-konf { animation: konf 1s ease-in-out infinite; } .jz-konf2 { animation-delay: .4s; } @keyframes konf { 50% { transform: translateY(-6px) rotate(10deg); } }
+.jz-oko { animation: mrk 5s infinite; } @keyframes mrk { 0%, 96%, 100% { transform: scaleY(1); } 98% { transform: scaleY(.1); } } .jz-oko { transform-origin: 100px 112px; }
+.jezek-mini { width: 56px; height: 56px; flex-shrink: 0; }
+.jezek-velky { width: 170px; margin: 0 auto; } .jezek-velky.klik { cursor: pointer; } .jezek-velky.skok { animation: velkyskok .6s; }
+@keyframes velkyskok { 40% { transform: translateY(-20px) rotate(-6deg); } 70% { transform: translateY(0) rotate(4deg); } }
+#jezek-bublina { position: absolute; left: 12px; right: 76px; bottom: calc(var(--nav-v) + var(--hudba-v) + var(--sab) + 14px); z-index: 20; display: flex; align-items: flex-end; gap: 6px; opacity: 0; transform: translateY(12px); transition: .25s; pointer-events: none; }
+#jezek-bublina.videt { opacity: 1; transform: none; pointer-events: auto; }
+.bublina { background: #fff; color: #111; border-radius: 16px; border-bottom-left-radius: 4px; padding: 10px 13px; font-size: 14.5px; line-height: 1.4; font-weight: 600; box-shadow: 0 6px 20px rgba(0,0,0,.4); }
+.bublina.tlum { background: var(--panel2); color: var(--tlum); font-weight: 500; }
+body:not(.ve-feedu) #jezek-bublina { bottom: calc(var(--nav-v) + var(--hudba-v) + var(--sab) + 10px); }
+#toast { position: absolute; left: 50%; top: calc(70px + var(--sat)); transform: translate(-50%, -10px); background: #fff; color: #111; padding: 9px 14px; border-radius: 999px; font-size: 14px; font-weight: 700; opacity: 0; transition: .25s; z-index: 50; max-width: 90vw; text-align: center; }
+#toast.videt { opacity: 1; transform: translate(-50%, 0); }
+.xp-bublina { position: absolute; right: 16px; top: calc(52px + var(--sat)); z-index: 30; color: #fde047; font-weight: 900; font-size: 18px; text-shadow: 0 2px 6px #000; animation: xp 1.2s forwards; pointer-events: none; }
+@keyframes xp { 0% { opacity: 0; transform: translateY(8px); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(-30px); } }
+.srdce-let { position: fixed; font-size: 64px; transform: translate(-50%, -50%); animation: srdce .9s forwards; pointer-events: none; z-index: 40; }
+@keyframes srdce { 0% { transform: translate(-50%,-50%) scale(.4); opacity: 0; } 25% { opacity: 1; transform: translate(-50%,-50%) scale(1.2) rotate(-8deg); } 100% { opacity: 0; transform: translate(-50%,-120%) scale(1) rotate(8deg); } }
+.hvezda { position: fixed; font-size: 22px; animation: hvezda 1s forwards; pointer-events: none; z-index: 40; }
+@keyframes hvezda { to { transform: translate(var(--dx), var(--dy)) scale(.3); opacity: 0; } }
+#konfety { position: fixed; inset: 0; z-index: 60; pointer-events: none; display: none; }
+
+/* ---- bottom sheet (vysvětlení) ---- */
+#sheet { position: absolute; inset: 0; z-index: 40; background: rgba(0,0,0,.55); display: none; align-items: flex-end; }
+#sheet.otevreno { display: flex; }
+.sheet-obsah { width: 100%; max-height: 85%; background: var(--panel); border-radius: 22px 22px 0 0; padding: 14px 16px calc(16px + var(--sab)); display: flex; flex-direction: column; animation: vyjet .25s; }
+@keyframes vyjet { from { transform: translateY(40px); opacity: 0; } }
+.sheet-hlava { display: flex; align-items: center; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,.08); }
+.sheet-pod { font-size: 13px; color: var(--tlum); }
+.sheet-telo { overflow-y: auto; padding-top: 12px; display: flex; flex-direction: column; gap: 10px; -webkit-user-select: text; user-select: text; }
+.sheet-karta { margin: 0; font-weight: 700; font-size: 15px; }
+.sheet-telo .bublina { border-radius: 16px; }
+.zavrit { margin-left: auto; background: rgba(255,255,255,.1); border: 0; color: #fff; width: 34px; height: 34px; border-radius: 50%; font-size: 15px; }
+.ai-form { display: flex; gap: 8px; } .ai-form input { flex: 1; min-width: 0; background: var(--panel2); border: 1px solid rgba(255,255,255,.14); border-radius: 12px; padding: 11px 12px; outline: none; }
+.ai-zprava.ja { align-self: flex-end; background: var(--b); color: #fff; padding: 9px 12px; border-radius: 14px; border-bottom-right-radius: 4px; font-size: 14px; max-width: 85%; }
+.spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid #ccc; border-top-color: #111; border-radius: 50%; animation: toceni .8s linear infinite; vertical-align: -2px; }
+
+/* ---- seznamy, boxy, profil ---- */
+.seznam { display: flex; flex-direction: column; gap: 8px; }
+.radek { display: flex; align-items: center; gap: 12px; background: var(--panel); border-radius: 16px; padding: 12px; border-left: 4px solid var(--b); }
+.radek-ikona { font-size: 26px; width: 40px; text-align: center; flex-shrink: 0; }
+.radek-text { flex: 1; min-width: 0; } .radek-text strong { display: block; font-size: 15px; }
+.maly-radek { padding: 9px 12px; } .maly-radek .radek-ikona { font-size: 20px; width: 30px; }
+.skore { font-weight: 900; font-size: 16px; } .skore.ok { color: var(--ok); } .skore.stred { color: #fbbf24; } .skore.ne { color: #f87171; }
+.bar { height: 6px; background: rgba(255,255,255,.1); border-radius: 999px; overflow: hidden; margin: 6px 0; }
+.bar div { height: 100%; background: var(--akcent); border-radius: 999px; transition: width .4s; }
+.box { background: var(--panel); border-radius: 16px; padding: 14px; margin-bottom: 10px; }
+.box p { margin: 0 0 10px; }
+textarea, .box input[type=text], .box input[type=email], .box input[type=password], .auth input { width: 100%; background: var(--panel2); border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 11px 12px; outline: none; margin-bottom: 8px; font-size: 15px; }
+textarea { resize: vertical; font-family: inherit; }
+.prepinac { position: relative; width: 48px; height: 28px; flex-shrink: 0; }
+.prepinac input { opacity: 0; width: 0; height: 0; }
+.prepinac span { position: absolute; inset: 0; background: rgba(255,255,255,.15); border-radius: 999px; transition: .2s; }
+.prepinac span::before { content: ""; position: absolute; width: 22px; height: 22px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: .2s; }
+.prepinac input:checked + span { background: var(--ok); } .prepinac input:checked + span::before { transform: translateX(20px); }
+.profil { text-align: center; } .profil h1 { margin-top: 6px; } .profil p { margin: 4px 0; }
+#jezek-jmeno { outline: none; border-bottom: 2px dashed rgba(255,255,255,.3); padding: 0 4px; }
+.statistiky { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 14px 0 10px; }
+.statistiky div { background: var(--panel); border-radius: 14px; padding: 10px 4px; text-align: center; }
+.statistiky b { display: block; font-size: 22px; } .statistiky span { font-size: 11px; color: var(--tlum); }
+.dny { display: flex; gap: 5px; justify-content: center; margin-bottom: 6px; }
+.den { width: 16px; height: 16px; border-radius: 5px; background: rgba(255,255,255,.1); } .den.akt { background: #f97316; }
+.viby { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
+.vibe { background: var(--panel2); border: 2px solid transparent; border-radius: 14px; padding: 10px 6px; display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 13px; font-weight: 700; text-align: center; }
+.vibe span { font-size: 24px; } .vibe small { font-weight: 500; color: var(--tlum); font-size: 10.5px; line-height: 1.2; }
+.vibe.akt { border-color: var(--akcent); }
+input[type=range] { width: 100%; accent-color: var(--akcent); }
+
+/* ---- test ---- */
+.test { height: 100%; display: flex; flex-direction: column; }
+.test-hlava { display: flex; align-items: center; gap: 10px; padding: calc(12px + var(--sat)) 14px 8px; }
+.test-hlava .zavrit { margin: 0; }
+.progress { flex: 1; height: 8px; background: rgba(255,255,255,.1); border-radius: 999px; overflow: hidden; }
+.progress div { height: 100%; background: var(--akcent); transition: width .3s; }
+.test .karta { flex: 1; padding: 16px 20px 10px; height: auto; }
+.test-pata { padding: 10px 16px calc(var(--nav-v) + var(--hudba-v) + var(--sab) + 12px); }
+.test-dal { width: 100%; }
+.test-vysledek { text-align: center; } .test-vysledek h1 { font-size: 44px; } .test-vysledek .seznam { text-align: left; }
+
+/* větší displeje: appka zůstane v "telefonu" */
+@media (min-width: 600px) {
+  body { background: #000; }
+  #app { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 430px; height: min(100vh, 900px); overflow: hidden; border-radius: 28px; box-shadow: 0 0 0 10px #1a1a1a, 0 30px 80px rgba(0,0,0,.6); background: var(--bg); }
+}
+@media (prefers-reduced-motion: reduce) { .jz-telo, .jezek-radost .jz-telo, #hudba-disk.toci { animation: none; } }
+
+/* ---- Hubík (maskot z videa) ---- */
+.hubik { position: relative; display: inline-block; width: 100%; line-height: 0; }
+.hubik img { width: 100%; height: auto; display: block; transform-origin: 50% 95%; animation: dych 3s ease-in-out infinite; -webkit-user-drag: none; }
+.hubik-radost img, .hubik-party img { animation: skok .6s ease-in-out infinite; }
+.hubik-smutek img { animation: kyv 1.2s ease-in-out infinite; filter: saturate(.6) brightness(.9); }
+.hubik-premysli img { animation: naklon 2s ease-in-out infinite; }
+.hubik-spi img { animation: dych 4s ease-in-out infinite; filter: brightness(.55); }
+.hubik-odznak { position: absolute; right: 2%; bottom: 4%; font-size: 28%; line-height: 1; filter: drop-shadow(0 2px 4px rgba(0,0,0,.6)); }
+.hubik-fx { position: absolute; font-size: 26%; line-height: 1; }
+.hubik-zzz { right: 6%; top: 4%; animation: zzz 2s ease-in-out infinite; }
+.hubik-slza { left: 30%; top: 46%; animation: slza 1.2s ease-in infinite; }
+.hubik-konf { left: 2%; top: 2%; animation: konf 1s ease-in-out infinite; }
+.hlava .logo .hubik { width: 36px; }
+.jezek-mini .hubik { width: 56px; }
+.jezek-velky .hubik-odznak, .prazdno .hubik-odznak { font-size: 36px; }
+.jezek-velky .hubik-fx, .prazdno .hubik-fx { font-size: 32px; }
+.jezek-mini .hubik-odznak, .hlava .hubik-odznak { font-size: 14px; }
+.jezek-mini .hubik-fx, .hlava .hubik-fx { font-size: 13px; }
+@media (prefers-reduced-motion: reduce) { .hubik img { animation: none !important; } }

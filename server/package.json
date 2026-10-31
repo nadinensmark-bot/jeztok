@@ -1,0 +1,17 @@
+{
+  "name": "jeztok-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Backend DefLearn Hubu: účty, postup učení, testy, vlastní kurzy a AI dovysvětlení (Claude API)",
+  "main": "server.js",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node server.js",
+    "mock": "MOCK_AI=1 node server.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
+    "pg": "^8.13.0"
+  }
+}

@@ -4,6 +4,8 @@ window.JEZTOK_CONFIG = {
   backendUrl: "",
   prefix: "dhprog_",
   zakladCesty: "../",
+  // barvy kurzů v paletě Defence Hubu (blue / steel)
+  barvyKurzu: { programy: "#2B5CC4", slovnicek: "#3E7CA8" },
   filtrKurzu: {
     defence: false,
     anglictina: false,

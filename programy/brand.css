@@ -1,0 +1,46 @@
+/* DH Programy – vizuál v barvách Defence Hubu (paleta převzatá z DH Kompasu: ink, navy, blue, steel, gold).
+   Písma: Space Grotesk (nadpisy), IBM Plex Sans (text). Logo DH zatím textové (wordmark) – vyměnit za SVG, až bude. */
+:root {
+  --bg: #0B1530; --fg: #F3F5F9; --tlum: #A9B4CF; --panel: #13234E; --panel2: #1C2F63;
+  --akcent: #C99A2E; --ok: #6E9152; --ne: #BD6B4B;
+  --dh-gold: #C99A2E; --dh-blue: #2B5CC4; --dh-steel: #3E7CA8;
+}
+html, body { font-family: "IBM Plex Sans", -apple-system, "Segoe UI", system-ui, sans-serif; }
+h1, h2, .karta h2, .logo, .statistiky b, .test-vysledek h1 { font-family: "Space Grotesk", "IBM Plex Sans", system-ui, sans-serif; }
+body { background: var(--bg); }
+@media (min-width: 600px) { body { background: #050a1a; } }
+.hlava { background: linear-gradient(rgba(11,21,48,.92), rgba(11,21,48,0)); }
+.hlava .logo { gap: 10px; }
+.wordmark { display: flex; flex-direction: column; line-height: 1; }
+.wordmark b { font-weight: 700; font-size: 19px; letter-spacing: -.3px; color: #fff; }
+.wordmark b span { color: var(--dh-gold); }
+.wordmark small { font-size: 10.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--tlum); margin-top: 3px; }
+.chip { background: rgba(201,154,46,.16); border: 1px solid rgba(201,154,46,.35); color: #F6E7C1; }
+.karta .pozadi { background: radial-gradient(120% 90% at 20% 0%, #1B2D5E 0%, #0E1B3C 60%, #0B1530 100%); }
+.karta .pozadi::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: linear-gradient(90deg, var(--b), transparent); opacity: .9; }
+.pozadi-emoji { opacity: .06; }
+.karta .pre { color: var(--dh-gold); }
+.stitek-tema { background: rgba(43,92,196,.25); border: 1px solid rgba(43,92,196,.4); }
+.stitek-opak { background: rgba(201,154,46,.18); color: #F6E7C1; }
+.mezera { border-color: var(--dh-gold); color: var(--dh-gold); background: rgba(201,154,46,.1); }
+.moznost { background: rgba(43,92,196,.16); border-color: rgba(201,216,242,.25); }
+.moznost.spravne { background: rgba(110,145,82,.3); border-color: var(--ok); }
+.moznost.spatne { background: rgba(189,107,75,.3); border-color: var(--ne); }
+.btn { background: var(--dh-gold); color: #0B1530; }
+.btn-sek { background: rgba(201,216,242,.14); color: var(--fg); }
+.rail-btn span { background: rgba(28,47,99,.75); border: 1px solid rgba(201,216,242,.15); }
+.rail-btn.akt span { background: rgba(201,154,46,.35); }
+.nav, .hudba { background: rgba(11,21,48,.94); border-color: rgba(201,216,242,.1); }
+.nav button.akt { color: var(--dh-gold); }
+#hudba-disk::after { background: var(--dh-gold); }
+.bar div { background: var(--dh-gold); }
+.progress div { background: var(--dh-gold); }
+.den.akt { background: var(--dh-gold); }
+.vibe.akt { border-color: var(--dh-gold); }
+.prepinac input:checked + span { background: var(--dh-steel); }
+.radek { border-left-color: var(--b); }
+.bublina { background: #F3F5F9; color: #0B1530; }
+.ai-zprava.ja { background: var(--dh-blue); }
+.vysl.ok { border-left-color: var(--ok); } .vysl.ne { border-left-color: var(--ne); }
+.xp-bublina { color: var(--dh-gold); }
+.brand-pata { text-align: center; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--tlum); }

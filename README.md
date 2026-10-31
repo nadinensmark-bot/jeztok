@@ -58,7 +58,9 @@ Kurzy v `obsah/`:
 
 **Varianta pro onboarding konzultanta** běží na **https://nadinensmark-bot.github.io/jeztok/programy/**: stejná
 aplikace, ale jen EU a NATO programy + slovníček (bez ČR programů a bez kurzu VŠE), vlastní ikona na ploše
-a oddělený postup. Výběr obsahu řídí `programy/config.js` (`filtrKurzu`).
+a oddělený postup. Výběr obsahu řídí `programy/config.js` (`filtrKurzu`). Vizuál je v barvách Defence Hubu
+(`programy/brand.css`, paleta z DH Kompasu, písma Space Grotesk a IBM Plex Sans); logo je zatím textový wordmark
+v hlavičce `programy/index.html` – nahradit SVG, až bude k dispozici.
 - Další kurzy (politologie apod.) se přidávají stejně: jeden soubor v `obsah/`, `<script>` v `index.html`
   a řádek v `sw.js`.
 

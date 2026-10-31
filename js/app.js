@@ -24,6 +24,8 @@
     const filtr = (window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.filtrKurzu) || null;
     const vest = (window.JEZTOK_KURZY || []).filter(k => !k.skryty && (!filtr || filtr[k.id] !== false)).map(k => {
       k = Object.assign({}, k, { vestaveny: true });
+      const barvy = (window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.barvyKurzu) || {};
+      if (barvy[k.id]) k.barva = barvy[k.id];
       const f = filtr && filtr[k.id];
       if (f && typeof f === "object") {
         k.temata = (k.temata || []).filter(t => !f.temata || f.temata.includes(t.id)).map(t => Object.assign({}, t, { karty: (t.karty || []).filter(c => !(f.bez || []).includes(t.id + ":" + c.id)) }));

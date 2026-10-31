@@ -3,9 +3,11 @@
 window.JEZTOK_CONFIG = {
   backendUrl: "",
   prefix: "dhprog_",
+  nazev: "Defence Hub · Programy",
+  logoPata: ["img/logo-dh-ci-white.png", "img/logo-diana-white.png"],
   zakladCesty: "../",
   // barvy kurzů v paletě Defence Hubu (blue / steel)
-  barvyKurzu: { programy: "#2B5CC4", slovnicek: "#3E7CA8" },
+  barvyKurzu: { programy: "#0058A8", slovnicek: "#709870" },
   filtrKurzu: {
     defence: false,
     anglictina: false,

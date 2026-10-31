@@ -454,7 +454,8 @@
       <h2>Aplikace</h2>
       <div class="box"><p class="maly">Na telefonu si DefLearn Hub přidej na plochu: v prohlížeči <b>Sdílet → Přidat na plochu</b> (iPhone) nebo <b>⋮ → Přidat na plochu</b> (Android). Pak běží jako appka, i offline.</p>
         <div class="tlacitka"><button class="btn btn-sek" data-ja-akce="export">Exportovat postup</button><button class="btn btn-nebezpeci" data-ja-akce="reset">Smazat postup</button></div></div>
-      <p class="tlum maly stred">DefLearn Hub · verze ${esc(window.JEZTOK_VERZE || "dev")}</p>
+      ${window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.logoPata ? `<div class="pata-logo">${[].concat(window.JEZTOK_CONFIG.logoPata).map(l => `<img src="${esc(l)}" alt="">`).join("")}</div>` : ""}
+      <p class="tlum maly stred">${esc((window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.nazev) || "DefLearn Hub")} · verze ${esc(window.JEZTOK_VERZE || "dev")}</p>
     </div>`;
   }
   document.addEventListener("click", async e => {

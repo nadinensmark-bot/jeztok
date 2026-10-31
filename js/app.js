@@ -49,7 +49,7 @@
     const d = dnes(); S.stav.dny[d] = S.stav.dny[d] || { xp: 0, karet: 0 };
     S.stav.dny[d].xp += n; S.stav.dny[d].karet += karet || 0;
     const po = JEZEK.urovenPodleXp(S.stav.xp);
-    if (po > pred) { konfety(); jezekRekni("Level up! Teď jsem " + JEZEK.UROVNE[po].nazev + ". " + JEZEK.UROVNE[po].popis, "party", 5000); vibrace([30, 50, 30, 50, 60]); }
+    if (po > pred) { konfety(); HUDBA.sting("levelup"); jezekRekni("Level up! Teď jsem " + JEZEK.UROVNE[po].nazev + ". " + JEZEK.UROVNE[po].popis, "party", 5000); vibrace([30, 50, 30, 50, 60]); }
     xpBublina(n);
   }
   function streak() {
@@ -127,6 +127,7 @@
     const gid = el.dataset.gid; if (!gid) return;
     const idx = S.feed.findIndex(c => c.gid === gid); const c = S.feed[idx];
     S.aktivni = c; clearTimeout(S.videnoTimer);
+    if (c && S.stav.hudba.auto !== false) { const nid = HUDBA.proKartu(c.typ); if (nid) S.stav.hudba.vibe = nid; }
     if (c && (c.typ === "fakt")) S.videnoTimer = setTimeout(() => { zaznamenej(c, "videno"); }, 1800);
     if (idx >= S.feed.length - 4) vykresliFeed(false);
     if (new Date().getHours() >= 23 && Math.random() < 0.08) jezekRekni(JEZEK.hlaska("nocni"), "spi", 4000);
@@ -180,7 +181,7 @@
   function ukazVysledek(el, c, ok, extra) {
     const v = $(".vysledek", el);
     v.innerHTML = `<div class="vysl ${ok ? "ok" : "ne"}"><strong>${ok ? "Správně!" : "Vedle."}</strong> ${esc(extra || "")} ${c.vysvetleni ? `<span class="vysl-text">${esc(c.vysvetleni)}</span>` : ""}</div>`;
-    vibrace(ok ? [20] : [60, 40, 60]);
+    vibrace(ok ? [20] : [60, 40, 60]); HUDBA.sting(ok ? "ok" : "ne");
     if (S.test) { testOdpoved(c, ok); return; }
     zaznamenej(c, ok ? "spravne" : "spatne");
     jezekRekni(JEZEK.hlaska(ok ? "spravne" : "spatne"), ok ? "radost" : "smutek", 2600);
@@ -430,7 +431,8 @@
         : `<p class="maly">Přihlas se, aby se postup ukládal na server a šel sledovat na více zařízeních. ${z.ok ? "" : '<span class="tlum">Server teď neodpovídá – zkus to později.</span>'}</p>
           <form id="auth-form" class="auth"><input type="text" name="jmeno" placeholder="Jméno (jen při registraci)" autocomplete="name"><input type="email" name="email" placeholder="E-mail" required autocomplete="email"><input type="password" name="heslo" placeholder="Heslo (min. 8 znaků)" required minlength="8" autocomplete="current-password"><div class="tlacitka"><button class="btn" type="submit" data-rezim="prihlasit">Přihlásit</button><button class="btn btn-sek" type="submit" data-rezim="registrovat">Registrovat</button></div><div id="auth-chyba" class="chyba"></div></form>`}</div>
       <h2>Hudba</h2>
-      <div class="box"><div class="viby">${HUDBA.VIBY.map(v => `<button class="vibe ${S.stav.hudba.vibe === v.id ? "akt" : ""}" data-vibe="${v.id}"><span>${v.emoji}</span>${esc(v.nazev)}<small>${esc(v.popis)}</small></button>`).join("")}</div>
+      <div class="box"><label class="radek-prepinac"><span><b>Měnit styl s každou kartou</b><br><span class="tlum maly">Klidnější styly u faktů, nakopnutí u kvízů. Vypni, když chceš jeden styl napořád.</span></span><span class="prepinac"><input type="checkbox" id="hudba-auto" ${S.stav.hudba.auto !== false ? "checked" : ""}><span></span></span></label>
+        <div class="viby">${HUDBA.VIBY.map(v => `<button class="vibe ${S.stav.hudba.vibe === v.id ? "akt" : ""}" data-vibe="${v.id}"><span>${v.emoji}</span>${esc(v.nazev)}<small>${esc(v.popis)}</small></button>`).join("")}</div>
         <label class="maly">Hlasitost <input type="range" id="hlasitost" min="0" max="1" step="0.05" value="${S.stav.hudba.volume}"></label></div>
       <h2>Aplikace</h2>
       <div class="box"><p class="maly">Na telefonu si DefLearn Hub přidej na plochu: v prohlížeči <b>Sdílet → Přidat na plochu</b> (iPhone) nebo <b>⋮ → Přidat na plochu</b> (Android). Pak běží jako appka, i offline.</p>
@@ -439,7 +441,7 @@
     </div>`;
   }
   document.addEventListener("click", async e => {
-    const v = e.target.closest("[data-vibe]"); if (v) { S.stav.hudba.vibe = v.dataset.vibe; HUDBA.setVibe(v.dataset.vibe); if (!HUDBA.hraje()) { S.stav.hudba.zapnuto = true; HUDBA.start(v.dataset.vibe); } ulozStav(); $$("[data-vibe]").forEach(b => b.classList.toggle("akt", b === v)); return; }
+    const v = e.target.closest("[data-vibe]"); if (v) { S.stav.hudba.vibe = v.dataset.vibe; S.stav.hudba.auto = false; HUDBA.setAuto(false); const ch = $("#hudba-auto"); if (ch) ch.checked = false; HUDBA.setVibe(v.dataset.vibe); if (!HUDBA.hraje()) { S.stav.hudba.zapnuto = true; HUDBA.setVolume(S.stav.hudba.volume); HUDBA.start(v.dataset.vibe); } ulozStav(); $$("[data-vibe]").forEach(b => b.classList.toggle("akt", b === v)); return; }
     const a = e.target.closest("[data-ja-akce]"); if (!a) return;
     switch (a.dataset.jaAkce) {
       case "jezek-klik": { const n = ["radost", "party", "premysli", "spi", "smutek"][Math.floor(Math.random() * 5)]; a.innerHTML = JEZEK.svg({ nalada: n, uroven: uroven() }); a.classList.add("skok"); setTimeout(() => a.classList.remove("skok"), 600); vibrace([15]); break; }
@@ -449,6 +451,7 @@
       case "reset": if (confirm("Opravdu smazat veškerý postup v tomto zařízení? (Na serveru zůstane, pokud jsi přihlášen/a.)")) { S.stav = SLOUCENI.prazdnyStav(); API.ulozStavLokalne(S.stav); API.lsSet("jeztok_testy", []); nactiKurzy(); vykresliJa(); vykresliFeed(true); toast("Postup smazán"); } break;
     }
   });
+  document.addEventListener("change", e => { if (e.target.id === "hudba-auto") { S.stav.hudba.auto = e.target.checked; HUDBA.setAuto(e.target.checked); if (e.target.checked && HUDBA.hraje()) HUDBA.proKartu(S.aktivni && S.aktivni.typ, true); ulozStav(); hudbaBar(); } });
   document.addEventListener("input", e => { if (e.target.id === "hlasitost") { S.stav.hudba.volume = Number(e.target.value); HUDBA.setVolume(S.stav.hudba.volume); ulozStav(); } });
   document.addEventListener("focusout", e => { if (e.target.id === "jezek-jmeno") { const n = e.target.textContent.trim().slice(0, 24) || "Hubík"; e.target.textContent = n; if (n !== S.stav.jezek) { S.stav.jezek = n; ulozStav(); jezekRekni("Takže " + n + ". Líbí se mi to.", "radost", 2500); } } });
   document.addEventListener("keydown", e => { if (e.target.id === "jezek-jmeno" && e.key === "Enter") { e.preventDefault(); e.target.blur(); } });
@@ -505,16 +508,23 @@
 
   // Hudba bar
   function hudbaBar() {
-    const st = HUDBA.stav(); const v = HUDBA.VIBY.find(x => x.id === S.stav.hudba.vibe) || HUDBA.VIBY[0];
-    $("#hudba-nazev").textContent = (st.hraje ? "♪ " : "") + v.emoji + " " + v.nazev + (st.hraje ? " · lo-fi generováno živě" : " · ťukni pro hudbu");
+    const st = HUDBA.stav(); const v = st.vibe;
+    $("#hudba-nazev").textContent = (st.hraje ? "♪ " : "") + (st.auto ? "🔀 " : "") + v.emoji + " " + v.nazev + (st.hraje ? (st.auto ? " · mění se s kartou" : " · ťukni pro další styl") : " · ťukni pro hudbu");
     $("#hudba-disk").classList.toggle("toci", st.hraje); $("#hudba-btn").textContent = st.hraje ? "⏸" : "▶";
   }
   HUDBA.onZmena(hudbaBar);
-  $("#hudba-btn").addEventListener("click", () => { if (HUDBA.hraje()) { HUDBA.stop(); S.stav.hudba.zapnuto = false; } else { HUDBA.setVolume(S.stav.hudba.volume); HUDBA.start(S.stav.hudba.vibe); S.stav.hudba.zapnuto = true; } ulozStav(); });
-  $("#hudba-nazev").addEventListener("click", () => { const i = HUDBA.VIBY.findIndex(x => x.id === S.stav.hudba.vibe); const v = HUDBA.VIBY[(i + 1) % HUDBA.VIBY.length]; S.stav.hudba.vibe = v.id; HUDBA.setVibe(v.id); if (!HUDBA.hraje()) { HUDBA.setVolume(S.stav.hudba.volume); HUDBA.start(v.id); S.stav.hudba.zapnuto = true; } ulozStav(); hudbaBar(); });
+  $("#hudba-btn").addEventListener("click", () => { if (HUDBA.hraje()) { HUDBA.stop(); S.stav.hudba.zapnuto = false; } else { HUDBA.setVolume(S.stav.hudba.volume); HUDBA.setAuto(S.stav.hudba.auto !== false); HUDBA.start(S.stav.hudba.auto !== false ? HUDBA.proKartu(S.aktivni && S.aktivni.typ, true) : S.stav.hudba.vibe); S.stav.hudba.zapnuto = true; } ulozStav(); });
+  $("#hudba-nazev").addEventListener("click", () => {
+    let id;
+    if (S.stav.hudba.auto !== false) id = HUDBA.proKartu(S.aktivni && S.aktivni.typ, true);
+    else { const i = HUDBA.VIBY.findIndex(x => x.id === S.stav.hudba.vibe); id = HUDBA.VIBY[(i + 1) % HUDBA.VIBY.length].id; HUDBA.setVibe(id); }
+    S.stav.hudba.vibe = id;
+    if (!HUDBA.hraje()) { HUDBA.setVolume(S.stav.hudba.volume); HUDBA.start(id); S.stav.hudba.zapnuto = true; }
+    ulozStav(); hudbaBar();
+  });
   // první dotyk kdekoli → spustit hudbu, pokud byla naposledy zapnutá
   let prvniDotyk = false;
-  function naPrvniDotyk() { if (prvniDotyk) return; prvniDotyk = true; if (S.stav.hudba.zapnuto !== false) { HUDBA.setVolume(S.stav.hudba.volume); HUDBA.start(S.stav.hudba.vibe); } }
+  function naPrvniDotyk() { if (prvniDotyk) return; prvniDotyk = true; if (S.stav.hudba.zapnuto !== false) { HUDBA.setVolume(S.stav.hudba.volume); HUDBA.setAuto(S.stav.hudba.auto !== false); HUDBA.start(S.stav.hudba.auto !== false ? HUDBA.proKartu(S.aktivni && S.aktivni.typ, true) : S.stav.hudba.vibe); } }
   document.addEventListener("pointerdown", naPrvniDotyk, { once: true });
   document.addEventListener("keydown", naPrvniDotyk, { once: true });
 
@@ -523,7 +533,8 @@
   // ------------------------------------------------------------------
   async function init() {
     S.stav = SLOUCENI.sloucStavy(SLOUCENI.prazdnyStav(), API.nactiStav());
-    if (!S.stav.hudba) S.stav.hudba = { vibe: "lofi", volume: 0.7, zapnuto: true };
+    if (!S.stav.hudba) S.stav.hudba = { vibe: "lofi", volume: 0.7, zapnuto: true, auto: true };
+    HUDBA.setAuto(S.stav.hudba.auto !== false); HUDBA.onZmena(st => { if (st.vibe && st.vibe.id) S.stav.hudba.vibe = st.vibe.id; });
     nactiKurzy();
     $("#jezek-hlava").innerHTML = JEZEK.svg({ nalada: "klid", uroven: uroven() });
     aktualizujChipy(); hudbaBar(); vykresliFeed(true); prepni("feed");

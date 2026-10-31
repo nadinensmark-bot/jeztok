@@ -7,7 +7,7 @@
   "use strict";
   function prazdnyStav() {
     return { verze: 1, xp: 0, karty: {}, dny: {}, jezek: "Hubík", vybraneKurzy: null,
-      hudba: { vibe: "lofi", volume: 0.7, zapnuto: true }, aktualizovano: 0 };
+      hudba: { vibe: "lofi", volume: 0.7, zapnuto: true, auto: true }, aktualizovano: 0 };
   }
   function sloucStavy(a, b) {
     a = a || prazdnyStav(); b = b || prazdnyStav();

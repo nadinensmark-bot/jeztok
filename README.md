@@ -47,13 +47,13 @@ v `sw.js` (aby fungoval offline).
 
 Kurzy v `obsah/`:
 
-- **`kurz-defence.js` – Understanding Defence: a Business Perspective (VŠE, 2DEBU)** – 194 karet
-  v 10 tématech podle materiálů kurzu (úvodní seminář, videa 1–4, case study, veletrhy 2026/27). Texty jsou vlastní
+- **`kurz-defence.js` – Understanding Defence: a Business Perspective (VŠE, 2DEBU)** – učivo
+  z videí 1–4, case study a veletrhy 2026/27 (bez organizačních informací o kurzu). Texty jsou vlastní
   české parafráze pro osobní studium; materiály kurzu jsou © Dr. Kristýna Helm – pokud je repozitář
-  veřejný, zvaž, zda soubor nechat v repu, nebo ho z něj odstranit a nahrát si ho do appky jen
-  lokálně (Kurzy → Přidat kurz → Nahrát soubor umí přímo tento `.js` soubor).
-- `kurz-uceni.js`, `kurz-finance.js`, `kurz-anglictina.js` – **jen demo**, aby appka hned něco
-  ukazovala. Klidně je smaž.
+  veřejný, zvaž, zda soubor nechat v repu.
+- `kurz-anglictina.js` – Angličtina: falešní přátelé (krátký doplňkový kurz).
+- Další kurzy (politologie apod.) se přidávají stejně: jeden soubor v `obsah/`, `<script>` v `index.html`
+  a řádek v `sw.js`.
 
 ## Rady, jak psát karty, aby to drželo
 

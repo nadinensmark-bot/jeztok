@@ -212,3 +212,7 @@ input[type=range] { width: 100%; accent-color: var(--akcent); }
 .jezek-mini .hubik-odznak, .hlava .hubik-odznak { font-size: 14px; }
 .jezek-mini .hubik-fx, .hlava .hubik-fx { font-size: 13px; }
 @media (prefers-reduced-motion: reduce) { .hubik img { animation: none !important; } }
+
+.radek-prepinac { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.radek-prepinac > span:first-child { flex: 1; }
+.viby .vibe small { display: block; }

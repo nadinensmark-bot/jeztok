@@ -47,8 +47,8 @@ v `sw.js` (aby fungoval offline).
 
 Kurzy v `obsah/`:
 
-- **`kurz-defence.js` – Understanding Defence: a Business Perspective (VŠE, 2DEBU)** – 99 karet
-  v 7 tématech podle materiálů kurzu (video 1–3, case study, veletrhy 2026/27). Texty jsou vlastní
+- **`kurz-defence.js` – Understanding Defence: a Business Perspective (VŠE, 2DEBU)** – 166 karet
+  v 10 tématech podle materiálů kurzu (úvodní seminář, videa 1–4, case study, veletrhy 2026/27). Texty jsou vlastní
   české parafráze pro osobní studium; materiály kurzu jsou © Dr. Kristýna Helm – pokud je repozitář
   veřejný, zvaž, zda soubor nechat v repu, nebo ho z něj odstranit a nahrát si ho do appky jen
   lokálně (Kurzy → Přidat kurz → Nahrát soubor umí přímo tento `.js` soubor).

@@ -1,6 +1,5 @@
 // DEFLEARN HUB – kurz: Understanding Defence – a Business Perspective (VŠE, 2DEBU, ZS 2026, Dr. Kristýna Helm)
-// Zdroj: přepis videa 1 (automatické titulky – názvy ověřit), osnovy videí 2 a 3, zadání case study,
-// přehled veletrhů 2026/27. Texty jsou vlastní české parafráze pro osobní studium; anglické termíny
+// Zdroj: přepisy a články z videí 1–4 (automatické titulky – sporné názvy ověřit). Texty jsou vlastní české parafráze pro osobní studium; anglické termíny
 // zůstávají anglicky, protože tak padnou u zkoušky. Čísla a data jsou převzata z materiálů kurzu.
 window.JEZTOK_KURZY = window.JEZTOK_KURZY || [];
 window.JEZTOK_KURZY.push({
@@ -820,50 +819,6 @@ window.JEZTOK_KURZY.push({
         { id: "k11", typ: "kviz", otazka: "Která oblast podle kurzu umožní armádě opravovat vybavení přímo v nasazení?",
           moznosti: ["Additive manufacturing (3D tisk)", "Kvantová kryptografie", "Human enhancement"], spravne: 0,
           vysvetleni: "Aditivní výroba: rychlé prototypování, výroba a opravy přímo v poli bez čekání na náhradní díl." }
-      ]
-    },
-    // =================================================================
-    {
-      id: "case",
-      nazev: "Case study a veletrhy",
-      karty: [
-        { id: "f1", typ: "fakt", titulek: "Case study: Market Analysis for a Defence-Focused Technology/Product",
-          text: "Dvě fáze. Fáze 1 – Selection and Market Focus Onepager (1 strana / 2–3 slidy): zvolený produkt a účel, market focus (typ zákazníka + region), členové týmu. Deadline 31. 10. 2026, Moodle → Module 5 → Part 1.",
-          vysvetleni: "Typ zákazníka: defence forces, government agencies, police forces, nebo dodavatelé těmto entitám. Region: EU, NATO země nebo konkrétní státy. Týmy 2–4 lidé (nebo individuálně); za tým odevzdává jeden." },
-        { id: "f2", typ: "fakt", titulek: "Fáze 2 – Market Analysis Report",
-          text: "3–10 stran (nebo ekvivalent): Technology/Product Overview, Target Market Characteristics, Competitor Landscape, Opportunities & Threats, Market Entry Recommendations. Formáty: Word, PowerPoint, Canva, nebo video do 10 minut. Deadline 27. 11. 2026, Moodle → Module 5 → Part 2.",
-          vysvetleni: "Prakticky zaměřená analýza z veřejně dostupných zdrojů (market reports, vládní publikace, defence industry news). Přesně pět povinných částí – udělej z nich nadpisy." },
-        { id: "k1", typ: "kviz", otazka: "Jaká je uzávěrka Part 2 – Market Analysis?",
-          moznosti: ["31. 10. 2026", "27. 11. 2026", "17. 12. 2026"], spravne: 1,
-          vysvetleni: "Part 1 (onepager) 31. 10. 2026, Part 2 (report) 27. 11. 2026." },
-        { id: "l1", typ: "lekce", titulek: "Hodnocení case study – 100 bodů",
-          kroky: [
-            "Relevance (20 b.) – jak dobře produkt a trh sedí na potřeby defence sektoru.",
-            "Depth of Analysis (30 b.) – důkladnost výzkumu vč. zákaznických a konkurenčních insightů.",
-            "Practicality (30 b.) – jasná, proveditelná doporučení pro vstup nebo růst.",
-            "Creativity (10 b.) – inovativní přístup k průzkumu a prezentaci.",
-            "Clarity (10 b.) – kvalita psaní/prezentace, struktura, vizuály.",
-            "Strategie: 60 ze 100 bodů je hloubka a praktičnost. Nepřekombinuj formu, dej čas datům a konkrétním doporučením."
-          ] },
-        { id: "k2", typ: "kviz", otazka: "Která dvě kritéria case study mají dohromady 60 bodů?",
-          moznosti: ["Relevance + Clarity", "Depth of Analysis + Practicality", "Creativity + Clarity"], spravne: 1,
-          vysvetleni: "Depth of Analysis 30 + Practicality 30 = 60. Relevance 20, Creativity 10, Clarity 10." },
-        { id: "d1", typ: "doplnit", text: "Pět povinných částí reportu: Product Overview, Target Market Characteristics, ___ Landscape, Opportunities & Threats, Market Entry Recommendations.", odpoved: ["Competitor", "competitor", "Competitors"],
-          vysvetleni: "Competitor Landscape – konkurenti, jejich silné a slabé stránky a USP." },
-        { id: "f3", typ: "fakt", titulek: "Veletrhy 2026 v Evropě, které se vyplatí znát",
-          text: "Eurosatory – Paříž, 15.–19. 6. 2026 (největší pozemní obrana v Evropě). Farnborough International Airshow – 20.–24. 7. 2026. Future Forces International Exhibition – Praha, 19.–23. 10. 2026. NEDS – Rotterdam, listopad 2026. HEMUS – Plovdiv, 3.–6. 6. 2026.",
-          vysvetleni: "Veletrhy jsou v kurzu nástroj R&D i BD: end-user feedback, matchmaking, viditelnost. Před cestou s exponátem pamatuj na pilíř 5 (dočasný export může vyžadovat povolení)." },
-        { id: "f4", typ: "fakt", titulek: "Veletrhy 2027: domácí půda a Gulf",
-          text: "IDET – Brno, květen 2027 (spolu s PYROS). IDEX – Abu Dhabi, 25.–29. 1. 2027. DEFEA – Atény, 18.–20. 5. 2027. FEINDEF – Madrid, květen 2027. ASDA – Záhřeb, 27.–29. 4. 2027. DSEI Japan – 29.–30. 4. 2027.",
-          vysvetleni: "Blízký východ: World Defense Show Rijád (8.–12. 2. 2026), Milipol Qatar (20.–22. 10. 2026), SOFEX Jordan (27.–29. 10. 2026), UMEX Abu Dhabi (27.–29. 1. 2026). Asie: Singapore Airshow (3.–8. 2. 2026), DSA Kuala Lumpur (20.–23. 4. 2026)." },
-        { id: "k3", typ: "kviz", otazka: "Který velký evropský veletrh pozemní obrany se koná v červnu 2026 v Paříži?",
-          moznosti: ["IDET", "Eurosatory", "Future Forces"], spravne: 1,
-          vysvetleni: "Eurosatory, 15.–19. 6. 2026. IDET je Brno (2027), Future Forces Praha (říjen 2026)." },
-        { id: "k4", typ: "kviz", otazka: "Kde a kdy je Future Forces International Exhibition 2026?",
-          moznosti: ["Brno, květen 2026", "Praha, 19.–23. 10. 2026", "Plovdiv, červen 2026"], spravne: 1,
-          vysvetleni: "Praha, 19.–23. 10. 2026. Brno hostí IDET/PYROS v květnu 2027, Plovdiv HEMUS v červnu 2026." },
-        { id: "a1", typ: "anone", tvrzeni: "IDEX 2027 se koná v Abu Dhabi na konci ledna 2027.", spravne: true,
-          vysvetleni: "IDEX 2027: Abu Dhabi, 25.–29. 1. 2027 – jeden z největších veletrhů regionu." }
       ]
     }
   ]

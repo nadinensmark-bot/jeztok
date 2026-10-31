@@ -48,7 +48,7 @@ v `sw.js` (aby fungoval offline).
 Kurzy v `obsah/`:
 
 - **`kurz-defence.js` – Understanding Defence: a Business Perspective (VŠE, 2DEBU)** – učivo
-  z videí 1–4, case study a veletrhy 2026/27 (bez organizačních informací o kurzu). Texty jsou vlastní
+  z videí 1–4 (bez organizačních informací o kurzu, termínů a přehledu veletrhů). Texty jsou vlastní
   české parafráze pro osobní studium; materiály kurzu jsou © Dr. Kristýna Helm – pokud je repozitář
   veřejný, zvaž, zda soubor nechat v repu.
 - `kurz-anglictina.js` – Angličtina: falešní přátelé (krátký doplňkový kurz).

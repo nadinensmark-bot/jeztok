@@ -1,5 +1,5 @@
 // DEFLEARN HUB – service worker: appka funguje offline, obsah se aktualizuje na pozadí.
-const VERZE = "deflearn-v8";
+const VERZE = "deflearn-v9";
 const SOUBORY = ["./", "./index.html", "./config.js", "./css/style.css", "./js/slouceni.js", "./js/jezek.js", "./js/hudba.js", "./js/api.js", "./js/app.js",
   "./obsah/kurz-defence.js", "./obsah/kurz-anglictina.js", "./manifest.webmanifest", "./img/ikona-192.png", "./img/ikona-512.png", "./img/hubik-klid.png", "./img/hubik-salut.png", "./img/hubik-radost.png", "./img/hubik-salut.webp"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(VERZE).then(c => c.addAll(SOUBORY)).then(() => self.skipWaiting())); });

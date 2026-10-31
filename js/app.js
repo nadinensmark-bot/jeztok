@@ -28,7 +28,9 @@
     S.kurzy.forEach(k => {
       k.pocet = 0;
       (k.temata || []).forEach(t => (t.karty || []).forEach(c => {
-        c.gid = k.id + ":" + c.id; c.kurz = k; c.tema = t; S.karty[c.gid] = c; k.pocet++;
+        c.gid = k.id + ":" + t.id + ":" + c.id; c.kurz = k; c.tema = t;
+        if (S.karty[c.gid]) console.warn("[DefLearn] duplicitní id karty", c.gid);
+        S.karty[c.gid] = c; k.pocet++;
       }));
     });
   }
@@ -536,8 +538,22 @@
   // ------------------------------------------------------------------
   // Start
   // ------------------------------------------------------------------
+  // Starší verze ukládala postup pod klíčem kurz:idKarty (bez tématu). Přenést, kde je to jednoznačné.
+  function migrujKlice() {
+    const stare = Object.keys(S.stav.karty).filter(g => g.split(":").length === 2);
+    if (!stare.length) return;
+    const vest = window.JEZTOK_KURZY || [];
+    stare.forEach(g => {
+      const [kid, cid] = g.split(":"); const k = vest.find(x => x.id === kid); let shody = [];
+      if (k) (k.temata || []).forEach(t => (t.karty || []).forEach(c => { if (c.id === cid) shody.push(kid + ":" + t.id + ":" + cid); }));
+      if (shody.length === 1 && !S.stav.karty[shody[0]]) S.stav.karty[shody[0]] = S.stav.karty[g];
+      delete S.stav.karty[g];
+    });
+    S.stav.aktualizovano = Date.now(); API.ulozStavLokalne(S.stav);
+  }
   async function init() {
     S.stav = SLOUCENI.sloucStavy(SLOUCENI.prazdnyStav(), API.nactiStav());
+    migrujKlice();
     if (!S.stav.hudba) S.stav.hudba = { vibe: "lofi", volume: 0.7, zapnuto: true, auto: true };
     HUDBA.setAuto(S.stav.hudba.auto !== false); HUDBA.onZmena(st => { if (st.vibe && st.vibe.id) S.stav.hudba.vibe = st.vibe.id; });
     nactiKurzy();

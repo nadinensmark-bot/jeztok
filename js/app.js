@@ -573,10 +573,11 @@
     API.health().then(() => { if (API.prihlasen()) poPrihlaseni(); });
     if ("serviceWorker" in navigator) {
       try {
+        const melSW = !!navigator.serviceWorker.controller; // při prvním spuštění žádné „nová verze“ nehlásit
         navigator.serviceWorker.register("sw.js").then(reg => {
           // po návratu do appky zkontrolovat novou verzi; když se nainstaluje, nabídnout obnovení
           document.addEventListener("visibilitychange", () => { if (!document.hidden) reg.update().catch(() => {}); });
-          reg.addEventListener("updatefound", () => { const nw = reg.installing; if (!nw) return; nw.addEventListener("statechange", () => { if (nw.state === "activated" && navigator.serviceWorker.controller) { const el = $("#toast"); el.innerHTML = "Nová verze je připravená · <b>ťukni pro obnovení</b>"; el.classList.add("videt"); clearTimeout(el._t); el.onclick = () => location.reload(); } }); });
+          reg.addEventListener("updatefound", () => { const nw = reg.installing; if (!nw) return; nw.addEventListener("statechange", () => { if (nw.state === "activated" && melSW) { const el = $("#toast"); el.innerHTML = "Nová verze je připravená · <b>ťukni pro obnovení</b>"; el.classList.add("videt"); clearTimeout(el._t); el.onclick = () => location.reload(); } }); });
         }).catch(() => {});
       } catch (e) {}
     }

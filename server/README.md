@@ -38,6 +38,19 @@ Vyžaduje **Node 22.13+** (kvůli vestavěnému `node:sqlite`).
 
 ## Nasazení na Render.com (≈10 minut)
 
+**Nejrychlejší cesta:** [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/nadinensmark-bot/jeztok)
+– tlačítko načte `render.yaml` a založí službu `jeztok-backend`. Při zakládání Render požádá o `DATABASE_URL`
+(Postgres connection string, viz níže) a volitelně `ANTHROPIC_API_KEY`.
+
+**Postgres zdarma (Neon, 3 minuty):** neon.tech → Sign up → New project (region Frankfurt) → zkopírovat
+*Connection string* (začíná `postgresql://…`) → vložit do Renderu jako `DATABASE_URL`. Neon free tier data
+nemaže; Render free Postgres se po 30 dnech smaže, proto Neon.
+
+Po nasazení pošli adresu služby (např. `https://jeztok-backend.onrender.com`) – vyplní se do `config.js`
+a `programy/config.js` a přihlášení se v obou appkách objeví v záložce **Já**.
+
+### Ručně
+
 1. Render → **New → Blueprint** → připojit tento repozitář. Render najde `render.yaml`
    a nabídne službu `jeztok-backend` (vedle `dh-kompas-backend`).
 2. Vyplnit `DATABASE_URL` (Postgres, viz výše) a volitelně `ANTHROPIC_API_KEY`.

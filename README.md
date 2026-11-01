@@ -93,7 +93,7 @@ v hlavičce `programy/index.html` – nahradit SVG, až bude k dispozici.
 
 1. **Frontend:** nic – GitHub Pages ho nasadí po každém pushi na `main`
    (`.github/workflows/pages.yml`). Adresa: `https://nadinensmark-bot.github.io/jeztok/`.
-2. **Backend (volitelný, pro účty a AI):** návod v [`server/README.md`](server/README.md).
+2. **Backend (pro přihlášení, postup napříč zařízeními a AI):** návod a tlačítko *Deploy to Render* v [`server/README.md`](server/README.md).
    Po nasazení vyplň jeho adresu do `config.js`:
    ```js
    window.JEZTOK_CONFIG = { backendUrl: "https://jeztok-backend.onrender.com" };

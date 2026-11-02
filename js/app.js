@@ -20,6 +20,8 @@
   // ------------------------------------------------------------------
   // Obsah
   // ------------------------------------------------------------------
+  // texty, které si varianta appky může přepsat v config.js
+  const CFG_TEXT = (k, vychozi) => (window.JEZTOK_CONFIG && typeof window.JEZTOK_CONFIG[k] === "string") ? window.JEZTOK_CONFIG[k] : vychozi;
   function nactiKurzy() {
     if (API.zamceno()) { S.kurzy = []; S.karty = {}; return; } // bez přihlášení žádný obsah
     const filtr = (window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.filtrKurzu) || null;
@@ -133,7 +135,7 @@
     if (reset) { el.innerHTML = ""; S.feed = []; }
     const dalsi = sestavFeed(12, S.feed.map(c => c.gid));
     if (API.zamceno()) {
-      el.innerHTML = `<section class="karta karta-prazdna"><div class="prazdno">${JEZEK.svg({ nalada: "klid", uroven: 0 })}<h2>Nejdřív se přihlas</h2><p>Obsah je jen pro přihlášené. Účet ti založil Defence Hub, přihlašovací údaje máš od Nadine.</p><button class="btn" data-akce="ja">Přihlásit se</button></div></section>`;
+      el.innerHTML = `<section class="karta karta-prazdna"><div class="prazdno">${JEZEK.svg({ nalada: "klid", uroven: 0 })}<h2>Nejdřív se přihlas</h2><p>${esc(CFG_TEXT("textZamceno", "Obsah je jen pro přihlášené. Účet ti založil Defence Hub, přihlašovací údaje máš od Nadine."))}</p><button class="btn" data-akce="ja">${esc(CFG_TEXT("tlacitkoZamceno", "Přihlásit se"))}</button></div></section>`;
       return;
     }
     if (!dalsi.length && !S.feed.length) {
@@ -314,7 +316,7 @@
   // ------------------------------------------------------------------
   // Testy
   // ------------------------------------------------------------------
-  const HTML_ZAMCENO = () => `<div class="stranka"><div class="prazdno" style="padding-top:40px">${JEZEK.svg({ nalada: "klid", uroven: 0 })}<h2>Nejdřív se přihlas</h2><p class="tlum">Kurzy, testy a postup jsou jen pro přihlášené.</p><button class="btn" data-akce="ja">Přihlásit se</button></div></div>`;
+  const HTML_ZAMCENO = () => `<div class="stranka"><div class="prazdno" style="padding-top:40px">${JEZEK.svg({ nalada: "klid", uroven: 0 })}<h2>Nejdřív se přihlas</h2><p class="tlum">Kurzy, testy a postup jsou jen pro přihlášené.</p><button class="btn" data-akce="ja">${esc(CFG_TEXT("tlacitkoZamceno", "Přihlásit se"))}</button></div></div>`;
   function vykresliTesty() {
     const el = $("#testy");
     if (API.zamceno()) { el.innerHTML = HTML_ZAMCENO(); return; }

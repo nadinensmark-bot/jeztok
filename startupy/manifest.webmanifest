@@ -1,0 +1,16 @@
+{
+  "name": "Defence Hub · Startupy",
+  "short_name": "DH Startupy",
+  "description": "Co musí vědět firma, která chce do obrany: trh, pravidla, programy, peníze. Krátce, ověřeně, se zdroji.",
+  "lang": "cs",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#002860",
+  "theme_color": "#061838",
+  "icons": [
+    { "src": "ikona-dh-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "ikona-dh-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

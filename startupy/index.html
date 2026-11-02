@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+  <title>DefLearn Hub · Startupy – defence pro firmy z databáze Defence Hubu</title>
+  <meta name="description" content="Co musí vědět firma, která chce do obrany: trh, pravidla, programy, peníze. Krátké karty se zdroji, kvízy a slovníček pojmů.">
+  <meta name="theme-color" content="#061838">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="DH Startupy">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="ikona-dh-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="ikona-dh-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="brand.css">
+</head>
+<body class="ve-feedu">
+  <div id="app">
+    <header class="hlava">
+      <div class="logo"><span id="jezek-hlava"></span><img class="logo-dh" src="img/logo-dh-ci-white.png" alt="Defence Hub · CzechInvest"></div>
+      <div class="chipy"><span class="chip" id="chip-streak">🔥 0</span><span class="chip" id="chip-xp">⚡ 0</span></div>
+    </header>
+
+    <main id="feed" class="obrazovka akt" aria-label="feed"></main>
+    <section id="testy" class="obrazovka"></section>
+    <section id="kurzy" class="obrazovka"></section>
+    <section id="ja" class="obrazovka"></section>
+
+    <div id="jezek-bublina"></div>
+    <div id="toast" role="status"></div>
+    <div id="sheet"></div>
+
+    <div class="hudba">
+      <div id="hudba-disk"></div>
+      <div id="hudba-nazev">☕ Lo-fi klid · ťukni pro hudbu</div>
+      <button id="hudba-btn" aria-label="přehrát / pozastavit">▶</button>
+    </div>
+    <nav class="nav">
+      <button data-o="feed" class="akt"><span>🏠</span>Feed</button>
+      <button data-o="testy"><span>📝</span>Testy</button>
+      <button data-o="kurzy"><span>📚</span>Kurzy</button>
+      <button data-o="ja"><span>🦔</span>Já</button>
+    </nav>
+  </div>
+  <canvas id="konfety"></canvas>
+
+  <script>window.JEZTOK_VERZE = "0.1.0";</script>
+  <script src="config.js"></script>
+  <!-- OBSAH: sdílené soubory kurzů; výběr témat řídí config.js (filtrKurzu). -->
+  <script src="../obsah/kurz-startupy.js"></script>
+  <script src="../obsah/kurz-slovnicek.js"></script>
+  <!-- aplikace -->
+  <script src="../js/slouceni.js"></script>
+  <script src="../js/jezek.js"></script>
+  <script src="../js/hudba.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

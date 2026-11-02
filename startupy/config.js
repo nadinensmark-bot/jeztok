@@ -1,0 +1,15 @@
+// DefLearn Hub · Startupy – varianta appky pro firmy z databáze Defence Hubu.
+// Stejná aplikace, jiný výběr obsahu, oddělené úložiště postupu. Registrace je otevřená jen e-mailům
+// ze seznamu na serveru (REGISTRACE_POVOLENE), kurzy podle KURZY_UZIVATELU ("*" → startupy + slovnicek).
+window.JEZTOK_CONFIG = {
+  backendUrl: "https://jeztok-backend.onrender.com",
+  prefix: "dhstart_",
+  nazev: "Defence Hub · Startupy",
+  logoPata: ["img/logo-dh-ci-white.png"],
+  zakladCesty: "../",
+  barvyKurzu: { startupy: "#0058A8", slovnicek: "#709870" },
+  filtrKurzu: { defence: false, anglictina: false, programy: false, startupy: true, slovnicek: true },
+  // texty zámku pro nepřihlášené: startupy se registrují samy
+  textZamceno: "Obsah je pro firmy z databáze Defence Hubu. Zaregistruj se firemním e-mailem, nebo se přihlas.",
+  tlacitkoZamceno: "Přihlásit se / registrovat"
+};

@@ -1,0 +1,49 @@
+/* DH Startupy – vizuál Defence Hub / CzechInvest. Barvy vzorkované z loga: navy #002860, blue #0058A8, green #709870.
+   Písma: Space Grotesk (nadpisy), IBM Plex Sans (text). Logo: startupy/img/logo-dh-ci*.png (bílá varianta v hlavičce). */
+:root {
+  --bg: #061838; --fg: #F3F5F9; --tlum: #A9B8D4; --panel: #0C2552; --panel2: #113070;
+  --akcent: #2E8BE6; --ok: #709870; --ne: #C86A55;
+  --dh-navy: #002860; --dh-blue: #0058A8; --dh-blue2: #2E8BE6; --dh-green: #709870; --dh-gold: #2E8BE6; --dh-steel: #0058A8;
+}
+html, body { font-family: "IBM Plex Sans", -apple-system, "Segoe UI", system-ui, sans-serif; }
+h1, h2, .karta h2, .logo, .statistiky b, .test-vysledek h1 { font-family: "Space Grotesk", "IBM Plex Sans", system-ui, sans-serif; }
+body { background: var(--bg); }
+@media (min-width: 600px) { body { background: #050a1a; } }
+.hlava { background: linear-gradient(rgba(6,24,56,.95), rgba(6,24,56,0)); }
+.hlava .logo img.logo-dh { height: 30px; width: auto; display: block; }
+.hlava .logo #jezek-hlava { display: none; }
+.hlava .logo { gap: 10px; }
+.wordmark { display: flex; flex-direction: column; line-height: 1; }
+.wordmark b { font-weight: 700; font-size: 19px; letter-spacing: -.3px; color: #fff; }
+.wordmark b span { color: var(--dh-gold); }
+.wordmark small { font-size: 10.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--tlum); margin-top: 3px; }
+.chip { background: rgba(46,139,230,.18); border: 1px solid rgba(46,139,230,.4); color: #DDEBFF; }
+.karta .pozadi { background: radial-gradient(120% 90% at 20% 0%, #0E3A7E 0%, #082A5E 55%, #061838 100%); }
+.karta .pozadi::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: linear-gradient(90deg, var(--b), transparent); opacity: .9; }
+.pozadi-emoji { opacity: .06; }
+.karta .pre { color: var(--dh-gold); }
+.stitek-tema { background: rgba(0,88,168,.35); border: 1px solid rgba(46,139,230,.35); }
+.stitek-opak { background: rgba(112,152,112,.25); color: #DDEFD9; }
+.mezera { border-color: var(--dh-blue2); color: #9CCBFF; background: rgba(46,139,230,.12); }
+.moznost { background: rgba(0,88,168,.25); border-color: rgba(201,216,242,.25); }
+.moznost.spravne { background: rgba(112,152,112,.35); border-color: var(--ok); }
+.moznost.spatne { background: rgba(200,106,85,.3); border-color: var(--ne); }
+.btn { background: #fff; color: var(--dh-navy); }
+.btn-sek { background: rgba(201,216,242,.14); color: var(--fg); }
+.rail-btn span { background: rgba(0,40,96,.8); border: 1px solid rgba(201,216,242,.15); }
+.rail-btn.akt span { background: rgba(46,139,230,.45); }
+.nav, .hudba { background: rgba(6,24,56,.95); border-color: rgba(201,216,242,.1); }
+.nav button.akt { color: #9CCBFF; }
+#hudba-disk::after { background: var(--dh-gold); }
+.bar div { background: var(--dh-gold); }
+.progress div { background: var(--dh-gold); }
+.den.akt { background: var(--dh-gold); }
+.vibe.akt { border-color: var(--dh-gold); }
+.prepinac input:checked + span { background: var(--dh-green); }
+.radek { border-left-color: var(--b); }
+.bublina { background: #F3F5F9; color: var(--dh-navy); }
+.ai-zprava.ja { background: var(--dh-blue); }
+.vysl.ok { border-left-color: var(--ok); } .vysl.ne { border-left-color: var(--ne); }
+.xp-bublina { color: #9CCBFF; }
+.brand-pata { text-align: center; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--tlum); }
+.pata-logo { display: flex; justify-content: center; align-items: center; gap: 22px; flex-wrap: wrap; padding: 18px 0 6px; } .pata-logo img { height: 34px; opacity: .85; }

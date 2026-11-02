@@ -4,7 +4,10 @@
 //   POST /api/zmena-hesla                                  změna hesla (staré + nové); odhlásí ostatní zařízení
 //   GET  /api/ja                                           kdo jsem (vč. povolených kurzů)
 //   KURZY_UZIVATELU (env, JSON {"email": ["programy","slovnicek"]}): které vestavěné kurzy uživatel vidí.
-//   Kdo v mapě není, vidí všechny.
+//   Klíč může být e-mail, "@domena.cz" (všichni z domény) nebo "*" (všichni ostatní); hodnota null = všechny kurzy.
+//   Priorita: e-mail > doména > "*". Kdo nespadá nikam, vidí všechny.
+//   REGISTRACE_POVOLENE (env, CSV e-mailů a "@domen"): když je nastavené, registrace projde jen jim (jinak 403).
+//   Prázdné = registrace otevřená. Přihlášení existujících účtů to neomezuje.
 //   GET  /api/tym                                          přehled postupu týmu (jen správci; ADMINI = e-maily oddělené čárkou)
 //   GET/PUT /api/postup                                    postup učení (slučuje se, viz ../js/slouceni.js)
 //   GET/POST /api/testy                                    výsledky testů
@@ -35,7 +38,8 @@ const CFG = {
   limitKurzDen: Number(process.env.LIMIT_KURZ_DEN || 5),
   limitAiCelkemDen: Number(process.env.LIMIT_AI_CELKEM_DEN || 1000),
   admini: (process.env.ADMINI || "").split(",").map(s => s.trim().toLowerCase()).filter(Boolean),
-  kurzyUzivatelu: (() => { try { const m = JSON.parse(process.env.KURZY_UZIVATELU || "{}"); const out = {}; for (const [e, k] of Object.entries(m)) if (Array.isArray(k)) out[String(e).trim().toLowerCase()] = k.map(String); return out; } catch (e) { console.warn("[jeztok] KURZY_UZIVATELU není platný JSON, ignoruji."); return {}; } })(),
+  kurzyUzivatelu: (() => { try { const m = JSON.parse(process.env.KURZY_UZIVATELU || "{}"); const out = {}; for (const [e, k] of Object.entries(m)) { if (Array.isArray(k)) out[String(e).trim().toLowerCase()] = k.map(String); else if (k === null) out[String(e).trim().toLowerCase()] = null; } return out; } catch (e) { console.warn("[jeztok] KURZY_UZIVATELU není platný JSON, ignoruji."); return {}; } })(),
+  registracePovolene: (process.env.REGISTRACE_POVOLENE || "").split(",").map(s => s.trim().toLowerCase()).filter(Boolean),
   maxTelo: 2 * 1024 * 1024,
   maxPoznamky: 30000
 };
@@ -50,7 +54,14 @@ const hashHesla = (heslo, salt) => { salt = salt || crypto.randomBytes(16).toStr
 const overHeslo = (heslo, ulozeny) => { const [salt, h] = String(ulozeny).split(":"); const k = crypto.scryptSync(heslo, salt, 64); const u = Buffer.from(h, "hex"); return k.length === u.length && crypto.timingSafeEqual(k, u); };
 const hashTokenu = t => crypto.createHmac("sha256", CFG.secret).update(t).digest("hex");
 const emailOk = e => typeof e === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) && e.length <= 200;
-const povoleneKurzy = email => CFG.kurzyUzivatelu[String(email || "").toLowerCase()] || null; // null = všechny
+const domenaZ = email => { const e = String(email || "").toLowerCase(); const i = e.indexOf("@"); return i >= 0 ? e.slice(i) : ""; };
+// povolené vestavěné kurzy: pole id, nebo null = všechny; hledá se e-mail, pak "@domena", pak "*"
+const povoleneKurzy = email => {
+  const e = String(email || "").toLowerCase(), m = CFG.kurzyUzivatelu;
+  for (const k of [e, domenaZ(e), "*"]) if (k && Object.prototype.hasOwnProperty.call(m, k)) return m[k];
+  return null;
+};
+const registraceDovolena = email => { if (!CFG.registracePovolene.length) return true; const e = String(email || "").toLowerCase(); return CFG.registracePovolene.includes(e) || CFG.registracePovolene.includes(domenaZ(e)); };
 const jeSpravce = email => CFG.admini.includes(String(email || "").toLowerCase());
 const verejnyUzivatel = u => ({ id: u.id, email: u.email, jmeno: u.jmeno || "", kurzy: povoleneKurzy(u.email), spravce: jeSpravce(u.email) });
 
@@ -193,6 +204,7 @@ async function obsluz(req, res) {
       const email = String(b.email || "").trim().toLowerCase();
       if (!emailOk(email)) throw new ChybaApi(400, "Zadej platný e-mail.");
       if (typeof b.heslo !== "string" || b.heslo.length < 8) throw new ChybaApi(400, "Heslo musí mít aspoň 8 znaků.");
+      if (!registraceDovolena(email)) throw new ChybaApi(403, "Tenhle e-mail není na seznamu pozvaných. Registrace je pro firmy z databáze Defence Hubu; pokud mezi ně patříš, ozvi se nám a e-mail doplníme.");
       if (await db.uzivatelPodleEmailu(email)) throw new ChybaApi(409, "Tenhle e-mail už je zaregistrovaný – zkus se přihlásit.");
       const u = { id: crypto.randomUUID(), email, jmeno: String(b.jmeno || "").trim().slice(0, 60), hash: hashHesla(b.heslo) };
       await db.vytvorUzivatele(u);

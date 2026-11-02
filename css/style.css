@@ -217,6 +217,14 @@ input[type=range] { width: 100%; accent-color: var(--akcent); }
 .radek-prepinac > span:first-child { flex: 1; }
 .viby .vibe small { display: block; }
 
+/* testy: volba jednoho tématu pod kurzem */
+details.test-temata { margin-top: 6px; }
+details.test-temata summary { cursor: pointer; list-style: none; }
+details.test-temata summary::-webkit-details-marker { display: none; }
+.chipy-temata { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.chip-tema { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); color: inherit; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600; text-align: left; }
+.chip-tema .tlum { font-weight: 400; margin-left: 2px; }
+
 /* vlastní playlist: panel s vloženým přehrávačem nad lištou hudby */
 #playlist-panel { position: absolute; left: 0; right: 0; bottom: calc(var(--nav-v) + var(--hudba-v) + var(--sab)); z-index: 10; background: #0b0b10; border-top: 1px solid rgba(255,255,255,.08); transition: transform .25s ease, opacity .25s ease; }
 #playlist-panel.skryty { transform: translateY(120%); opacity: 0; pointer-events: none; }

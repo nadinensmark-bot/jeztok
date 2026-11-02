@@ -1,4 +1,4 @@
-// DEFLEARN HUB – kurz: Defence pro startupy (verze pro firmy z databáze Defence Hubu)
+// DEFLEARN HUB – kurz: Obranné minimum pro startupy (verze pro firmy z databáze Defence Hubu)
 // Pravidla obsahu: každá karta typu „fakt“ má uvedený primární zdroj (zákon, nařízení, web instituce).
 // Text karet vzniká z těchto zdrojů, ne z materiálů třetích stran. Praktické rady = zkušenost Defence Hubu.
 // Odborné termíny EU/NATO/USA zůstávají anglicky s českým vysvětlením.
@@ -6,10 +6,10 @@
 window.JEZTOK_KURZY = window.JEZTOK_KURZY || [];
 window.JEZTOK_KURZY.push({
   id: "startupy",
-  nazev: "Defence pro startupy",
+  nazev: "Obranné minimum pro startupy",
   emoji: "🚀",
   barva: "#0f766e",
-  popis: "Co musí vědět firma, která chce do obrany: trh, pravidla, programy, peníze. Krátce, ověřeně, se zdroji.",
+  popis: "Co musí vědět firma, která chce do obrany: jak trh funguje, co smí, kde jsou zákazníci a peníze. Krátce, ověřeně, se zdroji.",
   temata: [
     // =================================================================
     {

@@ -323,19 +323,20 @@
     const testy = API.testyLokalne();
     el.innerHTML = `<div class="stranka"><h1>Testy</h1><p class="tlum">10 otázek z kurzu. Výsledek se uloží do postupu${API.prihlasen() ? " i na server" : ""}.</p>
       <div class="seznam">${S.kurzy.map(k => { const ot = pocetOtazek(k); const st = statistikaKurzu(k); const posl = testy.find(t => t.kurz === k.id);
-        return `<div class="radek" style="--b:${esc(k.barva)}"><div class="radek-ikona">${esc(k.emoji)}</div><div class="radek-text"><strong>${esc(k.nazev)}</strong><div class="tlum maly">${ot} otázek · naučeno ${st.procent} %${posl ? ` · poslední test ${posl.skore}/${posl.celkem}` : ""}</div></div><button class="btn" data-test="${esc(k.id)}" ${ot < 3 ? "disabled" : ""}>Spustit</button></div>`; }).join("")}
+        const temata = (k.temata || []).map(t => ({ t, n: (t.karty || []).filter(jeOtazka).length })).filter(x => x.n >= 3);
+        return `<div class="radek" style="--b:${esc(k.barva)}"><div class="radek-ikona">${esc(k.emoji)}</div><div class="radek-text"><strong>${esc(k.nazev)}</strong><div class="tlum maly">${ot} otázek · naučeno ${st.procent} %${posl ? ` · poslední test ${posl.skore}/${posl.celkem}` : ""}</div>${temata.length > 1 ? `<details class="test-temata"><summary class="tlum maly">Jen jedno téma</summary><div class="chipy-temata">${temata.map(x => `<button class="chip-tema" data-test="${esc(k.id)}" data-tema="${esc(x.t.id)}">${esc(x.t.nazev)} <span class="tlum">${x.n}</span></button>`).join("")}</div></details>` : ""}</div><button class="btn" data-test="${esc(k.id)}" ${ot < 3 ? "disabled" : ""}>Spustit</button></div>`; }).join("")}
         ${S.kurzy.length > 1 ? `<div class="radek" style="--b:#f59e0b"><div class="radek-ikona">🎲</div><div class="radek-text"><strong>Mix ze všech kurzů</strong><div class="tlum maly">Interleaving v praxi</div></div><button class="btn" data-test="*">Spustit</button></div>` : ""}
       </div>
-      ${testy.length ? `<h2>Historie</h2><div class="seznam">${testy.slice(0, 15).map(t => { const k = S.kurzy.find(x => x.id === t.kurz); return `<div class="radek maly-radek"><div class="radek-ikona">${k ? esc(k.emoji) : "🎲"}</div><div class="radek-text"><strong>${k ? esc(k.nazev) : "Mix"}</strong><div class="tlum maly">${new Date(t.kdy).toLocaleString("cs-CZ")}</div></div><div class="skore ${t.skore / t.celkem >= 0.8 ? "ok" : t.skore / t.celkem >= 0.5 ? "stred" : "ne"}">${t.skore}/${t.celkem}</div></div>`; }).join("")}</div>` : ""}
+      ${testy.length ? `<h2>Historie</h2><div class="seznam">${testy.slice(0, 15).map(t => { const k = S.kurzy.find(x => x.id === t.kurz); return `<div class="radek maly-radek"><div class="radek-ikona">${k ? esc(k.emoji) : "🎲"}</div><div class="radek-text"><strong>${k ? esc(k.nazev) : "Mix"}${t.tema && k ? ` <span class="tlum">· ${esc(((k.temata || []).find(x => x.id === t.tema) || {}).nazev || t.tema)}</span>` : ""}</strong><div class="tlum maly">${new Date(t.kdy).toLocaleString("cs-CZ")}</div></div><div class="skore ${t.skore / t.celkem >= 0.8 ? "ok" : t.skore / t.celkem >= 0.5 ? "stred" : "ne"}">${t.skore}/${t.celkem}</div></div>`; }).join("")}</div>` : ""}
     </div>`;
   }
   function pocetOtazek(k) { let n = 0; (k.temata || []).forEach(t => (t.karty || []).forEach(c => { if (jeOtazka(c)) n++; })); return n; }
-  function spustTest(kurzId) {
+  function spustTest(kurzId, temaId) {
     const kurzy = kurzId === "*" ? S.kurzy : S.kurzy.filter(k => k.id === kurzId);
-    let ot = []; kurzy.forEach(k => (k.temata || []).forEach(t => (t.karty || []).forEach(c => { if (jeOtazka(c)) ot.push(c); })));
+    let ot = []; kurzy.forEach(k => (k.temata || []).forEach(t => { if (temaId && t.id !== temaId) return; (t.karty || []).forEach(c => { if (jeOtazka(c)) ot.push(c); }); }));
     for (let i = ot.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [ot[i], ot[j]] = [ot[j], ot[i]]; }
     ot = ot.slice(0, 10);
-    S.test = { kurz: kurzId, otazky: ot, i: 0, odpovedi: [], zacatek: Date.now() };
+    S.test = { kurz: kurzId, tema: temaId || null, otazky: ot, i: 0, odpovedi: [], zacatek: Date.now() };
     jezekRekni(JEZEK.hlaska("testStart"), "premysli", 2500);
     vykresliTestOtazku();
   }
@@ -353,7 +354,7 @@
     if (t.i < t.otazky.length) { vykresliTestOtazku(); return; }
     const skore = t.odpovedi.filter(o => o.spravne).length, celkem = t.otazky.length, pomer = skore / celkem;
     pridejXp(XP.test + skore * 2, 0);
-    const vysl = { id: "t" + Date.now(), kurz: t.kurz, skore, celkem, kdy: Date.now(), trvani: Date.now() - t.zacatek, odpovedi: t.odpovedi };
+    const vysl = { id: "t" + Date.now(), kurz: t.kurz, tema: t.tema || undefined, skore, celkem, kdy: Date.now(), trvani: Date.now() - t.zacatek, odpovedi: t.odpovedi };
     await API.ulozTest(vysl); ulozStav();
     const nal = pomer >= 0.8 ? "party" : pomer >= 0.5 ? "radost" : "smutek";
     if (pomer >= 0.8) konfety();
@@ -361,15 +362,15 @@
     const spatne = t.odpovedi.filter(o => !o.spravne).map(o => S.karty[o.karta]);
     $("#testy").innerHTML = `<div class="stranka test-vysledek"><div class="jezek-velky">${JEZEK.svg({ nalada: nal, uroven: uroven() })}</div><h1>${skore} / ${celkem}</h1><p class="tlum">${pomer >= 0.8 ? "Výborně." : pomer >= 0.5 ? "Dobrý základ." : "Trénink. Chyby máš níž."} +${XP.test + skore * 2} XP</p>
       ${spatne.length ? `<h2>Co se vrátí do feedu</h2><div class="seznam">${spatne.map(c => `<div class="radek" style="--b:${esc(c.kurz.barva)}"><div class="radek-ikona">${esc(c.kurz.emoji)}</div><div class="radek-text"><strong>${esc(textKarty(c).split("\n")[0])}</strong>${c.vysvetleni ? `<div class="tlum maly">${esc(c.vysvetleni)}</div>` : ""}</div></div>`).join("")}</div>` : `<p>Bez chyby. ${esc(S.stav.jezek)} nemá co dodat.</p>`}
-      <div class="tlacitka"><button class="btn" data-test-akce="znovu" data-kurz="${esc(t.kurz)}">Ještě jednou</button><button class="btn btn-sek" data-test-akce="konec">Zpět na testy</button></div></div>`;
+      <div class="tlacitka"><button class="btn" data-test-akce="znovu" data-kurz="${esc(t.kurz)}" ${t.tema ? `data-tema="${esc(t.tema)}"` : ""}>Ještě jednou</button><button class="btn btn-sek" data-test-akce="konec">Zpět na testy</button></div></div>`;
     S.test = null;
   }
   document.addEventListener("click", e => {
-    const b = e.target.closest("[data-test]"); if (b) { spustTest(b.dataset.test); return; }
+    const b = e.target.closest("[data-test]"); if (b) { spustTest(b.dataset.test, b.dataset.tema || null); return; }
     const d = e.target.closest(".test-dal"); if (d && !d.disabled) { testDalsi(); return; }
     const a = e.target.closest("[data-test-akce]"); if (!a) return;
     if (a.dataset.testAkce === "konec") { S.test = null; vykresliTesty(); }
-    if (a.dataset.testAkce === "znovu") spustTest(a.dataset.kurz);
+    if (a.dataset.testAkce === "znovu") spustTest(a.dataset.kurz, a.dataset.tema || null);
   });
 
   // ------------------------------------------------------------------
@@ -381,7 +382,7 @@
     $("#kurzy").innerHTML = `<div class="stranka"><h1>Kurzy</h1><p class="tlum">Zapni, co chceš mít ve feedu. Všechno se míchá dohromady – to je záměr.</p>
       <div class="seznam">${S.kurzy.map(k => { const st = statistikaKurzu(k); const on = !v || v.includes(k.id);
         return `<div class="radek" style="--b:${esc(k.barva)}"><div class="radek-ikona">${esc(k.emoji)}</div><div class="radek-text"><strong>${esc(k.nazev)}</strong><div class="tlum maly">${esc(k.popis || "")}</div><div class="bar"><div style="width:${st.procent}%;background:${esc(k.barva)}"></div></div><div class="tlum maly">${k.pocet} karet · viděno ${st.videno} · naučeno ${st.umim}${k.vlastni ? ' · <a href="#" data-kurz-akce="smazat" data-id="' + esc(k.id) + '">smazat</a>' : ""}</div></div><label class="prepinac"><input type="checkbox" data-kurz-prepni="${esc(k.id)}" ${on ? "checked" : ""}><span></span></label></div>`; }).join("")}</div>
-      <h2>Přidat kurz</h2>
+      ${window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.bezVlastnichKurzu ? "" : `<h2>Přidat kurz</h2>
       <div class="box">
         <p class="maly">Vlož JSON ve formátu DefLearn Hubu (viz <code>obsah/_sablona.js</code>) – nebo nahraj soubor.</p>
         <textarea id="import-json" rows="5" placeholder='{"id":"muj","nazev":"Můj kurz","emoji":"📚","barva":"#0ea5e9","temata":[…]}'></textarea>
@@ -390,7 +391,7 @@
       <div class="box">
         <p class="maly"><b>Vytvořit kurz z poznámek ✨</b> – vlož text ze skript, prezentace nebo vlastní poznámky a ježek z nich udělá karty, kvízy a vysvětlení.</p>
         ${API.maAI() && !API.prihlasen() ? `<p class="tlum maly">Pro generování kurzů se přihlas v záložce <b>Já</b>.</p>` : API.maAI() ? `<input type="text" id="gen-nazev" placeholder="Název kurzu (např. Makroekonomie – 3. přednáška)"><textarea id="gen-text" rows="7" placeholder="Sem vlož poznámky (až ~30 000 znaků)…"></textarea><div class="tlacitka"><button class="btn" data-kurz-akce="generuj">Vygenerovat karty ✨</button></div><div id="gen-vysledek"></div>` : `<p class="tlum maly">${API.maBackend() ? "Zapne se, až bude na serveru nastavený ANTHROPIC_API_KEY." : "Vyžaduje nasazený backend s AI (server/README.md). Do té doby jde kurz přidat ručně jako JSON výše."}</p>`}
-      </div></div>`;
+      </div>`}</div>`;
   }
   function pridejVlastniKurz(k, nahradit) {
     if (!k || typeof k !== "object" || !k.id || !k.nazev || !Array.isArray(k.temata)) throw new Error("Chybí id, nazev nebo temata.");

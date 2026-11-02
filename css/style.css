@@ -217,6 +217,15 @@ input[type=range] { width: 100%; accent-color: var(--akcent); }
 .radek-prepinac > span:first-child { flex: 1; }
 .viby .vibe small { display: block; }
 
+/* vlastní playlist: panel s vloženým přehrávačem nad lištou hudby */
+#playlist-panel { position: absolute; left: 0; right: 0; bottom: calc(var(--nav-v) + var(--hudba-v) + var(--sab)); z-index: 10; background: #0b0b10; border-top: 1px solid rgba(255,255,255,.08); transition: transform .25s ease, opacity .25s ease; }
+#playlist-panel.skryty { transform: translateY(120%); opacity: 0; pointer-events: none; }
+#playlist-panel iframe { display: block; width: 100%; border: 0; }
+details.playlist { margin-top: 12px; }
+details.playlist summary { cursor: pointer; list-style: none; }
+details.playlist summary::-webkit-details-marker { display: none; }
+details.playlist form { margin-top: 10px; }
+
 /* přehled týmu (záložka Já, jen správci) */
 .tym-clovek { padding: 10px 0; border-top: 1px solid rgba(255,255,255,.08); }
 .tym-clovek:first-child { border-top: 0; padding-top: 0; }

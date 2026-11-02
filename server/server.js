@@ -9,7 +9,8 @@
 //   REGISTRACE_POVOLENE (env, CSV e-mailů a "@domen", nebo "*" = kdokoli): registrace projde jen jim, ostatní 403.
 //   REGISTRACE_KODY (env, CSV pozvánkových kódů): registrace projde i komukoli, kdo pošle platný kód (pole "kod").
 //   Bez obou = registrace uzavřená (bezpečný výchozí stav). Přihlášení existujících účtů to neomezuje.
-//   GET  /api/tym                                          přehled postupu týmu (jen správci; ADMINI = e-maily oddělené čárkou)
+//   GET  /api/tym                                          přehled postupu všech uživatelů (jen správci; ADMINI = e-maily oddělené čárkou);
+//        každý má skupinu "tym" (e-mail z TYM_DOMENY, výchozí @czechinvest.gov.cz) nebo "startup" (ostatní)
 //   GET/PUT /api/postup                                    postup učení (slučuje se, viz ../js/slouceni.js)
 //   GET/POST /api/testy                                    výsledky testů
 //   GET/PUT /api/kurzy, DELETE /api/kurzy/:id              vlastní kurzy uživatele
@@ -42,6 +43,7 @@ const CFG = {
   kurzyUzivatelu: (() => { try { const m = JSON.parse(process.env.KURZY_UZIVATELU || "{}"); const out = {}; for (const [e, k] of Object.entries(m)) { if (Array.isArray(k)) out[String(e).trim().toLowerCase()] = k.map(String); else if (k === null) out[String(e).trim().toLowerCase()] = null; } return out; } catch (e) { console.warn("[jeztok] KURZY_UZIVATELU není platný JSON, ignoruji."); return {}; } })(),
   registracePovolene: (process.env.REGISTRACE_POVOLENE || "").split(",").map(s => s.trim().toLowerCase()).filter(Boolean),
   registraceKody: (process.env.REGISTRACE_KODY || "").split(",").map(s => s.trim()).filter(Boolean),
+  tymDomeny: (process.env.TYM_DOMENY || "@czechinvest.gov.cz").split(",").map(s => s.trim().toLowerCase()).filter(Boolean),
   maxTelo: 2 * 1024 * 1024,
   maxPoznamky: 30000
 };
@@ -232,7 +234,7 @@ async function obsluz(req, res) {
       for (const l of lide) {
         const testy = await db.testy(l.id);
         const posledni = testy[0] ? { kurz: testy[0].kurz, skore: testy[0].skore, celkem: testy[0].celkem, kdy: testy[0].kdy } : null;
-        tym.push({ email: l.email, jmeno: l.jmeno || "", vytvoreno: Number(l.vytvoreno) || 0, kurzy: povoleneKurzy(l.email), spravce: jeSpravce(l.email), postup: souhrnPostupu(await db.nactiStav(l.id)), testy: { pocet: testy.length, posledni } });
+        tym.push({ email: l.email, jmeno: l.jmeno || "", vytvoreno: Number(l.vytvoreno) || 0, skupina: CFG.tymDomeny.includes(domenaZ(l.email)) ? "tym" : "startup", kurzy: povoleneKurzy(l.email), spravce: jeSpravce(l.email), postup: souhrnPostupu(await db.nactiStav(l.id)), testy: { pocet: testy.length, posledni } });
       }
       return json(res, 200, { ok: true, tym }, origin);
     }

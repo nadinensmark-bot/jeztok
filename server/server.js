@@ -7,7 +7,8 @@
 //   Klíč může být e-mail, "@domena.cz" (všichni z domény) nebo "*" (všichni ostatní); hodnota null = všechny kurzy.
 //   Priorita: e-mail > doména > "*". Kdo nespadá nikam, vidí všechny.
 //   REGISTRACE_POVOLENE (env, CSV e-mailů a "@domen", nebo "*" = kdokoli): registrace projde jen jim, ostatní 403.
-//   Nenastavené = registrace uzavřená (bezpečný výchozí stav). Přihlášení existujících účtů to neomezuje.
+//   REGISTRACE_KODY (env, CSV pozvánkových kódů): registrace projde i komukoli, kdo pošle platný kód (pole "kod").
+//   Bez obou = registrace uzavřená (bezpečný výchozí stav). Přihlášení existujících účtů to neomezuje.
 //   GET  /api/tym                                          přehled postupu týmu (jen správci; ADMINI = e-maily oddělené čárkou)
 //   GET/PUT /api/postup                                    postup učení (slučuje se, viz ../js/slouceni.js)
 //   GET/POST /api/testy                                    výsledky testů
@@ -40,6 +41,7 @@ const CFG = {
   admini: (process.env.ADMINI || "").split(",").map(s => s.trim().toLowerCase()).filter(Boolean),
   kurzyUzivatelu: (() => { try { const m = JSON.parse(process.env.KURZY_UZIVATELU || "{}"); const out = {}; for (const [e, k] of Object.entries(m)) { if (Array.isArray(k)) out[String(e).trim().toLowerCase()] = k.map(String); else if (k === null) out[String(e).trim().toLowerCase()] = null; } return out; } catch (e) { console.warn("[jeztok] KURZY_UZIVATELU není platný JSON, ignoruji."); return {}; } })(),
   registracePovolene: (process.env.REGISTRACE_POVOLENE || "").split(",").map(s => s.trim().toLowerCase()).filter(Boolean),
+  registraceKody: (process.env.REGISTRACE_KODY || "").split(",").map(s => s.trim()).filter(Boolean),
   maxTelo: 2 * 1024 * 1024,
   maxPoznamky: 30000
 };
@@ -62,6 +64,7 @@ const povoleneKurzy = email => {
   return null;
 };
 const registraceDovolena = email => { const p = CFG.registracePovolene; if (!p.length) return false; if (p.includes("*")) return true; const e = String(email || "").toLowerCase(); return p.includes(e) || p.includes(domenaZ(e)); };
+const kodPlatny = kod => { const k = String(kod || "").trim(); if (!k) return false; return CFG.registraceKody.some(x => x.length === k.length && crypto.timingSafeEqual(Buffer.from(x), Buffer.from(k))); };
 const jeSpravce = email => CFG.admini.includes(String(email || "").toLowerCase());
 const verejnyUzivatel = u => ({ id: u.id, email: u.email, jmeno: u.jmeno || "", kurzy: povoleneKurzy(u.email), spravce: jeSpravce(u.email) });
 
@@ -204,8 +207,8 @@ async function obsluz(req, res) {
       const email = String(b.email || "").trim().toLowerCase();
       if (!emailOk(email)) throw new ChybaApi(400, "Zadej platný e-mail.");
       if (typeof b.heslo !== "string" || b.heslo.length < 8) throw new ChybaApi(400, "Heslo musí mít aspoň 8 znaků.");
-      if (!CFG.registracePovolene.length) throw new ChybaApi(403, "Registrace je momentálně uzavřená. Účty zakládá Defence Hub.");
-      if (!registraceDovolena(email)) throw new ChybaApi(403, "Tenhle e-mail není na seznamu pozvaných. Registrace je pro firmy z databáze Defence Hubu; pokud mezi ně patříš, ozvi se nám a e-mail doplníme.");
+      if (!CFG.registracePovolene.length && !CFG.registraceKody.length) throw new ChybaApi(403, "Registrace je momentálně uzavřená. Účty zakládá Defence Hub.");
+      if (!registraceDovolena(email) && !kodPlatny(b.kod)) throw new ChybaApi(403, b.kod ? "Pozvánkový kód neplatí. Zkontroluj ho, nebo se ozvi Defence Hubu." : (CFG.registraceKody.length ? "Tenhle e-mail není na seznamu pozvaných. Zadej pozvánkový kód od Defence Hubu, nebo se nám ozvi." : "Tenhle e-mail není na seznamu pozvaných. Registrace je pro firmy z databáze Defence Hubu; pokud mezi ně patříš, ozvi se nám a e-mail doplníme."));
       if (await db.uzivatelPodleEmailu(email)) throw new ChybaApi(409, "Tenhle e-mail už je zaregistrovaný – zkus se přihlásit.");
       const u = { id: crypto.randomUUID(), email, jmeno: String(b.jmeno || "").trim().slice(0, 60), hash: hashHesla(b.heslo) };
       await db.vytvorUzivatele(u);

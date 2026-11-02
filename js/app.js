@@ -461,7 +461,7 @@
           <details class="heslo"><summary class="maly">Změnit heslo</summary>
           <form id="heslo-form" class="auth"><input type="password" name="stare" placeholder="Současné heslo" required autocomplete="current-password"><input type="password" name="nove" placeholder="Nové heslo (min. 8 znaků)" required minlength="8" autocomplete="new-password"><input type="password" name="nove2" placeholder="Nové heslo znovu" required minlength="8" autocomplete="new-password"><div class="tlacitka"><button class="btn" type="submit">Uložit nové heslo</button></div><div id="heslo-chyba" class="chyba"></div></form></details>`
         : `<p class="maly">Přihlas se, aby se postup ukládal na server a šel sledovat na více zařízeních. ${z.ok ? "" : API.probouzi() ? '<span class="tlum">Server se probouzí, chvilku to potrvá…</span>' : '<span class="tlum">Server teď neodpovídá – zkus to později.</span>'}</p>
-          <form id="auth-form" class="auth"><input type="text" name="jmeno" placeholder="Jméno (jen při registraci)" autocomplete="name"><input type="email" name="email" placeholder="E-mail" required autocomplete="email"><input type="password" name="heslo" placeholder="Heslo (min. 8 znaků)" required minlength="8" autocomplete="current-password"><div class="tlacitka"><button class="btn" type="submit" data-rezim="prihlasit">Přihlásit</button><button class="btn btn-sek" type="submit" data-rezim="registrovat">Registrovat</button></div><div id="auth-chyba" class="chyba"></div></form>`}</div>
+          <form id="auth-form" class="auth"><input type="text" name="jmeno" placeholder="Jméno (jen při registraci)" autocomplete="name"><input type="email" name="email" placeholder="E-mail" required autocomplete="email"><input type="password" name="heslo" placeholder="Heslo (min. 8 znaků)" required minlength="8" autocomplete="current-password">${window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.registraceKod ? `<input type="text" name="kod" placeholder="Pozvánkový kód (jen při registraci, pokud ho máš)" autocomplete="off" autocapitalize="characters">` : ""}<div class="tlacitka"><button class="btn" type="submit" data-rezim="prihlasit">Přihlásit</button><button class="btn btn-sek" type="submit" data-rezim="registrovat">Registrovat</button></div><div id="auth-chyba" class="chyba"></div></form>`}</div>
       ${API.jeSpravce() ? `<h2>Tým</h2><div id="tym" class="box"><p class="tlum maly">Načítám přehled…</p></div>` : ""}
       <h2>Hudba</h2>
       <div class="box"><label class="radek-prepinac"><span><b>Měnit styl s každou kartou</b><br><span class="tlum maly">Klidnější styly u faktů, nakopnutí u kvízů. Vypni, když chceš jeden styl napořád.</span></span><span class="prepinac"><input type="checkbox" id="hudba-auto" ${S.stav.hudba.auto !== false ? "checked" : ""}><span></span></span></label>
@@ -531,12 +531,12 @@
   document.addEventListener("submit", async e => {
     if (e.target.id !== "auth-form") return; e.preventDefault();
     const f = e.target, rezim = (e.submitter && e.submitter.dataset.rezim) || "prihlasit", ch = $("#auth-chyba"); ch.textContent = "";
-    const email = f.email.value.trim(), heslo = f.heslo.value, jmeno = f.jmeno.value.trim();
+    const email = f.email.value.trim(), heslo = f.heslo.value, jmeno = f.jmeno.value.trim(), kod = f.kod ? f.kod.value.trim() : "";
     $$("button", f).forEach(b => b.disabled = true);
     // server se po nečinnosti probouzí až minutu: po 3 s čekání to uživateli říct, ať neklikne pryč
     const cekani = setTimeout(() => { ch.innerHTML = '<span class="tlum">Server se probouzí, může to trvat až minutu…</span>'; }, 3000);
     try {
-      if (rezim === "registrovat") await API.registrace(email, heslo, jmeno); else await API.prihlaseni(email, heslo);
+      if (rezim === "registrovat") await API.registrace(email, heslo, jmeno, kod); else await API.prihlaseni(email, heslo);
       clearTimeout(cekani); ch.textContent = "";
       await poPrihlaseni(); toast("Přihlášeno"); jezekRekni("Vítej zpátky. Postup je v bezpečí na serveru.", "radost", 3000); vykresliJa();
     } catch (err) { clearTimeout(cekani); ch.textContent = err.message; $$("button", f).forEach(b => b.disabled = false); }

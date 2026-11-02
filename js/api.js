@@ -57,8 +57,8 @@
     return zdraviCeka;
   }
 
-  async function registrace(email, heslo, jmeno) {
-    const d = await volej("/api/registrace", "POST", { email, heslo, jmeno });
+  async function registrace(email, heslo, jmeno, kod) {
+    const d = await volej("/api/registrace", "POST", { email, heslo, jmeno, kod: kod || undefined });
     lsSet(KLIC.token, d.token); lsSet(KLIC.uzivatel, d.uzivatel); return d.uzivatel;
   }
   async function prihlaseni(email, heslo) {

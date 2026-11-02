@@ -459,6 +459,7 @@
           <form id="heslo-form" class="auth"><input type="password" name="stare" placeholder="Současné heslo" required autocomplete="current-password"><input type="password" name="nove" placeholder="Nové heslo (min. 8 znaků)" required minlength="8" autocomplete="new-password"><input type="password" name="nove2" placeholder="Nové heslo znovu" required minlength="8" autocomplete="new-password"><div class="tlacitka"><button class="btn" type="submit">Uložit nové heslo</button></div><div id="heslo-chyba" class="chyba"></div></form></details>`
         : `<p class="maly">Přihlas se, aby se postup ukládal na server a šel sledovat na více zařízeních. ${z.ok ? "" : API.probouzi() ? '<span class="tlum">Server se probouzí, chvilku to potrvá…</span>' : '<span class="tlum">Server teď neodpovídá – zkus to později.</span>'}</p>
           <form id="auth-form" class="auth"><input type="text" name="jmeno" placeholder="Jméno (jen při registraci)" autocomplete="name"><input type="email" name="email" placeholder="E-mail" required autocomplete="email"><input type="password" name="heslo" placeholder="Heslo (min. 8 znaků)" required minlength="8" autocomplete="current-password"><div class="tlacitka"><button class="btn" type="submit" data-rezim="prihlasit">Přihlásit</button><button class="btn btn-sek" type="submit" data-rezim="registrovat">Registrovat</button></div><div id="auth-chyba" class="chyba"></div></form>`}</div>
+      ${API.jeSpravce() ? `<h2>Tým</h2><div id="tym" class="box"><p class="tlum maly">Načítám přehled…</p></div>` : ""}
       <h2>Hudba</h2>
       <div class="box"><label class="radek-prepinac"><span><b>Měnit styl s každou kartou</b><br><span class="tlum maly">Klidnější styly u faktů, nakopnutí u kvízů. Vypni, když chceš jeden styl napořád.</span></span><span class="prepinac"><input type="checkbox" id="hudba-auto" ${S.stav.hudba.auto !== false ? "checked" : ""}><span></span></span></label>
         <div class="viby">${HUDBA.VIBY.map(v => `<button class="vibe ${S.stav.hudba.vibe === v.id ? "akt" : ""}" data-vibe="${v.id}"><span>${v.emoji}</span>${esc(v.nazev)}<small>${esc(v.popis)}</small></button>`).join("")}</div>
@@ -469,6 +470,41 @@
       ${window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.logoPata ? `<div class="pata-logo">${[].concat(window.JEZTOK_CONFIG.logoPata).map(l => `<img src="${esc(l)}" alt="">`).join("")}</div>` : ""}
       <p class="tlum maly stred">${esc((window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.nazev) || "DefLearn Hub")} · verze ${esc(window.JEZTOK_VERZE || "dev")}</p>
     </div>`;
+    if (API.jeSpravce()) vykresliTym();
+  }
+  // ---- přehled týmu (jen správci): fáze a procenta po kurzech, bez konkrétních karet ----
+  function streakZ(dny) {
+    const set = new Set(dny || []); let n = 0, off = set.has(dnes(0)) ? 0 : 1;
+    while (set.has(dnes(off))) { n++; off++; }
+    return n;
+  }
+  function predChvili(ms) {
+    if (!ms) return "zatím nic";
+    const d = Math.floor((Date.now() - ms) / DEN);
+    return d <= 0 ? "dnes" : d === 1 ? "včera" : d < 7 ? "před " + d + " dny" : d < 30 ? "před " + Math.floor(d / 7) + " týdny" : "před " + Math.floor(d / 30) + " měsíci";
+  }
+  function fazeKurzu(videno, umim, pocet) {
+    if (!pocet) return { nazev: "?", trida: "" };
+    if (!videno) return { nazev: "Nezačal/a", trida: "ne" };
+    if (umim / pocet >= 0.8) return { nazev: "Zvládá", trida: "ok" };
+    if (videno / pocet < 0.25) return { nazev: "Rozkoukává se", trida: "" };
+    return { nazev: "Učí se", trida: "stred" };
+  }
+  async function vykresliTym() {
+    const el = $("#tym"); if (!el) return;
+    let tym; try { tym = await API.nactiTym(); } catch (e) { el.innerHTML = `<p class="tlum maly">Přehled se nepodařilo načíst: ${esc(e.message)}</p>`; return; }
+    const vse = window.JEZTOK_KURZY || [];
+    const pocty = {}; vse.forEach(k => { let n = 0; (k.temata || []).forEach(t => n += (t.karty || []).length); pocty[k.id] = { n, nazev: k.nazev, emoji: k.emoji, barva: k.barva }; });
+    tym.sort((a, b) => (b.postup.aktualizovano || 0) - (a.postup.aktualizovano || 0));
+    el.innerHTML = tym.map(t => {
+      const kurzy = (t.kurzy || vse.map(k => k.id)).filter(id => pocty[id]);
+      const radky = kurzy.map(id => { const p = (t.postup.kurzy || {})[id] || { videno: 0, umim: 0 }; const k = pocty[id]; const f = fazeKurzu(p.videno, p.umim, k.n); const proc = k.n ? Math.round(100 * p.umim / k.n) : 0;
+        return `<div class="tym-kurz"><span class="tym-kurz-nazev">${esc(k.emoji)} ${esc(k.nazev)}</span><span class="skore ${f.trida}">${esc(f.nazev)}</span><div class="bar"><div style="width:${proc}%;background:${esc(k.barva)}"></div></div><span class="tlum maly">${proc} % naučeno · viděno ${p.videno}/${k.n}</span></div>`; }).join("");
+      const s = streakZ(t.postup.dny), posl = t.testy.posledni;
+      return `<div class="tym-clovek"><div class="tym-hlava"><strong>${esc(t.jmeno || t.email)}</strong><span class="tlum maly">${esc(predChvili(t.postup.aktualizovano))}</span></div>
+        <div class="tlum maly">⚡ ${t.postup.xp} XP · 🔥 ${s} ${s === 1 ? "den" : s >= 2 && s <= 4 ? "dny" : "dní"} v kuse · ${t.testy.pocet} ${t.testy.pocet === 1 ? "test" : t.testy.pocet >= 2 && t.testy.pocet <= 4 ? "testy" : "testů"}${posl ? " (poslední " + posl.skore + "/" + posl.celkem + ")" : ""}</div>
+        ${radky || '<div class="tlum maly">Žádné kurzy.</div>'}</div>`;
+    }).join("") || `<p class="tlum maly">Zatím nikdo.</p>`;
   }
   document.addEventListener("click", async e => {
     const v = e.target.closest("[data-vibe]"); if (v) { S.stav.hudba.vibe = v.dataset.vibe; S.stav.hudba.auto = false; HUDBA.setAuto(false); const ch = $("#hudba-auto"); if (ch) ch.checked = false; HUDBA.setVibe(v.dataset.vibe); if (!HUDBA.hraje()) { S.stav.hudba.zapnuto = true; HUDBA.setVolume(S.stav.hudba.volume); HUDBA.start(v.dataset.vibe); } ulozStav(); $$("[data-vibe]").forEach(b => b.classList.toggle("akt", b === v)); return; }

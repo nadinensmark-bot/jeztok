@@ -445,7 +445,7 @@
       <h2>Účet</h2>
       <div class="box">${!API.maBackend() ? `<p class="maly">Běžíš <b>bez účtu</b>: postup se ukládá jen do tohoto telefonu. Pro přihlášení a sledování postupu napříč zařízeními je potřeba nasadit backend (návod v <code>server/README.md</code>) a vyplnit adresu v <code>config.js</code>.</p>`
         : uz ? `<p>Přihlášen/a jako <b>${esc(uz.jmeno || uz.email)}</b> <span class="tlum maly">(${esc(uz.email)})</span></p><p class="tlum maly">Postup se synchronizuje automaticky. ${z.ai ? "AI dovysvětlení je zapnuté ✨" : "AI dovysvětlení není na serveru zapnuté."}</p><div class="tlacitka"><button class="btn btn-sek" data-ja-akce="sync">Synchronizovat teď</button><button class="btn btn-sek" data-ja-akce="odhlasit">Odhlásit</button></div>`
-        : `<p class="maly">Přihlas se, aby se postup ukládal na server a šel sledovat na více zařízeních. ${z.ok ? "" : '<span class="tlum">Server teď neodpovídá – zkus to později.</span>'}</p>
+        : `<p class="maly">Přihlas se, aby se postup ukládal na server a šel sledovat na více zařízeních. ${z.ok ? "" : API.probouzi() ? '<span class="tlum">Server se probouzí, chvilku to potrvá…</span>' : '<span class="tlum">Server teď neodpovídá – zkus to později.</span>'}</p>
           <form id="auth-form" class="auth"><input type="text" name="jmeno" placeholder="Jméno (jen při registraci)" autocomplete="name"><input type="email" name="email" placeholder="E-mail" required autocomplete="email"><input type="password" name="heslo" placeholder="Heslo (min. 8 znaků)" required minlength="8" autocomplete="current-password"><div class="tlacitka"><button class="btn" type="submit" data-rezim="prihlasit">Přihlásit</button><button class="btn btn-sek" type="submit" data-rezim="registrovat">Registrovat</button></div><div id="auth-chyba" class="chyba"></div></form>`}</div>
       <h2>Hudba</h2>
       <div class="box"><label class="radek-prepinac"><span><b>Měnit styl s každou kartou</b><br><span class="tlum maly">Klidnější styly u faktů, nakopnutí u kvízů. Vypni, když chceš jeden styl napořád.</span></span><span class="prepinac"><input type="checkbox" id="hudba-auto" ${S.stav.hudba.auto !== false ? "checked" : ""}><span></span></span></label>
@@ -478,11 +478,19 @@
     const f = e.target, rezim = (e.submitter && e.submitter.dataset.rezim) || "prihlasit", ch = $("#auth-chyba"); ch.textContent = "";
     const email = f.email.value.trim(), heslo = f.heslo.value, jmeno = f.jmeno.value.trim();
     $$("button", f).forEach(b => b.disabled = true);
+    // server se po nečinnosti probouzí až minutu: po 3 s čekání to uživateli říct, ať neklikne pryč
+    const cekani = setTimeout(() => { ch.innerHTML = '<span class="tlum">Server se probouzí, může to trvat až minutu…</span>'; }, 3000);
     try {
       if (rezim === "registrovat") await API.registrace(email, heslo, jmeno); else await API.prihlaseni(email, heslo);
+      clearTimeout(cekani); ch.textContent = "";
       await poPrihlaseni(); toast("Přihlášeno"); jezekRekni("Vítej zpátky. Postup je v bezpečí na serveru.", "radost", 3000); vykresliJa();
-    } catch (err) { ch.textContent = err.message; $$("button", f).forEach(b => b.disabled = false); }
+    } catch (err) { clearTimeout(cekani); ch.textContent = err.message; $$("button", f).forEach(b => b.disabled = false); }
   });
+  // health doběhl (server byl možná teprve vzhůru): překreslit, co na stavu serveru závisí
+  function poProbuzeni() {
+    if (S.obrazovka === "ja") vykresliJa();
+    if (S.vysvetlovana && $("#sheet").classList.contains("otevreno") && !$("#ai-form") && !$("#ai-chat").children.length && API.maAI() && API.prihlasen()) otevriVysvetleni(S.vysvetlovana);
+  }
   async function poPrihlaseni() {
     try { const s = await API.stahniStav(); S.stav = SLOUCENI.sloucStavy(S.stav, s); API.ulozStavLokalne(S.stav); await API.synchronizuj(S.stav); } catch (e) {}
     try { const kurzy = await API.stahniKurzy(); const lok = API.vlastniKurzyLokalne(); const mapa = {}; [...kurzy, ...lok].forEach(k => mapa[k.id] = k); API.ulozVlastniKurzyLokalne(Object.values(mapa)); for (const k of lok) if (!kurzy.some(x => x.id === k.id)) API.ulozKurzNaServer(k).catch(() => {}); } catch (e) {}
@@ -573,7 +581,13 @@
     const prvni = !API.nactiStav();
     setTimeout(() => jezekRekni(JEZEK.hlaska("vitej", { j: S.stav.jezek }), "radost", prvni ? 6000 : 3500), 600);
     const s = streak(); if (s >= 3 && S.stav.dny[dnes()] === undefined) setTimeout(() => jezekRekni(JEZEK.hlaska("streak", { n: s }), "party", 4000), 7000);
-    API.health().then(() => { if (API.prihlasen()) poPrihlaseni(); });
+    API.health().then(() => { if (API.prihlasen()) poPrihlaseni(); poProbuzeni(); });
+    // po návratu do appky (server mezitím mohl usnout) ho probudit dřív, než uživatel klikne na přihlášení nebo sync
+    let posledniHealth = Date.now();
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden || Date.now() - posledniHealth < 5 * 60 * 1000) return;
+      posledniHealth = Date.now(); API.health().then(poProbuzeni);
+    });
     if ("serviceWorker" in navigator) {
       try {
         const melSW = !!navigator.serviceWorker.controller; // při prvním spuštění žádné „nová verze“ nehlásit

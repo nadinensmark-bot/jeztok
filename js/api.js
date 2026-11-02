@@ -9,6 +9,7 @@
   const KLIC = { stav: PX + "stav", token: PX + "token", uzivatel: PX + "uzivatel", testy: PX + "testy", kurzy: PX + "vlastni_kurzy" };
   const base = (cfg.backendUrl || "").replace(/\/+$/, "");
   let zdravi = null; // výsledek /api/health
+  let zdraviCeka = null; // probíhající health(): server se může teprve probouzet
 
   function lsGet(k, def) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : def; } catch (e) { return def; } }
   function lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
@@ -19,21 +20,41 @@
   function uzivatel() { return lsGet(KLIC.uzivatel, null); }
   function prihlasen() { return !!(token() && uzivatel()); }
 
-  async function volej(cesta, metoda, telo) {
+  // Server (Render) se po nečinnosti může probouzet až minutu: fetch má proto časový limit
+  // a když hosting mezitím vrátí HTML stránku nebo 5xx bez JSONu, zkusí to po chvíli znovu.
+  async function volej(cesta, metoda, telo, volby) {
     if (!base) throw new Error("Backend není nastavený.");
     const h = { "Content-Type": "application/json" };
     const t = token(); if (t) h.Authorization = "Bearer " + t;
-    const r = await fetch(base + cesta, { method: metoda || "GET", headers: h, body: telo ? JSON.stringify(telo) : undefined });
-    let d = null; try { d = await r.json(); } catch (e) {}
+    const konec = Date.now() + ((volby && volby.timeoutMs) || 75000);
+    let r, d = null;
+    for (let pokus = 0; ; pokus++) {
+      const ctrl = new AbortController(); const tm = setTimeout(() => ctrl.abort(), Math.max(1000, konec - Date.now()));
+      try { r = await fetch(base + cesta, { method: metoda || "GET", headers: h, body: telo ? JSON.stringify(telo) : undefined, signal: ctrl.signal }); }
+      catch (e) {
+        clearTimeout(tm);
+        const err = new Error(ctrl.signal.aborted ? "Server se nestihl probudit, zkus to prosím znovu." : "Nepodařilo se spojit se serverem.");
+        err.timeout = ctrl.signal.aborted; err.sit = true; throw err;
+      }
+      clearTimeout(tm);
+      d = null; try { d = await r.json(); } catch (e) {}
+      if (!d && (r.status >= 500 || r.ok) && pokus < 30 && Date.now() + 3000 < konec) { await new Promise(res => setTimeout(res, 3000)); continue; }
+      break;
+    }
     if (r.status === 401) { lsDel(KLIC.token); lsDel(KLIC.uzivatel); }
     if (!r.ok || !d || d.ok === false) { const e = new Error((d && d.chyba) || ("Chyba serveru (" + r.status + ")")); e.status = r.status; throw e; }
     return d;
   }
 
+  function probouzi() { return !!zdraviCeka; }
   async function health() {
     if (!base) return (zdravi = { ok: false, bezBackendu: true });
-    try { zdravi = await volej("/api/health"); } catch (e) { zdravi = { ok: false, chyba: e.message }; }
-    return zdravi;
+    if (zdraviCeka) return zdraviCeka;
+    zdraviCeka = (async () => {
+      try { zdravi = await volej("/api/health", "GET", null, { timeoutMs: 90000 }); } catch (e) { zdravi = { ok: false, chyba: e.message }; }
+      zdraviCeka = null; return zdravi;
+    })();
+    return zdraviCeka;
   }
 
   async function registrace(email, heslo, jmeno) {
@@ -53,12 +74,19 @@
   function nactiStav() { return lsGet(KLIC.stav, null); }
   function ulozStavLokalne(stav) { lsSet(KLIC.stav, stav); }
 
-  let syncTimer = null, syncCekajici = null;
+  let syncTimer = null, syncCekajici = null, syncOpakovani = null, posledniStav = null;
   function naplanujSync(stav) {
     if (!prihlasen()) return;
-    syncCekajici = stav;
+    syncCekajici = stav; posledniStav = stav;
     clearTimeout(syncTimer);
-    syncTimer = setTimeout(() => { const s = syncCekajici; syncCekajici = null; synchronizuj(s).catch(() => {}); }, 1500);
+    syncTimer = setTimeout(() => {
+      const s = syncCekajici; syncCekajici = null;
+      synchronizuj(s).catch(() => {
+        // server nejspíš spal nebo vypadla síť: jeden opakovaný pokus za minutu s nejnovějším stavem
+        clearTimeout(syncOpakovani);
+        syncOpakovani = setTimeout(() => { if (prihlasen() && !syncCekajici && posledniStav) synchronizuj(posledniStav).catch(() => {}); }, 60000);
+      });
+    }, 1500);
   }
   async function synchronizuj(stav) {
     if (!prihlasen()) return stav;
@@ -88,7 +116,7 @@
   async function vysvetli(karta, dotaz, historie) { return volej("/api/vysvetli", "POST", { karta, dotaz, historie }); }
   async function generujKurz(nazev, poznamky) { return volej("/api/generuj-kurz", "POST", { nazev, poznamky }); }
 
-  window.API = { maBackend, prihlasen, uzivatel, health, zdravi: () => zdravi, maAI, registrace, prihlaseni, odhlaseni,
+  window.API = { maBackend, prihlasen, uzivatel, health, probouzi, zdravi: () => zdravi, maAI, registrace, prihlaseni, odhlaseni,
     nactiStav, ulozStavLokalne, naplanujSync, synchronizuj, stahniStav,
     testyLokalne, ulozTestyLokalne, ulozTest, stahniTesty, vlastniKurzyLokalne, ulozVlastniKurzyLokalne, ulozKurzNaServer, smazKurzNaServeru, stahniKurzy,
     vysvetli, generujKurz, lsSet, lsGet };

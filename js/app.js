@@ -22,7 +22,8 @@
   // ------------------------------------------------------------------
   function nactiKurzy() {
     const filtr = (window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.filtrKurzu) || null;
-    const vest = (window.JEZTOK_KURZY || []).filter(k => !k.skryty && (!filtr || filtr[k.id] !== false)).map(k => {
+    const povolene = API.povoleneKurzy(); // přihlášený uživatel může mít na serveru omezený výběr kurzů
+    const vest = (window.JEZTOK_KURZY || []).filter(k => !k.skryty && (!filtr || filtr[k.id] !== false) && (!povolene || povolene.includes(k.id))).map(k => {
       k = Object.assign({}, k, { vestaveny: true });
       const barvy = (window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.barvyKurzu) || {};
       if (barvy[k.id]) k.barva = barvy[k.id];
@@ -444,7 +445,9 @@
       <h2>Kurzy</h2><div class="seznam">${S.kurzy.map(k => { const st = statistikaKurzu(k); return `<div class="radek maly-radek" style="--b:${esc(k.barva)}"><div class="radek-ikona">${esc(k.emoji)}</div><div class="radek-text"><strong>${esc(k.nazev)}</strong><div class="bar"><div style="width:${st.procent}%;background:${esc(k.barva)}"></div></div></div><div class="skore">${st.procent} %</div></div>`; }).join("")}</div>
       <h2>Účet</h2>
       <div class="box">${!API.maBackend() ? `<p class="maly">Běžíš <b>bez účtu</b>: postup se ukládá jen do tohoto telefonu. Pro přihlášení a sledování postupu napříč zařízeními je potřeba nasadit backend (návod v <code>server/README.md</code>) a vyplnit adresu v <code>config.js</code>.</p>`
-        : uz ? `<p>Přihlášen/a jako <b>${esc(uz.jmeno || uz.email)}</b> <span class="tlum maly">(${esc(uz.email)})</span></p><p class="tlum maly">Postup se synchronizuje automaticky. ${z.ai ? "AI dovysvětlení je zapnuté ✨" : "AI dovysvětlení není na serveru zapnuté."}</p><div class="tlacitka"><button class="btn btn-sek" data-ja-akce="sync">Synchronizovat teď</button><button class="btn btn-sek" data-ja-akce="odhlasit">Odhlásit</button></div>`
+        : uz ? `<p>Přihlášen/a jako <b>${esc(uz.jmeno || uz.email)}</b> <span class="tlum maly">(${esc(uz.email)})</span></p><p class="tlum maly">Postup se synchronizuje automaticky. ${z.ai ? "AI dovysvětlení je zapnuté ✨" : "AI dovysvětlení není na serveru zapnuté."}</p><div class="tlacitka"><button class="btn btn-sek" data-ja-akce="sync">Synchronizovat teď</button><button class="btn btn-sek" data-ja-akce="odhlasit">Odhlásit</button></div>
+          <details class="heslo"><summary class="maly">Změnit heslo</summary>
+          <form id="heslo-form" class="auth"><input type="password" name="stare" placeholder="Současné heslo" required autocomplete="current-password"><input type="password" name="nove" placeholder="Nové heslo (min. 8 znaků)" required minlength="8" autocomplete="new-password"><input type="password" name="nove2" placeholder="Nové heslo znovu" required minlength="8" autocomplete="new-password"><div class="tlacitka"><button class="btn" type="submit">Uložit nové heslo</button></div><div id="heslo-chyba" class="chyba"></div></form></details>`
         : `<p class="maly">Přihlas se, aby se postup ukládal na server a šel sledovat na více zařízeních. ${z.ok ? "" : API.probouzi() ? '<span class="tlum">Server se probouzí, chvilku to potrvá…</span>' : '<span class="tlum">Server teď neodpovídá – zkus to později.</span>'}</p>
           <form id="auth-form" class="auth"><input type="text" name="jmeno" placeholder="Jméno (jen při registraci)" autocomplete="name"><input type="email" name="email" placeholder="E-mail" required autocomplete="email"><input type="password" name="heslo" placeholder="Heslo (min. 8 znaků)" required minlength="8" autocomplete="current-password"><div class="tlacitka"><button class="btn" type="submit" data-rezim="prihlasit">Přihlásit</button><button class="btn btn-sek" type="submit" data-rezim="registrovat">Registrovat</button></div><div id="auth-chyba" class="chyba"></div></form>`}</div>
       <h2>Hudba</h2>
@@ -463,7 +466,7 @@
     const a = e.target.closest("[data-ja-akce]"); if (!a) return;
     switch (a.dataset.jaAkce) {
       case "jezek-klik": { const n = ["radost", "party", "premysli", "spi", "smutek"][Math.floor(Math.random() * 5)]; a.innerHTML = JEZEK.svg({ nalada: n, uroven: uroven() }); a.classList.add("skok"); setTimeout(() => a.classList.remove("skok"), 600); vibrace([15]); break; }
-      case "odhlasit": await API.odhlaseni(); toast("Odhlášeno"); vykresliJa(); break;
+      case "odhlasit": await API.odhlaseni(); toast("Odhlášeno"); nactiKurzy(); vykresliFeed(true); vykresliJa(); break;
       case "sync": try { const s = await API.synchronizuj(S.stav); S.stav = SLOUCENI.sloucStavy(S.stav, s); API.ulozStavLokalne(S.stav); toast("Synchronizováno"); vykresliJa(); } catch (err) { toast("Synchronizace selhala: " + err.message); } break;
       case "export": { const blob = new Blob([JSON.stringify({ stav: S.stav, testy: API.testyLokalne(), kurzy: API.vlastniKurzyLokalne() }, null, 2)], { type: "application/json" }); const u = URL.createObjectURL(blob); const l = document.createElement("a"); l.href = u; l.download = "jeztok-postup.json"; l.click(); setTimeout(() => URL.revokeObjectURL(u), 5000); break; }
       case "reset": if (confirm("Opravdu smazat veškerý postup v tomto zařízení? (Na serveru zůstane, pokud jsi přihlášen/a.)")) { S.stav = SLOUCENI.prazdnyStav(); API.ulozStavLokalne(S.stav); API.ulozTestyLokalne([]); nactiKurzy(); vykresliJa(); vykresliFeed(true); toast("Postup smazán"); } break;
@@ -486,12 +489,22 @@
       await poPrihlaseni(); toast("Přihlášeno"); jezekRekni("Vítej zpátky. Postup je v bezpečí na serveru.", "radost", 3000); vykresliJa();
     } catch (err) { clearTimeout(cekani); ch.textContent = err.message; $$("button", f).forEach(b => b.disabled = false); }
   });
+  document.addEventListener("submit", async e => {
+    if (e.target.id !== "heslo-form") return; e.preventDefault();
+    const f = e.target, ch = $("#heslo-chyba"); ch.textContent = "";
+    if (f.nove.value !== f.nove2.value) { ch.textContent = "Nová hesla se neshodují."; return; }
+    $$("button", f).forEach(b => b.disabled = true);
+    try { await API.zmenHeslo(f.stare.value, f.nove.value); f.reset(); toast("Heslo změněno"); jezekRekni("Heslo změněno. Ostatní zařízení jsem odhlásil.", "radost", 3000); }
+    catch (err) { ch.textContent = err.message; }
+    $$("button", f).forEach(b => b.disabled = false);
+  });
   // health doběhl (server byl možná teprve vzhůru): překreslit, co na stavu serveru závisí
   function poProbuzeni() {
     if (S.obrazovka === "ja") vykresliJa();
     if (S.vysvetlovana && $("#sheet").classList.contains("otevreno") && !$("#ai-form") && !$("#ai-chat").children.length && API.maAI() && API.prihlasen()) otevriVysvetleni(S.vysvetlovana);
   }
   async function poPrihlaseni() {
+    try { await API.obnovUzivatele(); } catch (e) {} // aktuální seznam povolených kurzů
     try { const s = await API.stahniStav(); S.stav = SLOUCENI.sloucStavy(S.stav, s); API.ulozStavLokalne(S.stav); await API.synchronizuj(S.stav); } catch (e) {}
     try { const kurzy = await API.stahniKurzy(); const lok = API.vlastniKurzyLokalne(); const mapa = {}; [...kurzy, ...lok].forEach(k => mapa[k.id] = k); API.ulozVlastniKurzyLokalne(Object.values(mapa)); for (const k of lok) if (!kurzy.some(x => x.id === k.id)) API.ulozKurzNaServer(k).catch(() => {}); } catch (e) {}
     try { const testy = await API.stahniTesty(); const lok = API.testyLokalne(); const mapa = {}; [...testy, ...lok].forEach(t => mapa[t.id] = t); API.ulozTestyLokalne(Object.values(mapa).sort((a, b) => b.kdy - a.kdy)); } catch (e) {}

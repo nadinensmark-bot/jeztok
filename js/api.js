@@ -65,6 +65,11 @@
     const d = await volej("/api/prihlaseni", "POST", { email, heslo });
     lsSet(KLIC.token, d.token); lsSet(KLIC.uzivatel, d.uzivatel); return d.uzivatel;
   }
+  async function zmenHeslo(stare, nove) { return volej("/api/zmena-hesla", "POST", { stare, nove }); }
+  // znovu načíst profil ze serveru (např. když se změnil seznam povolených kurzů)
+  async function obnovUzivatele() { if (!prihlasen()) return null; const d = await volej("/api/ja"); lsSet(KLIC.uzivatel, d.uzivatel); return d.uzivatel; }
+  // vestavěné kurzy, které přihlášený uživatel smí vidět: pole id, nebo null = všechny
+  function povoleneKurzy() { const u = uzivatel(); return u && Array.isArray(u.kurzy) ? u.kurzy : null; }
   async function odhlaseni() {
     try { if (prihlasen()) await volej("/api/odhlaseni", "POST", {}); } catch (e) {}
     lsDel(KLIC.token); lsDel(KLIC.uzivatel);
@@ -116,7 +121,7 @@
   async function vysvetli(karta, dotaz, historie) { return volej("/api/vysvetli", "POST", { karta, dotaz, historie }); }
   async function generujKurz(nazev, poznamky) { return volej("/api/generuj-kurz", "POST", { nazev, poznamky }); }
 
-  window.API = { maBackend, prihlasen, uzivatel, health, probouzi, zdravi: () => zdravi, maAI, registrace, prihlaseni, odhlaseni,
+  window.API = { maBackend, prihlasen, uzivatel, health, probouzi, zdravi: () => zdravi, maAI, registrace, prihlaseni, odhlaseni, zmenHeslo, obnovUzivatele, povoleneKurzy,
     nactiStav, ulozStavLokalne, naplanujSync, synchronizuj, stahniStav,
     testyLokalne, ulozTestyLokalne, ulozTest, stahniTesty, vlastniKurzyLokalne, ulozVlastniKurzyLokalne, ulozKurzNaServer, smazKurzNaServeru, stahniKurzy,
     vysvetli, generujKurz, lsSet, lsGet };

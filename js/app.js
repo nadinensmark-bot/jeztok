@@ -463,7 +463,10 @@
       <h2>Hudba</h2>
       <div class="box"><label class="radek-prepinac"><span><b>Měnit styl s každou kartou</b><br><span class="tlum maly">Klidnější styly u faktů, nakopnutí u kvízů. Vypni, když chceš jeden styl napořád.</span></span><span class="prepinac"><input type="checkbox" id="hudba-auto" ${S.stav.hudba.auto !== false ? "checked" : ""}><span></span></span></label>
         <div class="viby">${HUDBA.VIBY.map(v => `<button class="vibe ${S.stav.hudba.vibe === v.id ? "akt" : ""}" data-vibe="${v.id}"><span>${v.emoji}</span>${esc(v.nazev)}<small>${esc(v.popis)}</small></button>`).join("")}</div>
-        <label class="maly">Hlasitost <input type="range" id="hlasitost" min="0" max="1" step="0.05" value="${S.stav.hudba.volume}"></label></div>
+        <label class="maly">Hlasitost <input type="range" id="hlasitost" min="0" max="1" step="0.05" value="${S.stav.hudba.volume}"></label>
+        ${window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.vlastniPlaylist ? `<details class="playlist" ${S.stav.hudba.playlist ? "open" : ""}><summary><b>Vlastní playlist</b> <span class="tlum maly">${S.stav.hudba.playlist ? "· zapnutý, generovaná hudba je vypnutá" : "· Spotify nebo YouTube místo generované hudby"}</span></summary>
+          <form id="playlist-form" class="auth"><input type="url" name="url" placeholder="Odkaz na playlist, album nebo skladbu" value="${esc(S.stav.hudba.playlist || "")}" required inputmode="url" autocomplete="off"><div class="tlacitka"><button class="btn" type="submit">Použít</button>${S.stav.hudba.playlist ? `<button class="btn btn-sek" type="button" data-ja-akce="playlist-zrusit">Zpět na generovanou</button>` : ""}</div><div id="playlist-chyba" class="chyba"></div>
+          <p class="tlum maly">Zkopíruj odkaz ze Spotify (Sdílet → Kopírovat odkaz) nebo z YouTube. Přehrávač se objeví nad spodní lištou, spustíš ho v něm. Bez přihlášení ke Spotify v tomhle prohlížeči hraje jen 30s ukázky.</p></form></details>` : ""}</div>
       <h2>Aplikace</h2>
       <div class="box"><p class="maly">Na telefonu si DefLearn Hub přidej na plochu: v prohlížeči <b>Sdílet → Přidat na plochu</b> (iPhone) nebo <b>⋮ → Přidat na plochu</b> (Android). Pak běží jako appka, i offline.</p>
         <div class="tlacitka"><button class="btn btn-sek" data-ja-akce="export">Exportovat postup</button><button class="btn btn-nebezpeci" data-ja-akce="reset">Smazat postup</button></div></div>
@@ -512,6 +515,7 @@
     switch (a.dataset.jaAkce) {
       case "jezek-klik": { const n = ["radost", "party", "premysli", "spi", "smutek"][Math.floor(Math.random() * 5)]; a.innerHTML = JEZEK.svg({ nalada: n, uroven: uroven() }); a.classList.add("skok"); setTimeout(() => a.classList.remove("skok"), 600); vibrace([15]); break; }
       case "odhlasit": await API.odhlaseni(); toast("Odhlášeno"); nactiKurzy(); vykresliFeed(true); vykresliJa(); break;
+      case "playlist-zrusit": S.stav.hudba.playlist = ""; ulozStav(); aplikujPlaylist(); hudbaBar(); vykresliJa(); toast("Zpět na generovanou hudbu"); break;
       case "sync": try { const s = await API.synchronizuj(S.stav); S.stav = SLOUCENI.sloucStavy(S.stav, s); API.ulozStavLokalne(S.stav); toast("Synchronizováno"); vykresliJa(); } catch (err) { toast("Synchronizace selhala: " + err.message); } break;
       case "export": { const blob = new Blob([JSON.stringify({ stav: S.stav, testy: API.testyLokalne(), kurzy: API.vlastniKurzyLokalne() }, null, 2)], { type: "application/json" }); const u = URL.createObjectURL(blob); const l = document.createElement("a"); l.href = u; l.download = "jeztok-postup.json"; l.click(); setTimeout(() => URL.revokeObjectURL(u), 5000); break; }
       case "reset": if (confirm("Opravdu smazat veškerý postup v tomto zařízení? (Na serveru zůstane, pokud jsi přihlášen/a.)")) { S.stav = SLOUCENI.prazdnyStav(); API.ulozStavLokalne(S.stav); API.ulozTestyLokalne([]); nactiKurzy(); vykresliJa(); vykresliFeed(true); toast("Postup smazán"); } break;
@@ -533,6 +537,12 @@
       clearTimeout(cekani); ch.textContent = "";
       await poPrihlaseni(); toast("Přihlášeno"); jezekRekni("Vítej zpátky. Postup je v bezpečí na serveru.", "radost", 3000); vykresliJa();
     } catch (err) { clearTimeout(cekani); ch.textContent = err.message; $$("button", f).forEach(b => b.disabled = false); }
+  });
+  document.addEventListener("submit", e => {
+    if (e.target.id !== "playlist-form") return; e.preventDefault();
+    const url = e.target.url.value.trim(), ch = $("#playlist-chyba");
+    if (!playlistEmbed(url)) { ch.textContent = "Tohle neumím vložit. Funguje odkaz na Spotify (open.spotify.com) nebo YouTube (youtube.com, youtu.be, music.youtube.com)."; return; }
+    S.stav.hudba.playlist = url; if (HUDBA.hraje()) HUDBA.stop(); ulozStav(); aplikujPlaylist(true); hudbaBar(); vykresliJa(); toast("Playlist nastavený · spusť ho v přehrávači dole");
   });
   document.addEventListener("submit", async e => {
     if (e.target.id !== "heslo-form") return; e.preventDefault();
@@ -591,14 +601,52 @@
   }
 
   // Hudba bar
+  // ---- vlastní playlist (Spotify / YouTube) místo generované hudby ----
+  // Jen odkazy z povolených domén se mění na adresu vloženého přehrávače; cokoli jiného se odmítne.
+  function playlistEmbed(url) {
+    let u; try { u = new URL(url); } catch (e) { return null; }
+    const host = u.hostname.replace(/^www\./, "");
+    if (host === "open.spotify.com") {
+      const m = /^\/(?:intl-[a-z]+\/)?(playlist|album|track|artist|show|episode)\/([A-Za-z0-9]+)/.exec(u.pathname);
+      return m ? { src: "https://open.spotify.com/embed/" + m[1] + "/" + m[2] + "?theme=0", vyska: 80 } : null;
+    }
+    if (host === "youtube.com" || host === "m.youtube.com" || host === "music.youtube.com") {
+      const list = u.searchParams.get("list"), v = u.searchParams.get("v");
+      if (list) return { src: "https://www.youtube-nocookie.com/embed/videoseries?list=" + encodeURIComponent(list), vyska: 180 };
+      if (v && /^[\w-]{11}$/.test(v)) return { src: "https://www.youtube-nocookie.com/embed/" + v, vyska: 180 };
+      return null;
+    }
+    if (host === "youtu.be") { const id = u.pathname.slice(1); return /^[\w-]{11}$/.test(id) ? { src: "https://www.youtube-nocookie.com/embed/" + id, vyska: 180 } : null; }
+    return null;
+  }
+  function maPlaylist() { return !!(window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.vlastniPlaylist && S.stav.hudba.playlist && playlistEmbed(S.stav.hudba.playlist)); }
+  // vykreslí (nebo odstraní) přehrávač; iframe se nahrazuje jen při změně odkazu, aby přehrávání přežilo překreslení
+  function aplikujPlaylist(ukazat) {
+    const panel = $("#playlist-panel"); if (!panel) return;
+    const e = maPlaylist() ? playlistEmbed(S.stav.hudba.playlist) : null;
+    if (!e) { panel.innerHTML = ""; panel.classList.add("skryty"); document.body.classList.remove("ma-playlist"); return; }
+    let fr = panel.querySelector("iframe");
+    if (!fr || fr.getAttribute("src") !== e.src) {
+      panel.innerHTML = ""; fr = document.createElement("iframe"); fr.src = e.src; fr.height = e.vyska; fr.loading = "lazy"; fr.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"; fr.referrerPolicy = "strict-origin-when-cross-origin"; fr.title = "Vlastní playlist"; panel.appendChild(fr);
+    }
+    panel.style.height = e.vyska + "px"; document.body.classList.add("ma-playlist");
+    if (ukazat) panel.classList.remove("skryty");
+  }
   function hudbaBar() {
+    if (maPlaylist()) {
+      const skryty = $("#playlist-panel").classList.contains("skryty");
+      $("#hudba-nazev").textContent = "🎧 Vlastní playlist · " + (skryty ? "ťukni pro přehrávač" : "ťukni pro schování");
+      $("#hudba-disk").classList.remove("toci"); $("#hudba-btn").textContent = "🎧"; return;
+    }
     const st = HUDBA.stav(); const v = st.vibe;
     $("#hudba-nazev").textContent = (st.hraje ? "♪ " : "") + (st.auto ? "🔀 " : "") + v.emoji + " " + v.nazev + (st.hraje ? (st.auto ? " · mění se s kartou" : " · ťukni pro další styl") : " · ťukni pro hudbu");
     $("#hudba-disk").classList.toggle("toci", st.hraje); $("#hudba-btn").textContent = st.hraje ? "⏸" : "▶";
   }
   HUDBA.onZmena(hudbaBar);
-  $("#hudba-btn").addEventListener("click", () => { if (HUDBA.hraje()) { HUDBA.stop(); S.stav.hudba.zapnuto = false; } else { HUDBA.setVolume(S.stav.hudba.volume); HUDBA.setAuto(S.stav.hudba.auto !== false); HUDBA.start(S.stav.hudba.auto !== false ? HUDBA.proKartu(S.aktivni && S.aktivni.typ, true) : S.stav.hudba.vibe); S.stav.hudba.zapnuto = true; } ulozStav(); });
+  function prepniPanelPlaylistu() { $("#playlist-panel").classList.toggle("skryty"); hudbaBar(); }
+  $("#hudba-btn").addEventListener("click", () => { if (maPlaylist()) return prepniPanelPlaylistu(); if (HUDBA.hraje()) { HUDBA.stop(); S.stav.hudba.zapnuto = false; } else { HUDBA.setVolume(S.stav.hudba.volume); HUDBA.setAuto(S.stav.hudba.auto !== false); HUDBA.start(S.stav.hudba.auto !== false ? HUDBA.proKartu(S.aktivni && S.aktivni.typ, true) : S.stav.hudba.vibe); S.stav.hudba.zapnuto = true; } ulozStav(); });
   $("#hudba-nazev").addEventListener("click", () => {
+    if (maPlaylist()) return prepniPanelPlaylistu();
     let id;
     if (S.stav.hudba.auto !== false) id = HUDBA.proKartu(S.aktivni && S.aktivni.typ, true);
     else { const i = HUDBA.VIBY.findIndex(x => x.id === S.stav.hudba.vibe); id = HUDBA.VIBY[(i + 1) % HUDBA.VIBY.length].id; HUDBA.setVibe(id); }
@@ -608,7 +656,7 @@
   });
   // první dotyk kdekoli → spustit hudbu, pokud byla naposledy zapnutá
   let prvniDotyk = false;
-  function naPrvniDotyk() { if (prvniDotyk) return; prvniDotyk = true; if (S.stav.hudba.zapnuto !== false) { HUDBA.setVolume(S.stav.hudba.volume); HUDBA.setAuto(S.stav.hudba.auto !== false); HUDBA.start(S.stav.hudba.auto !== false ? HUDBA.proKartu(S.aktivni && S.aktivni.typ, true) : S.stav.hudba.vibe); } }
+  function naPrvniDotyk() { if (prvniDotyk) return; prvniDotyk = true; if (maPlaylist()) return; if (S.stav.hudba.zapnuto !== false) { HUDBA.setVolume(S.stav.hudba.volume); HUDBA.setAuto(S.stav.hudba.auto !== false); HUDBA.start(S.stav.hudba.auto !== false ? HUDBA.proKartu(S.aktivni && S.aktivni.typ, true) : S.stav.hudba.vibe); } }
   document.addEventListener("pointerdown", naPrvniDotyk, { once: true });
   document.addEventListener("keydown", naPrvniDotyk, { once: true });
 
@@ -635,7 +683,7 @@
     HUDBA.setAuto(S.stav.hudba.auto !== false); HUDBA.onZmena(st => { if (st.vibe && st.vibe.id) S.stav.hudba.vibe = st.vibe.id; });
     nactiKurzy();
     $("#jezek-hlava").innerHTML = JEZEK.svg({ nalada: "klid", uroven: uroven() });
-    aktualizujChipy(); hudbaBar(); vykresliFeed(true); prepni("feed");
+    aktualizujChipy(); aplikujPlaylist(); hudbaBar(); vykresliFeed(true); prepni("feed");
     const prvni = !API.nactiStav();
     setTimeout(() => jezekRekni(JEZEK.hlaska("vitej", { j: S.stav.jezek }), "radost", prvni ? 6000 : 3500), 600);
     const s = streak(); if (s >= 3 && S.stav.dny[dnes()] === undefined) setTimeout(() => jezekRekni(JEZEK.hlaska("streak", { n: s }), "party", 4000), 7000);

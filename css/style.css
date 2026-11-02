@@ -217,6 +217,15 @@ input[type=range] { width: 100%; accent-color: var(--akcent); }
 .radek-prepinac > span:first-child { flex: 1; }
 .viby .vibe small { display: block; }
 
+/* výuka: materiály a lekce ke čtení */
+.vyuka-material { text-decoration: none; color: inherit; }
+.vyuka-lekce-radek { display: block; }
+.vyuka-lekce-radek summary { display: flex; align-items: center; gap: 12px; cursor: pointer; list-style: none; }
+.vyuka-lekce-radek summary::-webkit-details-marker { display: none; }
+.lekce-text { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.08); }
+.lekce-text p { margin: 0 0 10px; font-size: 15px; line-height: 1.5; }
+.stranka h2 { margin-top: 22px; }
+
 /* testy: volba jednoho tématu pod kurzem */
 details.test-temata { margin-top: 6px; }
 details.test-temata summary { cursor: pointer; list-style: none; }

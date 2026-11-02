@@ -276,7 +276,8 @@
         ${c.typ === "kviz" ? `<div class="bublina tlum">Správná odpověď: <b>${esc(c.moznosti[c.spravne])}</b></div>` : c.typ === "anone" ? `<div class="bublina tlum">Správně: <b>${c.spravne ? "pravda" : "lež"}</b></div>` : c.typ === "doplnit" ? `<div class="bublina tlum">Správně: <b>${esc(Array.isArray(c.odpoved) ? c.odpoved[0] : c.odpoved)}</b></div>` : ""}
         ${lekce ? `<button class="btn btn-sek" data-akce="skoc-lekce" data-gid="${esc(lekce.gid)}">📖 Otevřít lekci: ${esc(lekce.titulek)}</button>` : ""}
         <div id="ai-chat"></div>
-        ${API.maAI() && API.prihlasen() ? `<form id="ai-form" class="ai-form"><input type="text" placeholder="Zeptej se ježka (např. „vysvětli to na příkladu“)" aria-label="dotaz"><button class="btn" type="submit">Vysvětli jinak ✨</button></form>` : API.maAI() ? `<p class="tlum maly">Pro AI dovysvětlení se přihlas v záložce <b>Já</b>.</p>` : API.maBackend() ? `<p class="tlum maly">AI dovysvětlení se zapne, až bude na serveru nastavený ANTHROPIC_API_KEY.</p>` : `<p class="tlum maly">AI dovysvětlení vyžaduje backend (viz server/README.md).</p>`}
+        ${c.zdroj ? `<p class="zdroj">Zdroj: ${esc(c.zdroj)}</p>` : ""}
+        ${API.maAI() && API.prihlasen() ? `<form id="ai-form" class="ai-form"><input type="text" placeholder="Zeptej se ježka (např. „vysvětli to na příkladu“)" aria-label="dotaz"><button class="btn" type="submit">Vysvětli jinak ✨</button></form>` : API.maAI() ? `<p class="tlum maly">Pro AI dovysvětlení se přihlas v záložce <b>Já</b>.</p>` : ""}
       </div></div>`;
     sheet.classList.add("otevreno"); document.body.classList.add("sheet-open");
   }
@@ -371,6 +372,30 @@
     const a = e.target.closest("[data-test-akce]"); if (!a) return;
     if (a.dataset.testAkce === "konec") { S.test = null; vykresliTesty(); }
     if (a.dataset.testAkce === "znovu") spustTest(a.dataset.kurz, a.dataset.tema || null);
+  });
+
+  // ------------------------------------------------------------------
+  // Výuka: lekce ke čtení a materiály (průvodci, one-pagery, odkazy) po kurzech
+  // ------------------------------------------------------------------
+  const TYP_MATERIALU = { pruvodce: "📘 Průvodce", onepager: "📄 One-pager", clanek: "📰 Článek", nastroj: "🔗 Odkaz" };
+  function vykresliVyuka() {
+    const el = $("#vyuka"); if (!el) return;
+    if (API.zamceno()) { el.innerHTML = HTML_ZAMCENO(); return; }
+    const materialy = window.JEZTOK_VYUKA || [];
+    const sekce = S.kurzy.map(k => {
+      const lekce = []; (k.temata || []).forEach(t => (t.karty || []).forEach(c => { if (c.typ === "lekce") lekce.push({ c, t }); }));
+      const mat = materialy.filter(m => m.kurz === k.id || m.kurz === "*");
+      if (!lekce.length && !mat.length) return "";
+      return `<h2 style="--b:${esc(k.barva)}">${esc(k.emoji)} ${esc(k.nazev)}</h2>
+        ${mat.length ? `<div class="seznam">${mat.map(m => `<a class="radek vyuka-material" style="--b:${esc(k.barva)}" href="${esc(m.url)}" target="_blank" rel="noopener"><div class="radek-ikona">${esc((TYP_MATERIALU[m.typ] || "🔗").split(" ")[0])}</div><div class="radek-text"><strong>${esc(m.nazev)}</strong><div class="tlum maly">${esc(m.popis || "")}</div><div class="tlum maly">${esc((TYP_MATERIALU[m.typ] || "Odkaz").split(" ").slice(1).join(" "))} · otevře se v prohlížeči</div></div></a>`).join("")}</div>` : ""}
+        ${lekce.length ? `<div class="seznam vyuka-lekce">${lekce.map(({ c, t }) => { const p = S.stav.karty[c.gid] || {}; return `<details class="radek vyuka-lekce-radek" style="--b:${esc(k.barva)}"><summary><div class="radek-ikona">📖</div><div class="radek-text"><strong>${esc(c.titulek)}</strong><div class="tlum maly">${esc(t.nazev)} · ${c.kroky.length} kroků${p.videno ? " · přečteno" : ""}</div></div></summary><div class="lekce-text">${c.kroky.map(kr => `<p>${esc(kr)}</p>`).join("")}<div class="tlacitka"><button class="btn btn-sek" data-vyuka-feed="${esc(c.gid)}">Projít ve feedu (+XP)</button></div></div></details>`; }).join("")}</div>` : ""}`;
+    }).join("");
+    el.innerHTML = `<div class="stranka"><h1>Výuka</h1><p class="tlum">Souvislé výklady z kurzů a materiály k přečtení: průvodci, one-pagery a odkazy Defence Hubu. Karty a kvízy k tomu najdeš ve feedu.</p>${sekce || `<p class="tlum maly">Zatím žádné materiály.</p>`}</div>`;
+  }
+  document.addEventListener("click", e => {
+    const b = e.target.closest("[data-vyuka-feed]"); if (!b) return;
+    const c = S.karty[b.dataset.vyukaFeed]; if (!c) return;
+    prepni("feed"); vlozDoFeedu(c);
   });
 
   // ------------------------------------------------------------------
@@ -582,6 +607,7 @@
     $$(".nav button").forEach(b => b.classList.toggle("akt", b.dataset.o === o));
     if (o === "testy" && !S.test) vykresliTesty();
     if (o === "kurzy") vykresliKurzy();
+    if (o === "vyuka") vykresliVyuka();
     if (o === "ja") vykresliJa();
     document.body.classList.toggle("ve-feedu", o === "feed");
   }

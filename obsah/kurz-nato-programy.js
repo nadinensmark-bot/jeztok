@@ -18,8 +18,8 @@ window.JEZTOK_KURZY.push({
       karty: [
         { id: "f1", typ: "fakt", titulek: "Co je DIANA",
           text: "Defence Innovation Accelerator for the North Atlantic: akcelerátor NATO pro dual-use deep tech. Firma (startup nebo SME) se hlásí sama na konkrétní challenge, kterou NATO vypíše podle potřeb spojenců. Defence Hub CzechInvest je české akcelerační místo (accelerator site), tedy vstupní brána českých firem do DIANA.",
-          zdroj: "diana.nato.int (About, Accelerator programme); defencehub.gov.cz/nato-diana",
-          vysvetleni: "Síť DIANA k listopadu 2026: 16 aktivovaných akceleračních míst a víc než 200 testovacích center napříč Aliancí, přístup k ekosystémům všech 32 členských zemí. Česká site se zaměřuje na vesmír, pokročilé materiály, AI a ecotech." },
+          zdroj: "diana.nato.int (About, Accelerator programme); Defence Hub CzechInvest, NATO DIANA Accelerators Prague Summit 10/2026; defencehub.gov.cz/nato-diana",
+          vysvetleni: "Síť DIANA k listopadu 2026: 19 akceleračních míst (v říjnu 2026 se sešla v Praze na summitu pořádaném Defence Hubem) a víc než 200 testovacích center napříč Aliancí, přístup k ekosystémům všech 32 členských zemí. Česká site se zaměřuje na vesmír, pokročilé materiály, AI a ecotech." },
         { id: "f2", typ: "fakt", titulek: "Co vybraná firma dostane",
           text: "100 000 € jako contractual funding (smluvní financování, ne grant; vyplaceno před startem programu), šestiměsíční akcelerační program s mentory, přístup k testovacím centrům (testování, evaluace, validace, verifikace) a kontakty na end-usery, průmysl a investory. Firmy vybrané do Mission Track mohou získat až 300 000 € navíc, tedy celkem až 400 000 €.",
           zdroj: "diana.nato.int/accelerator-programme.html (stav 11/2026)",

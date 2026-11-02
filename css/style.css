@@ -217,6 +217,16 @@ input[type=range] { width: 100%; accent-color: var(--akcent); }
 .radek-prepinac > span:first-child { flex: 1; }
 .viby .vibe small { display: block; }
 
+/* přehled týmu (záložka Já, jen správci) */
+.tym-clovek { padding: 10px 0; border-top: 1px solid rgba(255,255,255,.08); }
+.tym-clovek:first-child { border-top: 0; padding-top: 0; }
+.tym-hlava { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.tym-kurz { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; align-items: center; margin-top: 8px; }
+.tym-kurz .bar { grid-column: 1 / -1; margin: 4px 0 0; }
+.tym-kurz .tlum { grid-column: 1 / -1; }
+.tym-kurz-nazev { font-size: 14px; font-weight: 600; }
+.tym-kurz .skore { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; }
+
 /* změna hesla (záložka Já) */
 details.heslo { margin-top: 12px; }
 details.heslo summary { cursor: pointer; color: var(--tlum, #9aa3b2); list-style: none; }

@@ -216,3 +216,11 @@ input[type=range] { width: 100%; accent-color: var(--akcent); }
 .radek-prepinac { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
 .radek-prepinac > span:first-child { flex: 1; }
 .viby .vibe small { display: block; }
+
+/* změna hesla (záložka Já) */
+details.heslo { margin-top: 12px; }
+details.heslo summary { cursor: pointer; color: var(--tlum, #9aa3b2); list-style: none; }
+details.heslo summary::-webkit-details-marker { display: none; }
+details.heslo summary::before { content: "▸ "; }
+details.heslo[open] summary::before { content: "▾ "; }
+details.heslo form { margin-top: 10px; }

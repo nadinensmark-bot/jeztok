@@ -77,4 +77,6 @@ přežije (postup je vždy i v telefonu a doplní se, až server odpoví).
 ## Konfigurace
 
 Viz `.env.example`. Nejdůležitější: `ALLOWED_ORIGIN`, `DATABASE_URL`, `SESSION_SECRET`,
-`ANTHROPIC_API_KEY`.
+`ANTHROPIC_API_KEY`. Přístupy: `REGISTRACE_POVOLENE` (kdo se smí registrovat; nenastavené =
+registrace uzavřená), `KURZY_UZIVATELU` (kdo vidí které kurzy; e-mail, `@doména`, `*`),
+`ADMINI` (správci s přehledem týmu). Tyto tři drž mimo repo (obsahují e-maily).

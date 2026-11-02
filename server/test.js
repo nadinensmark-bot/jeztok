@@ -2,6 +2,7 @@
 // a MOCK_AI, projde registraci, postup, testy, kurzy i AI endpointy.
 "use strict";
 process.env.PORT = "0"; if (!process.env.DATABASE_URL) process.env.DB_PATH = ":memory:"; process.env.MOCK_AI = "1"; process.env.ALLOWED_ORIGIN = "*";
+process.env.KURZY_UZIVATELU = JSON.stringify({ "omezeny@b.cz": ["programy", "slovnicek"] });
 const assert = require("assert");
 const { start } = require("./server");
 (async () => {
@@ -12,7 +13,15 @@ const { start } = require("./server");
   r = await api("/api/registrace", "POST", { email: "a@b.cz", heslo: "kratke" }); assert.equal(r.status, 400);
   r = await api("/api/registrace", "POST", { email: "a@b.cz", heslo: "tajneheslo1", jmeno: "Nadine" }); assert.equal(r.status, 200); token = r.d.token;
   r = await api("/api/registrace", "POST", { email: "a@b.cz", heslo: "tajneheslo1" }); assert.equal(r.status, 409);
-  r = await api("/api/ja"); assert.equal(r.d.uzivatel.jmeno, "Nadine");
+  r = await api("/api/ja"); assert.equal(r.d.uzivatel.jmeno, "Nadine"); assert.equal(r.d.uzivatel.kurzy, null);
+  // změna hesla: špatné staré, krátké nové, pak správně; staré heslo pak nefunguje, nové ano
+  r = await api("/api/zmena-hesla", "POST", { stare: "spatne", nove: "noveheslo22" }); assert.equal(r.status, 400);
+  r = await api("/api/zmena-hesla", "POST", { stare: "tajneheslo1", nove: "kratke" }); assert.equal(r.status, 400);
+  r = await api("/api/zmena-hesla", "POST", { stare: "tajneheslo1", nove: "noveheslo22" }); assert.equal(r.status, 200);
+  r = await api("/api/ja"); assert.equal(r.status, 200, "aktuální session po změně hesla zůstává");
+  { const t = token; token = ""; r = await api("/api/prihlaseni", "POST", { email: "a@b.cz", heslo: "tajneheslo1" }); assert.equal(r.status, 401); r = await api("/api/prihlaseni", "POST", { email: "a@b.cz", heslo: "noveheslo22" }); assert.equal(r.status, 200); token = t; }
+  // omezený uživatel dostane seznam povolených kurzů
+  { const t = token; token = ""; r = await api("/api/registrace", "POST", { email: "Omezeny@b.cz", heslo: "tajneheslo1", jmeno: "Kolega" }); assert.deepEqual(r.d.uzivatel.kurzy, ["programy", "slovnicek"]); token = t; }
   r = await api("/api/postup", "PUT", { stav: { xp: 10, karty: { "u:f1": { sila: 1, kdy: 5 } }, dny: { "2026-10-31": { xp: 10, karet: 1 } }, aktualizovano: 5 } }); assert.equal(r.d.stav.xp, 10);
   r = await api("/api/postup", "PUT", { stav: { xp: 8, karty: { "u:f1": { sila: 3, kdy: 9 }, "u:k1": { sila: 1, kdy: 1 } }, aktualizovano: 9 } });
   assert.equal(r.d.stav.xp, 10); assert.equal(r.d.stav.karty["u:f1"].sila, 3); assert.ok(r.d.stav.karty["u:k1"]); assert.equal(r.d.stav.dny["2026-10-31"].xp, 10);
@@ -26,6 +35,6 @@ const { start } = require("./server");
   r = await api("/api/generuj-kurz", "POST", { nazev: "Makro", poznamky: "Inflace je růst cenové hladiny. Měří se indexem spotřebitelských cen.\n\nCentrální banka cílí inflaci pomocí úrokových sazeb. Vyšší sazby zdražují úvěry a tlumí poptávku, takže ceny rostou pomaleji než jindy." }); assert.equal(r.status, 200); assert.ok(r.d.kurz.temata[0].karty.length >= 1);
   r = await api("/api/odhlaseni", "POST"); r = await api("/api/ja"); assert.equal(r.status, 401);
   token = ""; r = await api("/api/prihlaseni", "POST", { email: "a@b.cz", heslo: "spatne-heslo" }); assert.equal(r.status, 401);
-  r = await api("/api/prihlaseni", "POST", { email: "A@b.cz", heslo: "tajneheslo1" }); assert.equal(r.status, 200);
+  r = await api("/api/prihlaseni", "POST", { email: "A@b.cz", heslo: "noveheslo22" }); assert.equal(r.status, 200);
   server.close(); console.log("backend: všechny testy prošly ✓");
 })().catch(e => { console.error("TEST SELHAL:", e); process.exit(1); });

@@ -1,7 +1,10 @@
 // =====================================================================
 // DefLearn Hub – backend. Malý Node.js server bez frameworku.
 //   POST /api/registrace, /api/prihlaseni, /api/odhlaseni   účty (e-mail + heslo)
-//   GET  /api/ja                                           kdo jsem
+//   POST /api/zmena-hesla                                  změna hesla (staré + nové); odhlásí ostatní zařízení
+//   GET  /api/ja                                           kdo jsem (vč. povolených kurzů)
+//   KURZY_UZIVATELU (env, JSON {"email": ["programy","slovnicek"]}): které vestavěné kurzy uživatel vidí.
+//   Kdo v mapě není, vidí všechny.
 //   GET/PUT /api/postup                                    postup učení (slučuje se, viz ../js/slouceni.js)
 //   GET/POST /api/testy                                    výsledky testů
 //   GET/PUT /api/kurzy, DELETE /api/kurzy/:id              vlastní kurzy uživatele
@@ -30,6 +33,7 @@ const CFG = {
   limitVysvetliDen: Number(process.env.LIMIT_VYSVETLI_DEN || 40),
   limitKurzDen: Number(process.env.LIMIT_KURZ_DEN || 5),
   limitAiCelkemDen: Number(process.env.LIMIT_AI_CELKEM_DEN || 1000),
+  kurzyUzivatelu: (() => { try { const m = JSON.parse(process.env.KURZY_UZIVATELU || "{}"); const out = {}; for (const [e, k] of Object.entries(m)) if (Array.isArray(k)) out[String(e).trim().toLowerCase()] = k.map(String); return out; } catch (e) { console.warn("[jeztok] KURZY_UZIVATELU není platný JSON, ignoruji."); return {}; } })(),
   maxTelo: 2 * 1024 * 1024,
   maxPoznamky: 30000
 };
@@ -44,7 +48,8 @@ const hashHesla = (heslo, salt) => { salt = salt || crypto.randomBytes(16).toStr
 const overHeslo = (heslo, ulozeny) => { const [salt, h] = String(ulozeny).split(":"); const k = crypto.scryptSync(heslo, salt, 64); const u = Buffer.from(h, "hex"); return k.length === u.length && crypto.timingSafeEqual(k, u); };
 const hashTokenu = t => crypto.createHmac("sha256", CFG.secret).update(t).digest("hex");
 const emailOk = e => typeof e === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) && e.length <= 200;
-const verejnyUzivatel = u => ({ id: u.id, email: u.email, jmeno: u.jmeno || "" });
+const povoleneKurzy = email => CFG.kurzyUzivatelu[String(email || "").toLowerCase()] || null; // null = všechny
+const verejnyUzivatel = u => ({ id: u.id, email: u.email, jmeno: u.jmeno || "", kurzy: povoleneKurzy(u.email) });
 
 // jednoduché denní limity v paměti (na klíč)
 const pocitadla = new Map(); let pocitadlaDen = "";
@@ -189,6 +194,16 @@ async function obsluz(req, res) {
       return json(res, 200, { ok: true }, origin);
     }
     if (c === "/api/ja" && m === "GET") { const u = await vyzadujUzivatele(req); return json(res, 200, { ok: true, uzivatel: verejnyUzivatel(u) }, origin); }
+    if (c === "/api/zmena-hesla" && m === "POST") {
+      const u = await vyzadujUzivatele(req); const b = await nactiTelo(req);
+      const plny = await db.uzivatelSHashem(u.id);
+      if (typeof b.stare !== "string" || !plny || !overHeslo(b.stare, plny.hash)) throw new ChybaApi(400, "Staré heslo nesedí."); // 400, ne 401: klient při 401 odhlašuje
+      if (typeof b.nove !== "string" || b.nove.length < 8) throw new ChybaApi(400, "Nové heslo musí mít aspoň 8 znaků.");
+      if (b.nove === b.stare) throw new ChybaApi(400, "Nové heslo je stejné jako staré.");
+      await db.zmenHeslo(u.id, hashHesla(b.nove));
+      const a = req.headers.authorization || ""; await db.smazSessionsUzivatele(u.id, a.startsWith("Bearer ") ? hashTokenu(a.slice(7)) : "");
+      return json(res, 200, { ok: true }, origin);
+    }
 
     if (c === "/api/postup" && m === "GET") { const u = await vyzadujUzivatele(req); return json(res, 200, { ok: true, stav: (await db.nactiStav(u.id)) || SLOUCENI.prazdnyStav() }, origin); }
     if (c === "/api/postup" && m === "PUT") {

@@ -1,7 +1,7 @@
 // DefLearn Hub · Programy – varianta appky pro onboarding konzultanta EU a NATO programů.
 // Stejná aplikace, jen jiný výběr obsahu a oddělené úložiště postupu.
 window.JEZTOK_CONFIG = {
-  backendUrl: "",
+  backendUrl: "https://jeztok-backend.onrender.com",
   prefix: "dhprog_",
   nazev: "Defence Hub · Programy",
   logoPata: ["img/logo-dh-ci-white.png"],

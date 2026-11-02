@@ -13,6 +13,8 @@ window.JEZTOK_CONFIG = {
   bezVlastnichKurzu: true,
   // pole „Pozvánkový kód“ v registraci (server: REGISTRACE_KODY)
   registraceKod: true,
+  // bez tlačítka Sdílet na kartách (méně prvků na obrazovce)
+  bezSdileni: true,
   // texty zámku pro nepřihlášené: startupy se registrují samy
   textZamceno: "Obsah je pro firmy z databáze Defence Hubu. Zaregistruj se firemním e-mailem, nebo se přihlas.",
   tlacitkoZamceno: "Přihlásit se / registrovat"

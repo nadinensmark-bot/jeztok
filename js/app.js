@@ -163,7 +163,7 @@
   // ------------------------------------------------------------------
   function htmlKarty(c, test) {
     const k = c.kurz, p = postupKarty(c.gid);
-    const stitky = `<div class="stitky"><span class="stitek" style="background:${esc(k.barva)}">${esc(k.emoji)} ${esc(k.nazev)}</span><span class="stitek stitek-tema">${esc(c.tema.nazev)}</span>${p.dalsi && p.videno && !test ? '<span class="stitek stitek-opak">🔁 opakování</span>' : ""}</div>`;
+    const stitky = `<div class="stitky"><span class="stitek" style="background:${esc(k.barva)}">${esc(k.emoji)} ${esc(k.nazev)}</span><span class="stitek-cesta">${esc(c.tema.nazev)}</span>${p.dalsi && p.videno && !test ? '<span class="stitek stitek-opak">🔁 opakování</span>' : ""}</div>`;
     let telo = "";
     switch (c.typ) {
       case "fakt": telo = `<h2>${esc(c.titulek)}</h2><p class="text">${esc(c.text)}</p>${c.zdroj ? `<p class="zdroj">${esc(c.zdroj)}</p>` : ""}`; break;
@@ -174,10 +174,10 @@
       default: telo = `<p>Neznámý typ karty (${esc(c.typ)})</p>`;
     }
     const rail = test ? "" : `<div class="rail">
-        <button class="rail-btn ${p.ulozeno ? "akt" : ""}" data-akce="umim" title="Umím to"><span>${p.ulozeno ? "❤️" : "🤍"}</span><small>Umím</small></button>
+        <button class="rail-btn ${p.ulozeno ? "akt" : ""}" data-akce="umim" title="Označit jako naučené (bude se ukazovat méně často); druhým ťuknutím zrušíš"><span class="fajfka">✓</span><small>${p.ulozeno ? "Umím ✓" : "Už umím"}</small></button>
         <button class="rail-btn" data-akce="vysvetli" title="Vysvětli"><span>💬</span><small>Vysvětli</small></button>
         <button class="rail-btn" data-akce="pozdeji" title="Později"><span>🔁</span><small>Později</small></button>
-        <button class="rail-btn" data-akce="sdilet" title="Sdílet"><span>↗️</span><small>Sdílet</small></button>
+        ${window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.bezSdileni ? "" : `<button class="rail-btn" data-akce="sdilet" title="Sdílet"><span>↗️</span><small>Sdílet</small></button>`}
       </div>`;
     return `<section class="karta typ-${esc(c.typ)}" data-gid="${esc(c.gid)}" style="--b:${esc(k.barva)}"><div class="pozadi"><span class="pozadi-emoji">${esc(k.emoji)}</span></div><div class="obsah">${stitky}${telo}</div>${rail}</section>`;
   }
@@ -214,16 +214,37 @@
   }
   function lekceDal(el, c, i) {
     const kroky = $$(".krok", el);
-    if (i < kroky.length) { kroky[i].classList.add("videt"); kroky[i].scrollIntoView({ behavior: "smooth", block: "nearest" }); const b = $(".krok-dal", el); b.dataset.i = i + 1; if (i + 1 >= kroky.length) b.textContent = "Hotovo ✓"; }
-    else { const b = $(".krok-dal", el); b.disabled = true; b.textContent = "Hotovo ✓"; if (!S.test) { zaznamenej(c, "lekce"); jezekRekni("Lekce hotová. Za chvíli tě z ní vyzkouším.", "radost", 2500); hvezdicky(el); } }
+    const b = $(".krok-dal", el);
+    if (i < kroky.length) {
+      kroky[i].classList.add("videt"); b.dataset.i = i + 1; b.textContent = i + 1 >= kroky.length ? "Hotovo ✓" : "Dál →";
+      // nový krok i tlačítko musí zůstat vidět: posunout vnitřní obsah tak, aby tlačítko bylo u spodního okraje
+      requestAnimationFrame(() => kroky[i].scrollIntoView({ behavior: "smooth", block: "end" }));
+    } else {
+      if (!S.test) { zaznamenej(c, "lekce"); hvezdicky(el); toast("Lekce hotová · +" + XP.lekce + " XP"); }
+      b.textContent = S.test ? "Hotovo ✓" : "Další karta ↓"; b.dataset.i = "dalsi"; b.classList.add("hotovo");
+      const hint = document.createElement("p"); hint.className = "tlum maly lekce-hotovo"; hint.textContent = "Hotovo. Svajpni dolů na další kartu, nebo ťukni na tlačítko."; b.insertAdjacentElement("beforebegin", hint);
+      requestAnimationFrame(() => hint.scrollIntoView({ behavior: "smooth", block: "end" }));
+    }
   }
+  // posun feedu na další kartu (po dokončení lekce, klávesy na počítači)
+  function dalsiKartaVeFeedu(smer) {
+    const feed = $("#feed"); const karty = $$("#feed .karta"); if (!karty.length) return;
+    const h = feed.clientHeight, idx = Math.round(feed.scrollTop / h) + (smer || 1);
+    const cil = karty[Math.max(0, Math.min(karty.length - 1, idx))];
+    if (cil) feed.scrollTo({ top: cil.offsetTop, behavior: "smooth" });
+  }
+  document.addEventListener("keydown", e => {
+    if (S.obrazovka !== "feed" || S.test) return; if (e.target.closest("input, textarea, form")) return;
+    if (e.key === "ArrowDown" || e.key === "PageDown" || e.key === " ") { e.preventDefault(); dalsiKartaVeFeedu(1); }
+    if (e.key === "ArrowUp" || e.key === "PageUp") { e.preventDefault(); dalsiKartaVeFeedu(-1); }
+  });
 
   // Klikání v kartách (feed i test)
   document.addEventListener("click", e => {
     const karta = e.target.closest(".karta"); if (!karta) return;
     const c = S.karty[karta.dataset.gid]; if (!c) return;
     const m = e.target.closest(".moznost"); if (m) { odpovedKviz(karta, c, Number(m.dataset.i)); return; }
-    const kd = e.target.closest(".krok-dal"); if (kd) { lekceDal(karta, c, Number(kd.dataset.i)); return; }
+    const kd = e.target.closest(".krok-dal"); if (kd) { if (kd.dataset.i === "dalsi") { dalsiKartaVeFeedu(1); return; } lekceDal(karta, c, Number(kd.dataset.i)); return; }
     const r = e.target.closest(".rail-btn"); if (r) { railAkce(r.dataset.akce, c, karta, r); return; }
   });
   document.addEventListener("submit", e => {
@@ -240,7 +261,14 @@
   });
   function railAkce(akce, c, karta, btn) {
     switch (akce) {
-      case "umim": { const p = postupKarty(c.gid); if (p.ulozeno) return; zaznamenej(c, "umim"); btn.classList.add("akt"); $("span", btn).textContent = "❤️"; btn.classList.add("pulz"); setTimeout(() => btn.classList.remove("pulz"), 500); vibrace([20]); jezekRekni(JEZEK.hlaska("umim"), "radost", 2200); break; }
+      case "umim": {
+        const p = postupKarty(c.gid);
+        if (p.ulozeno) { // zrušit: karta se zase bude opakovat normálně
+          p.ulozeno = false; p.sila = Math.max(0, p.sila - 1); p.dalsi = Date.now() + INTERVALY[p.sila]; ulozStav();
+          btn.classList.remove("akt"); $("small", btn).textContent = "Už umím"; toast("Zrušeno. Karta se bude zase opakovat."); break;
+        }
+        zaznamenej(c, "umim"); btn.classList.add("akt"); $("small", btn).textContent = "Umím ✓"; btn.classList.add("pulz"); setTimeout(() => btn.classList.remove("pulz"), 500); vibrace([20]);
+        jezekRekni(JEZEK.hlaska("umim"), "radost", 2600); break; }
       case "vysvetli": otevriVysvetleni(c); break;
       case "pozdeji": zaznamenej(c, "pozdeji"); jezekRekni(JEZEK.hlaska("pozdeji"), "klid", 2000); karta.nextElementSibling && karta.nextElementSibling.scrollIntoView({ behavior: "smooth" }); break;
       case "sdilet": sdilet(c); break;

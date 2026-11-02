@@ -44,6 +44,8 @@ body:not(.ve-feedu) .hlava { display: none; }
 .stitky { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
 .stitek { font-size: 12px; font-weight: 700; padding: 4px 9px; border-radius: 999px; color: #fff; }
 .stitek-tema { background: rgba(255,255,255,.12); } .stitek-opak { background: rgba(255,255,255,.12); color: #fde68a; }
+.stitek-cesta { font-size: 12px; font-weight: 600; color: var(--tlum); padding: 4px 2px; align-self: center; }
+.stitky { align-items: center; }
 .mezera { display: inline-block; min-width: 3.2em; padding: 0 12px; margin: 0 2px; border: 2px dashed color-mix(in srgb, var(--b) 55%, #fff); border-radius: 10px; background: rgba(255,255,255,.08); color: color-mix(in srgb, var(--b) 45%, #fff); font-size: .8em; vertical-align: baseline; line-height: 1.35; white-space: nowrap; }
 
 .moznosti { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
@@ -64,7 +66,12 @@ form.doplnit input:focus { border-color: #fff; }
 form.doplnit input.spravne { border-color: var(--ok); } form.doplnit input.spatne { border-color: var(--ne); }
 .kroky .krok { display: none; font-size: 17px; line-height: 1.5; padding: 12px 14px; background: rgba(255,255,255,.08); border-radius: 14px; margin: 0 0 10px; animation: nahoru .3s; }
 .kroky .krok.videt { display: block; }
-.krok-dal { margin-top: 6px; }
+.krok-dal { margin-top: 6px; position: sticky; bottom: 0; box-shadow: 0 -14px 18px -6px rgba(11,11,16,.75); }
+.kroky .krok, .lekce-hotovo { scroll-margin-bottom: 64px; }
+.krok-dal.hotovo { background: var(--akcent, #22c55e); }
+.lekce-hotovo { margin: 4px 0 8px; }
+/* na počítači (myš, trackpad) je tvrdé přichytávání karet nepříjemné: volnější snap + šipky nahoru/dolů */
+@media (pointer: fine) { #feed { scroll-snap-type: y proximity; } }
 
 .btn { background: var(--fg); color: #111; border: 0; border-radius: 14px; padding: 12px 18px; font-weight: 800; font-size: 15px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; transition: transform .1s; }
 .btn:active { transform: scale(.96); } .btn:disabled { opacity: .5; }
@@ -72,11 +79,12 @@ form.doplnit input.spravne { border-color: var(--ok); } form.doplnit input.spatn
 .btn-nebezpeci { background: rgba(239,68,68,.2); color: #fca5a5; }
 .tlacitka { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 
-.rail { position: absolute; right: 10px; bottom: calc(var(--nav-v) + var(--hudba-v) + var(--sab) + 28px); z-index: 3; display: flex; flex-direction: column; gap: 14px; }
+.rail { position: absolute; right: 10px; bottom: calc(var(--nav-v) + var(--hudba-v) + var(--sab) + 28px); z-index: 3; display: flex; flex-direction: column; gap: 10px; }
 .rail-btn { background: none; border: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; color: #fff; }
-.rail-btn span { font-size: 28px; width: 48px; height: 48px; display: grid; place-items: center; background: rgba(255,255,255,.12); backdrop-filter: blur(6px); border-radius: 50%; transition: transform .15s; }
+.rail-btn span { font-size: 24px; width: 44px; height: 44px; display: grid; place-items: center; background: rgba(255,255,255,.12); backdrop-filter: blur(6px); border-radius: 50%; transition: transform .15s; }
 .rail-btn:active span { transform: scale(.9); }
-.rail-btn.akt span { background: rgba(244,63,94,.35); }
+.rail-btn.akt span { background: rgba(34,197,94,.55); }
+.rail-btn span.fajfka { font-size: 26px; font-weight: 900; color: #fff; }
 .rail-btn.pulz span { animation: pulz .5s; }
 @keyframes pulz { 30% { transform: scale(1.35); } }
 .rail-btn small { font-size: 11px; font-weight: 700; text-shadow: 0 1px 3px #000; }

@@ -41,7 +41,7 @@
     vitej: ["Ahoj! Já jsem {j}. Projeď prstem nahoru a jedem.", "Čau, tady {j}. Dneska se něco naučíme, ať to bolí nebo ne.", "{j} na příjmu. Hudba hraje, karty čekají."],
     spravne: ["Jo! Přesně tak.", "Bum. Správně.", "To je ono! Bodlinky se ježí radostí.", "Správně. Já věděl, že to dáš.", "Čistá práce."],
     spatne: ["Au. To nevadí – teď si to budeš pamatovat líp.", "Vedle. Ale chyba + vysvětlení = učení. Čti dál.", "Hmm, ne. Koukni na vysvětlení, vrátím ti to později.", "Nic se neděje. Tahle karta se za chvíli vrátí."],
-    umim: ["Jasně, bereme. Za chvíli tě z toho vyzkouším.", "Uloženo do bodlin. Ověřím to.", "Super. Vrátím ti to, až to budeš skoro zapomínat – to je ten trik."],
+    umim: ["Označeno jako naučené: budu to ukazovat míň často a ověřím to, až bys to mohl/a zapomínat. Druhým ťuknutím to zrušíš.", "Dobře, tuhle kartu beru jako naučenou. Vrátí se, až bude čas si ji připomenout. Ťukni znovu, kdyby ne.", "Naučeno. Ukážu to zas, až to budeš skoro zapomínat, to je ten trik. Zrušíš dalším ťuknutím."],
     pozdeji: ["Ok, odložím to. Ale neuteče ti to.", "Vrátí se to. Všechno se vrátí."],
     streak: ["{n} dní v kuse! Tohle je přesně to, co paměť potřebuje.", "Streak {n}. Ježčí srdce plesá."],
     testStart: ["Test! Žádný stres, žádný strach. Nikdo to nevidí. Jen já.", "Tak ukaž, co v tobě je."],

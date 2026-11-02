@@ -53,6 +53,7 @@ async function otevri(cfg) {
     uzivatelPodleId: async id => (await a.all("SELECT id, email, jmeno, vytvoreno FROM uzivatele WHERE id = ?", [id]))[0] || null,
     vytvorUzivatele: async u => { await a.run("INSERT INTO uzivatele (id, email, jmeno, hash, vytvoreno) VALUES (?, ?, ?, ?, ?)", [u.id, u.email, u.jmeno, u.hash, now()]); },
     uzivatelSHashem: async id => (await a.all("SELECT * FROM uzivatele WHERE id = ?", [id]))[0] || null,
+    vsichniUzivatele: async () => a.all("SELECT id, email, jmeno, vytvoreno FROM uzivatele ORDER BY jmeno, email"),
     zmenHeslo: async (id, hash) => { await a.run("UPDATE uzivatele SET hash = ? WHERE id = ?", [hash, id]); },
     smazSessionsUzivatele: async (uzivatel, krome) => { await a.run("DELETE FROM sessions WHERE uzivatel = ? AND hash <> ?", [uzivatel, krome || ""]); },
     // sessions

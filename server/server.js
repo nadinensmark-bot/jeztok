@@ -5,6 +5,7 @@
 //   GET  /api/ja                                           kdo jsem (vč. povolených kurzů)
 //   KURZY_UZIVATELU (env, JSON {"email": ["programy","slovnicek"]}): které vestavěné kurzy uživatel vidí.
 //   Kdo v mapě není, vidí všechny.
+//   GET  /api/tym                                          přehled postupu týmu (jen správci; ADMINI = e-maily oddělené čárkou)
 //   GET/PUT /api/postup                                    postup učení (slučuje se, viz ../js/slouceni.js)
 //   GET/POST /api/testy                                    výsledky testů
 //   GET/PUT /api/kurzy, DELETE /api/kurzy/:id              vlastní kurzy uživatele
@@ -33,6 +34,7 @@ const CFG = {
   limitVysvetliDen: Number(process.env.LIMIT_VYSVETLI_DEN || 40),
   limitKurzDen: Number(process.env.LIMIT_KURZ_DEN || 5),
   limitAiCelkemDen: Number(process.env.LIMIT_AI_CELKEM_DEN || 1000),
+  admini: (process.env.ADMINI || "").split(",").map(s => s.trim().toLowerCase()).filter(Boolean),
   kurzyUzivatelu: (() => { try { const m = JSON.parse(process.env.KURZY_UZIVATELU || "{}"); const out = {}; for (const [e, k] of Object.entries(m)) if (Array.isArray(k)) out[String(e).trim().toLowerCase()] = k.map(String); return out; } catch (e) { console.warn("[jeztok] KURZY_UZIVATELU není platný JSON, ignoruji."); return {}; } })(),
   maxTelo: 2 * 1024 * 1024,
   maxPoznamky: 30000
@@ -49,7 +51,20 @@ const overHeslo = (heslo, ulozeny) => { const [salt, h] = String(ulozeny).split(
 const hashTokenu = t => crypto.createHmac("sha256", CFG.secret).update(t).digest("hex");
 const emailOk = e => typeof e === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) && e.length <= 200;
 const povoleneKurzy = email => CFG.kurzyUzivatelu[String(email || "").toLowerCase()] || null; // null = všechny
-const verejnyUzivatel = u => ({ id: u.id, email: u.email, jmeno: u.jmeno || "", kurzy: povoleneKurzy(u.email) });
+const jeSpravce = email => CFG.admini.includes(String(email || "").toLowerCase());
+const verejnyUzivatel = u => ({ id: u.id, email: u.email, jmeno: u.jmeno || "", kurzy: povoleneKurzy(u.email), spravce: jeSpravce(u.email) });
+
+// Souhrn postupu pro přehled týmu: žádné konkrétní karty, jen počty po kurzech (gid karty = kurz:tema:karta).
+function souhrnPostupu(stav) {
+  const s = stav || {}; const kurzy = {};
+  for (const [gid, p] of Object.entries(s.karty || {})) {
+    const kurz = String(gid).split(":")[0]; if (!kurz) continue;
+    const k = kurzy[kurz] || (kurzy[kurz] = { videno: 0, umim: 0 });
+    if (p && p.videno) k.videno++;
+    if (p && p.sila >= 3) k.umim++;
+  }
+  return { xp: Number(s.xp) || 0, dny: Object.keys(s.dny || {}).sort(), aktualizovano: Number(s.aktualizovano) || 0, kurzy };
+}
 
 // jednoduché denní limity v paměti (na klíč)
 const pocitadla = new Map(); let pocitadlaDen = "";
@@ -194,6 +209,17 @@ async function obsluz(req, res) {
       return json(res, 200, { ok: true }, origin);
     }
     if (c === "/api/ja" && m === "GET") { const u = await vyzadujUzivatele(req); return json(res, 200, { ok: true, uzivatel: verejnyUzivatel(u) }, origin); }
+    if (c === "/api/tym" && m === "GET") {
+      const u = await vyzadujUzivatele(req);
+      if (!jeSpravce(u.email)) throw new ChybaApi(403, "Přehled týmu je jen pro správce.");
+      const lide = await db.vsichniUzivatele(); const tym = [];
+      for (const l of lide) {
+        const testy = await db.testy(l.id);
+        const posledni = testy[0] ? { kurz: testy[0].kurz, skore: testy[0].skore, celkem: testy[0].celkem, kdy: testy[0].kdy } : null;
+        tym.push({ email: l.email, jmeno: l.jmeno || "", vytvoreno: Number(l.vytvoreno) || 0, kurzy: povoleneKurzy(l.email), spravce: jeSpravce(l.email), postup: souhrnPostupu(await db.nactiStav(l.id)), testy: { pocet: testy.length, posledni } });
+      }
+      return json(res, 200, { ok: true, tym }, origin);
+    }
     if (c === "/api/zmena-hesla" && m === "POST") {
       const u = await vyzadujUzivatele(req); const b = await nactiTelo(req);
       const plny = await db.uzivatelSHashem(u.id);

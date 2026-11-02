@@ -3,6 +3,7 @@
 "use strict";
 process.env.PORT = "0"; if (!process.env.DATABASE_URL) process.env.DB_PATH = ":memory:"; process.env.MOCK_AI = "1"; process.env.ALLOWED_ORIGIN = "*";
 process.env.KURZY_UZIVATELU = JSON.stringify({ "omezeny@b.cz": ["programy", "slovnicek"] });
+process.env.ADMINI = "a@b.cz";
 const assert = require("assert");
 const { start } = require("./server");
 (async () => {
@@ -33,6 +34,11 @@ const { start } = require("./server");
   r = await api("/api/kurzy/muj", "DELETE"); r = await api("/api/kurzy"); assert.equal(r.d.kurzy.length, 0);
   r = await api("/api/vysvetli", "POST", { karta: { typ: "fakt", text: "Spacing effect…", vysvetleni: "Rozložené opakování." }, dotaz: "Jinak" }); assert.equal(r.status, 200); assert.ok(r.d.odpoved.length > 10);
   r = await api("/api/generuj-kurz", "POST", { nazev: "Makro", poznamky: "Inflace je růst cenové hladiny. Měří se indexem spotřebitelských cen.\n\nCentrální banka cílí inflaci pomocí úrokových sazeb. Vyšší sazby zdražují úvěry a tlumí poptávku, takže ceny rostou pomaleji než jindy." }); assert.equal(r.status, 200); assert.ok(r.d.kurz.temata[0].karty.length >= 1);
+  // přehled týmu: správce vidí souhrn po kurzech, bez konkrétních karet; omezený uživatel dostane 403
+  r = await api("/api/ja"); assert.equal(r.d.uzivatel.spravce, true);
+  r = await api("/api/tym"); assert.equal(r.status, 200); assert.equal(r.d.tym.length, 2);
+  { const ja = r.d.tym.find(t => t.email === "a@b.cz"); assert.equal(ja.postup.xp, 10); assert.equal(ja.postup.kurzy.u.umim, 1); assert.equal(ja.postup.kurzy.u.videno, 0); assert.equal(ja.testy.pocet, 1); assert.equal(ja.testy.posledni.skore, 7); assert.ok(!JSON.stringify(ja.postup).includes("u:f1"), "žádné gid karet v přehledu"); }
+  { const t = token; r = await api("/api/prihlaseni", "POST", { email: "omezeny@b.cz", heslo: "tajneheslo1" }); token = r.d.token; assert.equal(r.d.uzivatel.spravce, false); r = await api("/api/tym"); assert.equal(r.status, 403); token = t; }
   r = await api("/api/odhlaseni", "POST"); r = await api("/api/ja"); assert.equal(r.status, 401);
   token = ""; r = await api("/api/prihlaseni", "POST", { email: "a@b.cz", heslo: "spatne-heslo" }); assert.equal(r.status, 401);
   r = await api("/api/prihlaseni", "POST", { email: "A@b.cz", heslo: "noveheslo22" }); assert.equal(r.status, 200);

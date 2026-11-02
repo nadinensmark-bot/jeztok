@@ -21,6 +21,7 @@
   // Obsah
   // ------------------------------------------------------------------
   function nactiKurzy() {
+    if (API.zamceno()) { S.kurzy = []; S.karty = {}; return; } // bez přihlášení žádný obsah
     const filtr = (window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.filtrKurzu) || null;
     const povolene = API.povoleneKurzy(); // přihlášený uživatel může mít na serveru omezený výběr kurzů
     const vest = (window.JEZTOK_KURZY || []).filter(k => !k.skryty && (!filtr || filtr[k.id] !== false) && (!povolene || povolene.includes(k.id))).map(k => {
@@ -131,6 +132,10 @@
     const el = $("#feed");
     if (reset) { el.innerHTML = ""; S.feed = []; }
     const dalsi = sestavFeed(12, S.feed.map(c => c.gid));
+    if (API.zamceno()) {
+      el.innerHTML = `<section class="karta karta-prazdna"><div class="prazdno">${JEZEK.svg({ nalada: "klid", uroven: 0 })}<h2>Nejdřív se přihlas</h2><p>Obsah je jen pro přihlášené. Účet ti založil Defence Hub, přihlašovací údaje máš od Nadine.</p><button class="btn" data-akce="ja">Přihlásit se</button></div></section>`;
+      return;
+    }
     if (!dalsi.length && !S.feed.length) {
       el.innerHTML = `<section class="karta karta-prazdna"><div class="prazdno">${JEZEK.svg({ nalada: "spi", uroven: uroven() })}<h2>Nic nového</h2><p>${esc(JEZEK.hlaska("prazdno"))}</p><button class="btn" data-akce="kurzy">Přidat kurz</button><button class="btn btn-sek" data-akce="obnovit">Obnovit feed</button></div></section>`;
       return;
@@ -292,6 +297,7 @@
       case "zavrit-sheet": zavriSheet(); break;
       case "skoc-lekce": { zavriSheet(); const c = S.karty[a.dataset.gid]; if (!c) return; if (S.test) return; vlozDoFeedu(c); break; }
       case "kurzy": prepni("kurzy"); break;
+      case "ja": prepni("ja"); break;
       case "obnovit": vykresliFeed(true); break;
     }
   });
@@ -308,8 +314,10 @@
   // ------------------------------------------------------------------
   // Testy
   // ------------------------------------------------------------------
+  const HTML_ZAMCENO = () => `<div class="stranka"><div class="prazdno" style="padding-top:40px">${JEZEK.svg({ nalada: "klid", uroven: 0 })}<h2>Nejdřív se přihlas</h2><p class="tlum">Kurzy, testy a postup jsou jen pro přihlášené.</p><button class="btn" data-akce="ja">Přihlásit se</button></div></div>`;
   function vykresliTesty() {
     const el = $("#testy");
+    if (API.zamceno()) { el.innerHTML = HTML_ZAMCENO(); return; }
     const testy = API.testyLokalne();
     el.innerHTML = `<div class="stranka"><h1>Testy</h1><p class="tlum">10 otázek z kurzu. Výsledek se uloží do postupu${API.prihlasen() ? " i na server" : ""}.</p>
       <div class="seznam">${S.kurzy.map(k => { const ot = pocetOtazek(k); const st = statistikaKurzu(k); const posl = testy.find(t => t.kurz === k.id);
@@ -366,6 +374,7 @@
   // Kurzy (výběr, import, generování z poznámek)
   // ------------------------------------------------------------------
   function vykresliKurzy() {
+    if (API.zamceno()) { $("#kurzy").innerHTML = HTML_ZAMCENO(); return; }
     const v = S.stav.vybraneKurzy;
     $("#kurzy").innerHTML = `<div class="stranka"><h1>Kurzy</h1><p class="tlum">Zapni, co chceš mít ve feedu. Všechno se míchá dohromady – to je záměr.</p>
       <div class="seznam">${S.kurzy.map(k => { const st = statistikaKurzu(k); const on = !v || v.includes(k.id);

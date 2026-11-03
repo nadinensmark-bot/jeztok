@@ -32,7 +32,7 @@ body:not(.ve-feedu) .hlava { display: none; }
 /* ---- feed ---- */
 #feed { height: 100%; overflow-y: scroll; scroll-snap-type: y mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 #feed::-webkit-scrollbar { display: none; }
-.karta { position: relative; height: 100%; scroll-snap-align: start; scroll-snap-stop: always; overflow: hidden; display: flex; align-items: center; padding: calc(64px + var(--sat)) 72px calc(var(--nav-v) + var(--hudba-v) + var(--sab) + 20px) 20px; }
+.karta { position: relative; height: 100%; scroll-snap-align: start; scroll-snap-stop: always; overflow: hidden; content-visibility: auto; contain: layout paint; display: flex; align-items: center; padding: calc(64px + var(--sat)) 72px calc(var(--nav-v) + var(--hudba-v) + var(--sab) + 20px) 20px; }
 .karta .pozadi { position: absolute; inset: 0; background: radial-gradient(120% 90% at 20% 15%, color-mix(in srgb, var(--b) 70%, #000) 0%, #0b0b10 70%), linear-gradient(160deg, color-mix(in srgb, var(--b) 35%, #000), #0b0b10); }
 .pozadi-emoji { position: absolute; right: -10px; bottom: 90px; font-size: 180px; opacity: .08; transform: rotate(-12deg); filter: grayscale(.2); }
 .karta .obsah { position: relative; z-index: 2; width: 100%; max-height: 100%; overflow-y: auto; scrollbar-width: none; -webkit-user-select: text; user-select: text; }
@@ -81,7 +81,7 @@ form.doplnit input.spravne { border-color: var(--ok); } form.doplnit input.spatn
 
 .rail { position: absolute; right: 10px; bottom: calc(var(--nav-v) + var(--hudba-v) + var(--sab) + 28px); z-index: 3; display: flex; flex-direction: column; gap: 10px; }
 .rail-btn { background: none; border: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; color: #fff; }
-.rail-btn span { font-size: 24px; width: 44px; height: 44px; display: grid; place-items: center; background: rgba(255,255,255,.12); backdrop-filter: blur(6px); border-radius: 50%; transition: transform .15s; }
+.rail-btn span { font-size: 24px; width: 44px; height: 44px; display: grid; place-items: center; background: rgba(40,44,60,.72); border-radius: 50%; transition: transform .15s; }
 .rail-btn:active span { transform: scale(.9); }
 .rail-btn.akt span { background: rgba(34,197,94,.55); }
 .rail-btn span.fajfka { font-size: 26px; font-weight: 900; color: #fff; }

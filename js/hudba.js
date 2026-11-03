@@ -195,6 +195,7 @@
   let akordAkt = null;
   function smycka() {
     const beat = 60 / vibe.bpm, s16 = beat / 4;
+    if (dalsiCas < ctx.currentTime - 0.25) { dalsiCas = ctx.currentTime + 0.05; step -= step % 16; }
     while (dalsiCas < ctx.currentTime + LOOKAHEAD) {
       const s = step % 16, bar = Math.floor(step / 16);
       if (s === 0) akordAkt = novyTakt(bar);

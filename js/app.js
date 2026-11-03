@@ -155,7 +155,18 @@
     if (c && S.stav.hudba.auto !== false) { const nid = HUDBA.proKartu(c.typ); if (nid) S.stav.hudba.vibe = nid; }
     if (c && (c.typ === "fakt")) S.videnoTimer = setTimeout(() => { zaznamenej(c, "videno"); }, 1800);
     if (idx >= S.feed.length - 4) vykresliFeed(false);
+    if (idx > 30) { clearTimeout(S.prorezTimer); S.prorezTimer = setTimeout(prorezFeed, 400); }
     if (new Date().getHours() >= 23 && Math.random() < 0.08) jezekRekni(JEZEK.hlaska("nocni"), "spi", 4000);
+  }
+  // Staré karty pryč z DOM: nad aktivní kartou nechat jen 15. Feed jinak jen roste (každá karta má
+  // tlačítka, přechody, pozadí) a po pár desítkách karet se telefon zasekává.
+  function prorezFeed() {
+    const feed = $("#feed"); if (!feed || S.obrazovka !== "feed" || S.test) return;
+    const idx = S.aktivni ? S.feed.findIndex(c => c.gid === S.aktivni.gid) : -1; if (idx <= 30) return;
+    const odstranit = idx - 15, posun = feed.scrollTop - $$(".karta", feed)[idx].offsetTop; // kde v kartě zrovna jsme
+    $$(".karta", feed).slice(0, odstranit).forEach(n => { if (io) io.unobserve(n); n.remove(); });
+    S.feed.splice(0, odstranit);
+    const akt = $$(".karta", feed)[idx - odstranit]; if (akt) feed.scrollTop = akt.offsetTop + posun; // zůstat na stejné kartě
   }
 
   // ------------------------------------------------------------------

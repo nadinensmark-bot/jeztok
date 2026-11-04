@@ -1,8 +1,8 @@
 # Z ověřených profilů zemí (scratchpad/procurement/*.json) postaví kurz obsah/kurz-procurement.js
 # a sdílená čistá data (procurement/_cista.json) pro PDF (one-pagery, e-book, checklisty).
 import json, re, pathlib, sys
-BASE = pathlib.Path("/tmp/claude-0/-home-claude/855939f8-aecf-58d9-ab74-7e92bd7e90e9/scratchpad")
-P = BASE / "procurement"
+BASE = pathlib.Path(__file__).resolve().parent
+P = pathlib.Path(sys.argv[2]) if len(sys.argv) > 2 else BASE / "data"  # ověřené profily zemí (mimo veřejné repo)
 OUT_JS = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else BASE / "verify/obsah/kurz-procurement.js"
 
 # pořadí a seskupení (kód, vlajka); regiony jen pro e-book

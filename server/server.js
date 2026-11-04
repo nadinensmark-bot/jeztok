@@ -44,6 +44,8 @@ const CFG = {
   registracePovolene: (process.env.REGISTRACE_POVOLENE || "").split(",").map(s => s.trim().toLowerCase()).filter(Boolean),
   registraceKody: (process.env.REGISTRACE_KODY || "").split(",").map(s => s.trim()).filter(Boolean),
   tymDomeny: (process.env.TYM_DOMENY || "@czechinvest.gov.cz").split(",").map(s => s.trim().toLowerCase()).filter(Boolean),
+  // správci, kteří v přehledu vidí i startupy (podmnožina ADMINI); nenastavené = startupy nevidí nikdo
+  adminiStartupy: (process.env.ADMINI_STARTUPY || "").split(",").map(s => s.trim().toLowerCase()).filter(Boolean),
   maxTelo: 2 * 1024 * 1024,
   maxPoznamky: 30000
 };
@@ -68,7 +70,8 @@ const povoleneKurzy = email => {
 const registraceDovolena = email => { const p = CFG.registracePovolene; if (!p.length) return false; if (p.includes("*")) return true; const e = String(email || "").toLowerCase(); return p.includes(e) || p.includes(domenaZ(e)); };
 const kodPlatny = kod => { const k = String(kod || "").trim(); if (!k) return false; return CFG.registraceKody.some(x => x.length === k.length && crypto.timingSafeEqual(Buffer.from(x), Buffer.from(k))); };
 const jeSpravce = email => CFG.admini.includes(String(email || "").toLowerCase());
-const verejnyUzivatel = u => ({ id: u.id, email: u.email, jmeno: u.jmeno || "", kurzy: povoleneKurzy(u.email), spravce: jeSpravce(u.email) });
+const vidiStartupy = email => jeSpravce(email) && CFG.adminiStartupy.includes(String(email || "").toLowerCase());
+const verejnyUzivatel = u => ({ id: u.id, email: u.email, jmeno: u.jmeno || "", kurzy: povoleneKurzy(u.email), spravce: jeSpravce(u.email), spravceStartupy: vidiStartupy(u.email) });
 
 // Souhrn postupu pro přehled týmu: žádné konkrétní karty, jen počty po kurzech (gid karty = kurz:tema:karta).
 function souhrnPostupu(stav) {
@@ -230,11 +233,13 @@ async function obsluz(req, res) {
     if (c === "/api/tym" && m === "GET") {
       const u = await vyzadujUzivatele(req);
       if (!jeSpravce(u.email)) throw new ChybaApi(403, "Přehled týmu je jen pro správce.");
-      const lide = await db.vsichniUzivatele(); const tym = [];
+      const lide = await db.vsichniUzivatele(); const tym = []; const startupy = vidiStartupy(u.email);
       for (const l of lide) {
+        const skupina = CFG.tymDomeny.includes(domenaZ(l.email)) ? "tym" : "startup";
+        if (skupina === "startup" && !startupy) continue; // startupy vidí jen správci z ADMINI_STARTUPY
         const testy = await db.testy(l.id);
         const posledni = testy[0] ? { kurz: testy[0].kurz, skore: testy[0].skore, celkem: testy[0].celkem, kdy: testy[0].kdy } : null;
-        tym.push({ email: l.email, jmeno: l.jmeno || "", vytvoreno: Number(l.vytvoreno) || 0, skupina: CFG.tymDomeny.includes(domenaZ(l.email)) ? "tym" : "startup", kurzy: povoleneKurzy(l.email), spravce: jeSpravce(l.email), postup: souhrnPostupu(await db.nactiStav(l.id)), testy: { pocet: testy.length, posledni } });
+        tym.push({ email: l.email, jmeno: l.jmeno || "", vytvoreno: Number(l.vytvoreno) || 0, skupina, kurzy: povoleneKurzy(l.email), spravce: jeSpravce(l.email), postup: souhrnPostupu(await db.nactiStav(l.id)), testy: { pocet: testy.length, posledni } });
       }
       return json(res, 200, { ok: true, tym }, origin);
     }

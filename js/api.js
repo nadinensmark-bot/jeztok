@@ -71,6 +71,7 @@
   // vestavěné kurzy, které přihlášený uživatel smí vidět: pole id, nebo null = všechny
   function povoleneKurzy() { const u = uzivatel(); return u && Array.isArray(u.kurzy) ? u.kurzy : null; }
   function jeSpravce() { const u = uzivatel(); return !!(u && u.spravce); }
+  function vidiStartupy() { const u = uzivatel(); return !!(u && u.spravce && u.spravceStartupy); }
   async function nactiTym() { const d = await volej("/api/tym"); return d.tym; }
   // s backendem je obsah jen pro přihlášené: bez účtu appka neukazuje žádné kurzy
   function zamceno() { return maBackend() && !prihlasen(); }
@@ -125,7 +126,7 @@
   async function vysvetli(karta, dotaz, historie) { return volej("/api/vysvetli", "POST", { karta, dotaz, historie }); }
   async function generujKurz(nazev, poznamky) { return volej("/api/generuj-kurz", "POST", { nazev, poznamky }); }
 
-  window.API = { maBackend, prihlasen, uzivatel, health, probouzi, zdravi: () => zdravi, maAI, registrace, prihlaseni, odhlaseni, zmenHeslo, obnovUzivatele, povoleneKurzy, zamceno, jeSpravce, nactiTym,
+  window.API = { maBackend, prihlasen, uzivatel, health, probouzi, zdravi: () => zdravi, maAI, registrace, prihlaseni, odhlaseni, zmenHeslo, obnovUzivatele, povoleneKurzy, zamceno, jeSpravce, vidiStartupy, nactiTym,
     nactiStav, ulozStavLokalne, naplanujSync, synchronizuj, stahniStav,
     testyLokalne, ulozTestyLokalne, ulozTest, stahniTesty, vlastniKurzyLokalne, ulozVlastniKurzyLokalne, ulozKurzNaServer, smazKurzNaServeru, stahniKurzy,
     vysvetli, generujKurz, lsSet, lsGet };

@@ -3,10 +3,11 @@
 "use strict";
 process.env.PORT = "0"; if (!process.env.DATABASE_URL) process.env.DB_PATH = ":memory:"; process.env.MOCK_AI = "1"; process.env.ALLOWED_ORIGIN = "*";
 process.env.KURZY_UZIVATELU = JSON.stringify({ "a@b.cz": null, "omezeny@b.cz": ["programy", "slovnicek"], "@startup.io": ["startupy", "slovnicek"], "sef@startup.io": null, "*": ["startupy"] });
-process.env.REGISTRACE_POVOLENE = "a@b.cz, omezeny@b.cz, @startup.io, cizi@jinde.cz";
+process.env.REGISTRACE_POVOLENE = "a@b.cz, omezeny@b.cz, druhy@b.cz, @startup.io, cizi@jinde.cz";
 process.env.REGISTRACE_KODY = "TEST-2026, DRUHY";
 process.env.TYM_DOMENY = "@b.cz";
-process.env.ADMINI = "a@b.cz";
+process.env.ADMINI = "a@b.cz, druhy@b.cz";
+process.env.ADMINI_STARTUPY = "a@b.cz";
 const assert = require("assert");
 const { start } = require("./server");
 (async () => {
@@ -52,6 +53,14 @@ const { start } = require("./server");
   assert.equal(r.d.tym.find(t => t.email === "a@b.cz").skupina, "tym"); assert.equal(r.d.tym.find(t => t.email === "firma@startup.io").skupina, "startup");
   { const ja = r.d.tym.find(t => t.email === "a@b.cz"); assert.equal(ja.postup.xp, 10); assert.equal(ja.postup.kurzy.u.umim, 1); assert.equal(ja.postup.kurzy.u.videno, 0); assert.equal(ja.testy.pocet, 1); assert.equal(ja.testy.posledni.skore, 7); assert.ok(!JSON.stringify(ja.postup).includes("u:f1"), "žádné gid karet v přehledu"); }
   { const t = token; r = await api("/api/prihlaseni", "POST", { email: "omezeny@b.cz", heslo: "tajneheslo1" }); token = r.d.token; assert.equal(r.d.uzivatel.spravce, false); r = await api("/api/tym"); assert.equal(r.status, 403); token = t; }
+  // druhý správce mimo ADMINI_STARTUPY: vidí tým, ale žádné startupy
+  { const t = token; const pred = (await api("/api/tym")).d.tym; token = "";
+    r = await api("/api/registrace", "POST", { email: "druhy@b.cz", heslo: "tajneheslo1", jmeno: "Leoš" }); assert.equal(r.status, 200); token = r.d.token;
+    assert.equal(r.d.uzivatel.spravce, true); assert.equal(r.d.uzivatel.spravceStartupy, false);
+    r = await api("/api/tym"); assert.equal(r.status, 200);
+    assert.ok(r.d.tym.every(x => x.skupina === "tym"), "druhý správce nesmí dostat startupy");
+    assert.equal(r.d.tym.length, pred.filter(x => x.skupina === "tym").length + 1);
+    token = t; r = await api("/api/ja"); assert.equal(r.d.uzivatel.spravceStartupy, true); }
   r = await api("/api/odhlaseni", "POST"); r = await api("/api/ja"); assert.equal(r.status, 401);
   token = ""; r = await api("/api/prihlaseni", "POST", { email: "a@b.cz", heslo: "spatne-heslo" }); assert.equal(r.status, 401);
   r = await api("/api/prihlaseni", "POST", { email: "A@b.cz", heslo: "noveheslo22" }); assert.equal(r.status, 200);

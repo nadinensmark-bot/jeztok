@@ -47,3 +47,4 @@ body { background: var(--bg); }
 .xp-bublina { color: #9CCBFF; }
 .brand-pata { text-align: center; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--tlum); }
 .pata-logo { display: flex; justify-content: center; align-items: center; gap: 22px; flex-wrap: wrap; padding: 18px 0 6px; } .pata-logo img { height: 34px; opacity: .85; }
+:root { --karta-pod: rgba(6,24,56,.96); --prstenec: #2E8BE6; }

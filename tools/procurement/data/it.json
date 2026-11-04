@@ -1,0 +1,87 @@
+{
+  "kod": "it",
+  "zeme": "Itálie",
+  "stav": "2026-11-04",
+  "clenstvi": "EU, NATO",
+  "kdo_nakupuje": {
+    "text": "Vojenský materiál nakupuje Ministero della Difesa přes Direzione Nazionale degli Armamenti (DNA) a její technické direkce: TERRARM (pozemní systémy), NAVARM (námořní), ARMAEREO (letecké a letová způsobilost) a TELEDIFE (informatika, telematika, pokročilé technologie). Funkce Segretario Generale della Difesa a Direttore Nazionale degli Armamenti, dřív spojené v jedné osobě, byly rozděleny (decreto-legge 75/2023, prováděcí organizační DPCM z roku 2024); DNA má vlastní útvary pro politiku průmyslu, koordinaci zbrojních programů a technologické inovace. Nabídky se podávají vždy konkrétní direkci, ne ministerstvu obecně.",
+    "instituce": [
+      {"nazev": "Ministero della Difesa, Direzione Nazionale degli Armamenti", "zkratka": "DNA", "url": "https://governo.it/sites/governo.it/files/rel_ill_dpcm_org__Min__difesa_dopo_mef__mod_2_SEGR.pdf"},
+      {"nazev": "Segretariato Generale della Difesa", "zkratka": "SGD", "url": "https://www.difesa.it/assets/allegati/5017/rubrica_sgd_dna_12_2025.pdf"},
+      {"nazev": "Direzione degli Armamenti Terrestri", "zkratka": "TERRARM", "url": "https://ted.europa.eu/en/notice/387614-2023/pdf"},
+      {"nazev": "Direzione degli Armamenti Aeronautici e per l'Aeronavigabilità", "zkratka": "ARMAEREO", "url": "https://difesa.it/assets/allegati/4393/telefonoepostaelettronicagiugno2026_v2.pdf"}
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Směrnici 2009/81/ES (obranné a bezpečnostní zakázky) provádí Decreto legislativo 15 novembre 2011, n. 208, účinný od 15. 1. 2012. Ostatní zakázky resortu (mimo režim 2009/81/ES) spadají pod obecný Codice dei contratti pubblici, D.Lgs. 36/2023, který má samostatnou hlavu V pro obranu, bezpečnost a utajované zakázky. Finanční prahy jsme v primárním zdroji neověřili.",
+    "predpisy": [
+      {"nazev": "Decreto legislativo 15 novembre 2011, n. 208 (attuazione direttiva 2009/81/CE)", "url": "https://www.normattiva.it/eli/id/2011/12/16/011G0249/CONSOLIDATED/20260925"},
+      {"nazev": "Decreto legislativo 31 marzo 2023, n. 36, Codice dei contratti pubblici", "url": "https://www.normattiva.it/eli/id/2023/03/31/23G00044/CONSOLIDATED"}
+    ]
+  },
+  "kde_tendry": {
+    "text": "Nadlimitní zakázky direkcí DNA vycházejí v TED (Úřední věstník EU) a v italském věstníku GURI, podklady a podání nabídek běží elektronicky přes platformu acquistinretepa.it (provozuje Consip), kde je nutná registrace. Dokumenty k zakázkám direkce zveřejňují i na difesa.it.",
+    "portaly": [
+      {"nazev": "TED, Tenders Electronic Daily", "url": "https://ted.europa.eu/en/notice/387614-2023/pdf"},
+      {"nazev": "Acquisti in Rete PA (Consip), e-procurement platforma", "url": "https://www.acquistinretepa.it/opencms/opencms/"}
+    ]
+  },
+  "registrace": {
+    "text": "Pro účast v tendru se zahraniční firma registruje na platformě acquistinretepa.it a potřebuje kvalifikovanou elektronickou doručovací adresu podle eIDAS (italská PEC jí není dostupná). Veškerá dokumentace musí být v italštině, cizojazyčné listiny se přikládají se soudním (nebo konzulárně ověřeným) překladem a podpisy zahraničních listin se legalizují, pokud mezinárodní smlouva nestanoví jinak. Registro Nazionale delle Imprese (RNI) vedené DNA je povinné pro firmy, které v Itálii vyvíjejí, vyrábějí nebo obchodují s vojenským materiálem, a předpokládá společnost založenou a činnou v Itálii. NCAGE kód získá česká firma zdarma od Odboru katalogizace MO ČR.",
+    "kroky": [
+      "Získat NCAGE kód přes Odbor katalogizace MO ČR (zdarma, přes portál NSPA)",
+      "Zřídit kvalifikovaný elektronický podpis a eIDAS kvalifikovanou elektronickou doručovací službu",
+      "Registrovat se na acquistinretepa.it a sledovat TED a profily direkcí DNA",
+      "Připravit nabídku v italštině, cizojazyčné doklady se soudním překladem a legalizací",
+      "Při plánu vyrábět nebo obchodovat s vojenským materiálem přímo v Itálii (např. přes italskou dceřinou společnost) počítat s registrací v RNI (poplatek 800 EUR ročně, platnost 3 roky)"
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "DNA má útvar I Reparto Politica industriale e relazioni internazionali, který řeší průmyslovou politiku vyzbrojování a mezinárodní spolupráci. Oficiální italskou offsetovou politiku ani pravidla pro industrial participation (povinné průmyslové kompenzace) se v primárních zdrojích ověřit nepodařilo."
+  },
+  "bezpecnost": {
+    "text": "Bezpečnostní prověrky osob a firem (abilitazioni di sicurezza personali ed industriali) vydává UCSe, Ufficio Centrale per la Segretezza, v rámci národní bezpečnostní organizace (sicurezzanazionale.gov.it). Česko má s Itálií bezpečnostní smlouvu o vzájemné ochraně utajovaných informací (uvedena na seznamu NBÚ). Konkrétní postup uznání české Facility Security Clearance se ověřit nepodařilo."
+  },
+  "inovace": {
+    "text": "Hlavní nástroj DNA pro otevřené inovace je PNRM (Piano Nazionale della Ricerca Militare), který řídí III Reparto Innovazione tecnologica a spolufinancuje výzkumné projekty průmyslu, malých a středních podniků, startupů a národních univerzit a výzkumných institucí. V Turíně funguje DualTech by Takeoff, italské NATO DIANA accelerator site (nabízí moduly k business, compliance a procurement, přístup k test centres a financování Phase 1 100 tis. EUR, Phase 2 300 tis. EUR); vstup je přes DIANA challenge programme, ne přímo.",
+    "programy": [
+      {"nazev": "PNRM, Piano Nazionale della Ricerca Militare", "url": "https://www.difesa.it/assets/allegati/ita_ricerca_tecnologica_e_innovazione_2025.2026.03.03.17.07.04.121.pdf", "pro_zahranicni": "nejasné, dokument DNA mluví o národních subjektech (Ricerca Tecnologica e Innovazione 2025)"},
+      {"nazev": "DualTech by Takeoff (NATO DIANA accelerator site, Turín)", "url": "https://www.diana.nato.int/connect/dualtech-by-takeoff-accelerating-dualuse-technologies-for-nato-diana-in-italy.html", "pro_zahranicni": "nejasné, zařazení do konkrétního akcelerátoru určuje DIANA, stránka podmínky neuvádí"}
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "Počítat s italštinou: zadávací dokumentace, dotazy i nabídka musí být italsky, cizí doklady se soudním překladem.",
+    "Před prvním tendrem vyřešit eIDAS kvalifikovanou doručovací adresu a registraci na acquistinretepa.it, bez nich elektronické podání nejde.",
+    "Sledovat tendry podle direkce (TERRARM, NAVARM, ARMAEREO, TELEDIFE), každá vede vlastní řízení.",
+    "Pro výzkumnou spolupráci zvážit PNRM přes italského partnera (průmysl nebo univerzitu), protože program cílí na národní subjekty."
+  ],
+  "prirucky": [
+    {"nazev": "Vademecum R.N.I. (registrace do Registro Nazionale delle Imprese)", "vydavatel": "Ministero della Difesa, Direzione Nazionale degli Armamenti, Se.R.N.I.", "url": "https://difesa.it/assets/allegati/31346/vademecum_giugno_2026.pdf", "jazyk": "it", "typ": "pdf"},
+    {"nazev": "Ricerca Tecnologica e Innovazione 2025", "vydavatel": "Ministero della Difesa, Direzione Nazionale degli Armamenti", "url": "https://www.difesa.it/assets/allegati/ita_ricerca_tecnologica_e_innovazione_2025.2026.03.03.17.07.04.121.pdf", "jazyk": "it", "typ": "pdf"}
+  ],
+  "zdroje": [
+    {"nazev": "Relazione illustrativa, DPCM organizzazione Ministero della Difesa (separace SGD a DNA)", "url": "https://governo.it/sites/governo.it/files/rel_ill_dpcm_org__Min__difesa_dopo_mef__mod_2_SEGR.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "Rubrica SGD / DNA 12/2025 (organizační struktura)", "url": "https://www.difesa.it/assets/allegati/5017/rubrica_sgd_dna_12_2025.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "Organigramma SGD 2024", "url": "https://www.difesa.it/assets/allegati/30822/organigrammasgd.2024.04.10.10.04.47.387.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "Normattiva, D.Lgs. 208/2011", "url": "https://www.normattiva.it/eli/id/2011/12/16/011G0249/CONSOLIDATED/20260925", "otevreno": "2026-11-04"},
+    {"nazev": "Normattiva, D.Lgs. 36/2023", "url": "https://www.normattiva.it/eli/id/2023/03/31/23G00044/CONSOLIDATED", "otevreno": "2026-11-04"},
+    {"nazev": "TED oznámení TERRARM 387614-2023", "url": "https://ted.europa.eu/en/notice/387614-2023/pdf", "otevreno": "2026-11-04"},
+    {"nazev": "ARMAEREO, Disciplinare di gara (Platform Type V), požadavky na zahraniční uchazeče", "url": "https://www.difesa.it/assets/allegati/4324/disciplinarefaseoffertaplatform.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "Vademecum R.N.I.", "url": "https://difesa.it/assets/allegati/31346/vademecum_giugno_2026.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "UCSe, Portale UCSe", "url": "https://www.sicurezzanazionale.gov.it/data/cms/posts/117/attachments/9c44c2ba-ac6e-499e-a7b2-3e2c238cc3ef/download", "otevreno": "2026-11-04"},
+    {"nazev": "NBÚ, Documents (seznam bilaterálních smluv)", "url": "https://nbu.gov.cz/en/documents", "otevreno": "2026-11-04"},
+    {"nazev": "DNA, Ricerca Tecnologica e Innovazione 2025 (PNRM)", "url": "https://www.difesa.it/assets/allegati/ita_ricerca_tecnologica_e_innovazione_2025.2026.03.03.17.07.04.121.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "NATO DIANA, DualTech by Takeoff", "url": "https://www.diana.nato.int/connect/dualtech-by-takeoff-accelerating-dualuse-technologies-for-nato-diana-in-italy.html", "otevreno": "2026-11-04"},
+    {"nazev": "MO ČR, Odbor katalogizace: NCAGE", "url": "https://okm.mo.gov.cz/en/node/284", "otevreno": "2026-11-04"},
+    {"nazev": "SIAC Difesa FAQ (NCB Itálie)", "url": "https://siac.difesa.it/EN/Pages/FAQ.aspx", "otevreno": "2026-11-04"}
+  ],
+  "nejiste": [
+    "Číslo a datum organizačního DPCM (v sekundárních zdrojích DPCM 20. 6. 2024 č. 99) jsme v primárním zdroji neověřili; relazione illustrativa (governo.it) jen potvrzuje právní základ v decreto-legge 75/2023 a lhůtu do 30. 6. 2024.",
+    "Plné úřední názvy direkcí NAVARM a TELEDIFE jsme v otevřeném primárním zdroji neověřili (stránky difesa.it HTML nešly otevřít, robots).",
+    "Finanční prahy D.Lgs. 208/2011 (čl. 10) neověřeny, normattiva nezobrazila text článku.",
+    "Italská offsetová / industrial participation politika: nepodařilo se najít oficiální dokument.",
+    "Zda je RNI povinné i pro zahraniční firmu, která jen dodává italskému MO bez provozovny v Itálii, vademecum výslovně neřeší (https://difesa.it/assets/allegati/31346/vademecum_giugno_2026.pdf).",
+    "Postup UCSe pro uznání FSC zahraniční firmy neověřen.",
+    "PNRM: termíny výzev a způsob podání nejsou v otevřeném dokumentu, web pnrm.difesa.it nešel otevřít."
+  ]
+}

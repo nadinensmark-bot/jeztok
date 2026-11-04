@@ -1,0 +1,144 @@
+{
+  "kod": "mk",
+  "zeme": "Severní Makedonie",
+  "stav": "2026-11-04",
+  "clenstvi": "NATO (od 27. 3. 2020); kandidátská země EU (od 12/2005, rozhodnutí o zahájení jednání 3/2020, screening dokončen 12/2023)",
+  "kdo_nakupuje": {
+    "text": "Hlavním nákupčím je Ministerstvo obrany (Министерство за одбрана), které vedle obecného ročního plánu zakázek vydává zvláštní plán zakázek v oblasti obrany a bezpečnosti (pro rok 2026 plán č. 01-150/1 z 29. 1. 2026). Zadavatelem obranné zakázky může být každý zadavatel podle čl. 9 obecného zákona o veřejných zakázkách. Systém metodicky řídí a sleduje Биро за јавни набавки (Úřad pro veřejné zakázky) pod Ministerstvem financí.",
+    "instituce": [
+      {
+        "nazev": "Министерство за одбрана",
+        "zkratka": "",
+        "url": "https://www.mod.gov.mk/"
+      },
+      {
+        "nazev": "Биро за јавни набавки",
+        "zkratka": "БЈН",
+        "url": "https://www.bjn.gov.mk/"
+      }
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Platí Закон за јавни набавки во областа на одбраната и безбедноста (Sl. vesnik 180/19, novely 176/21 a 58/26; úplné znění zveřejněno v 5/2026), který transponuje směrnici 2009/81/ES. Zákon stanoví hodnotové limity 50 000 EUR pro zboží a služby a 100 000 EUR pro stavební práce, bez DPH (čl. 19). Postupy: užší řízení, jednací řízení s uveřejněním, jednací řízení bez uveřejnění (jen ve vyjmenovaných případech, čl. 24), soutěžní dialog, rámcové dohody a elektronické aukce. Mezivládní (G2G) kontrakty na vojenské a bezpečnostní vybavení jsou z působnosti vyjmuty (čl. 8). Zákon navíc upravuje ověřování firem registrovaných v Severní Makedonii pro zakázky NATO a členských států (čl. 1 odst. 2).",
+    "predpisy": [
+      {
+        "nazev": "Закон за јавни набавки во областа на одбраната и безбедноста, úplné znění 2026 (PDF, BJN)",
+        "url": "https://www.bjn.gov.mk/wp-content/uploads/2026/05/ЗЈНОБ-редакциски-пречистен-текст-2026.pdf"
+      },
+      {
+        "nazev": "Přehled verzí zákona a novel (BJN)",
+        "url": "https://www.bjn.gov.mk/propisi/zakon-odbrana-javni-nabavki/"
+      }
+    ]
+  },
+  "kde_tendry": {
+    "text": "Oznámení se zveřejňují v elektronickém systému veřejných zakázek ЕСЈН (e-nabavki.gov.mk) v den odeslání (čl. 30 odst. 1). Při odhadované hodnotě od 400 000 EUR (zboží, služby) nebo 5 000 000 EUR (práce) musí jít oznámení do tří pracovních dnů i do Úředního věstníku EU, tedy na TED (čl. 30 odst. 2). Web MO odkazuje přímo na přehledy plánů, oznámení a smluv MO v e-nabavki. Tendry NATO a jeho agentur (NSPA, NCIA) MO odkazuje na weby těchto agentur.",
+    "portaly": [
+      {
+        "nazev": "MO, veřejné zakázky (plány, odkazy do e-nabavki)",
+        "url": "https://mod.gov.mk/mk-MK/transparentnost/javni-nabavki"
+      },
+      {
+        "nazev": "e-nabavki, oznámení zadavatele MO",
+        "url": "https://e-nabavki.gov.mk/InstitutionGridData.aspx#/ciAnnouncementsGrid/d4330ecc-2c45-4e31-860f-5d5cd0a4d8a5"
+      },
+      {
+        "nazev": "TED (zakázky nad limity čl. 30 odst. 2)",
+        "url": "https://ted.europa.eu/en/"
+      }
+    ]
+  },
+  "registrace": {
+    "text": "Podle zákona se může zúčastnit každý hospodářský subjekt, sám nebo ve skupině (čl. 9 odst. 1); zvláštní pravidla pro zahraniční firmy ve viditelné části zákona nejsou. U zakázek s utajovanými informacemi zadávací dokumentace určí potřebná opatření a uchazeč může být požádán o závazek mlčenlivosti a údaje o subdodavatelích (čl. 10). Postup registrace v e-nabavki pro zahraniční firmy a jazyk nabídek se ověřit nepodařilo (portál se nenačetl, zákon jazyk neupravuje).",
+    "kroky": [
+      "Sledovat plán zakázek MO v oblasti obrany a bezpečnosti (vychází koncem ledna) a oznámení MO v e-nabavki.",
+      "U větších zakázek (od 400 000 EUR zboží/služby, od 5 mil. EUR práce) hledat oznámení i na TED.",
+      "U utajovaných zakázek předem zajistit osvědčení podnikatele od NBÚ (mezi ČR a Severní Makedonií platí smlouva o ochraně utajovaných informací)."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Ve zveřejněném úplném znění zákona (ověřeno po čl. 47) se pojmy offset, průmyslová spolupráce ani kompenzace neobjevují. Oficiální offsetovou politiku se nepodařilo najít. MO provozuje Centar za poddrška na kompaniite, které pomáhá domácím firmám vstoupit do zakázek NATO, ale nejde o offsetový nástroj."
+  },
+  "bezpecnost": {
+    "text": "Národní bezpečnostní úřad je Дирекција за безбедност на класифицирани информации (ДБКИ, dbki.gov.mk), která na webu zveřejňuje zákon o utajovaných informacích a sekci bezpečnostních osvědčení a dotazníků. Pravidla uznání zahraničního FSC se ověřit nepodařilo. Smlouva mezi ČR a Republikou Makedonie o výměně a vzájemné ochraně utajovaných informací: podpis 27. 8. 2008 (Praha), platnost od 1. 10. 2009, č. 71/2009 Sb. m. s. (zdroj MZV ČR)."
+  },
+  "inovace": {
+    "text": "Ověřený vstupní bod je jen Centar za poddrška na kompaniite při MO: pomáhá domácím firmám se zakázkami NATO a členských států, vede registr hospodářských subjektů pro tyto zakázky a vydává potvrzení o splnění podmínek (žádosti e-mailem nebo osobně). Inovační program, challenge ani DIANA test centrum v Severní Makedonii se ověřit nepodařilo.",
+    "programy": [
+      {
+        "nazev": "Центар за поддршка на компании (MO)",
+        "url": "https://mod.gov.mk/mk-MK/nato-i-pridones-vo-megjunarodni-misii/centar-za-poddrska-na-kompanii",
+        "pro_zahranicni": "ne, stránka MO ho určuje domácím firmám"
+      }
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "Obranné zakázky MO jdou přes e-nabavki a nad 400 000 EUR (zboží, služby) i na TED, takže je lze sledovat z ČR bez místní přítomnosti.",
+    "Zákon i úplné znění jsou jen v makedonštině (BJN anglickou verzi nenabízí); počítejte s překladem zadávací dokumentace.",
+    "ČR a Severní Makedonie mají mezivládní dohody o generální opravě vrtulníků MO (2022, č. 22/2023 Sb. m. s.) a o náhradních dílech, spotřebním materiálu a opravách letadel MO (2023, č. 65/2024 Sb. m. s.). G2G kontrakty zákon o obranných zakázkách vyjímá (čl. 8), takže cesta k nim nevede přes tendr v e-nabavki.",
+    "Platná smlouva o ochraně utajovaných informací (od 2009) umožňuje použít osvědčení od NBÚ i pro makedonské utajované zakázky."
+  ],
+  "prirucky": [],
+  "zdroje": [
+    {
+      "nazev": "BJN, Zákon o zakázkách v oblasti obrany a bezpečnosti (verze a novely)",
+      "url": "https://www.bjn.gov.mk/propisi/zakon-odbrana-javni-nabavki/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "BJN, úplné znění zákona 2026 (PDF)",
+      "url": "https://www.bjn.gov.mk/wp-content/uploads/2026/05/ЗЈНОБ-редакциски-пречистен-текст-2026.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Биро за јавни набавки, hlavní stránka",
+      "url": "https://www.bjn.gov.mk/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO Severní Makedonie, hlavní stránka",
+      "url": "https://www.mod.gov.mk/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO, veřejné zakázky",
+      "url": "https://mod.gov.mk/mk-MK/transparentnost/javni-nabavki",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO, Centrum podpory firem (zakázky NATO)",
+      "url": "https://mod.gov.mk/mk-MK/nato-i-pridones-vo-megjunarodni-misii/centar-za-poddrska-na-kompanii",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "ДБКИ, hlavní stránka",
+      "url": "https://www.dbki.gov.mk/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MZV ČR, smlouvy ČR se Severní Makedonií",
+      "url": "https://mzv.gov.cz/jnp/cz/encyklopedie_statu/evropa/makedonie/smlouvy/index.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NATO, členské státy",
+      "url": "https://www.nato.int/cps/en/natohq/topics_52044.htm",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Evropská komise, Severní Makedonie",
+      "url": "https://enlargement.ec.europa.eu/enlargement-policy/north-macedonia_en",
+      "otevreno": "2026-11-04"
+    }
+  ],
+  "nejiste": [
+    "Registrace zahraničních firem v e-nabavki (povinnost, postup) neověřena, portál se nepodařilo načíst: https://e-nabavki.gov.mk/PublicAccess/Home.aspx#/home",
+    "Jazyk nabídek: zákon (viditelná část) jazyk neupravuje; zda jde podat anglicky, určuje zřejmě zadávací dokumentace, neověřeno.",
+    "Co přesně změnila novela č. 58/26 (2026), z úplného znění nelze vyčíst.",
+    "Prováděcí předpisy k zákonu jsou na https://www.bjn.gov.mk/propisi/podzakonski-akti-jn-odbrana-bezbednost/ ; stránka nebyla otevřena.",
+    "Orgán pro přezkum (námitky) u obranných zakázek ve viditelné části zákona nenalezen.",
+    "Uznávání zahraničního FSC a postup ДБКИ neověřeny (sekce Безбедносни сертификати a Меѓународни договори se nenačetly).",
+    "Offsetová politika: nenalezena; nelze tvrdit, že ji Severní Makedonie nemá.",
+    "DIANA test centra ani akcelerátor v Severní Makedonii neověřeny."
+  ]
+}

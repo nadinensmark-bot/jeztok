@@ -1,0 +1,178 @@
+{
+  "kod": "al",
+  "zeme": "Albánie",
+  "stav": "2026-11-04",
+  "clenstvi": "NATO (od 1. 4. 2009); kandidátská země EU (od 6/2014, přístupová jednání otevřena, všech 33 kapitol otevřeno)",
+  "kdo_nakupuje": {
+    "text": "Obranné a bezpečnostní zakázky zadává Ministerstvo obrany (Ministria e Mbrojtjes) přes svou Procurement Unit v Tiraně, jako zadavatel vystupují i vojenské útvary (např. Vojenský útvar č. 6002). Běžné (neobranné) nákupy MO běží přes systém Agentury pro veřejné zakázky (APP). Licencování výrobců a obchodníků s vojenským materiálem má na starosti Agjencia e Industrisë së Mbrojtjes, státním výrobcem zbraní a munice je KAYO sh.a. (zřízena zákonem č. 88/2024).",
+    "instituce": [
+      {
+        "nazev": "Ministria e Mbrojtjes",
+        "zkratka": "MM",
+        "url": "https://www.mod.gov.al/"
+      },
+      {
+        "nazev": "Agjencia e Prokurimit Publik",
+        "zkratka": "APP",
+        "url": "https://app.gov.al/legislation/public-procurement/law/"
+      },
+      {
+        "nazev": "Agjencia e Industrisë së Mbrojtjes / KAYO sh.a.",
+        "zkratka": "",
+        "url": "https://www.mod.gov.al/politikat-e-sigurise/te-tjera-nga-mm/industria-ushtarake"
+      }
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Základ je zákon č. 36/2020 o zakázkách v oblasti obrany a bezpečnosti (LPFMS), který částečně transponuje směrnici 2009/81/ES. Prováděcí pravidla schválila vláda rozhodnutím (VKM) č. 1170 z 24. 12. 2020. Zákon zná užší řízení, jednací řízení s uveřejněním i bez uveřejnění (jen v odůvodněných případech), soutěžní dialog a rámcové dohody na max. 5 let. Vyjímá mj. zpravodajské nákupy, mezivládní kontrakty, nákupy přes agentury NATO a krizové situace (čl. 5). Finanční limity stanoví vládní pravidla, v textu zákona nejsou. U utajovaných zakázek se navíc uplatní zákon č. 10/2023 o utajovaných informacích a VKM č. 659 z 23. 10. 2024 o průmyslové bezpečnosti. Pro běžné zakázky platí obecný zákon č. 162/2020 o veřejných zakázkách.",
+    "predpisy": [
+      {
+        "nazev": "Ligji nr. 36/2020 Për prokurimet në fushën e mbrojtjes dhe të sigurisë (PDF, MO)",
+        "url": "https://www.mod.gov.al/images/akteligjore/prokurimet/ligj-2020-04-16-36.pdf"
+      },
+      {
+        "nazev": "Přehled právních předpisů MO k vojenským zakázkám (Prokurimet Ushtarake)",
+        "url": "https://www.mod.gov.al/index.php/ministria/baza-ligjore/prokurimet-ushtarake"
+      },
+      {
+        "nazev": "VKM nr. 659, datë 23.10.2024 (průmyslová bezpečnost a ochrana utajovaných informací v obranných zakázkách)",
+        "url": "https://nsa.gov.al/wp-content/uploads/VKM-Nr.-659-date-23.10.2024-2.pdf"
+      },
+      {
+        "nazev": "Law 162/2020 on Public Procurement (anglický překlad, APP)",
+        "url": "https://app.gov.al/legislation/public-procurement/law/"
+      }
+    ]
+  },
+  "kde_tendry": {
+    "text": "Obranné zakázky podle zákona 36/2020 MO zveřejňuje na svém webu v sekci Prokurime a v Bulletinu veřejných oznámení (Buletini i Njoftimeve Publike) agentury APP. Část oznámení o zakázce je k dispozici i v angličtině (PDF), u utajovaných řízení často ne. Běžné zakázky MO jsou v registrech plánů a realizací na webu APP. Na webu MO se objevují i přeposlané tendry NATO (např. projekt NATO v polském Poznani, 2025).",
+    "portaly": [
+      {
+        "nazev": "MO Albánie, Prokurime (oznámení o obranných zakázkách)",
+        "url": "https://www.mod.gov.al/politikat-e-sigurise/te-tjera-nga-mm/prokurime"
+      },
+      {
+        "nazev": "MO Albánie, vysvětlení: zakázky MO přes APP vs. podle zákona 36/2020",
+        "url": "https://www.mod.gov.al/politikat-e-sigurise/te-tjera-nga-mm/prokurime/5857-prokurimet-e-ministrise-se-mbrojtjes-nepermjet-app"
+      },
+      {
+        "nazev": "Agjencia e Prokurimit Publik (APP)",
+        "url": "https://app.gov.al/legislation/public-procurement/international-legislation/"
+      }
+    ]
+  },
+  "registrace": {
+    "text": "Ověřený vzor (užší řízení MO, oznámení z 8. 9. 2026): dvoufázové řízení, nejdřív předkvalifikace, pak výzva k podání nabídky. Žádost o účast se podává fyzicky v zalepené, podepsané a orazítkované obálce na MO v Tiraně (originály nebo notářsky ověřené kopie), elektronické podání oznámení neuvádí. Přijímá se albánština i angličtina, měna je albánský lek (ALL), požaduje se jistota (bankovní nebo pojišťovací záruka). Zahraniční firma dokládá profesní licence ze své země, které ověří příslušný úřad, a k tomu albánské licence požadované pro danou zakázku. NCAGE kód ani zvláštní registr dodavatelů v oznámení zmíněn není.",
+    "kroky": [
+      "Sledovat sekci Prokurime na mod.gov.al a Bulletin oznámení APP; stáhnout anglickou verzi oznámení, pokud je k dispozici.",
+      "Ověřit v oznámení požadované licence a certifikáty (u stavebních zakázek albánské licence NP/NS a ISO certifikáty) a připravit české ekvivalenty k ověření.",
+      "Podat žádost o účast v předkvalifikaci osobně nebo kurýrem na adresu MO v Tiraně v termínu, s originály nebo notářsky ověřenými kopiemi.",
+      "U utajované zakázky mít platné osvědčení podnikatele od NBÚ; albánský AKSIK si jeho platnost ověří přímo u NBÚ."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Oficiální offsetovou politiku ani pravidla průmyslové spolupráce se nepodařilo ověřit: zákon 36/2020 (v dostupném výtahu) ani stránka MO o obranném průmyslu offsety nezmiňují. Stát posiluje domácí výrobu přes KAYO sh.a. (zákon č. 88/2024, sloučila podniky ULP Mjekës, KM Poliçan a UM Gramsh) a Agenturu obranného průmyslu, která licencuje a vede registry výrobců. Viz nejiste."
+  },
+  "bezpecnost": {
+    "text": "Národní bezpečnostní úřad je Autoriteti Kombëtar për Sigurinë e Informacionit të Klasifikuar (AKSIK, nsa.gov.al). Vydává osvědčení průmyslové bezpečnosti (CSI, Facility Security Clearance) s platností až 5 let a uznává CSI a osobní osvědčení (CSP) vydaná v členských státech NATO a EU nebo ve státech se smlouvou o ochraně utajovaných informací. Uznání běží přes zadavatele: ten pošle údaje o zahraniční firmě AKSIK, AKSIK si je ověří korespondencí s partnerským úřadem (u nás NBÚ) a písemně potvrdí zadavateli. Do zakázek se stupněm Restricted se smí hlásit jen zahraniční firmy registrované v NATO, EU nebo smluvním státě. Při probíhající zakázce musí zadavatel podat podklady k obnově zahraničního CSI nejméně 240 dní před koncem platnosti. Smlouva mezi vládou ČR a Albánie o výměně a vzájemné ochraně utajovaných informací: podpis 19. 11. 2009 (Praha), platnost od 1. 8. 2012, č. 77/2012 Sb. m. s. (zdroj MZV ČR)."
+  },
+  "inovace": {
+    "text": "Stránka MO o obranném průmyslu uvádí, že Agentura obranného průmyslu podporuje výzkum a vývoj a spolupracuje se Security and Defence Innovation Centre (centrum inovací pro bezpečnost a obranu). Podrobnosti, podmínky ani web centra se nepodařilo ověřit. Přítomnost DIANA test center nebo akcelerátoru v Albánii se ověřit nepodařilo.",
+    "programy": [
+      {
+        "nazev": "Security and Defence Innovation Centre (zmínka na webu MO)",
+        "url": "https://www.mod.gov.al/politikat-e-sigurise/te-tjera-nga-mm/industria-ushtarake",
+        "pro_zahranicni": "nejasné (web MO neuvádí podmínky)"
+      }
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "Oznámení MO jsou často i v angličtině a nabídky lze podat anglicky, ale podání je papírové a osobní v Tiraně: počítejte s logistikou ověřených kopií a kurýra.",
+    "Mezi ČR a Albánií platí smlouva o ochraně utajovaných informací (od 2012), takže osvědčení podnikatele od NBÚ je pro AKSIK uznatelné. Uznání si ale vyžádá zadavatel a jde přes korespondenci úřadů, proto ho řešte hned po předkvalifikaci.",
+    "U stavebních a infrastrukturních zakázek MO požaduje vedle domácích licencí i albánské licence a ISO certifikáty; bez nich se zahraniční firma neobejde, takže zvažte partnera s albánskými licencemi.",
+    "Albánie buduje státní zbrojovku KAYO a licenční agenturu: pro dodavatele komponent a technologií je to potenciální odběratel mimo tendry MO (konkrétní nákupní pravidla KAYO neověřena)."
+  ],
+  "prirucky": [],
+  "zdroje": [
+    {
+      "nazev": "MO Albánie, Prokurime (seznam oznámení)",
+      "url": "https://www.mod.gov.al/politikat-e-sigurise/te-tjera-nga-mm/prokurime",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO Albánie, oznámení o zakázce (užší řízení, sklad výzbroje Elbasan), anglicky",
+      "url": "https://www.mod.gov.al/images/njoftime2026/prokurime/080926Njoftimi-Kontrates-Rikonstruksion-english.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO Albánie, detail oznámení (Albánsky + EN PDF)",
+      "url": "https://www.mod.gov.al/politikat-e-sigurise/te-tjera-nga-mm/prokurime/7987-procedure-e-kufizuar-prokurimi-ne-fushen-e-mbrojtjes-dhe-te-sigurise-me-objekt-rikonstruksion-i-objektit-depo-mbitokesore-armatimi",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO Albánie, zakázky MO přes APP",
+      "url": "https://www.mod.gov.al/politikat-e-sigurise/te-tjera-nga-mm/prokurime/5857-prokurimet-e-ministrise-se-mbrojtjes-nepermjet-app",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO Albánie, Baza ligjore / Prokurimet Ushtarake",
+      "url": "https://www.mod.gov.al/index.php/ministria/baza-ligjore/prokurimet-ushtarake",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Zákon č. 36/2020 (PDF na webu MO)",
+      "url": "https://www.mod.gov.al/images/akteligjore/prokurimet/ligj-2020-04-16-36.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO Albánie, Industria ushtarake (Agentura obranného průmyslu, KAYO)",
+      "url": "https://www.mod.gov.al/politikat-e-sigurise/te-tjera-nga-mm/industria-ushtarake",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "APP, zákony o veřejných zakázkách (162/2020 aj.)",
+      "url": "https://app.gov.al/legislation/public-procurement/law/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "AKSIK, průmyslová bezpečnost",
+      "url": "https://nsa.gov.al/siguria-industriale/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "AKSIK, hlavní stránka",
+      "url": "https://nsa.gov.al/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "VKM č. 659/2024 o průmyslové bezpečnosti",
+      "url": "https://nsa.gov.al/wp-content/uploads/VKM-Nr.-659-date-23.10.2024-2.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MZV ČR, smlouvy ČR s Albánií",
+      "url": "https://mzv.gov.cz/jnp/cz/encyklopedie_statu/evropa/albanie/smlouvy/index.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NATO, členské státy",
+      "url": "https://www.nato.int/cps/en/natohq/topics_52044.htm",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Evropská komise, Albánie (stav přístupových jednání)",
+      "url": "https://enlargement.ec.europa.eu/enlargement-policy/albania_en",
+      "otevreno": "2026-11-04"
+    }
+  ],
+  "nejiste": [
+    "Na portálu konsultimipublik.gov.al existuje návrh zákona o změnách zákona 36/2020 (RENJK 848) a důvodová zpráva datovaná 6. 8. 2026 (RENJK 1033); dokumenty (docx) se nepodařilo otevřít, obsah ani stav novely nejsou ověřeny: https://konsultimipublik.gov.al/documents/RENJK_848_Projektligjin“P-r-disa-ndryshime-dhe-shtesa-n--ligjin-nr.-362020-“P-r-prokurimet-n--fush-n-e-mbrojtjes-dhe-t--siguris-”.docx",
+    "Finanční limity (prahy) pro obranné zakázky stanoví vládní pravidla k zákonu 36/2020 (VKM 1170/2020); text VKM 1170 se nepodařilo otevřít, limity nejsou ověřeny.",
+    "Offsety / industrial participation: žádná oficiální politika nenalezena. Nelze tvrdit, že Albánie offsety nevyžaduje, jen že je ověřené zdroje nezmiňují.",
+    "Starší VKM č. 1085 z 24. 12. 2020 (pravidla pro kontrakty na vojenský materiál mimo LPFMS) zmiňuje jen sekundární zdroj (IDM/CESS policy brief, 2022); primární text ani platnost neověřeny.",
+    "Seznam bilaterálních dohod na nsa.gov.al (Marrëveshje Bashkëpunimi) se nepodařilo načíst; smlouva s ČR je ověřena jen ze strany MZV ČR.",
+    "Security and Defence Innovation Centre: název uveden na webu MO, ale chybí web, zřizovatel a podmínky.",
+    "DIANA test centra ani akcelerátor v Albánii se ověřit nepodařilo (web DIANA nevypsal lokality).",
+    "Zda se Ministerstvo obrany řídí u obranných zakázek elektronickým systémem APP, není jasné: ověřený vzor z 2026 předpokládá papírové podání."
+  ]
+}

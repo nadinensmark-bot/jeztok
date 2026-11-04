@@ -1,0 +1,94 @@
+{
+  "kod": "ua",
+  "zeme": "Ukrajina",
+  "stav": "2026-11-04",
+  "clenstvi": "není členem EU ani NATO",
+  "kdo_nakupuje": {
+    "text": "Od 1. 1. 2026 jsou všechny nákupy pro armádu (zbraně, oblečení, výstroj, potraviny, paliva a maziva) soustředěny v Defence Procurement Agency (DPA) ministerstva obrany; ministerstvo si nechává tvorbu politiky a dohled, agentura má dozorčí radu (oznámení MO na webu vlády z 1. 1. 2026). Druhou agenturou byl State Operator for Non-Lethal Acquisition (DOT), spuštěný v prosinci 2023 pro nesmrtící nákupy. MO 1. 5. 2025 zřídilo komisi pro jeho reorganizaci pod vedením ředitele DPA a tehdy oznámilo formální sloučení obou agentur až po skončení válečného stavu; v lednu 2026 už MO používá označení „Defence Procurement Agency DOT“.",
+    "instituce": [
+      {"nazev": "Defence Procurement Agency", "zkratka": "DPA", "url": "https://dpa.mod.gov.ua/en"},
+      {"nazev": "State Operator for Non-Lethal Acquisition", "zkratka": "DOT", "url": ""},
+      {"nazev": "Ministry of Defence of Ukraine", "zkratka": "MoD", "url": "https://mod.gov.ua/en/news/synchronization-of-the-dot-and-the-dpa-creates-new-opportunities-to-enhance-the-efficiency-of-defense-procurement"}
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Základem je zákon Про оборонні закупівлі (On Defence Procurement) č. 808-IX, přijatý 17. 7. 2020 a podepsaný prezidentem v srpnu 2020; podle prezidentské kanceláře harmonizuje ukrajinské právo se směrnicí 2009/81/ES. Po dobu válečného stavu platí zvláštní pravidla podle usnesení vlády č. 1275 „Про затвердження особливостей здійснення оборонних закупівель на період дії правового режиму воєнного стану“. Novela z 9. 5. 2023 (podle zákona 2958-IX o transparentnosti obranných zakázek) umožnila zjednodušené nákupy v Prozorro a uložila zpětně zveřejnit zprávy o zakázkách; netýká se státního tajemství, zbraní, vojenské techniky a munice.",
+    "predpisy": [
+      {"nazev": "Zákon Про оборонні закупівлі č. 808-IX (oznámení o podpisu, Office of the President)", "url": "https://www.president.gov.ua/news/volodimir-zelenskij-pidpisav-zakon-shodo-oboronnih-zakupivel-62689"},
+      {"nazev": "Usnesení vlády č. 1275 a jeho novela z 9. 5. 2023 (oznámení vlády)", "url": "https://www.kmu.gov.ua/en/news/posylyly-prozorist-ta-konkurentsiiu-uriad-ukhvalyv-rishennia-shchodo-zakupivel-dlia-potreb-oborony"}
+    ]
+  },
+  "kde_tendry": {
+    "text": "Zbraně a munice se většinou nesoutěží veřejně: DPA posílá žádosti o obchodní nabídky ověřeným dodavatelům (Verified Suppliers) podle potřeb ozbrojených sil. Vstupem je sekce Suppliers na webu DPA (single window, spuštěna 30. 4. 2025). Vybrané dual-use položky DPA nakupuje přes Prozorro. Brigády si od července 2025 objednávají drony, prostředky elektronického boje a další techniku přímo v marketplace DOT-Chain Defence (spuštěn 7. 7. 2025, vyvinul DOT, provozně ho řídí DPA). K 15. 12. 2025 v něm bylo přes 100 výrobců a přístup 186 brigád; MO na 1. čtvrtletí 2026 vyčlenilo 12 mld. UAH. Kritéria pro zařazení výrobců do marketplace v ověřených zdrojích zveřejněna nejsou.",
+    "portaly": [
+      {"nazev": "DPA: For suppliers (single window, Verified Supplier)", "url": "https://dpa.mod.gov.ua/en/suppliers"},
+      {"nazev": "MoD: DOT-Chain Defence, 12 mld. UAH na Q1 2026", "url": "https://mod.gov.ua/en/news/the-military-will-receive-uah-12-billion-to-order-equipment-through-dot-chain-defence-in-q1-2026"}
+    ]
+  },
+  "registrace": {
+    "text": "Firma vyplní Verified Supplier Application Form a pošle ho s požadovanými doklady výhradně na oficiální e-mail DPA (jiné adresy agentura nebere). Po ověření ji DPA zapíše do seznamu ověřených dodavatelů, nebo zdůvodněně odmítne. Pro zbraně, munici a vojenskou techniku musí položka mít NSN (NATO Stock Number, kodifikační číslo NATO), být na seznamu Generálního štábu schváleném MO a splňovat požadavky MO. DPA zveřejňuje vzorovou státní smlouvu. Zda a jak se ověřenými dodavateli stávají zahraniční firmy, zdroje výslovně neuvádějí.",
+    "kroky": [
+      "Zajistit NSN kódy pro nabízené produkty (podmínka DPA u zbraní, munice a techniky).",
+      "Vyplnit Verified Supplier Application Form a poslat ho na oficiální e-mail DPA uvedený na stránce Suppliers.",
+      "Průběžně posílat DPA aktuální obchodní nabídky a katalogy a hlásit změny portfolia.",
+      "Na straně ČR: mít povolení k zahraničnímu obchodu s vojenským materiálem a licenci MPO na konkrétní obchod (zákon 38/1994 Sb., viz tipy)."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Offsetovou politiku Ukrajiny jsem z primárního zdroje neověřila. Pro české firmy je relevantní, že ČR a Ukrajina mají Dohodu o spolupráci v oblasti obranného průmyslu (podepsána 17. 2. 2006 v Praze, platná od 29. 11. 2007, č. 5/2009 Sb. m. s.) a dohodu ministerstev obrany o vzájemném ověřování jakosti produktů obranného určení (21. 10. 2013, č. 96/2013 Sb. m. s.; obojí zdroj MZV ČR). Program Test in Ukraine (Brave1) nabízí i párování s ukrajinskými výrobci pro společnou výrobu (co-production)."
+  },
+  "bezpecnost": {
+    "text": "ČR a Ukrajina mají Dohodu o ochraně utajovaných skutečností (podepsána 14. 5. 2003 v Praze, platná od 1. 12. 2004, č. 137/2004 Sb. m. s.; zdroj MZV ČR). Ukrajinský národní bezpečnostní úřad a postup pro Facility Security Clearance zahraničních firem jsem neověřila. Brave1 nespolupracuje s výrobci ani jejich spřízněnými osobami napojenými na Rusko, Bělorusko nebo Severní Koreu."
+  },
+  "inovace": {
+    "text": "Brave1 je státní platforma pro obranné inovace, kterou realizuje Innovation Development Fund z iniciativy státních orgánů a bezpečnostního sektoru. Začala jako grantový program (přes 750 grantů za 3,7 mld. UAH), nabízí bojové testování, Brave1 Market, analytiku a pomoc s technickými specifikacemi; v klastru je kolem 2 500 firem. Pro zahraniční výrobce je program Test in Ukraine (dva režimy: Test Together s účastí výrobce, nebo Leave it to us, kdy testy vede Brave1 a dodá zprávu). Mezinárodní granty v roce 2026: UNITE: Brave NATO (první společný grantový program Ukrajiny a NATO, výzva otevřena 28. 7. 2026), Brave1 International NATO grant competition (změna pravidel 7. 8. 2026), DefTech Forges: BraveTech EU (výzva 12. 8. 2026), BRAVE FRANCE (16. 6. 2026); vláda 27. 6. 2026 schválila přes 100 mil. EUR na mezinárodní granty Brave1 a partnerů.",
+    "programy": [
+      {"nazev": "Brave1", "url": "https://brave1.gov.ua/en/about", "pro_zahranicni": "částečně: mezinárodní granty jsou podle Brave1 pro ukrajinské i mezinárodní firmy (https://brave1.gov.ua/en/international-projects); podmínky jednotlivých výzev ověřit"},
+      {"nazev": "Test in Ukraine (Brave1)", "url": "https://testinukraine.brave1.tech/", "pro_zahranicni": "ano: program cílí na mezinárodní výrobce a spojence Ukrajiny (https://testinukraine.brave1.tech/)"},
+      {"nazev": "Brave1 International Projects (UNITE: Brave NATO, BraveTech EU, BRAVE FRANCE a další)", "url": "https://brave1.gov.ua/en/international-projects", "pro_zahranicni": "ano podle popisu programů, detailní eligibility ve FAQ nebyla čitelná"}
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "Do DPA se nevstupuje přes veřejný tendr, ale přes status Verified Supplier a NSN kód; bez kodifikace NATO u vojenského materiálu nabídka neprojde.",
+    "Vývoz z ČR: obchod s vojenským materiálem smí dělat jen firma se sídlem v ČR s povolením MPO; na každý obchod je potřeba licence s dokladem o konečném užití ne starším 12 měsíců. MPO rozhoduje do 60 dnů na základě závazných stanovisek MZV, MV a u významného materiálu i MO (zákon 38/1994 Sb.).",
+    "Dovoz na Ukrajinu: vojenské zboží mimo seznam podle usnesení vlády č. 1378 smí dovážet jen zvláštní dovozci určení vládou, takže je potřeba ukrajinský partner; pro dočasný dovoz k testům je nutné povolení ukrajinské Státní služby exportní kontroly (SSEC) a česká licence ho nenahrazuje (manuál Brave1 z 10. 7. 2025).",
+    "Systém se rychle mění (centralizace v DPA od 1. 1. 2026, škálování DOT-Chain Defence): před každým krokem ověřit aktuální stav na webu DPA a MO."
+  ],
+  "prirucky": [
+    {"nazev": "Manual for Manufacturers on How to Arrange the Import and Export of Their Goods to Ukraine for Testing Purposes (10. 7. 2025)", "vydavatel": "Brave1", "url": "https://testinukraine.brave1.tech/documents/Manual_ENG.pdf", "jazyk": "en", "typ": "pdf"},
+    {"nazev": "For suppliers (Verified Supplier, požadavky na NSN, vzorová smlouva)", "vydavatel": "Defence Procurement Agency", "url": "https://dpa.mod.gov.ua/en/suppliers", "jazyk": "en", "typ": "web"},
+    {"nazev": "Obchodování s NSPA (pro kontext kodifikace a NCAGE)", "vydavatel": "Ministerstvo obrany ČR", "url": "https://vyzbrojovani.mo.gov.cz/sites/vyzbrojovani/files/2024-04/Obchodov%C3%A1n%C3%AD%20s%20NSPA.pdf", "jazyk": "cs", "typ": "pdf"}
+  ],
+  "zdroje": [
+    {"nazev": "Vláda Ukrajiny / MO: From January 1, all military procurement is centralized under the MoD DPA (1. 1. 2026)", "url": "https://www.kmu.gov.ua/en/news/z-1-sichnia-usi-zakupivli-dlia-viiska-zdiisniuie-iedyna-ahentsiia-oboronnykh-zakupivel-minoborony-denys-shmyhal", "otevreno": "2026-11-04"},
+    {"nazev": "MO: Synchronization of the DOT and the DPA (2. 5. 2025)", "url": "https://mod.gov.ua/en/news/synchronization-of-the-dot-and-the-dpa-creates-new-opportunities-to-enhance-the-efficiency-of-defense-procurement", "otevreno": "2026-11-04"},
+    {"nazev": "MO: Synchronization of the DOT and the DPA, expanding reform to weapons (1. 5. 2025)", "url": "https://mod.gov.ua/en/news/synchronization-of-the-dot-and-the-dpa-the-ministry-of-defence-is-expanding-the-non-lethal-procurement-reform-to-include-weapons", "otevreno": "2026-11-04"},
+    {"nazev": "MO: Non-lethal procurement for the State Special Transport Service by Defence Procurement Agency DOT (27. 1. 2026)", "url": "https://mod.gov.ua/en/news/going-forward-non-lethal-procurement-for-the-state-special-transport-service-will-be-handled-by-defence-procurement-agency-dot", "otevreno": "2026-11-04"},
+    {"nazev": "DPA: úvodní stránka", "url": "https://dpa.mod.gov.ua/en", "otevreno": "2026-11-04"},
+    {"nazev": "DPA: For suppliers", "url": "https://dpa.mod.gov.ua/en/suppliers", "otevreno": "2026-11-04"},
+    {"nazev": "DPA: single window for market engagement (30. 4. 2025)", "url": "https://dpa.mod.gov.ua/en/page/dpa-launches-single-window-for-market-engagement", "otevreno": "2026-11-04"},
+    {"nazev": "MO: One-stop shop DPA (28. 4. 2025)", "url": "https://mod.gov.ua/en/news/a-one-stop-shop-approach-is-to-be-introduced-by-the-ministry-of-defense-s-procurement-agency-dpa-to-streamline-interaction-with-suppliers", "otevreno": "2026-11-04"},
+    {"nazev": "MO: Ukraine launches DOT-Chain Defence (7. 7. 2025)", "url": "https://mod.gov.ua/en/news/ukraine-launches-dot-chain-defence-a-digital-system-for-rapid-delivery-of-weapons", "otevreno": "2026-11-04"},
+    {"nazev": "MO: UAH 12 billion through DOT-Chain Defence in Q1 2026 (15. 12. 2025)", "url": "https://mod.gov.ua/en/news/the-military-will-receive-uah-12-billion-to-order-equipment-through-dot-chain-defence-in-q1-2026", "otevreno": "2026-11-04"},
+    {"nazev": "Office of the President: podpis zákona o obranných zakázkách (12. 8. 2020)", "url": "https://www.president.gov.ua/news/volodimir-zelenskij-pidpisav-zakon-shodo-oboronnih-zakupivel-62689", "otevreno": "2026-11-04"},
+    {"nazev": "Vláda Ukrajiny: novela usnesení č. 1275 (10. 5. 2023)", "url": "https://www.kmu.gov.ua/en/news/posylyly-prozorist-ta-konkurentsiiu-uriad-ukhvalyv-rishennia-shchodo-zakupivel-dlia-potreb-oborony", "otevreno": "2026-11-04"},
+    {"nazev": "Brave1: úvodní stránka", "url": "https://brave1.gov.ua/en/", "otevreno": "2026-11-04"},
+    {"nazev": "Brave1: About", "url": "https://brave1.gov.ua/en/about", "otevreno": "2026-11-04"},
+    {"nazev": "Brave1: International Projects", "url": "https://brave1.gov.ua/en/international-projects", "otevreno": "2026-11-04"},
+    {"nazev": "Brave1: Test in Ukraine", "url": "https://testinukraine.brave1.tech/", "otevreno": "2026-11-04"},
+    {"nazev": "Brave1: Manual for Manufacturers (import a export pro testování)", "url": "https://testinukraine.brave1.tech/documents/Manual_ENG.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "Zákon č. 38/1994 Sb., o zahraničním obchodu s vojenským materiálem (znění k 15. 7. 2025)", "url": "https://www.zakonyprolidi.cz/cs/1994-38", "otevreno": "2026-11-04"},
+    {"nazev": "MZV ČR: Smlouvy s Ukrajinou", "url": "https://mzv.gov.cz/jnp/cz/encyklopedie_statu/evropa/ukrajina/smlouvy/index.html", "otevreno": "2026-11-04"}
+  ],
+  "nejiste": [
+    "Stav DOT po 1. 1. 2026: MO v květnu 2025 slibovalo formální sloučení až po válečném stavu, v lednu 2026 ale používá označení „Defence Procurement Agency DOT“. Sekundární zdroje (Defence Ukraine, StateWatch) píšou o sloučení k 1. 1. 2026; primární právní akt jsem neotevřela.",
+    "Změna ve vedení DPA (odchod ředitele Arsena Žumadilova 31. 8. 2026, pověřený ředitel Artem Romaniukov od 1. 9. 2026) je jen ze sekundárního zdroje (https://www.defenceukraine.com/en/insights/dpa-succession-zhumadilov-exit-2026/), primárně neověřeno.",
+    "Text zákona 808-IX a usnesení č. 1275 na zakon.rada.gov.ua a kmu.gov.ua nebyl strojově dostupný; datum usnesení 11. 11. 2022 mám jen z názvu ve výsledku vyhledávání.",
+    "Podmínky pro zahraniční firmy jako Verified Supplier DPA a kritéria vstupu do DOT-Chain Defence: zdroje je výslovně neuvádějí.",
+    "Proces kodifikace (NSN) zahraničního produktu pro ukrajinské MO: neověřeno.",
+    "Médii zmíněné rozšíření nákupů DPA o letadla a taktické rakety (říjen 2026) jsem z primárního zdroje neověřila.",
+    "Web Prozorro jsem neotevřela, proto u portálů chybí.",
+    "Offsety / povinná lokalizace výroby a ukrajinský národní bezpečnostní úřad: neověřeno.",
+    "Podmínky MPO a Licenční správy pro vývoz na Ukrajinu nad rámec zákona 38/1994 Sb. (web MPO blokuje strojové čtení): neověřeno."
+  ]
+}

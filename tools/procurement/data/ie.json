@@ -1,0 +1,79 @@
+{
+  "kod": "ie",
+  "zeme": "Irsko",
+  "stav": "2026-11-04",
+  "clenstvi": "EU (není v NATO)",
+  "kdo_nakupuje": {
+    "text": "Obranné vybavení a velké projekty pro Defence Forces zadává Procurement & Acquisitions Branch (dříve Contracts Branch) na Department of Defence, který zároveň určuje nákupní politiku celé obranné organizace. Menší nákupy dělají jednotlivé útvary Defence Forces (kontakty jsou v každé zakázce na eTenders). Běžné zboží a služby jdou přes rámcové smlouvy Office of Government Procurement (OGP).",
+    "instituce": [
+      {"nazev": "Department of Defence, Procurement & Acquisitions Branch", "zkratka": "DoD", "url": "https://www.gov.ie/en/department-of-defence/organisation-information/procurement-acquisitions-branch/"},
+      {"nazev": "Office of Government Procurement", "zkratka": "OGP", "url": "https://www.gov.ie/en/department-of-defence/publications/procurement/"}
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Směrnice 2009/81/ES je provedena předpisem S.I. No. 62 of 2012, European Union (Award of Contracts relating to Defence and Security) Regulations 2012, účinným od 30. 3. 2012 (zbraně, munice, vojenský materiál). Ostatní nákupy ministerstva jdou podle směrnice 2014/24/EU (S.I. No. 284 of 2016). Aktuální unijní prahy pro směrnici 2009/81/ES od 1. 1. 2026: dodávky a služby 432 000 EUR, stavební práce 5 404 000 EUR (nařízení Komise v přenesené pravomoci (EU) 2025/2487). Stránka ministerstva stále uvádí původní prahy z roku 2012 (412 000 a 5 150 000 EUR). Vnitřní pravidla ministerstva: od 25 000 EUR se zakázky obvykle inzerují na eTenders.",
+    "predpisy": [
+      {"nazev": "S.I. No. 62 of 2012, European Union (Award of Contracts relating to Defence and Security) Regulations 2012", "url": "https://www.irishstatutebook.ie/2012/en/si/0062.html"},
+      {"nazev": "Commission Delegated Regulation (EU) 2025/2487 (prahy směrnice 2009/81/ES od 1. 1. 2026)", "url": "https://eur-lex.europa.eu/eli/reg_del/2025/2487/oj/eng"}
+    ]
+  },
+  "kde_tendry": {
+    "text": "Všechny soutěže ministerstva a Defence Forces jsou na národním portálu eTenders; nadlimitní zakázky navíc v Úředním věstníku EU (TED). Na eTenders je registrace dodavatele potřebná pro podání nabídky; zda je nutná i pro stažení dokumentace a zda je zdarma, portál na úvodní stránce neuvádí.",
+    "portaly": [
+      {"nazev": "eTenders (Ireland's National Tendering Website)", "url": "https://www.etenders.gov.ie"},
+      {"nazev": "Department of Defence: Procurement", "url": "https://www.gov.ie/en/department-of-defence/publications/procurement/"}
+    ]
+  },
+  "registrace": {
+    "text": "Žádný zvláštní registr dodavatelů obrany se v oficiálních zdrojích nepodařilo najít. Pro účast v soutěžích se firma registruje na eTenders (odkaz Register a Supplier). Ministerstvo uvádí, že nákupy musí být soutěžní a nadlimitní jdou i do Úředního věstníku EU.",
+    "kroky": [
+      "Zaregistrovat firmu jako dodavatele na eTenders.",
+      "Sledovat zakázky Department of Defence a útvarů Defence Forces na eTenders a nadlimitní zakázky v TED.",
+      "Prověřit rámcové smlouvy OGP, přes které ministerstvo kupuje běžné zboží a služby."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Oficiální politiku offsetů nebo průmyslové spolupráce se v primárních zdrojích nepodařilo dohledat; stránky ministerstva o nákupech o ní nemluví (viz nejiste)."
+  },
+  "bezpecnost": {
+    "text": "Národní bezpečnostní úřad (National Security Authority, NSA) pro ochranu utajovaných informací EU je meziresortní skupina, které předsedá Department of Foreign Affairs. Podle parlamentní odpovědi z 3. 6. 2020 Irsko nemělo zavedený režim Facility Security Clearance pro firmy a vláda měla řešit, zda je potřeba ho upravit zákonem; aktuální stav se z primárních zdrojů ověřit nepodařilo. Bilaterální smlouva o ochraně utajovaných informací s ČR v seznamu platných smluv MZV ČR není uvedena."
+  },
+  "inovace": {
+    "text": "Hlavní vstupní bod je Research Ireland Defence Innovation Challenge 2026 (Research Ireland s Department of Defence a Defence Forces, vyhlášeno 29. 7. 2026, uzávěrka 29. 10. 2026): koncept 20 000 EUR, seed fáze do 200 000 EUR, finálová cena až 1 mil. EUR. Hlavním žadatelem musí být výzkumník ze způsobilé výzkumné instituce, firmy (hlavně SME) mohou být jen součástí rozšířeného týmu; účast zahraničních firem dokumentace neřeší. Irsko není v NATO, a tedy ani v síti NATO DIANA.",
+    "programy": [
+      {"nazev": "Research Ireland Defence Innovation Challenge 2026", "url": "https://www.researchireland.ie/news/defence-innovation-challenge-2026/", "pro_zahranicni": "nejasné: dokumentace výzvy účast zahraničních firem neuvádí, žadatel musí být ze způsobilé výzkumné instituce (Call Document 2026)"}
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "Obranné zakázky jdou všechny přes eTenders, registrace tam je základní krok; nadlimitní zakázky jsou i v TED.",
+    "Inovační výzva Research Ireland je postavená na výzkumných institucích, firma se může zapojit jen jako partner týmu; bez irského výzkumného partnera nemá cenu ji řešit.",
+    "Pro zakázky s utajovanými informacemi počítat s tím, že irský systém prověrek firem byl podle oficiálních zdrojů dlouho nedořešený; ověřit u zadavatele předem."
+  ],
+  "prirucky": [
+    {"nazev": "How We Purchase (Department of Defence)", "vydavatel": "Department of Defence", "url": "https://www.gov.ie/en/department-of-defence/organisation-information/how-we-purchase/", "jazyk": "en", "typ": "web"},
+    {"nazev": "Research Ireland Defence Innovation Challenge 2026 Call Document", "vydavatel": "Research Ireland", "url": "https://media.researchireland.ie/wp-content/uploads/2026/07/Research_Ireland-Defence_Innovation_Challenge_2026_Call_Document.pdf", "jazyk": "en", "typ": "pdf"}
+  ],
+  "zdroje": [
+    {"nazev": "Procurement & Acquisitions Branch (gov.ie)", "url": "https://www.gov.ie/en/department-of-defence/organisation-information/procurement-acquisitions-branch/", "otevreno": "2026-11-04"},
+    {"nazev": "Department of Defence: Procurement", "url": "https://www.gov.ie/en/department-of-defence/publications/procurement/", "otevreno": "2026-11-04"},
+    {"nazev": "How We Purchase", "url": "https://www.gov.ie/en/department-of-defence/organisation-information/how-we-purchase/", "otevreno": "2026-11-04"},
+    {"nazev": "Award of Contracts relating to Defence and Security Regulations 2012 (gov.ie)", "url": "https://www.gov.ie/en/department-of-defence/publications/award-of-contracts-relating-to-defence-and-security-regulations-2012/", "otevreno": "2026-11-04"},
+    {"nazev": "S.I. No. 62 of 2012 (Irish Statute Book)", "url": "https://www.irishstatutebook.ie/2012/en/si/0062.html", "otevreno": "2026-11-04"},
+    {"nazev": "Commission Delegated Regulation (EU) 2025/2487 (EUR-Lex)", "url": "https://eur-lex.europa.eu/eli/reg_del/2025/2487/oj/eng", "otevreno": "2026-11-04"},
+    {"nazev": "Nařízení (EU) 2025/2487, text v Úředním věstníku (kopie BOE)", "url": "https://boe.es/doue/2025/2487/L00001-00002.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "eTenders", "url": "https://www.etenders.gov.ie", "otevreno": "2026-11-04"},
+    {"nazev": "Oireachtas, parlamentní otázka 3. 6. 2020 (NSA, Facility Security Clearance)", "url": "https://www.oireachtas.ie/en/debates/question/2020-06-03/20/", "otevreno": "2026-11-04"},
+    {"nazev": "Research Ireland: Defence Innovation Challenge 2026", "url": "https://www.researchireland.ie/news/defence-innovation-challenge-2026/", "otevreno": "2026-11-04"},
+    {"nazev": "Research Ireland Defence Innovation Challenge 2026 Call Document", "url": "https://media.researchireland.ie/wp-content/uploads/2026/07/Research_Ireland-Defence_Innovation_Challenge_2026_Call_Document.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "Department of Defence and Defence Forces Strategy Statement 2026 to 2029 (rozcestník)", "url": "https://www.gov.ie/en/department-of-defence/publications/department-of-defence-and-defence-forces-strategy-statement-2026-2029/", "otevreno": "2026-11-04"},
+    {"nazev": "MZV ČR: smlouvy ČR a Irsko", "url": "https://mzv.gov.cz/jnp/cz/encyklopedie_statu/evropa/irsko/smlouvy/index.html", "otevreno": "2026-11-04"}
+  ],
+  "nejiste": [
+    "Offsety / průmyslová spolupráce: oficiální dokument, který by je vyžadoval nebo vylučoval, nenalezen.",
+    "Aktuální stav irského režimu Facility Security Clearance pro firmy (2025 až 2026) se z primárních zdrojů ověřit nepodařilo; poslední oficiální údaj je parlamentní odpověď z 3. 6. 2020: https://www.oireachtas.ie/en/debates/question/2020-06-03/20/",
+    "Strategy Statement 2026 to 2029 (PDF) nebyl otevřen, nevíme, co říká k nákupům a průmyslu: https://www.gov.ie/en/department-of-defence/publications/department-of-defence-and-defence-forces-strategy-statement-2026-2029/",
+    "Nejasné, zda je registrace na eTenders zdarma a zda je nutná už pro stažení zadávací dokumentace.",
+    "Bilaterální smlouva ČR a Irsko o ochraně utajovaných informací: v seznamu MZV ČR není, seznam NBÚ se nepodařilo načíst.",
+    "Stránka Procurement (2019) mluví o Contracts Branch, novější stránka (2025) o Procurement & Acquisitions Branch; jde zřejmě o přejmenování, výslovně to ale ověřeno není."
+  ]
+}

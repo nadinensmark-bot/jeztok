@@ -1,0 +1,85 @@
+{
+  "kod": "tr",
+  "zeme": "Turecko",
+  "stav": "2026-11-04",
+  "clenstvi": "NATO (není členem EU)",
+  "kdo_nakupuje": {
+    "text": "Velké zbrojní projekty pro ozbrojené síly řídí Savunma Sanayii Başkanlığı (SSB, Presidency of Defence Industries), úřad přímo pod prezidentem republiky; výběr dodavatele u projektů SSB schvaluje výbor podle zákona 3238. SSB zároveň spravuje Savunma Sanayii Destekleme Fonu (fond na podporu obranného průmyslu) a pravidla sanayileşme/offset.",
+    "instituce": [
+      {"nazev": "T.C. Cumhurbaşkanlığı Savunma Sanayii Başkanlığı", "zkratka": "SSB", "url": "https://www.ssb.gov.tr/Website/index.aspx?LangID=2"},
+      {"nazev": "Milli Savunma Bakanlığı (jako Savunma Sanayii Milli Güvenlik Makamı pro bezpečnost)", "zkratka": "MSB", "url": "https://www.ssb.gov.tr/storage/img/155202.pdf"}
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Základem je zákon 3238 Savunma Sanayii ile İlgili Bazı Düzenlemeler Hakkında Kanun (1985), který zřizuje fond, vyjímá obranné projekty z některých obecných zákonů o státních zakázkách a svěřuje výběr dodavatele výboru. Obecný zákon o veřejných zakázkách 4734 Kamu İhale Kanunu v čl. 3 písm. b) vyjímá zakázky v oblasti obrany, bezpečnosti a zpravodajství, o jejichž zařazení rozhoduje prezident nebo příslušné ministerstvo; trestní ustanovení a zákazy účasti zákona 4734 ale platí dál. Pro tyto zakázky SSB uvádí zvláštní zásady 2009/15108 (text jsme neotevřeli). Turecko není v EU, směrnice 2009/81/ES se neuplatňuje.",
+    "predpisy": [
+      {"nazev": "3238 Savunma Sanayii ile İlgili Bazı Düzenlemeler Hakkında Kanun", "url": "https://www.ssb.gov.tr/storage/img/ssduzenlemekanun.pdf"},
+      {"nazev": "4734 Kamu İhale Kanunu (čl. 3 b, výjimka pro obranu)", "url": "https://www.ssb.gov.tr/storage/img/154734.pdf"},
+      {"nazev": "5202 Savunma Sanayii Güvenliği Kanunu", "url": "https://www.ssb.gov.tr/storage/img/155202.pdf"},
+      {"nazev": "SSB, přehled předpisů (Mevzuat)", "url": "https://www.ssb.gov.tr/mevzuat"}
+    ]
+  },
+  "kde_tendry": {
+    "text": "SSB zveřejňuje oznámení o tendrech a dokumenty typu Request for Information (bilgi talep dokümanı) v sekci Duyurular na ssb.gov.tr; projekty jsou popsány v sekci projektů podle domén (pozemní, námořní, letecké, rakety, elektronika, kyber). Obsah sekce Duyurular se nám nepodařilo načíst, takže podmínky účasti zahraničních firem v konkrétních výzvách neověřeny.",
+    "portaly": [
+      {"nazev": "SSB, hlavní stránka (odkaz na sekci Duyurular)", "url": "https://www.ssb.gov.tr/Website/index.aspx?LangID=2"}
+    ]
+  },
+  "registrace": {
+    "text": "Samostatný registr dodavatelů SSB jsme v primárním zdroji neověřili. Pro domácí účast v projektech SSB vyžaduje, aby všechny firmy na projektu (včetně hlavního dodavatele) registrovaly produkty v systému YETEN a lokální dodavatelé se hodnotí v kategoriích EYDEP (A, B, C). Offsetová smlouva a její přílohy musí být v turečtině. NCAGE kód získá česká firma zdarma od Odboru katalogizace MO ČR.",
+    "kroky": [
+      "Získat NCAGE kód přes Odbor katalogizace MO ČR (zdarma, přes portál NSPA)",
+      "Sledovat oznámení a RFI v sekci Duyurular na ssb.gov.tr",
+      "Počítat s offsetovým závazkem jako zahraniční hlavní dodavatel (viz průmyslová spolupráce) nebo vstoupit jako subdodavatel tureckého hlavního dodavatele",
+      "Pro utajované zakázky získat přes MSB Tesis Güvenlik Belgesi (FSC) a Kişi Güvenlik Belgesi, případně podle mezinárodní dohody"
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Turecko industrial participation a offsety vyžaduje. Podle Sanayileşme Süreçleri Rehber Dokümanı SSB (verze 3.0, 7. 12. 2022) má domácí hlavní dodavatel tzv. Sanayileşme Yükümlülüğü (lokální obsah a závazek TÜK, nejméně 2 % ceny nabídky, podíl malých a středních podniků nejméně 21 %), zahraniční hlavní dodavatel má offsetový závazek nejméně 70 % ceny nabídky (u zahraničního subdodavatele pod tureckým hlavním dodavatelem nejméně 70 % hodnoty subdodávky, pokud to SSB schválí). Offset lze plnit exportem, technologickou spoluprací nebo průmyslovou spoluprací schválenou SSB, s multiplikátory podle druhu plnění; záruka činí 6 % závazků a za neplnění hrozí sankce 6 % za období. Pravidla vydává a spravuje SSB; minimum 70 % uváděl už Sanayi Katılımı Offset Rehberi z dubna 2011."
+  },
+  "bezpecnost": {
+    "text": "Bezpečnost obranného průmyslu upravuje zákon 5202 Savunma Sanayii Güvenliği Kanunu. Národním bezpečnostním orgánem pro obranný průmysl (Savunma Sanayii Milli Güvenlik Makamı) je Milli Savunma Bakanlığı (MSB), které vydává Tesis Güvenlik Belgesi (facility security certificate) a Kişi Güvenlik Belgesi (osobní prověrku); obojí je nutné před přístupem k utajovaným informacím a před účastí v utajovaných zakázkách a subdodávkách. U položek z dovozu podle mezinárodní dohody a u projektů NATO platí podmínky příslušné dohody. Bilaterální smlouva ČR a Turecka o ochraně utajovaných informací na seznamu NBÚ uvedena není."
+  },
+  "inovace": {
+    "text": "V Ankaře působí ODTÜ Teknokent jako NATO DIANA accelerator site (mentoring, přístup k test centres, právní a IP podpora, kontakty na fondy). Do sítě DIANA test centres byl přijat např. NÖROM (společné neurovědní centrum Gazi, Ankara a ODTÜ univerzit). SSB provozuje portál pro řízení VaV projektů (Ar-Ge ve Teknoloji Yönetimi Portalı). Podmínky pro zahraniční firmy u národních programů jsme neověřili.",
+    "programy": [
+      {"nazev": "ODTÜ Teknokent (NATO DIANA accelerator site, Ankara)", "url": "https://www.diana.nato.int/connect/odtu-teknokent-advancing-dualuse-innovation-in-turkiye.html", "pro_zahranicni": "nejasné, přiřazení do akcelerátoru určuje DIANA challenge programme"},
+      {"nazev": "NÖROM, DIANA test centre (neurověda a neurotechnologie)", "url": "https://www.yok.gov.tr/en/news/turkiyes-neuroscience-center-to-test-nato-technologies-EU6j8", "pro_zahranicni": "nejasné"}
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "Jako zahraniční hlavní dodavatel počítat s offsetem nejméně 70 % ceny nabídky, to výrazně mění kalkulaci; realističtější vstup bývá subdodávka tureckému hlavnímu dodavateli (ale i tam může SSB offset uložit).",
+    "Offsetová smlouva a nepřijaté přílohy musí být turecky, plánovat překlad a místní právní podporu.",
+    "Pro utajované zakázky je nutná prověrka přes MSB a ČR nemá s Tureckem (podle seznamu NBÚ) bilaterální bezpečnostní smlouvu, ověřit předem s NBÚ, jak se postupuje.",
+    "Turecko není v EU, nelze se opírat o pravidla směrnice 2009/81/ES ani o TED."
+  ],
+  "prirucky": [
+    {"nazev": "Sanayileşme Süreçleri Rehber Dokümanı (Sürüm 3.0)", "vydavatel": "SSB", "url": "https://www.ssb.gov.tr/storage/img/sanayilesme-surecleri-2023-rehber-dokumani.pdf", "jazyk": "tr", "typ": "pdf"},
+    {"nazev": "Sanayi Katılımı Offset Rehberi (2011)", "vydavatel": "SSM (dnes SSB)", "url": "https://www.ssb.gov.tr/storage/img/sanayi-katilimi-offset-rehberi-2011.pdf", "jazyk": "tr", "typ": "pdf"},
+    {"nazev": "Sanayi Katılımı / Offset, přehled dokumentů", "vydavatel": "SSB", "url": "https://www.ssb.gov.tr/sanayi-katilimi-offset", "jazyk": "tr", "typ": "web"}
+  ],
+  "zdroje": [
+    {"nazev": "SSB, hlavní stránka", "url": "https://www.ssb.gov.tr/Website/index.aspx?LangID=2", "otevreno": "2026-11-04"},
+    {"nazev": "SSB, Sanayi Katılımı / Offset", "url": "https://www.ssb.gov.tr/sanayi-katilimi-offset", "otevreno": "2026-11-04"},
+    {"nazev": "SSB, Mevzuat", "url": "https://www.ssb.gov.tr/mevzuat", "otevreno": "2026-11-04"},
+    {"nazev": "SSB, Sanayileşme Süreçleri Rehber Dokümanı v3.0", "url": "https://www.ssb.gov.tr/storage/img/sanayilesme-surecleri-2023-rehber-dokumani.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "SSB, Sanayi Katılımı Offset Rehberi 2011", "url": "https://www.ssb.gov.tr/storage/img/sanayi-katilimi-offset-rehberi-2011.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "Zákon 3238", "url": "https://www.ssb.gov.tr/storage/img/ssduzenlemekanun.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "Zákon 4734", "url": "https://www.ssb.gov.tr/storage/img/154734.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "Zákon 5202", "url": "https://www.ssb.gov.tr/storage/img/155202.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "NATO DIANA, ODTÜ Teknokent", "url": "https://www.diana.nato.int/connect/odtu-teknokent-advancing-dualuse-innovation-in-turkiye.html", "otevreno": "2026-11-04"},
+    {"nazev": "YÖK, NÖROM v síti DIANA", "url": "https://www.yok.gov.tr/en/news/turkiyes-neuroscience-center-to-test-nato-technologies-EU6j8", "otevreno": "2026-11-04"},
+    {"nazev": "NBÚ, Documents (seznam bilaterálních smluv)", "url": "https://nbu.gov.cz/en/documents", "otevreno": "2026-11-04"},
+    {"nazev": "MO ČR, Odbor katalogizace: NCAGE", "url": "https://okm.mo.gov.cz/en/node/284", "otevreno": "2026-11-04"}
+  ],
+  "nejiste": [
+    "Prezidentský dekret o SSB (ssbkararname.pdf) se nepodařilo přečíst, přesný právní status a úkoly SSB proto opíráme jen o hlavní stránku SSB a zákon 3238.",
+    "Sekce Duyurular (https://www.ssb.gov.tr/duyurular) vracela chybu serveru, podmínky RFI/RFP pro zahraniční firmy neověřeny.",
+    "Existence a postup registru dodavatelů SSB (firma kayıt) neověřeny.",
+    "Které zakázky nakupuje přímo MSB nebo jednotlivé složky ozbrojených sil (mimo SSB) a kde je zveřejňují, neověřeno.",
+    "Zásady 2009/15108 k zakázkám SSB podle čl. 3 b zákona 4734 jsou na seznamu předpisů bez odkazu, text neotevřen.",
+    "Zda platí verze 3.0 Sanayileşme Süreçleri (12/2022) i ke 4. 11. 2026, nebo existuje novější, neověřeno.",
+    "Seznam NBÚ bilaterálních smluv může být neúplný; absenci smlouvy s Tureckem potvrdit u NBÚ.",
+    "Počet tureckých DIANA test centres: článek YÖK (8/2026) mluví o NÖROM jako o jediném tureckém centru ve svém oboru; média uvádějí 8 tureckých center, primárně neověřeno."
+  ]
+}

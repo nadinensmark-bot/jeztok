@@ -8,7 +8,7 @@ window.JEZTOK_CONFIG = {
   logoPata: ["img/logo-dh-ci-white.png"],
   zakladCesty: "../",
   barvyKurzu: { startupy: "#0058A8", eu: "#1d4ed8", nato: "#002860", slovnicek: "#709870" },
-  filtrKurzu: { defence: false, anglictina: false, programy: false, startupy: true, eu: true, nato: true, slovnicek: true },
+  filtrKurzu: { defence: false, anglictina: false, programy: false, startupy: true, eu: true, nato: true, procurement: true, slovnicek: true },
   // bez importu JSON a generování z poznámek v záložce Kurzy (startupy jen vybírají z připravených kurzů)
   bezVlastnichKurzu: true,
   // pole „Pozvánkový kód“ v registraci (server: REGISTRACE_KODY)

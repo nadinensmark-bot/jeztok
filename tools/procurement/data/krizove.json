@@ -1,0 +1,128 @@
+{
+  "stav": "2026-11-04",
+  "ncage": {
+    "text": "NCAGE kód v ČR přiděluje výhradně Oddělení katalogizace (OdK), které plní roli národního kodifikačního úřadu; web katalogizace (okm.mo.gov.cz) patří pod Úřad pro obrannou standardizaci, katalogizaci a státní ověřování jakosti (Ministerstvo obrany). Přidělení je bezplatné a OdK pošle žadateli oznámení e-mailem do 10 pracovních dnů. Kdo NCAGE potřebuje kvůli registraci v informačním systému, žádá přes NCAGE portál NSPA; výrobci a dodavatelé katalogizovaných výrobků pro uživatele JSK (jednotná smluvní katalogizační doložka) dostanou NCAGE v rámci katalogizace výrobku. Existenci kódu lze předem ověřit podle IČO v databázi organizací (H4); žádost lze podat i přes systém katalogizace (Číselníky, H-série, Požadavky na NCAGE).",
+    "oficialni_nazev": "Oddělení katalogizace (OdK), Úřad pro obrannou standardizaci, katalogizaci a státní ověřování jakosti, Ministerstvo obrany",
+    "rozpor": "Obě varianty ze zdrojů jsou nepřesné. Oficiální web uvádí Oddělení katalogizace, ne Odbor katalogizace MO. Nadřízený úřad se jmenuje Úřad pro obrannou standardizaci, katalogizaci a státní ověřování jakosti (web urosksoj.mo.gov.cz, změnu názvu ani reorganizaci web nezmiňuje). Správná formulace: Oddělení katalogizace Úřadu pro obrannou standardizaci, katalogizaci a státní ověřování jakosti.",
+    "poplatek": "zdarma (Přidělení NCAGE je bezplatné, web OdK)",
+    "lhuta": "oznámení e-mailem do 10 pracovních dnů",
+    "kontakt": "Ing. Helena Princová (OdK); telefon viz nejiste",
+    "url": "https://okm.mo.gov.cz/subjekty-kodifikace/vyrobcidodavatele/ncage-katalogizacni-kod-vyrobcedodavatele",
+    "url_portal_nspa": "https://eportal.nspa.nato.int/Codification/CageTool/home",
+    "zdroje": [
+      {
+        "nazev": "OdK: NCAGE, katalogizační kód výrobce/dodavatele",
+        "url": "https://okm.mo.gov.cz/subjekty-kodifikace/vyrobcidodavatele/ncage-katalogizacni-kod-vyrobcedodavatele",
+        "otevreno": "2026-11-04"
+      },
+      {
+        "nazev": "Katalogizace MO: Výrobci/dodavatelé (CZ)",
+        "url": "https://okm.mo.gov.cz/subjekty-katalogizace/vyrobcidodavatele",
+        "otevreno": "2026-11-04"
+      },
+      {
+        "nazev": "Codification MoD: Manufacturers/Suppliers (EN)",
+        "url": "https://okm.mo.gov.cz/en/manufacturerssuppliers",
+        "otevreno": "2026-11-04"
+      },
+      {
+        "nazev": "Codification MoD: Contacts",
+        "url": "https://okm.mo.gov.cz/en/contacts",
+        "otevreno": "2026-11-04"
+      },
+      {
+        "nazev": "Katalogizace MO: návod Vyžadování NCAGE (PDF, 2025)",
+        "url": "https://okm.mo.gov.cz/sites/okm/files/2025-03/vy%C5%BEadov%C3%A1n%C3%AD_NCAGE_2.pdf",
+        "otevreno": "2026-11-04"
+      },
+      {
+        "nazev": "Úřad pro obrannou standardizaci, katalogizaci a státní ověřování jakosti",
+        "url": "https://urosksoj.mo.gov.cz/",
+        "otevreno": "2026-11-04"
+      }
+    ],
+    "nejiste": [
+      "Zkratku úřadu (Úř OSK SOJ, ÚOSK SOJ) oficiální web neuvádí, používat plný název.",
+      "Telefon kontaktní osoby se liší: stránka NCAGE uvádí +420 973 229 274, anglická stránka Contacts +420 973 522 369.",
+      "Portál NSPA (CageTool) jsme neotevřeli; zda NCAGE vyžaduje MO ČR od každého dodavatele (mimo katalogizované výrobky), stránka neuvádí.",
+      "Návod Vyžadování NCAGE (PDF) neuvádí vydavatele ani datum, je jen uložen na webu katalogizace (složka 2025-03)."
+    ]
+  },
+  "poplatky_cz": {
+    "nbu_osvedceni_podnikatele": {
+      "text": "Správní poplatek podle zákona 634/2004 Sb., sazebník, položka 3 písm. h): přijetí žádosti o vydání osvědčení podnikatele 5 000 Kč, pokud utajovaná informace u podnikatele nevzniká ani mu není poskytována, ale jeho zaměstnanci k ní mají přístup; 10 000 Kč, pokud u něj utajovaná informace vzniká nebo je mu poskytnuta. Poplatek se nevybírá za žádost o nové osvědčení podanou před skončením platnosti dosavadního (položka 3, Předmětem poplatku není, bod 5). Znění zákona účinné od 1. 9. 2026.",
+      "url": "https://www.zakonyprolidi.cz/cs/2004-634",
+      "zdroje": [
+        {
+          "nazev": "Zákon 634/2004 Sb., zakonyprolidi.cz (ZÁLOŽNÍ, neoficiální zdroj; e-sbirka.gov.cz se automaticky nenačte)",
+          "url": "https://www.zakonyprolidi.cz/cs/2004-634",
+          "otevreno": "2026-11-04"
+        }
+      ],
+      "nejiste": [
+        "Ověřeno jen na zakonyprolidi.cz (záložní zdroj); oficiální znění v e-Sbírce ani služba na portal.gov.cz nebyly dostupné. Před publikací doporučujeme ověřit výši v e-Sbírce.",
+        "Text položky odkazuje na poznámku pod čarou 2d, kterou jsme neviděli."
+      ]
+    },
+    "nbu_lhuty_412_2005": {
+      "text": "",
+      "url": "",
+      "zdroje": [],
+      "nejiste": [
+        "Lhůty pro vydání rozhodnutí v řízení o vydání osvědčení podnikatele (část čtvrtá zákona 412/2005 Sb., § 88a až 135) jsme neověřili: e-sbirka.gov.cz se automaticky nenačte, nbu.gov.cz blokuje přístup, zakonyprolidi.cz a epravo.cz zobrazují bez přihlášení jen začátek zákona (do § 42, resp. § 25).",
+        "Rozsudek Městského soudu v Praze 3 A 49/2015 zmiňuje v argumentaci účastníka § 117 (75 dní, prodloužení na 9 měsíců). Jde o znění z roku 2015 a o tvrzení účastníka, ne soudu: nepoužívat, jen jako vodítko, kde hledat (§ 117).",
+        "Prohlášení podnikatele pro stupeň Vyhrazené (§ 15a) se podává před prvním přístupem a platí 5 let; jde o úkon podnikatele, bez rozhodnutí NBÚ (zakonyprolidi.cz, záložní zdroj)."
+      ]
+    },
+    "mpo_povoleni_38_1994": {
+      "text": "Povolení k provádění zahraničního obchodu s vojenským materiálem vydává Licenční správa MPO se souhlasem MZV, MV a u významného vojenského materiálu MO; držitelem může být jen právnická osoba se sídlem v ČR (MZV). Lhůty podle zákona 38/1994 Sb.: ministerstvo rozhodne o žádosti o povolení do 60 dnů ode dne doručení (§ 12 odst. 1); dotčené orgány vydají závazné stanovisko do 20 dnů od doručení stejnopisu žádosti (§ 6 odst. 3). Správní poplatek se podle MPO řídí položkou 104 sazebníku zákona 634/2004 Sb. a hradí se po výzvě; výši poplatku za povolení jsme neověřili. Žádosti se podávají elektronicky přes ELIS MPO (eFormuláře, i datovou schránkou).",
+      "url": "https://www.businessinfo.cz/navody/obchod-vojensky-material-povoleni/",
+      "zdroje": [
+        {
+          "nazev": "MPO Licenční správa: Povolování zahraničního obchodu vojenským materiálem (BusinessInfo.cz)",
+          "url": "https://www.businessinfo.cz/navody/obchod-vojensky-material-povoleni/",
+          "otevreno": "2026-11-04"
+        },
+        {
+          "nazev": "MPO Licenční správa: formulář Žádost o vydání povolení právnické osobě (BusinessInfo.cz)",
+          "url": "https://www.businessinfo.cz/formulare/zadost-povoleni-po-zahranicni-obchod-vojensky-material/",
+          "otevreno": "2026-11-04"
+        },
+        {
+          "nazev": "MZV ČR: Kontrola zahraničního obchodu s vojenským materiálem (aktualizace 16. 10. 2019)",
+          "url": "https://mzv.gov.cz/jnp/cz/zahranicni_vztahy/bezpecnostni_politika/kontrola_exportu_zbrani/kontrola_zahranicniho_obchodu_s.html",
+          "otevreno": "2026-11-04"
+        },
+        {
+          "nazev": "Zákon 38/1994 Sb., zakonyprolidi.cz, znění od 15. 7. 2025 (ZÁLOŽNÍ, neoficiální zdroj)",
+          "url": "https://www.zakonyprolidi.cz/cs/1994-38",
+          "otevreno": "2026-11-04"
+        }
+      ],
+      "nejiste": [
+        "Výše poplatku podle položky 104 (zakonyprolidi.cz zobrazuje sazebník jen do položky 5, mpo.cz blokuje přístup).",
+        "Doba platnosti povolení: MZV (2019) uvádí nejvýše 5 let, ve zobrazeném znění zákona 38/1994 Sb. (zakonyprolidi.cz) jsme pevnou dobu nenašli, jen důvody zániku (§ 13). Rozpor neřešen, ověřit u MPO.",
+        "Lhůty § 6 a § 12 jsou ověřeny jen na zakonyprolidi.cz (záložní zdroj), e-Sbírka nedostupná."
+      ]
+    },
+    "mpo_licence_38_1994": {
+      "text": "Licence se vydává na jednu konkrétní obchodní transakci a předpokládá platné povolení. Správní poplatek 1 000 Kč (kromě registrace k obecné transferové licenci EU; bez poplatku mj. výstavy, předvádění, reklamace a bezplatné vzorky). Lhůta: u obchodu mimo EU 60 dní od podání, závazná stanoviska MZV, MO a MV do 20 dní se do lhůty nezapočítávají; individuální nebo globální transferová licence EU 30 dní (portal.gov.cz). Zákon: § 16 odst. 1 a 2 (60 dnů, stanoviska 20 dnů, ve zvlášť složitých případech lze prodloužit), dočasná licence § 19b (15 pracovních dnů).",
+      "url": "https://portal.gov.cz/sluzby-vs/licence-k-zahranicnimu-obchodu-s-vojenskym-materialem-S1631",
+      "zdroje": [
+        {
+          "nazev": "Portál veřejné správy: Licence k zahraničnímu obchodu s vojenským materiálem (S1631)",
+          "url": "https://portal.gov.cz/sluzby-vs/licence-k-zahranicnimu-obchodu-s-vojenskym-materialem-S1631",
+          "otevreno": "2026-11-04"
+        },
+        {
+          "nazev": "Zákon 38/1994 Sb., zakonyprolidi.cz (ZÁLOŽNÍ, neoficiální zdroj)",
+          "url": "https://www.zakonyprolidi.cz/cs/1994-38",
+          "otevreno": "2026-11-04"
+        }
+      ],
+      "nejiste": [
+        "Portal.gov.cz neuvádí položku sazebníku pro poplatek 1 000 Kč."
+      ]
+    }
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "kod": "sk",
+  "zeme": "Slovensko",
+  "stav": "2026-11-04",
+  "clenstvi": "EU, NATO",
+  "kdo_nakupuje": {
+    "text": "Nakupuje Ministerstvo obrany SR (MO SR). Na webu MO SR vydává většinu oznámení Sekcia verejného obstarávania (munice, výcvik, údržba), prodej majetku a zařazení do databáze NSIP řeší Sekcia majetku a infraštruktúry. Povolení k obchodu s výrobky obranného průmyslu spadají pod Ministerstvo hospodárstva SR (zákon 392/2011 Z. z.).",
+    "instituce": [
+      {
+        "nazev": "Ministerstvo obrany Slovenskej republiky, Obstarávanie tovarov, služieb a práce",
+        "zkratka": "MO SR",
+        "url": "https://www.mosr.sk/obstaravanie-tovarov-sluzieb-a-prace/"
+      },
+      {
+        "nazev": "Ministerstvo hospodárstva SR (zoznam výrobkov obranného priemyslu, opatrenie č. 1/2025)",
+        "zkratka": "MH SR",
+        "url": "https://static.slov-lex.sk/static/SK/ZZ/2025/133/20250605.html"
+      }
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Obranné zakázky spadají pod obecný zákon č. 343/2015 Z. z. o verejnom obstarávaní (znění účinné od 1. 7. 2026), který obsahuje definice zakázky v oblasti obrany a bezpečnosti, vojenského a citlivého vybavení (§ 3 ods. 6 až 8), výjimky (§ 1 ods. 2, mj. písm. a pro utajované skutečnosti a základní bezpečnostní zájmy a písm. x až ai pro mezinárodní smlouvy a nasazení v zahraničí) a pravidla pro podlimitní obranné zakázky (§ 5 ods. 4: od 300 000 EUR u tovarů a služeb a od 800 000 EUR u prací, pod finančním limitem stanoveným ÚVO). Oznámení MO SR na webu uvádějí postup podle § 139 zákona 343/2015. Seznam výrobků obranného průmyslu vydalo MH SR opatřením č. 1/2025 (účinné 5. 6. 2025) podle zákona 392/2011 Z. z. Interní směrnice MO SR č. 19/2011 o verejnom obstarávaní je na webu MO SR stále uvedena, ale vychází ze zrušeného zákona 25/2006 Z. z.",
+    "predpisy": [
+      {
+        "nazev": "Zákon č. 343/2015 Z. z. o verejnom obstarávaní (znenie od 1. 7. 2026)",
+        "url": "https://static.slov-lex.sk/pdf/SK/ZZ/2015/343/ZZ_2015_343_20260701.pdf"
+      },
+      {
+        "nazev": "Opatrenie MH SR č. 1/2025, zoznam výrobkov obranného priemyslu (č. 133/2025 Z. z.)",
+        "url": "https://static.slov-lex.sk/static/SK/ZZ/2025/133/20250605.html"
+      },
+      {
+        "nazev": "Smernice MO SR a metodické usmernenia k verejnému obstarávaniu",
+        "url": "https://www.mosr.sk/smernice-mo-sr-a-metodicke-usmernenia-k-verejnemu-obstaravaniu/"
+      }
+    ]
+  },
+  "kde_tendry": {
+    "text": "MO SR zveřejňuje výzvy, vysvětlení a podklady na svém webu (Obstarávanie tovarov, služieb a práce, Súťažné podklady) a před zakázkami pořádá přípravné trhové konzultace (PTK) s formuláři k přihlášení. Komunikace u zakázek s nízkou hodnotou probíhá od 31. 3. 2022 výhradně přes platformu EVO. Národní Elektronická platforma verejného obstarávania (EPVO, isepvo.sk) dnes zahrnuje IS EVO a elektronické tržiště. Nadlimitní zakázky jdou i do TED.",
+    "portaly": [
+      {
+        "nazev": "MO SR: Obstarávanie tovarov, služieb a práce",
+        "url": "https://www.mosr.sk/obstaravanie-tovarov-sluzieb-a-prace/"
+      },
+      {
+        "nazev": "MO SR: Prípravné trhové konzultácie",
+        "url": "https://www.mosr.sk/pripravne-trhove-konzultacie/"
+      },
+      {
+        "nazev": "EPVO, Elektronická platforma verejného obstarávania",
+        "url": "https://www.isepvo.sk/o-systeme/"
+      }
+    ]
+  },
+  "registrace": {
+    "text": "Pro elektronické zakázky MO SR je nutný účet v soukromé zóně webu Úradu pre verejné obstarávanie (uvo.gov.sk) propojený s hospodářským subjektem v EVO a ověření subjektu validačním kódem, a to před podáním nabídky. Pro mezinárodní tendry NATO Security Investment Programme (NSIP) musí být firma zařazena do databáze NSIP vedené MO SR.",
+    "kroky": [
+      "Založit účet v soukromé zóně uvo.gov.sk a zaregistrovat a ověřit hospodářský subjekt v EVO/EPVO.",
+      "Sledovat výzvy a PTK na webu MO SR, k PTK se hlásit přes formulář.",
+      "Pro tendry NSIP podat písemnou žádost o zařazení do databáze NSIP (výpis z obchodního rejstříku, reference za 3 roky, certifikát systému jakosti, případně potvrzení NBÚ a NATO FSC).",
+      "U konkrétního tendru NSIP si včas vyžádat od MO SR prohlášení o způsobilosti (declaration of eligibility)."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Podle analýzy Analytického útvaru MO SR č. 1/2023 (Kompenzácie v obranných nákupoch, únor 2023; podle vlastního textu nemusí vyjadřovat oficiální postoj MO SR) Slovensko nemá obecný předpis, který by offset vyžadoval v předem dané výši: průmyslová spolupráce se požaduje případ od případu (ad hoc). Starší vládní zásady pro offsety (2003, aktualizace 2012) už neplatí. U nedávných projektů se zapojení slovenského průmyslu zdůvodňovalo bezpečností dodávek: BOV 8x8 (Patria) a PBOV (CV90) aspoň 40 % hodnoty smlouvy, 3D radary (Elta) asi 30 %. Nákupy obrněných vozidel šly jako mezivládní smlouvy mimo zákon 343/2015 Z. z. Analýza doporučuje průmyslovou spolupráci formalizovat a zřídit pro ni útvar. Směrnice MO SR č. 19/2011 (offset od zahraničních dodavatelů nad 6 mil. EUR, typicky 20 % přímý nebo 30 % přímý a nepřímý) vychází ze zrušeného zákona 25/2006 Z. z., analýza ji mezi platnými pravidly neuvádí."
+  },
+  "bezpecnost": {
+    "text": "Národním bezpečnostním úřadem je Národný bezpečnostný úrad (NBÚ). Průmyslovou bezpečnost upravuje zákon č. 215/2004 Z. z. o ochrane utajovaných skutočností (znění od 1. 5. 2025): § 43 až 52, mj. bezpečnostní prověrka podnikatele (§ 45) a potvrzení o průmyslové bezpečnosti (§ 50), prováděcí vyhlášky NBÚ č. 325/2004 a 301/2013 Z. z. (novela 186/2025 Z. z.). Výměnu utajovaných skutočností se zahraničím řeší § 60 až 62; uznání zahraničního FSC jsme v dostupném textu nenašli. S ČR platí Dohoda medzi vládou Slovenskej republiky a vládou Českej republiky o vzájomnej ochrane utajovaných skutočností: podpis Bratislava 3. 2. 2005, platnost od 3. 12. 2005 (oznámení č. 488/2005 Z. z.); nahradila dohodu z 23. 5. 2000 (72/2001 Z. z.). Text dohody, a tedy pravidla uznání FSC, jsme neotevřeli."
+  },
+  "inovace": {
+    "text": "MO SR má kontaktní místo pro NATO DIANA (diana@mod.gov.sk) a návod k zapojení: registrace na portálu DIANA a podání Challenge Application. Způsobilé jsou subjekty se sídlem v členském státě NATO, které dělají výzkum a vývoj v deep tech a dual-use technologiích. Seznam NATO z roku 2023 uvádí na Slovensku sedm DIANA test centres (Cognexa, Beset, Glycanostics, Smart Mobility Platform Matador Holding, Needronix, Neuroconsan, Panza Robotics). MO SR dále vede stránky výzkumu a vývoje (medzirezortný podprogram 06E0I, kontaktní bod pro podporu VaV) a Evropského obranného fondu; podmínky pro zahraniční firmy tam neuvádí.",
+    "programy": [
+      {
+        "nazev": "MO SR: Severoatlantický akcelerátor pre obranné inovácie DIANA",
+        "url": "https://www.mosr.sk/severoatlanticky-akcelerator-pre-obranne-inovacie-diana/",
+        "pro_zahranicni": "ano (sídlo v NATO státě, https://www.mosr.sk/kto-su-opravneni-ucastnici-programovych-vyziev/)"
+      },
+      {
+        "nazev": "MO SR: Ako sa zapojiť do akcelerátora DIANA",
+        "url": "https://www.mosr.sk/ako-sa-zapojit-do-akceleratora-diana/",
+        "pro_zahranicni": "ano (postup přes portál DIANA)"
+      },
+      {
+        "nazev": "MO SR: Výskum a vývoj (podprogram 06E0I)",
+        "url": "https://www.mosr.sk/vyskum-a-vyvoj/",
+        "pro_zahranicni": "nejasné (stránka podmínky neuvádí)"
+      }
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "Registraci v EVO/EPVO udělejte předem, ověření subjektu je podmínkou podání nabídky (oznam MO SR).",
+    "Přípravné trhové konzultace MO SR jsou nejlevnější vstup: podklady a formuláře jsou veřejně na webu, dokumenty jsou ve slovenštině.",
+    "Pro tendry NSIP se vyplatí zařazení do databáze MO SR, MO SR vyžaduje schopnost pracovat s dokumentací ve slovenštině a angličtině.",
+    "Někteří slovenští zadavatelé připouštějí komunikaci i v češtině (příklad Správa štátnych hmotných rezerv, TED 421193-2026), u MO SR to ověřte v konkrétních podkladech.",
+    "U velkých nákupů MO SR (vozidla, radary) se požadovalo 30 až 40 % zapojení slovenského průmyslu: pro českou firmu je realistická cesta přes slovenského partnera nebo jako subdodavatel hlavního dodavatele."
+  ],
+  "prirucky": [
+    {
+      "nazev": "Kvalifikačný systém dodávateľov (databáza NSIP)",
+      "vydavatel": "MO SR",
+      "url": "https://www.mosr.sk/kvalifikacny-system-dodavatelov/",
+      "jazyk": "sk",
+      "typ": "web"
+    },
+    {
+      "nazev": "Oznam pre podnikateľov (komunikácia cez EVO)",
+      "vydavatel": "MO SR",
+      "url": "https://www.mosr.sk/data/files/4722_oznam-pre-podnikatelov.pdf",
+      "jazyk": "sk",
+      "typ": "pdf"
+    },
+    {
+      "nazev": "Ako sa zapojiť do akcelerátora DIANA",
+      "vydavatel": "MO SR",
+      "url": "https://www.mosr.sk/ako-sa-zapojit-do-akceleratora-diana/",
+      "jazyk": "sk",
+      "typ": "web"
+    }
+  ],
+  "zdroje": [
+    {
+      "nazev": "MO SR: úvodní stránka (redirect z mod.gov.sk)",
+      "url": "https://www.mosr.sk/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO SR: Obstarávanie tovarov, služieb a práce",
+      "url": "https://www.mosr.sk/obstaravanie-tovarov-sluzieb-a-prace/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO SR: Smernice a metodické usmernenia k VO",
+      "url": "https://www.mosr.sk/smernice-mo-sr-a-metodicke-usmernenia-k-verejnemu-obstaravaniu/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO SR: Smernica č. 19/2011 o verejnom obstarávaní",
+      "url": "https://www.mod.gov.sk/data/att/162730.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO SR: Oznam pre podnikateľov (EVO)",
+      "url": "https://www.mosr.sk/data/files/4722_oznam-pre-podnikatelov.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO SR: Prípravné trhové konzultácie",
+      "url": "https://www.mosr.sk/pripravne-trhove-konzultacie/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO SR: Kvalifikačný systém dodávateľov",
+      "url": "https://www.mosr.sk/kvalifikacny-system-dodavatelov/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO SR: Dohody o vzájomnej spolupráci",
+      "url": "https://www.mosr.sk/dohody-o-vzajomnej-spolupraci-s-mo-sr/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO SR: DIANA",
+      "url": "https://www.mosr.sk/severoatlanticky-akcelerator-pre-obranne-inovacie-diana/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO SR: Ako sa zapojiť do akcelerátora DIANA",
+      "url": "https://www.mosr.sk/ako-sa-zapojit-do-akceleratora-diana/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO SR: Kto sú oprávnení účastníci programových výziev",
+      "url": "https://www.mosr.sk/kto-su-opravneni-ucastnici-programovych-vyziev/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO SR: Výskum a vývoj",
+      "url": "https://www.mosr.sk/vyskum-a-vyvoj/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Slov-lex: zákon 343/2015 Z. z., znenie od 1. 7. 2026",
+      "url": "https://static.slov-lex.sk/pdf/SK/ZZ/2015/343/ZZ_2015_343_20260701.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Slov-lex: 133/2025 Z. z., opatrenie MH SR č. 1/2025",
+      "url": "https://static.slov-lex.sk/static/SK/ZZ/2025/133/20250605.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Slov-lex: zákon 215/2004 Z. z., znenie od 1. 5. 2025",
+      "url": "https://static.slov-lex.sk/static/SK/ZZ/2004/215/20250501.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "EPVO: O systéme",
+      "url": "https://www.isepvo.sk/o-systeme/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "TED 421193-2026 (Správa štátnych hmotných rezerv SR)",
+      "url": "https://ted.europa.eu/en/notice/421193-2026/pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NATO: DIANA test centres (2023)",
+      "url": "https://nato.int/content/dam/nato/legacy-wcm/media_pdf/2023/6/pdf/230607-DIANA-test-centres.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO SR, Analytický útvar: Kompenzácie v obranných nákupoch (analýza 1/2023)",
+      "url": "https://analyzy.gov.sk/files/archiv/62/Kompenzacie_v_obrannych_nakupoch.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Slov-lex: 488/2005 Z. z., oznámení o dohodě SR a ČR o ochraně utajovaných skutočností",
+      "url": "https://static.slov-lex.sk/static/SK/ZZ/2005/488/20051104.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Slov-lex: 72/2001 Z. z., dohoda SR a ČR z roku 2000",
+      "url": "https://static.slov-lex.sk/static/SK/ZZ/2001/72/20010227.html",
+      "otevreno": "2026-11-04"
+    }
+  ],
+  "nejiste": [
+    "Analýza MO SR 1/2023 popisuje ad hoc přístup k průmyslové spolupráci; zda MO SR od roku 2023 přijalo formální pravidla nebo útvar pro průmyslovou spolupráci, neověřeno.",
+    "Dohoda SR a ČR z roku 2005: platnost ověřena jen z oznámení 488/2005 Z. z. (bez zmínky o pozdějším ukončení); plný text, ustanovení o průmyslové bezpečnosti a české číslo Sb. m. s. neověřeny (seznam smluv MZV ČR pro Slovensko se načetl jen částečně).",
+    "Výše finančního limitu pro nadlimitní obranné zakázky (stanoví ÚVO vyhláškou, neotevřeno) a význam postupu podle § 139 zákona 343/2015 uváděného v oznámeních MO SR.",
+    "Zda je EVO pro nadlimitní obranné zakázky MO SR nahrazeno EPVO a od kdy (stránka EPVO datum neuvádí).",
+    "Postup NBÚ SR pro zahraniční podnikatele a uznání české FSC (§ 60 až 62 zákona 215/2004 jsme neviděli v plném znění).",
+    "Seznam DIANA test centres je z roku 2023; slovenské DIANA accelerator site jsme nenašli."
+  ]
+}

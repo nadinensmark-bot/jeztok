@@ -1,0 +1,97 @@
+{
+  "kod": "at",
+  "zeme": "Rakousko",
+  "stav": "2026-11-04",
+  "clenstvi": "EU (není členem NATO)",
+  "kdo_nakupuje": {
+    "text": "Pro Bundesheer pořizuje Bundesministerium für Landesverteidigung (BMLV). Formální zadávací řízení a vergaberecht má na starosti oddělení Abteilung Vergabe und Einkaufsrecht (VER); od 1. 1. 2025 platí nová interní Richtlinie für die Beschaffung (RfB), uvádí výroční zpráva 2024 ministerské Beschaffungs-Prüfkommission (přezkumná komise pro nákupy). Technickým kompetenčním centrem je Armaments and Defence Technology Agency (Vídeň, arwt@bmlv.gv.at): zkoušky a testy, technické specifikace, klasifikace a číslování položek zásobování. Část velkých nákupů jde mimo soutěž, např. G2G nebo společně s jinými státy (C-390 s Nizozemskem, protivzdušná obrana přes ESSI).",
+    "instituce": [
+      {"nazev": "Bundesministerium für Landesverteidigung", "zkratka": "BMLV", "url": "https://www.bundesheer.at/unser-heer/organisation"},
+      {"nazev": "BMLV, Abteilung Vergabe und Einkaufsrecht (podle výroční zprávy Beschaffungs-Prüfkommission 2024)", "zkratka": "VER", "url": "https://www.parlament.gv.at/dokument/XXVIII/SONS/10/imfname_1713808.pdf"},
+      {"nazev": "Armaments and Defence Technology Agency", "zkratka": "", "url": "https://www.bundesheer.at/en/your-partners-1/armaments-agency"}
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Obranné a bezpečnostní zakázky upravuje Bundesvergabegesetz Verteidigung und Sicherheit 2012 (BVergGVS 2012), který provádí směrnici 2009/81/ES; vedle něj platí obecný BVergG 2018 a BVergKonz 2018. Gesčně odpovídá Bundesministerium für Justiz (BMJ). Vergaberechtsgesetz 2026 novelizuje BVergG 2018, BVergKonz 2018 i BVergGVS 2012 (vládní návrh 17. 11. 2025: vyšší a trvalé limity pro přímé zadání, eForms, nové poplatky za přezkum); podle materiálu Wirtschaftskammer vyšel v BGBl. I Nr. 8/2026 a hlavní části platí od 1. 3. 2026. Na základě BVergGVS 2012 vydalo ministerstvo Publikationsmedienverordnung Verteidigung und Sicherheit 2019 (elektronické médium pro národní zveřejnění nadlimitních obranných oznámení).",
+    "predpisy": [
+      {"nazev": "BMJ: Vergaberecht in Österreich (přehled zákonů včetně BVergGVS 2012)", "url": "https://www.bmj.gv.at/themen/Vergaberecht/Vergaberecht-in-%C3%96sterreich.html"},
+      {"nazev": "Vergaberechtsgesetz 2026, vládní návrh (Ministerratsvortrag 17. 11. 2025)", "url": "https://www.bundeskanzleramt.gv.at/dam/jcr:19e16cfe-1d15-413b-9aac-9f5ad1bba7d9/31_22_mrv.pdf"},
+      {"nazev": "Vergaberechtsgesetz 2026, ministerský návrh 58/ME XXVIII. GP (čl. 3 mění BVergGVS 2012)", "url": "https://www.parlament.gv.at/dokument/XXVIII/ME/58/fname_1715645.pdf"},
+      {"nazev": "Publikationsmedienverordnung Verteidigung und Sicherheit 2019, hodnocení dopadů (BMJ)", "url": "https://www.bmj.gv.at/dam/jcr:57629447-9a7f-417c-aa8d-231684cb77f1/wfa.pdf"}
+    ]
+  },
+  "kde_tendry": {
+    "text": "Státní portál pro firmy USP (Unternehmensserviceportal) má bezplatnou Ausschreibungssuche, která denně sbírá zakázky podle BVergG ze všech zdrojů veřejných zadavatelů; registrace na hledání není potřeba, nabídka se pak podává na platformě uvedené u zakázky. Mezi publikačními médii USP jmenuje i vlastní databázi BMLV, dále auftrag.at (zakázky spolkových zadavatelů), BBG a Úřední věstník EU. Nadlimitní zakázky musí běžet plně elektronicky (e-Vergabe) a oznámení se posílají přes eForms; nadlimitní zakázky jdou na TED. Bundesbeschaffung GmbH (BBG) je centrální nákupní organizace státu; zda nakupuje pro BMLV i vojenský materiál, jsem neověřila (zpráva komise zmiňuje jen rámcové smlouvy na nákladní auta).",
+    "portaly": [
+      {"nazev": "USP Ausschreibungssuche", "url": "https://www.usp.gv.at/services/ausschreibungssuche.html"},
+      {"nazev": "USP: Ausschreibungsdatenbanken und Publikationsmedien (seznam včetně databáze BMLV)", "url": "https://www.usp.gv.at/foerderungen-ausschreibungen/vergabeverfahren/ausschreibungsdatenbanken-und-publikationsmedien.html"},
+      {"nazev": "Bundesbeschaffung GmbH, Aktuelle Ausschreibungen", "url": "https://www.bbg.gv.at"},
+      {"nazev": "TED (Tenders Electronic Daily)", "url": "https://ted.europa.eu"}
+    ]
+  },
+  "registrace": {
+    "text": "Centrální registr dodavatelů pro obranné zakázky BMLV jsem neověřila. Hledání zakázek na USP je bez registrace, k podání nabídky se firma registruje na platformě, kterou zadavatel u zakázky uvede. Způsobilost (Befugnis, Zuverlässigkeit, Leistungsfähigkeit) lze předběžně doložit jednotným evropským osvědčením (Einheitliche Europäische Eigenerklärung, ESPD).",
+    "kroky": [
+      "Vyhledávat zakázky přes USP Ausschreibungssuche a TED (bez registrace).",
+      "Registrovat se na e-Vergabe platformě uvedené u konkrétní zakázky a podat nabídku elektronicky (u nadlimitních zakázek povinné).",
+      "Připravit doklady o způsobilosti, předběžně jednotné evropské osvědčení (ESPD).",
+      "U utajovaných zakázek počítat s bezpečnostní prověrkou firmy (viz bezpečnost)."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Rakousko se vrací k průmyslové spolupráci u obranných nákupů. Ministryně obrany Tanner a ministr hospodářství Hattmannsdorfer zřídili 8. 7. 2025 Taskforce Industriekooperation (BMLV, BMWET, Wirtschaftskammer, Industriellenvereinigung, Finanzprokuratur): má stanovit závazné rámcové podmínky, posílit domácí výrobu bezpečnostně relevantního zboží a zajistit dodavatelské řetězce; pilotem je nákup cvičných proudových letounů. Konkrétní pravidla (prahy, procenta) tisková zpráva neuvádí. Podle jednacího řádu BMLV z roku 2021 posuzovalo protiobchody (Gegengeschäfte) oddělení Rüstungspolitik."
+  },
+  "bezpecnost": {
+    "text": "National Security Authority je Informationssicherheitskommission (ISK) při Bundeskanzleramt (kancelář: oddělení I/10, isk@bka.gv.at). U vojenských zakázek prověrky a inspekce firem provádí i bezpečnostní osvědčení (Sicherheitsunbedenklichkeitsbescheinigung, max. 5 let) vydává BMLV, u civilních BMI. Postup: žádost u věcně příslušného ministerstva, smluvní závazek k ochraně utajovaných informací, jmenování Security Officer a zástupce, prověrka spolehlivosti firmy, fyzická a IT opatření, prověrka osob od stupně VERTRAULICH, audit. Facility Security Clearance (FSC) si mezi sebou potvrzují národní bezpečnostní úřady, firma ji sama nedostává; zahraniční firma tedy postupuje přes svůj NSA (pro ČR NBÚ). ČR a Rakousko mají Smlouvu o výměně a vzájemné ochraně utajovaných informací (podepsána 24. 9. 2008, platná od 1. 10. 2009, č. 69/2009 Sb.m.s., podle přehledu MZV ČR)."
+  },
+  "inovace": {
+    "text": "Hlavní vstup je program obranného výzkumu FORTE (od 2018), který financuje Bundesministerium für Finanzen (BMF), BMLV je vojenský uživatel a program řídí agentura FFG. Výzva 2025 (uzávěrka 6. 3. 2026, rozpočet 4,95 mil. EUR, jazyk němčina): studie do 500 tis. EUR až 100 % a kooperativní projekty 100 tis. až 2 mil. EUR až 85 %, min. dva partneři a povinná účast BMLV. Žadatelem musí být firma s provozovnou nebo výzkumem v Rakousku nebo rakouská výzkumná instituce; zahraniční partneři mohou čerpat, ale dohromady max. 20 % celkové podpory. Civilní bezpečnostní výzkum pokrývá KIRAS (také BMF). Rakousko není v NATO, DIANA v zemi nepůsobí.",
+    "programy": [
+      {"nazev": "FORTE, obranný výzkum (BMF, BMLV, správa FFG)", "url": "https://www.bmf.gv.at/en/topics/security-and-technology/Defence-Research-FORTE.html", "pro_zahranicni": "ano jako partner, max. 20 % podpory pro všechny zahraniční partnery; žadatel s rakouskou provozovnou (Ausschreibungsleitfaden FORTE 2025)"},
+      {"nazev": "FORTE Ausschreibungsleitfaden 2025", "url": "https://fdoc.ffg.at/s/vdb/public/node/content/HIx5voysRyqglqipPNgMhg/1.0?a=true", "pro_zahranicni": "ano jako partner, viz limit 20 %"}
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "Do FORTE se česká firma dostane jako partner rakouského konsorcia (zahraniční partneři dohromady max. 20 % podpory), projekt musí zapojit BMLV a výzvy i podání jsou německy.",
+    "Zakázky sledujte bezplatně přes USP Ausschreibungssuche a TED; nadlimitní nabídky se podávají jen elektronicky.",
+    "Počítejte s novým důrazem na Industriekooperation: rakouský partner nebo výroba v Rakousku může u velkých nákupů hrát roli, pravidla se teprve připravují.",
+    "Utajované zakázky: rakouské osvědčení firma nedostává, FSC potvrzuje NBÚ na základě dohody ČR a Rakouska z roku 2009."
+  ],
+  "prirucky": [
+    {"nazev": "Industrielle Sicherheit (Informationssicherheit, Industrial Security)", "vydavatel": "Unternehmensserviceportal (USP)", "url": "https://www.usp.gv.at/foerderungen-ausschreibungen/informationssicherheit-industrial-security.html", "jazyk": "de", "typ": "web"},
+    {"nazev": "FORTE Ausschreibungsleitfaden 2025", "vydavatel": "BMF / FFG", "url": "https://fdoc.ffg.at/s/vdb/public/node/content/HIx5voysRyqglqipPNgMhg/1.0?a=true", "jazyk": "de", "typ": "pdf"},
+    {"nazev": "Vergabeverfahren (přehled pro firmy)", "vydavatel": "Unternehmensserviceportal (USP)", "url": "https://www.usp.gv.at/themen/betrieb-und-umwelt/laufender-betrieb/vergabeverfahren.html", "jazyk": "de", "typ": "web"}
+  ],
+  "zdroje": [
+    {"nazev": "Bundesheer: Armaments and Defence Technology Agency", "url": "https://www.bundesheer.at/en/your-partners-1/armaments-agency", "otevreno": "2026-11-04"},
+    {"nazev": "Bundesheer: Your partners", "url": "https://www.bundesheer.at/en/your-partners-1", "otevreno": "2026-11-04"},
+    {"nazev": "Bundesheer: Intelligence services", "url": "https://www.bundesheer.at/en/your-partners-1/intelligence-services", "otevreno": "2026-11-04"},
+    {"nazev": "Bundesheer: Organisation", "url": "https://www.bundesheer.at/unser-heer/organisation", "otevreno": "2026-11-04"},
+    {"nazev": "Bundesbeschaffung GmbH", "url": "https://www.bbg.gv.at", "otevreno": "2026-11-04"},
+    {"nazev": "MZV ČR: smlouvy ČR a Rakouska", "url": "https://mzv.gov.cz/jnp/cz/encyklopedie_statu/evropa/rakousko/smlouvy/index.html", "otevreno": "2026-11-04"},
+    {"nazev": "Beschaffungs-Prüfkommission BMLV, Jahresbericht 2024 (Parlament)", "url": "https://www.parlament.gv.at/dokument/XXVIII/SONS/10/imfname_1713808.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "BMLV Geschäftseinteilung 2021 (příloha parlamentní odpovědi 9688/AB)", "url": "https://www.parlament.gv.at/dokument/XXVII/AB/9688/imfname_1439328.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "BMJ: Vergaberecht in Österreich", "url": "https://www.bmj.gv.at/themen/Vergaberecht/Vergaberecht-in-%C3%96sterreich.html", "otevreno": "2026-11-04"},
+    {"nazev": "BMJ: WFA Publikationsmedienverordnung Verteidigung und Sicherheit 2019", "url": "https://www.bmj.gv.at/dam/jcr:57629447-9a7f-417c-aa8d-231684cb77f1/wfa.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "Ministerratsvortrag Vergaberechtsgesetz 2026", "url": "https://www.bundeskanzleramt.gv.at/dam/jcr:19e16cfe-1d15-413b-9aac-9f5ad1bba7d9/31_22_mrv.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "Parlament: 58/ME Vergaberechtsgesetz 2026 (Gesetzestext)", "url": "https://www.parlament.gv.at/dokument/XXVIII/ME/58/fname_1715645.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "WKO Steiermark: BVergG-Novelle 2026 (webinář)", "url": "https://www.wko.at/stmk/unternehmen/bundesvergabegesetz-nov.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "USP: Vergabeverfahren", "url": "https://www.usp.gv.at/themen/betrieb-und-umwelt/laufender-betrieb/vergabeverfahren.html", "otevreno": "2026-11-04"},
+    {"nazev": "USP: Ausschreibungssuche", "url": "https://www.usp.gv.at/services/ausschreibungssuche.html", "otevreno": "2026-11-04"},
+    {"nazev": "USP: Ausschreibungsdatenbanken und Publikationsmedien", "url": "https://www.usp.gv.at/foerderungen-ausschreibungen/vergabeverfahren/ausschreibungsdatenbanken-und-publikationsmedien.html", "otevreno": "2026-11-04"},
+    {"nazev": "USP: Industrielle Sicherheit", "url": "https://www.usp.gv.at/foerderungen-ausschreibungen/informationssicherheit-industrial-security.html", "otevreno": "2026-11-04"},
+    {"nazev": "BMWET: Taskforce Industriekooperation (8. 7. 2025)", "url": "https://www.bmwet.gv.at/Presse/Archiv/BMWET-Pressemeldungen-2025/PA-BMWET-Juli-2025/Industriekooperationen.html", "otevreno": "2026-11-04"},
+    {"nazev": "BMF: Defence Research FORTE", "url": "https://www.bmf.gv.at/en/topics/security-and-technology/Defence-Research-FORTE.html", "otevreno": "2026-11-04"},
+    {"nazev": "FFG: FORTE Ausschreibungsleitfaden 2025", "url": "https://fdoc.ffg.at/s/vdb/public/node/content/HIx5voysRyqglqipPNgMhg/1.0?a=true", "otevreno": "2026-11-04"}
+  ],
+  "nejiste": [
+    "Plné znění BVergGVS 2012 a prahy pro obranné zakázky: RIS (ris.bka.gv.at) blokuje automatické čtení; zákon a jeho vztah ke směrnici 2009/81/ES potvrzují BMJ a hodnocení dopadů BMJ.",
+    "Číslo a datum vyhlášení Vergaberechtsgesetz 2026 (BGBl. I Nr. 8/2026, 27. 2. 2026, účinnost 1. 3. 2026) mám z materiálu Wirtschaftskammer Steiermark, ne z BGBl (RIS blokován). Konkrétní změny BVergGVS 2012 (čl. 3 návrhu) jsem nečetla.",
+    "Konkrétní e-Vergabe platforma a databáze BMLV: USP ji uvádí, ale odkaz (usp.gv.at/linkresolution/link/13084) a bmlv.gv.at nešly načíst.",
+    "Zda BBG nakupuje pro BMLV i vojenský materiál: neověřeno.",
+    "Výsledná pravidla Taskforce Industriekooperation (prahy, procenta, kdo je spravuje): k 4. 11. 2026 jsem žádný přijatý dokument nenašla; trend.at (8. 7. 2025) psal, že taskforce teprve připraví směrnice.",
+    "Aktuální organizační zařazení oddělení Rüstungspolitik a VER: jednací řád je z 9. 4. 2021, novější jsem neověřila.",
+    "FORTE výzva 2026: stránka ffg.at/forte/ausschreibung-2026 existuje, ale nešla načíst; parametry výše jsou z výzvy 2025.",
+    "Změna oproti 1. kolu: odstraněno tvrzení, že FORTE a právní rámec nejsou ověřeny; nyní doloženo zdroji výše."
+  ]
+}

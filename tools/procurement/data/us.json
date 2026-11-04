@@ -1,0 +1,483 @@
+{
+  "kod": "us",
+  "zeme": "Spojené státy americké",
+  "stav": "2026-11-04",
+  "clenstvi": "NATO (není členem EU)",
+  "kontext": "Americký obranný trh je největší na světě, ale pro malou zahraniční firmu je nejtěžší vstoupit přímo. Nákup není centralizovaný v jedné agentuře: zakázky zadávají vojenské resorty (Army, Navy, Air Force) a obranné agentury, každá přes své contracting activities (útvary s pravomocí uzavírat smlouvy). Pravidla nastavuje FAR (Federal Acquisition Regulation, obecný předpis pro všechny federální nákupy) a obranný doplněk DFARS. Obojí se právě mění: OMB 25. 6. 2026 zveřejnil první ze tří balíků návrhů přepsaného FAR (Revolutionary FAR Overhaul, 17 částí FAR), úřady reformu od roku 2025 zavádějí přes dočasné odchylky (deviations); platné znění FAR na acquisition.gov je FAC 2026-01 (účinné od 13. 3. 2026), DFARS ve znění změny z 7. 5. 2026. Prezidentské nařízení EO 14347 (5. 9. 2025) povolilo ministerstvu obrany používat sekundární název Department of War (DoW); v zákonech zůstává název Department of Defense, dokud ho nezmění Kongres. Ministr 7. 11. 2025 ohlásil reformu akvizic, Defense Acquisition System se přejmenoval na Warfighting Acquisition System. Pro pochopení trhu je důležité rozlišit dva směry: když USA prodávají partnerům, jde to buď přes Foreign Military Sales (FMS, smlouvu uzavírá vláda USA a nakupuje přes akviziční systém DoD, program spravuje DSCA), nebo přes Direct Commercial Sales (DCS, partner kupuje přímo od americké firmy, která potřebuje exportní licenci ministerstva zahraničí). Obojí podléhá Arms Export Control Act. Tato kapitola řeší opačný směr: jak česká firma prodá americkému DoD. Exportní kontroly (důležité pro práci s americkými komponentami a daty): ITAR (22 CFR části 120 až 130, vychází ze sekce 38 Arms Export Control Act) spravuje Directorate of Defense Trade Controls (DDTC) ministerstva zahraničí. Pro českou firmu, která dostane americký obranný výrobek nebo technická data (např. od partnera nebo primu), platí 22 CFR 123.9: jakýkoli další převod, reexport nebo změna konečného užití vyžaduje předchozí písemný souhlas DDTC, a to i po zabudování do vlastního výrobku; výjimka existuje pro reexport zabudovaných komponent vládám NATO za splnění podmínek a s oznámením DDTC do 30 dnů. EAR (15 CFR části 730 až 774, dual-use položky na Commerce Control List) spravuje BIS ministerstva obchodu. Podle pravidla de minimis (15 CFR 734.4) zahraniční výrobek s kontrolovaným americkým obsahem do 10 % hodnoty nepodléhá EAR při reexportu kamkoli a do 25 % při reexportu do zemí mimo skupiny E:1 a E:2; pro některé položky se de minimis neuplatní vůbec.",
+  "kdo_nakupuje": {
+    "text": "Vojenský materiál a služby nakupuje ministerstvo obrany (DoD, sekundárně Department of War) decentralizovaně: vojenské resorty (Army, Navy včetně námořní pěchoty, Air Force včetně Space Force) a obranné agentury, z nichž pro dodavatele dílů a spotřebního materiálu je klíčová Defense Logistics Agency (DLA). USSOCOM (velitelství speciálních sil) má vlastní akviziční složku SOF AT&L. Akviziční politiku a dohled řídí Under Secretary for Acquisition and Sustainment (USD(A&S)); inovační vstupy mají DIU a služební programy jako AFWERX.",
+    "instituce": [
+      {
+        "nazev": "Office of the Under Secretary for Acquisition and Sustainment",
+        "zkratka": "USD(A&S)",
+        "url": "https://www.acq.osd.mil/"
+      },
+      {
+        "nazev": "Defense Logistics Agency",
+        "zkratka": "DLA",
+        "url": "https://www.dla.mil/Small-Business/Getting-Started/index.html"
+      },
+      {
+        "nazev": "Defense Innovation Unit",
+        "zkratka": "DIU",
+        "url": "https://www.diu.mil/work-with-us"
+      },
+      {
+        "nazev": "AFWERX (innovation arm of the Department of the Air Force)",
+        "zkratka": "AFWERX",
+        "url": "https://afwerx.com/"
+      },
+      {
+        "nazev": "USSOCOM Special Operations Forces Acquisition, Technology & Logistics, International Operations",
+        "zkratka": "SOF AT&L",
+        "url": "https://www.socom.mil/SOF-ATL/Pages/icd.aspx"
+      },
+      {
+        "nazev": "Office of Small Business Programs",
+        "zkratka": "OSBP",
+        "url": "https://business.defense.gov/"
+      },
+      {
+        "nazev": "Defense Security Cooperation Agency",
+        "zkratka": "DSCA",
+        "url": "https://www.dsca.mil/foreign-military-sales-faq"
+      }
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Obranné zakázky se řídí FAR (48 CFR, obecná federální pravidla) a DFARS (obranný doplněk). Domácí preference: Buy American (FAR část 25) vyžaduje u výrobku výrobu v USA a podíl domácích komponent nad 65 % u dodávek v letech 2024 až 2028 a 75 % od roku 2029; zahraniční nabídka se při hodnocení zvýhodní o 20 % (velká firma) nebo 30 % (malá firma). Česká republika je ale od 29. 6. 2012 v DFARS vedena jako qualifying country (země s dohodou o reciproční obranné akvizici, Reciprocal Defense Procurement): smlouvu podepsal ministr obrany USA s českým ministrem obrany 18. 4. 2012 a DoD určil, že uplatňovat Buy American a Balance of Payments na koncové výrobky z těchto zemí je v rozporu s veřejným zájmem (nevztahuje se na stavby). Výjimku z pravidel o speciálních kovech (specialty metals) mají i výrobky vyrobené v qualifying country. Berry Amendment (10 U.S.C. 4862) ale platí dál: potraviny, oblečení, stany a plachty, textilie a vlákna, vlna, osobní výstroj z těchto materiálů, ruční a měřicí nástroje a vlajky musí být z USA, výjimka pro qualifying countries je jen pro ochranné oblečení proti chemickým zbraním. Kybernetická bezpečnost: klauzule DFARS 252.204-7021 (CMMC, Cybersecurity Maturity Model Certification, datum klauzule listopad 2025) vyžaduje u zakázek s FCI/CUI (federální a citlivé neutajované informace) platný stav CMMC a dodavatel ho musí přenést na subdodavatele; zavádí se ve čtyřech ročních fázích.",
+    "predpisy": [
+      {
+        "nazev": "Federal Acquisition Regulation, Part 25 Foreign Acquisition (FAC 2026-01)",
+        "url": "https://www.acquisition.gov/far/part-25"
+      },
+      {
+        "nazev": "Revolutionary FAR Overhaul (přehled reformy FAR)",
+        "url": "https://www.acquisition.gov/far-overhaul"
+      },
+      {
+        "nazev": "OMB Advances Revolutionary FAR Overhaul with Formal Publication of Regulatory Changes (25. 6. 2026)",
+        "url": "https://www.whitehouse.gov/releases/2026/06/omb-advances-revolutionary-far-overhaul-with-formal-publication-of-regulatory-changes/"
+      },
+      {
+        "nazev": "DFARS 225.872-1 General (qualifying countries)",
+        "url": "https://www.acquisition.gov/dfars/225.872-1-general."
+      },
+      {
+        "nazev": "DFARS Case 2012-D043, New Qualifying Country: Czech Republic (Federal Register, 29. 6. 2012)",
+        "url": "https://www.govinfo.gov/content/pkg/FR-2012-06-29/pdf/2012-15564.pdf"
+      },
+      {
+        "nazev": "DFARS 225.7002-1 Restrictions (Berry Amendment)",
+        "url": "https://www.acquisition.gov/dfars/225.7002-1-restrictions."
+      },
+      {
+        "nazev": "DFARS 225.7003-3 Exceptions (specialty metals)",
+        "url": "https://www.acquisition.gov/dfars/225.7003-3-exceptions."
+      },
+      {
+        "nazev": "DFARS 252.204-7021 Contractor Compliance with the CMMC Level Requirements",
+        "url": "https://www.acquisition.gov/dfars/252.204-7021-contractor-compliance-cybersecurity-maturity-model-certification-level-requirements."
+      },
+      {
+        "nazev": "32 CFR 170.3 Applicability (CMMC)",
+        "url": "https://www.law.cornell.edu/cfr/text/32/170.3"
+      },
+      {
+        "nazev": "Executive Order 14347 Restoring the United States Department of War",
+        "url": "https://www.whitehouse.gov/presidential-actions/2025/09/restoring-the-united-states-department-of-war/"
+      }
+    ]
+  },
+  "kde_tendry": {
+    "text": "Zakázky federálních úřadů včetně DoD se zveřejňují na SAM.gov v sekci Contract Opportunities (předběžná oznámení, výzvy, oznámení o zadání a zadání bez soutěže); vyhledávat může kdokoli bez účtu. DLA uvádí, že své zakázky nad 25 000 USD zveřejňuje na SAM.gov, ale nabídky na většinu výzev DLA Aviation a Land and Maritime se podávají jen v DIBBS (DLA Internet Bid Board System), kde je nutná samostatná registrace; přes SAM.gov se nabídky DLA nepodávají. DIU zveřejňuje své výzvy (Commercial Solutions Openings, Commercial Acceleration Opportunities, challenges) na vlastním webu; ke dni 4. 11. 2026 tam nebyla otevřená žádná CSO a jedna výzva typu challenge/CAO. AFWERX zveřejňuje SBIR/STTR témata (aktuálně FY27 Release 1).",
+    "portaly": [
+      {
+        "nazev": "SAM.gov Contract Opportunities",
+        "url": "https://sam.gov/content/opportunities"
+      },
+      {
+        "nazev": "DLA: Getting Started (odkazy na DIBBS a registraci)",
+        "url": "https://www.dla.mil/Small-Business/Getting-Started/index.html"
+      },
+      {
+        "nazev": "DIU Open Solicitations",
+        "url": "https://www.diu.mil/work-with-us/open-solicitations"
+      },
+      {
+        "nazev": "AFWERX (SBIR/STTR témata a výzvy)",
+        "url": "https://afwerx.com/"
+      }
+    ]
+  },
+  "registrace": {
+    "text": "Bez registrace v SAM.gov (System for Award Management) nelze dostat federální zakázku. Firma mimo USA potřebuje nejdřív NCAGE kód: podle FAR 2.101 ho firmám mimo USA přiděluje členský stát NATO nebo agentura NSPA a DLA ho vede v kmenovém registru CAGE. Při registraci v SAM.gov se přidělí Unique Entity ID (UEI); registrace se musí obnovovat každých 365 dní. Před zadáním zakázky nad hranicí mikronákupu musí uchazeč doložit CAGE kód své lokality a také CAGE kód a název vlastníka, pokud ho někdo vlastní nebo ovládá. Pro DLA je navíc nutná registrace v DIBBS. Zakázky s utajovanými informacemi jsou pro zahraniční firmu nedostupné (viz bezpečnost).",
+    "kroky": [
+      "Ověřit, že DoD daný typ výrobku kupuje a kdo (u DLA stránka What DLA Buys, jinak průzkum na SAM.gov Contract Opportunities).",
+      "Získat NCAGE kód od národního kodifikačního úřadu (FAR 2.101: přiděluje členský stát NATO nebo NSPA).",
+      "Založit účet přes Login.gov a zaregistrovat subjekt v SAM.gov (Register Entity); SAM přidělí UEI; registraci obnovovat každých 365 dní.",
+      "Pro zakázky DLA se zaregistrovat v DIBBS; nabídky DLA Aviation a Land and Maritime se podávají jen tam.",
+      "Pokud zakázka obsahuje FCI/CUI, připravit si stav CMMC na požadované úrovni (DFARS 252.204-7021), vyžaduje se i po subdodavatelích.",
+      "Zkontrolovat, zda výrobek nespadá pod Berry Amendment (textil, oblečení, stany, ruční nástroje atd.), tam qualifying country status ČR nepomáhá."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "USA při svých nákupech nepracují s offsety, domácí průmysl chrání pravidly Buy American, Berry Amendment a speciálních kovů (viz právní rámec); v ověřených předpisech jsme offsetový požadavek vůči zahraničním dodavatelům nenašli. Opačným směrem (když ČR kupuje americkou techniku přes FMS) platí DFARS 225.7306: DoD na základě prezidentské politiky z 16. 4. 1990 offsety u FMS nepodporuje, neuzavírá a americké firmy k nim nezavazuje; o offsetu rozhodují a vyjednávají ho samy dotčené firmy. Pro české firmy to znamená, že průmyslovou spolupráci u nákupů ČR z USA je nutné vyjednat přímo s americkým dodavatelem, ne s vládou USA."
+  },
+  "bezpecnost": {
+    "text": "Průmyslovou bezpečnost (National Industrial Security Program, Facility Clearance, FCL) spravuje DCSA. Podle 32 CFR 117.9 může FCL získat jen subjekt založený podle práva USA a umístěný v USA, a to jen na návrh (sponzorství) vládního zadavatele nebo už prověřeného dodavatele; zahraniční firma FCL dostat nemůže. Americká dceřiná společnost české firmy je pod zahraničním vlivem (FOCI, Foreign Ownership, Control or Influence) a FCL dostane jen tehdy, pokud se FOCI zmírní, například dohodou typu special security agreement. Bilaterální dohodu ČR a USA o ochraně utajovaných informací se nám z oficiálního zdroje ověřit nepodařilo (viz nejisté)."
+  },
+  "inovace": {
+    "text": "DIU (Defense Innovation Unit) zadává přes Commercial Solutions Opening (CSO) prototypové dohody podle Other Transaction authority (10 U.S.C. 4022), podle DIU často do 60 až 90 dnů; postup je krátký solution brief, pak pitch na pozvání, nabídka a prototypová dohoda. Odpovědět může podle DIU jakýkoli jednotlivec nebo komerční subjekt a DIU uvádí, že spolupracuje s firmami v USA i ve spojeneckých zemích; jednotlivé výzvy ale mohou mít omezení (např. výzva CLASS ACT vyžaduje americké občanství klíčového managementu). OT dohody (Other Transactions, mimo FAR) podle 10 U.S.C. 4022 vyžadují mimo jiné významnou účast nontraditional defense contractor (firma, která v posledním roce neměla zakázku DoD plně pod cost accounting standards); definice nevyžaduje americkou firmu. Po úspěšném prototypu lze zadat navazující výrobu bez další soutěže. SBIR/STTR (dotační program pro malé firmy, obnovený zákonem Public Law 119-83 z 13. 4. 2026 do 30. 9. 2031) je pro české firmy uzavřený: příjemce musí být z více než 50 % přímo vlastněn občany USA nebo osobami s trvalým pobytem (nebo za podmínek americkými VC fondy), mít do 500 zaměstnanců a podle AFWERX sídlit v USA; nový zákon navíc zavádí hodnocení zahraničních vazeb (u Air Force jako Foreign Risk Evaluation). Pro zralé zahraniční výrobky je nejpřímější cestou Foreign Comparative Testing (FCT, 10 U.S.C. 2350a(g)): úřad FCT pod OUSD(R&E) financuje testování zahraničních technologií, projekty navrhují americké složky (služby nebo velitelství), průměrně 500 až 700 tis. USD ročně na 18 až 24 měsíců, s možností následného nákupu.",
+    "programy": [
+      {
+        "nazev": "DIU Commercial Solutions Opening (CSO) a Commercial Acceleration Opportunities",
+        "url": "https://www.diu.mil/work-with-us/open-solicitations",
+        "pro_zahranicni": "ano, podle výzvy: DIU uvádí spolupráci s firmami v USA i ve spojeneckých zemích, některé výzvy vyžadují americké občanství klíčového managementu (diu.mil/work-with-us/open-solicitations)"
+      },
+      {
+        "nazev": "Foreign Comparative Testing (FCT)",
+        "url": "https://ac.cto.mil/wp-content/uploads/2025/08/FCT_101Brief_2025_Approved.pdf",
+        "pro_zahranicni": "ano, program je určen pro zahraniční technologie, ale návrh projektu podává americký sponzor (služba nebo velitelství) (FCT 101 Brief 2025)"
+      },
+      {
+        "nazev": "USSOCOM SOF AT&L International Operations (FCT a mezinárodní spolupráce)",
+        "url": "https://www.socom.mil/SOF-ATL/Pages/icd.aspx",
+        "pro_zahranicni": "ano, přes FCT a model spolupráce s partnerskou zemí (socom.mil)"
+      },
+      {
+        "nazev": "Prototypové Other Transactions (10 U.S.C. 4022)",
+        "url": "https://www.law.cornell.edu/uscode/text/10/4022",
+        "pro_zahranicni": "nejasné: zákon zahraniční účastníky nevylučuje a definice nontraditional defense contractor nevyžaduje americkou firmu (10 U.S.C. 3014), konkrétní podmínky určuje každá výzva"
+      },
+      {
+        "nazev": "SBIR/STTR (DoD, AFWERX a další)",
+        "url": "https://afwerx.com/programs/sbir-sttr/sbir-sttr-overview/",
+        "pro_zahranicni": "ne: vyžaduje firmu se sídlem v USA a většinové vlastnictví občany USA nebo osobami s trvalým pobytem (13 CFR 121.702, afwerx.com)"
+      },
+      {
+        "nazev": "AFWERX Foreign Risk Evaluation (FRE)",
+        "url": "https://afwerx.com/programs/sbir-sttr/foreign-risk-evaluation-fre-program/",
+        "pro_zahranicni": "ne (jde o prověrku zahraničních vazeb uchazečů o SBIR/STTR, zahraniční vazby nejsou automaticky vylučující)"
+      }
+    ]
+  },
+  "cesty_pro_zahranicni": [
+    {
+      "nazev": "Přímá dodávka jako firma z qualifying country",
+      "text": "Díky dohodě RDP (podepsané 18. 4. 2012) se na české koncové výrobky neuplatňují omezení Buy American a Balance of Payments a platí výjimka pro speciální kovy. Firma potřebuje NCAGE, SAM.gov a UEI. Nepomáhá to u položek pod Berry Amendment a u staveb; DoD si zároveň ponechává právo omezit konkrétní nákup na domácí zdroje.",
+      "url": "https://www.acquisition.gov/dfars/225.872-1-general."
+    },
+    {
+      "nazev": "Foreign Comparative Testing přes amerického sponzora",
+      "text": "Pro hotový, odzkoušený výrobek. Firma potřebuje uživatele v americké armádě, který projekt navrhne; FCT financuje testy a otevírá cestu k nákupu bez soutěže. Firmy mohou zadat informace o produktu přes online formulář uvedený v briefu FCT.",
+      "url": "https://ac.cto.mil/wp-content/uploads/2025/08/FCT_101Brief_2025_Approved.pdf"
+    },
+    {
+      "nazev": "DIU výzvy (CSO, CAO)",
+      "text": "Rychlé prototypové dohody podle OT authority. Číst podmínky každé výzvy: některé jsou otevřené firmám ze spojeneckých zemí, jiné vyžadují americké občanství managementu. Výzvy nejsou otevřené stále, sledovat stránku Open Solicitations.",
+      "url": "https://www.diu.mil/work-with-us/open-solicitations"
+    },
+    {
+      "nazev": "Subdodávka americkému primovi a teaming",
+      "text": "Realisticky nejčastější cesta pro malou firmu. Prime přenese na subdodavatele požadavky, mimo jiné CMMC, pokud subdodávka pracuje s FCI/CUI, a domácí preference (výjimka pro speciální kovy z qualifying country platí i v subdodávkách na všech stupních). V OT konsorciích může malá nebo netradiční firma splnit podmínku významné účasti nontraditional defense contractor.",
+      "url": "https://www.acquisition.gov/dfars/252.204-7021-contractor-compliance-cybersecurity-maturity-model-certification-level-requirements."
+    },
+    {
+      "nazev": "Americká dceřiná společnost",
+      "text": "Otevírá utajované zakázky (FCL jen pro subjekty založené a umístěné v USA, při zahraničním vlastnictví nutné zmírnění FOCI). SBIR/STTR ani tak nezíská, pokud není většinově vlastněna občany USA nebo osobami s trvalým pobytem. Pokud v USA vyrábí obranné výrobky z USML, musí se registrovat u DDTC i bez vývozu (22 CFR 122.1).",
+      "url": "https://www.law.cornell.edu/cfr/text/32/117.9"
+    },
+    {
+      "nazev": "Dodávky přes DLA a DIBBS",
+      "text": "Pro náhradní díly, spotřební a standardizovaný materiál. Registrace SAM.gov (CAGE/NCAGE), pak DIBBS, kde se podává většina nabídek DLA Aviation a Land and Maritime.",
+      "url": "https://www.dla.mil/Small-Business/Getting-Started/index.html"
+    }
+  ],
+  "tipy_pro_cz_firmy": [
+    "Začít NCAGE kódem a registrací v SAM.gov (UEI); registraci hlídat, propadá po 365 dnech. Bez toho nejde ani DLA, ani přímá zakázka.",
+    "Nespoléhat na SBIR/STTR: česká firma ani její americká dcera pod českou kontrolou podmínky vlastnictví nesplní. Pro hotový výrobek je reálnější FCT (přes amerického sponzora) nebo výzvy DIU otevřené spojeneckým firmám.",
+    "Qualifying country status ČR (od 2012) odstraňuje znevýhodnění Buy American, ale ne Berry Amendment: textil, oblečení, stany, osobní výstroj z těchto materiálů a ruční nástroje musí být z USA, takže tam je jedinou cestou výroba v USA.",
+    "Při subdodávkách primům počítat s požadavky CMMC (u FCI/CUI) a s ITAR/EAR omezeními na převod amerických komponent a dat; utajované zakázky jen přes americký subjekt s FCL a zmírněným FOCI."
+  ],
+  "prirucky": [
+    {
+      "nazev": "Foreign Comparative Testing (FCT) 101 Brief 2025",
+      "vydavatel": "OUSD(R&E), FCT Office",
+      "url": "https://ac.cto.mil/wp-content/uploads/2025/08/FCT_101Brief_2025_Approved.pdf",
+      "jazyk": "en",
+      "typ": "pdf"
+    },
+    {
+      "nazev": "Getting Started (prodej DLA krok za krokem)",
+      "vydavatel": "Defense Logistics Agency",
+      "url": "https://www.dla.mil/Small-Business/Getting-Started/index.html",
+      "jazyk": "en",
+      "typ": "web"
+    },
+    {
+      "nazev": "Work with Us (DIU, postup CSO)",
+      "vydavatel": "Defense Innovation Unit",
+      "url": "https://www.diu.mil/work-with-us",
+      "jazyk": "en",
+      "typ": "web"
+    },
+    {
+      "nazev": "Entity Registration (SAM.gov)",
+      "vydavatel": "GSA, SAM.gov",
+      "url": "https://sam.gov/content/entity-registration",
+      "jazyk": "en",
+      "typ": "web"
+    },
+    {
+      "nazev": "Foreign Military Sales FAQ (FMS vs DCS)",
+      "vydavatel": "Defense Security Cooperation Agency",
+      "url": "https://www.dsca.mil/foreign-military-sales-faq",
+      "jazyk": "en",
+      "typ": "web"
+    },
+    {
+      "nazev": "Berry Amendment (přehled a FAQ)",
+      "vydavatel": "Defense Pricing, Contracting, and Acquisition Policy, USD(A&S)",
+      "url": "https://www.acq.osd.mil/asda/dpc/cp/ic/berry-amendment.html",
+      "jazyk": "en",
+      "typ": "web"
+    }
+  ],
+  "zdroje": [
+    {
+      "nazev": "DFARS 225.872-1 General (qualifying countries, změna 7. 5. 2026)",
+      "url": "https://www.acquisition.gov/dfars/225.872-1-general.",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Federal Register 29. 6. 2012, DFARS Case 2012-D043 New Qualifying Country: Czech Republic",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2012-06-29/pdf/2012-15564.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Federal Register 19. 1. 2010, žádost o informace k jednání o RDP MOU s ČR",
+      "url": "https://govinfo.gov/content/pkg/FR-2010-01-19/pdf/2010-568.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "acq.osd.mil Reciprocal Defense Procurement and Acquisition Policy MOUs (aktuální stránka)",
+      "url": "https://www.acq.osd.mil/asda/dpc/cp/ic/reciprocal-procurement-mou.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "acq.osd.mil RDP MOUs, archivní verze z 20. 12. 2020 (UNT Web Archive)",
+      "url": "https://webarchive.library.unt.edu/web/20201220015112/http://www.acq.osd.mil/dpap/cpic/ic/reciprocal_procurement_memoranda_of_understanding.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "acq.osd.mil Berry Amendment",
+      "url": "https://www.acq.osd.mil/asda/dpc/cp/ic/berry-amendment.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "acq.osd.mil úvodní stránka USD(A&S)",
+      "url": "https://www.acq.osd.mil/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "FAR Part 25 (FAC 2026-01)",
+      "url": "https://www.acquisition.gov/far/part-25",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "FAR 2.101 Definitions (CAGE a NCAGE)",
+      "url": "https://www.acquisition.gov/far/2.101",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "FAR 4.1802 Policy (CAGE kód)",
+      "url": "https://www.acquisition.gov/far/4.1802",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Revolutionary FAR Overhaul",
+      "url": "https://www.acquisition.gov/far-overhaul",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "White House: OMB Advances Revolutionary FAR Overhaul (25. 6. 2026)",
+      "url": "https://www.whitehouse.gov/releases/2026/06/omb-advances-revolutionary-far-overhaul-with-formal-publication-of-regulatory-changes/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "DFARS 225.7002-1 Restrictions (Berry Amendment)",
+      "url": "https://www.acquisition.gov/dfars/225.7002-1-restrictions.",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "DFARS 225.7003-3 Exceptions (specialty metals)",
+      "url": "https://www.acquisition.gov/dfars/225.7003-3-exceptions.",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "DFARS 225.7306 Offset arrangements",
+      "url": "https://www.acquisition.gov/dfars/225.7306-offset-arrangements.",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "DFARS 252.204-7021 CMMC Level Requirements",
+      "url": "https://www.acquisition.gov/dfars/252.204-7021-contractor-compliance-cybersecurity-maturity-model-certification-level-requirements.",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "32 CFR 170.3 Applicability (CMMC)",
+      "url": "https://www.law.cornell.edu/cfr/text/32/170.3",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "32 CFR 117.9 Entity eligibility determination (FCL)",
+      "url": "https://www.law.cornell.edu/cfr/text/32/117.9",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "DCSA Entity Vetting, Facility Clearances & FOCI",
+      "url": "https://www.dcsa.mil/Industrial-Security/Entity-Vetting-Facility-Clearances-FOCI/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "SAM.gov Entity Registration",
+      "url": "https://sam.gov/content/entity-registration",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "SAM.gov Contract Opportunities",
+      "url": "https://sam.gov/content/opportunities",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "DLA Small Business: Getting Started",
+      "url": "https://www.dla.mil/Small-Business/Getting-Started/index.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "DIU Work with Us",
+      "url": "https://www.diu.mil/work-with-us",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "DIU Open Solicitations",
+      "url": "https://www.diu.mil/work-with-us/open-solicitations",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "DIU Solutions",
+      "url": "https://www.diu.mil/solutions",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "10 U.S.C. 4022 Authority of DoD to carry out certain prototype projects",
+      "url": "https://www.law.cornell.edu/uscode/text/10/4022",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "10 U.S.C. 3014 Nontraditional defense contractor",
+      "url": "https://www.law.cornell.edu/uscode/text/10/3014",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "13 CFR 121.702 SBIR/STTR ownership and size",
+      "url": "https://www.law.cornell.edu/cfr/text/13/121.702",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Public Law 119-83 Small Business Innovation and Economic Security Act (13. 4. 2026)",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ83/html/PLAW-119publ83.htm",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "AFWERX úvodní stránka",
+      "url": "https://afwerx.com/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "AFWERX SBIR/STTR Overview",
+      "url": "https://afwerx.com/programs/sbir-sttr/sbir-sttr-overview/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "AFWERX Foreign Risk Evaluation (FRE) Program",
+      "url": "https://afwerx.com/programs/sbir-sttr/foreign-risk-evaluation-fre-program/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "FCT 101 Brief 2025 (OUSD(R&E))",
+      "url": "https://ac.cto.mil/wp-content/uploads/2025/08/FCT_101Brief_2025_Approved.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "USSOCOM SOF AT&L International Operations",
+      "url": "https://www.socom.mil/SOF-ATL/Pages/icd.aspx",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "DSCA Foreign Military Sales FAQ",
+      "url": "https://www.dsca.mil/foreign-military-sales-faq",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "22 CFR 120.1 General authorities (ITAR)",
+      "url": "https://www.law.cornell.edu/cfr/text/22/120.1",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "22 CFR 122.1 Registration requirements (ITAR)",
+      "url": "https://www.law.cornell.edu/cfr/text/22/122.1",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "22 CFR 123.9 Reexports, retransfers (ITAR)",
+      "url": "https://www.law.cornell.edu/cfr/text/22/123.9",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "BIS Export Administration Regulations",
+      "url": "https://www.bis.gov/regulations/ear",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "15 CFR 734.4 De minimis U.S. content (EAR)",
+      "url": "https://www.law.cornell.edu/cfr/text/15/734.4",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Executive Order 14347 Restoring the United States Department of War (5. 9. 2025)",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/09/restoring-the-united-states-department-of-war/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Secretary of War Announces Acquisition Reform (tisková zpráva DoD z 10. 11. 2025, převzato GlobalSecurity.org)",
+      "url": "https://www.globalsecurity.org/military/library/news/2025/11/mil-251110-dod01.htm",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Office of Small Business Programs",
+      "url": "https://business.defense.gov/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "State Department Treaties in Force 2026",
+      "url": "https://www.state.gov/treaties-in-force",
+      "otevreno": "2026-11-04"
+    }
+  ],
+  "nejiste": [
+    "RDP dohoda s ČR: aktuální stránka acq.osd.mil (https://www.acq.osd.mil/asda/dpc/cp/ic/reciprocal-procurement-mou.html) se načetla bez seznamu zemí a datumu, ověřeno proto z DFARS 225.872-1 a Federal Register 2012-15564 (podpis 18. 4. 2012, Federal Register to nazývá agreement, ne MOU). Archivní verze stránky acq.osd.mil z 12/2020 (UNT Web Archive) při strojovém čtení uváděla ČR v seznamu zemí, se kterými DoD nemá RDP MOU, jen MOU o reciproční státní kontrole jakosti (Reciprocal Government QA Services). To je v rozporu s DFARS; pravděpodobně chyba extrakce nebo zastaralý seznam, doporučuji ověřit ručně v prohlížeči.",
+    "Bilaterální dohodu ČR a USA o ochraně utajovaných (vojenských) informací se nepodařilo ověřit: nbu.gov.cz blokuje automatické čtení a seznam Treaties in Force 2026 (https://www.state.gov/wp-content/uploads/2026/06/Treaties-in-Force-2026.pdf) se nenačetl až ke kapitole Czech Republic.",
+    "Která česká instituce přiděluje NCAGE kód (pravděpodobně ÚOSK, Úřad pro obrannou standardizaci, katalogizaci a státní ověřování jakosti): web uosk.cz i portál NSPA odmítly automatické čtení. Ověřeno jen obecně z FAR 2.101 (přiděluje člen NATO nebo NSPA).",
+    "Zda je registrace v SAM.gov zdarma a jaké jsou zvláštní kroky pro zahraniční subjekty (SAM.gov a FSD stránky se nenačetly s obsahem).",
+    "Přesné datum zahájení fáze 1 CMMC (účinnost DFARS pravidla) a tedy začátku fáze 2 (o rok později, tj. kolem listopadu 2026): ověřeno jen datum klauzule NOV 2025 a pravidlo ročních fází v 32 CFR 170.3; stránka dodcio.defense.gov/CMMC se načetla bez obsahu.",
+    "Detaily reformy akvizic ze 7. 11. 2025 (Portfolio Acquisition Executives místo PEO, preference komerčních řešení a CSO): oficiální weby war.gov a defense.gov nešly načíst, k dispozici byla jen tisková zpráva převzatá GlobalSecurity.org a kopie memoranda na webu prodejce (carahsoft.com). Do hlavního textu je zařazeno jen přejmenování na Warfighting Acquisition System.",
+    "Seznam akvizičních velitelství jednotlivých složek (Army Contracting Command, NAVSEA, NAVAIR, AFLCMC, Space Systems Command apod.): weby buď blokují čtení, nebo se načetly bez relevantního obsahu; PGI 202.101 se seznamem contracting activities se nenačetl.",
+    "Zda USA formálně nevyžadují offsety od zahraničních dodavatelů: výslovné prohlášení jsme nenašli, tvrzení stojí na absenci takového požadavku v ověřených předpisech a na DFARS 225.7306 (týká se FMS).",
+    "DIANA akcelerátory a test centra na území USA: diana.nato.int uvádí jen souhrnná čísla (16 akcelerátorů, více než 200 test center v Alianci), konkrétní americká místa nebyla ověřena.",
+    "Podmínky DIU CSO pro zahraniční firmy obecně (CSO Guide a FAQ DIU se nenačetly); ověřeno jen z úvodní stránky a stránky Open Solicitations.",
+    "Požadavky na dovoz obranných výrobků do USA (dovozní povolení) nebyly ověřeny.",
+    "Výpadek SBIR/STTR mezi 1. 10. 2025 a obnovením v dubnu 2026 je doložen jen sekundárními zdroji, proto ho neuvádím; ověřeno jen obnovení zákonem Public Law 119-83 do 30. 9. 2031."
+  ]
+}

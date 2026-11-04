@@ -1,0 +1,220 @@
+{
+  "kod": "pl",
+  "zeme": "Polsko",
+  "stav": "2026-11-04",
+  "clenstvi": "EU, NATO",
+  "kdo_nakupuje": {
+    "text": "Hlavním nákupčím výzbroje je Agencja Uzbrojenia (Agentura pro výzbroj) v resortu Ministerstwa Obrony Narodowej (MON). Podle PARP vede zadávací řízení, uzavírá smlouvy, vyjednává offsetové smlouvy a koordinuje projekty výzkumu a vývoje. Za vojensko-průmyslovou spolupráci a podporu polského obranného průmyslu odpovídá na MON Departament Polityki Zbrojeniowej (DPZ).",
+    "instituce": [
+      {
+        "nazev": "Agencja Uzbrojenia (profil zadavatele v BIP, adresa převzata z oznámení na TED)",
+        "zkratka": "AU",
+        "url": "https://au-bip.wp.mil.pl/pl/bip/zamowienia/"
+      },
+      {
+        "nazev": "Ministerstwo Obrony Narodowej, Departament Polityki Zbrojeniowej (Współpraca z przemysłem)",
+        "zkratka": "MON / DPZ",
+        "url": "https://www.gov.pl/web/obrona-narodowa/przemysl"
+      }
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Obranné a bezpečnostní zakázky upravuje Prawo zamówień publicznych (Pzp) z 11. 9. 2019, Dział VI (čl. 395 až 430), který transponuje směrnici 2009/81/ES; konsolidované znění Dz.U. 2026 poz. 793. Pzp se neuplatní mj. na utajované zakázky a tam, kde to vyžaduje základní bezpečnostní zájem státu a nejde ho chránit jinak (čl. 12 Pzp, ve vazbě na čl. 346 SFEU). Řízení pro obranné zakázky: omezené řízení (čl. 411), jednací řízení s uveřejněním (čl. 412), soutěžní dialog (čl. 413), jednací řízení bez uveřejnění (čl. 414) a přímé zadání (čl. 415). Offsety řeší samostatný zákon (viz průmyslová spolupráce). Finanční prahy neuvádíme, aktuální hodnoty pro 2026 jsme z primárního zdroje neověřili.",
+    "predpisy": [
+      {
+        "nazev": "Ustawa z dnia 11 września 2019 r. Prawo zamówień publicznych (metadata, t.j. Dz.U. 2026 poz. 793)",
+        "url": "https://api.sejm.gov.pl/eli/acts/DU/2019/2019"
+      },
+      {
+        "nazev": "Ustawa z dnia 26 czerwca 2014 r. o niektórych umowach zawieranych w związku z realizacją zamówień o podstawowym znaczeniu dla bezpieczeństwa państwa (t.j. Dz.U. 2022 poz. 1218)",
+        "url": "https://eli.gov.pl/api/acts/DU/2022/1218/text.html"
+      },
+      {
+        "nazev": "Ustawa z dnia 5 sierpnia 2010 r. o ochronie informacji niejawnych (metadata, t.j. Dz.U. 2025 poz. 1209)",
+        "url": "https://api.sejm.gov.pl/eli/acts/DU/2010/1228"
+      }
+    ]
+  },
+  "kde_tendry": {
+    "text": "Agencja Uzbrojenia zveřejňuje obranná řízení na TED s odkazem na směrnici 2009/81/ES a jako internetovou adresu uvádí svůj profil v BIP. Příklad z roku 2026 (TED 291495-2026): jediným jazykem žádostí o účast byla polština a žádosti se podávaly v listinné podobě s vlastnoručním podpisem (poštou, kurýrem nebo osobně ve Varšavě), e-mail jen pro komunikaci. Obecné veřejné zakázky MON vede na gov.pl v sekci Zamówienia publiczne. Profil AU v BIP je chráněn captchou, jeho obsah ani případnou elektronickou platformu jsme neověřili.",
+    "portaly": [
+      {
+        "nazev": "TED, příklad oznámení Agencja Uzbrojenia 291495-2026",
+        "url": "https://ted.europa.eu/en/notice/291495-2026/pdf"
+      },
+      {
+        "nazev": "Agencja Uzbrojenia, BIP: zamówienia (adresa z oznámení TED)",
+        "url": "https://au-bip.wp.mil.pl/pl/bip/zamowienia/"
+      },
+      {
+        "nazev": "MON: Zamówienia publiczne i ogłoszenia",
+        "url": "https://www.gov.pl/web/obrona-narodowa/zamowienia-publiczne-ogloszenia"
+      }
+    ]
+  },
+  "registrace": {
+    "text": "Obecný registr dodavatelů pro obranné zakázky jsme v primárních zdrojích nenašli. Účast probíhá podle podmínek konkrétního oznámení. MON provozuje od září 2025 službu Kontakt dla przemysłu, přes kterou firmy a výzkumná pracoviště nabízejí produkty a projekty výzkumu a vývoje pro modernizaci armády; zda je určena i zahraničním firmám, stránka neuvádí.",
+    "kroky": [
+      "Sledovat TED a profil Agencja Uzbrojenia v BIP.",
+      "Počítat s polštinou a u části řízení s listinnou žádostí o účast (ověřit v každém oznámení).",
+      "U zakázek s utajovanými informacemi stupně „poufne\" a vyšším zajistit świadectwo bezpieczeństwa przemysłowego (viz bezpečnost).",
+      "Představit produkt MON přes formulář Kontakt dla przemysłu (kontakt-przemysl.wp.mil.pl).",
+      "Podle PARP ověřit, zda činnost nevyžaduje koncesi Ministerstva vnitra (MSWiA) pro obchod s vojenským zbožím."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Polsko offsety vyžaduje. Zákon z 26. 6. 2014 o některých smlouvách uzavíraných v souvislosti se zakázkami zásadního významu pro bezpečnost státu (t.j. Dz.U. 2022 poz. 1218, poslední novela Dz.U. 2022 poz. 25) ukládá offsetovou povinnost zahraničnímu dodavateli (zagraniczny dostawca) u nákupů zbraní, munice a válečného materiálu, kde jde o opatření podle čl. 346 odst. 1 písm. b SFEU. Offsetovou smlouvu uzavírá Státní pokladna zastoupená ministrem obrany po stanovisku Komitetu Offsetowego (poradní orgán ministra). Cílem je transfer technologií a licencí a udržení či vybudování výrobních, servisních a údržbových kapacit v Polsku; smlouva trvá nejvýše 10 let a zákon nestanoví pevný hodnotový práh, hodnota se určuje případ od případu. MON na stránce Kontakt dla przemysłu uvádí jako prioritu vedení směřovat aspoň polovinu zakázek na výzbroj domácím firmám."
+  },
+  "bezpecnost": {
+    "text": "Utajované informace upravuje zákon z 5. 8. 2010 o ochronie informacji niejawnych (t.j. Dz.U. 2025 poz. 1209). Świadectwo bezpieczeństwa przemysłowego (průmyslové bezpečnostní osvědčení, obdoba FSC) vydává ABW nebo SKW; podle PARP SKW pro subjekty napojené na MON, ABW v ostatních případech. Osvědčení je nutné pro stupně „poufne\", „tajne\" a „ściśle tajne\", ne pro „zastrzeżone\"; má tři stupně (1. včetně zpracování ve vlastních akreditovaných IT systémech, 2. bez vlastních IT systémů, 3. bez zpracování ve vlastních prostorách) a platí 10 let (poufne), 7 let (tajne) nebo 5 let (ściśle tajne). PARP upozorňuje, že zákonné lhůty prověrek (u průmyslové asi 6 měsíců) se v praxi překračují. Postup uznání zahraniční FSC stránka ABW nepopisuje. Bilaterální dohoda s ČR existuje: Umowa między Rządem RP a Rządem Republiki Czeskiej o wzajemnej ochronie informacji niejawnych, podepsána v Praze 7. 12. 2004, Dz.U. 2005 Nr 193 poz. 1612 (seznam ABW, stav 2. 5. 2025)."
+  },
+  "inovace": {
+    "text": "MON aktivně propaguje NATO DIANA: výzva do akceleračního programu 2027 běžela 1. 6. až 3. 7. 2026, vybrané firmy začnou v lednu 2027. Akces NCBR (společnost Národního centra pro výzkum a vývoj) spustil 29. 4. 2026 ve spolupráci s MON akcelerátor MilTech pro dual-use technologie (vesmír, bezpilotní a anti-dronové systémy, AI, ochrana kritické infrastruktury) s grantem až 300 000 PLN a mentoringem až 100 000 PLN; druhá edice je plánovaná na rok 2026. Seznam NATO z roku 2023 uvádí v Polsku sedm DIANA test centres: Łukasiewicz PIAP, CENAGIS, WITI, WITPiS, PSNC, Łukasiewicz EMAG a WAT AUTONOMY.",
+    "programy": [
+      {
+        "nazev": "NATO DIANA, výzva 2027 (informace MON)",
+        "url": "https://www.gov.pl/web/obrona-narodowa/rusza-nabor-do-programu-akceleracyjnego-nato-diana-2027",
+        "pro_zahranicni": "ano (DIANA je otevřená firmám z členských států NATO, polská stránka to neřeší)"
+      },
+      {
+        "nazev": "MilTech w Akces NCBR",
+        "url": "https://www.gov.pl/web/ncbr/inauguracja-programu-akceleracyjnego-miltech-w-akces-ncbr",
+        "pro_zahranicni": "nejasné (stránka NCBR podmínky způsobilosti neuvádí)"
+      },
+      {
+        "nazev": "MON Kontakt dla przemysłu (formulář pro nabídky produktů a výzkumu)",
+        "url": "https://www.gov.pl/web/obrona-narodowa/kontakt-dla-przemyslu---formularz-zgloszeniowy",
+        "pro_zahranicni": "nejasné (stránka uvádí firmy a výzkumná pracoviště bez určení země)"
+      },
+      {
+        "nazev": "Seznam DIANA test centres (NATO, 2023)",
+        "url": "https://nato.int/content/dam/nato/legacy-wcm/media_pdf/2023/6/pdf/230607-DIANA-test-centres.pdf",
+        "pro_zahranicni": "ano (síť DIANA)"
+      }
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "Počítejte s polštinou a u některých řízení AU s papírovou žádostí o účast s vlastnoručním podpisem (oznámení TED 291495-2026).",
+    "MON deklaruje, že aspoň polovina zakázek na výzbroj má jít domácím firmám, a offsetový zákon tlačí zahraniční dodavatele k tvorbě kapacit v Polsku: polský partner nebo role subdodavatele polské firmy zvyšuje šanci.",
+    "Prověrku průmyslové bezpečnosti řešte s předstihem, PARP uvádí, že lhůty se v praxi překračují; CZ a PL mají dohodu o ochraně utajovaných informací z roku 2004.",
+    "Pro první kontakt s MON lze použít formulář Kontakt dla przemysłu; způsobilost zahraničních firem si ověřte přímo u MON."
+  ],
+  "prirucky": [
+    {
+      "nazev": "Zamówienia publiczne sektora obronnego: jakie obowiązują w nich zasady",
+      "vydavatel": "PARP (Polska Agencja Rozwoju Przedsiębiorczości)",
+      "url": "https://www.parp.gov.pl/component/content/article/89750:zamowienia-publiczne-sektora-obronnego-jakie-obowiazuja-w-nich-zasady",
+      "jazyk": "pl",
+      "typ": "web"
+    },
+    {
+      "nazev": "Zakupy dotyczące bezpieczeństwa. Wybrane aspekty (prezentace, 23. 6. 2026)",
+      "vydavatel": "Urząd Zamówień Publicznych",
+      "url": "https://www.gov.pl/attachment/f2911244-eb4e-4363-8ba5-de5ec6893993",
+      "jazyk": "pl",
+      "typ": "pdf"
+    },
+    {
+      "nazev": "Bezpieczeństwo przemysłowe",
+      "vydavatel": "ABW (BIP)",
+      "url": "https://bip.abw.gov.pl/bip/informacje-niejawne-1/nadzor-nad-systemem-oc/bezpieczenstwo-przemys/148,BEZPIECZENSTWO-PRZEMYSLOWE.pdf",
+      "jazyk": "pl",
+      "typ": "pdf"
+    }
+  ],
+  "zdroje": [
+    {
+      "nazev": "TED, oznámení Agencja Uzbrojenia 419618-2026",
+      "url": "https://ted.europa.eu/en/notice/419618-2026/pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "TED, oznámení Agencja Uzbrojenia 291495-2026",
+      "url": "https://ted.europa.eu/en/notice/291495-2026/pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "PARP: Zamówienia publiczne sektora obronnego (16. 12. 2025)",
+      "url": "https://www.parp.gov.pl/component/content/article/89750:zamowienia-publiczne-sektora-obronnego-jakie-obowiazuja-w-nich-zasady",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "UZP: Zakupy dotyczące bezpieczeństwa. Wybrane aspekty (23. 6. 2026)",
+      "url": "https://www.gov.pl/attachment/f2911244-eb4e-4363-8ba5-de5ec6893993",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Sejm ELI: metadata Pzp",
+      "url": "https://api.sejm.gov.pl/eli/acts/DU/2019/2019",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Sejm ELI: offsetový zákon 2014, původní text",
+      "url": "https://api.sejm.gov.pl/eli/acts/DU/2014/932/text.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Sejm ELI: metadata offsetového zákona",
+      "url": "https://api.sejm.gov.pl/eli/acts/DU/2014/932",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "ELI: offsetový zákon, t.j. Dz.U. 2022 poz. 1218",
+      "url": "https://eli.gov.pl/api/acts/DU/2022/1218/text.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Sejm ELI: metadata zákona o ochronie informacji niejawnych",
+      "url": "https://api.sejm.gov.pl/eli/acts/DU/2010/1228",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "ABW: Bezpieczeństwo przemysłowe",
+      "url": "https://bip.abw.gov.pl/bip/informacje-niejawne-1/nadzor-nad-systemem-oc/bezpieczenstwo-przemys/148,BEZPIECZENSTWO-PRZEMYSLOWE.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "ABW: Wykaz umów bilateralnych o wzajemnej ochronie informacji niejawnych",
+      "url": "https://www.abw.gov.pl/pl/zadania/ochrona-informacji-nie/wukaz-umo/1267,Wykaz-umow-bilateralnych-o-wzajemnej-ochronie-informacji-niejawnych.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MON: Współpraca z przemysłem",
+      "url": "https://www.gov.pl/web/obrona-narodowa/przemysl",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MON: Kontakt dla przemysłu, formularz zgłoszeniowy",
+      "url": "https://www.gov.pl/web/obrona-narodowa/kontakt-dla-przemyslu---formularz-zgloszeniowy",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MON: Zamówienia publiczne i ogłoszenia",
+      "url": "https://www.gov.pl/web/obrona-narodowa/zamowienia-publiczne-ogloszenia",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MON: Rusza nabór do programu akceleracyjnego NATO DIANA 2027",
+      "url": "https://www.gov.pl/web/obrona-narodowa/rusza-nabor-do-programu-akceleracyjnego-nato-diana-2027",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NCBR: Inauguracja programu akceleracyjnego MilTech w Akces NCBR",
+      "url": "https://www.gov.pl/web/ncbr/inauguracja-programu-akceleracyjnego-miltech-w-akces-ncbr",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NATO: DIANA test centres (2023)",
+      "url": "https://nato.int/content/dam/nato/legacy-wcm/media_pdf/2023/6/pdf/230607-DIANA-test-centres.pdf",
+      "otevreno": "2026-11-04"
+    }
+  ],
+  "nejiste": [
+    "Reforma Agencja Uzbrojenia: médium Defence24 (20. 10. 2026) cituje náměstkyni MON, že návrh zákona o „Agencja Uzbrojenia 2.0\" pro řízení celého životního cyklu techniky představí na začátku roku 2027; primární dokument MON jsme neotevřeli: https://defence24.pl/polityka-obronna/mon-zapowiada-agencje-uzbrojenia-20-projekt-ustawy-na-poczatek-2027-roku",
+    "Profil Agencja Uzbrojenia v BIP (au-bip.wp.mil.pl) a web wojsko-polskie.pl/au vracejí ochranu proti botům; způsob podávání nabídek mimo uvedená oznámení a případnou e-platformu AU jsme neověřili.",
+    "Role útvaru MON pro offsety (Biuro do spraw Umów Offsetowych) vůči Agencja Uzbrojenia: zákon uvádí ministra obrany, PARP uvádí, že offsety vyjednává AU; organizační zařazení jsme z primárního zdroje neověřili.",
+    "Aktuální finanční prahy pro obranné zakázky v roce 2026 (PARP uvádí hodnoty platné před 1. 1. 2026).",
+    "Postup uznání české FSC v Polsku a role NBÚ ČR (stránka ABW to nepopisuje).",
+    "Seznam DIANA test centres pochází z roku 2023, aktuální stav a případné polské DIANA accelerator site jsme neověřili (diana.nato.int nešlo načíst)."
+  ]
+}

@@ -48,10 +48,9 @@
       }));
     });
   }
-  function aktivniKurzy() {
-    const v = S.stav.vybraneKurzy;
-    return S.kurzy.filter(k => !v || v.includes(k.id));
-  }
+  // kurz s mimoMix (např. procurement po zemích) není ve feedu, dokud si ho uživatel nezapne; jde ale projít přes Témata
+  function vybrany(k) { const v = S.stav.vybraneKurzy; return v ? v.includes(k.id) : !k.mimoMix; }
+  function aktivniKurzy() { return S.kurzy.filter(vybrany); }
   function jeOtazka(c) { return c.typ === "kviz" || c.typ === "anone" || c.typ === "doplnit"; }
 
   // ------------------------------------------------------------------
@@ -210,7 +209,7 @@
     const stitky = `<div class="stitky"><span class="stitek" style="background:${esc(k.barva)}">${esc(k.emoji)} ${esc(k.nazev)}</span>${test ? `<span class="stitek-cesta">${esc(c.tema.nazev)}</span>` : `<button class="stitek-cesta" data-tema-otevri="${esc(k.id)}" data-tema="${esc(c.tema.id)}" title="Projít celé téma popořadě">${esc(c.tema.nazev)} ›</button>`}${p.dalsi && p.videno && !test ? '<span class="stitek stitek-opak">🔁 opakování</span>' : ""}</div>`;
     let telo = "";
     switch (c.typ) {
-      case "fakt": telo = `<h2>${txt(c.titulek)}</h2><p class="text">${txt(c.text)}</p>${c.zapojit ? htmlZapojit(c.zapojit) : ""}${c.zdroj ? `<p class="zdroj">${htmlZdroje(c.zdroj)}</p>` : ""}`; break;
+      case "fakt": telo = `<h2>${txt(c.titulek)}</h2><p class="text">${txt(c.text)}</p>${c.zapojit ? htmlZapojit(c.zapojit) : ""}${c.zdroj || c.odkazy ? `<p class="zdroj">${c.zdroj ? htmlZdroje(c.zdroj) : ""}${htmlOdkazu(c.odkazy, !!c.zdroj)}</p>` : ""}`; break;
       case "kviz": telo = `<h2>${txt(c.otazka)}</h2><div class="moznosti">${c.moznosti.map((m, i) => `<button class="moznost" data-i="${i}">${txt(m)}</button>`).join("")}</div><div class="vysledek"></div>`; break;
       case "anone": telo = `<p class="pre">Pravda, nebo lež?</p><h2>${txt(c.tvrzeni)}</h2><div class="moznosti anone"><button class="moznost" data-i="1">✅ Pravda</button><button class="moznost" data-i="0">❌ Lež</button></div><div class="vysledek"></div>`; break;
       case "doplnit": telo = `<p class="pre">Doplň slovo</p><h2>${txt(c.text).replace(/_{2,}/g, '<span class="mezera">?</span>')}</h2><form class="doplnit"><input type="text" autocomplete="off" autocapitalize="off" placeholder="Doplň slovo nebo číslo…" aria-label="odpověď"><button class="btn" type="submit">Ověřit</button></form><div class="vysledek"></div>`; break;
@@ -251,6 +250,10 @@
       return pred + vloz(cista, "https://" + cista) + konec;
     });
     return s.replace(/\u0001(\d+)\u0002/g, (m, i) => odkazy[Number(i)]);
+  }
+  function htmlOdkazu(o, sOddelovacem) {
+    if (!o || !o.length) return "";
+    return (sOddelovacem ? " · " : "") + o.map(x => `<a class="zdroj-odkaz" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.nazev)} ↗</a>`).join(" · ");
   }
   function domenaUrl(u) { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return u; } }
   function htmlZapojit(z) {
@@ -380,7 +383,7 @@
         ${lekce ? `<button class="btn btn-sek" data-akce="skoc-lekce" data-gid="${esc(lekce.gid)}">📖 Otevřít lekci: ${esc(lekce.titulek)}</button>` : ""}
         <div id="ai-chat"></div>
         ${c.zapojit ? `<div class="bublina tlum"><b>Jak se k tomu dostat:</b> ${esc(c.zapojit.text)}${c.zapojit.url ? ` <a class="zdroj-odkaz" href="${esc(c.zapojit.url)}" target="_blank" rel="noopener">${esc(domenaUrl(c.zapojit.url))} ↗</a>` : ""}</div>` : ""}
-        ${c.zdroj ? `<p class="zdroj">Zdroj: ${htmlZdroje(c.zdroj)}</p>` : ""}
+        ${c.zdroj || c.odkazy ? `<p class="zdroj">Zdroj: ${c.zdroj ? htmlZdroje(c.zdroj) : ""}${htmlOdkazu(c.odkazy, !!c.zdroj)}</p>` : ""}
         ${API.maAI() && API.prihlasen() ? `<form id="ai-form" class="ai-form"><input type="text" placeholder="Zeptej se ježka (např. „vysvětli to na příkladu“)" aria-label="dotaz"><button class="btn" type="submit">Vysvětli jinak ✨</button></form>` : API.maAI() ? `<p class="tlum maly">Pro AI dovysvětlení se přihlas v záložce <b>Já</b>.</p>` : ""}
       </div></div>`;
     sheet.classList.add("otevreno"); document.body.classList.add("sheet-open");
@@ -428,7 +431,7 @@
     const testy = API.testyLokalne();
     el.innerHTML = `<div class="stranka"><h1>Testy</h1><p class="tlum">10 otázek z kurzu. Výsledek se uloží do postupu${API.prihlasen() ? " i na server" : ""}.</p>
       <div class="seznam">${S.kurzy.map(k => { const ot = pocetOtazek(k); const st = statistikaKurzu(k); const posl = testy.find(t => t.kurz === k.id);
-        const temata = (k.temata || []).map(t => ({ t, n: (t.karty || []).filter(jeOtazka).length })).filter(x => x.n >= 3);
+        const temata = (k.temata || []).map(t => ({ t, n: (t.karty || []).filter(jeOtazka).length })).filter(x => x.n >= 2);
         return `<div class="radek" style="--b:${esc(k.barva)}"><div class="radek-ikona">${esc(k.emoji)}</div><div class="radek-text"><strong>${esc(k.nazev)}</strong><div class="tlum maly">${ot} otázek · naučeno ${st.procent} %${posl ? ` · poslední test ${posl.skore}/${posl.celkem}` : ""}</div>${temata.length > 1 ? `<details class="test-temata"><summary class="tlum maly">Jen jedno téma</summary><div class="chipy-temata">${temata.map(x => `<button class="chip-tema" data-test="${esc(k.id)}" data-tema="${esc(x.t.id)}">${esc(x.t.nazev)} <span class="tlum">${x.n}</span></button>`).join("")}</div></details>` : ""}</div><button class="btn" data-test="${esc(k.id)}" ${ot < 3 ? "disabled" : ""}>Spustit</button></div>`; }).join("")}
         ${S.kurzy.length > 1 ? `<div class="radek" style="--b:#f59e0b"><div class="radek-ikona">🎲</div><div class="radek-text"><strong>Mix ze všech kurzů</strong><div class="tlum maly">Interleaving v praxi</div></div><button class="btn" data-test="*">Spustit</button></div>` : ""}
       </div>
@@ -481,7 +484,7 @@
   // ------------------------------------------------------------------
   // Výuka: lekce ke čtení a materiály (průvodci, one-pagery, odkazy) po kurzech
   // ------------------------------------------------------------------
-  const TYP_MATERIALU = { pruvodce: "📘 Průvodce", onepager: "📄 One-pager", clanek: "📰 Článek", nastroj: "🔗 Odkaz" };
+  const TYP_MATERIALU = { pruvodce: "📘 Průvodce", onepager: "📄 One-pager", checklist: "✅ Checklist", clanek: "📰 Článek", nastroj: "🔗 Odkaz" };
   function vykresliVyuka() {
     const el = $("#vyuka"); if (!el) return;
     if (API.zamceno()) { el.innerHTML = HTML_ZAMCENO(); return; }
@@ -509,7 +512,7 @@
     if (API.zamceno()) { $("#kurzy").innerHTML = HTML_ZAMCENO(); return; }
     const v = S.stav.vybraneKurzy;
     $("#kurzy").innerHTML = `<div class="stranka"><h1>Kurzy</h1><p class="tlum">Zapni, co chceš mít ve feedu, karty z kurzů se v něm míchají. Chceš jít popořadě? Rozbal u kurzu <b>Témata</b> a vyber oblast.</p>
-      <div class="seznam">${S.kurzy.map(k => { const st = statistikaKurzu(k); const on = !v || v.includes(k.id);
+      <div class="seznam">${S.kurzy.map(k => { const st = statistikaKurzu(k); const on = vybrany(k);
         return htmlMapyTemat(k, `<div class="radek" style="--b:${esc(k.barva)}"><div class="radek-ikona">${esc(k.emoji)}</div><div class="radek-text"><strong>${esc(k.nazev)}</strong><div class="tlum maly">${esc(k.popis || "")}</div><div class="bar"><div style="width:${st.procent}%;background:${esc(k.barva)}"></div></div><div class="tlum maly">${k.pocet} karet · viděno ${st.videno} · naučeno ${st.umim}${k.vlastni ? ' · <a href="#" data-kurz-akce="smazat" data-id="' + esc(k.id) + '">smazat</a>' : ""}</div></div><label class="prepinac"><input type="checkbox" data-kurz-prepni="${esc(k.id)}" ${on ? "checked" : ""}><span></span></label></div>`); }).join("")}</div>
       ${window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.bezVlastnichKurzu ? "" : `<h2>Přidat kurz</h2>
       <div class="box">
@@ -561,7 +564,7 @@
   }
   document.addEventListener("change", e => {
     const p = e.target.closest("[data-kurz-prepni]");
-    if (p) { const id = p.dataset.kurzPrepni; let v = S.stav.vybraneKurzy ? S.stav.vybraneKurzy.slice() : S.kurzy.map(k => k.id); v = p.checked ? [...new Set([...v, id])] : v.filter(x => x !== id); S.stav.vybraneKurzy = v.length === S.kurzy.length ? null : v; ulozStav(); vykresliFeed(true); return; }
+    if (p) { const id = p.dataset.kurzPrepni; const vychozi = S.kurzy.filter(k => !k.mimoMix).map(k => k.id); let v = S.stav.vybraneKurzy ? S.stav.vybraneKurzy.slice() : vychozi.slice(); v = p.checked ? [...new Set([...v, id])] : v.filter(x => x !== id); S.stav.vybraneKurzy = (v.length === vychozi.length && vychozi.every(x => v.includes(x))) ? null : v; ulozStav(); vykresliFeed(true); return; }
     if (e.target.id === "import-soubor") { const f = e.target.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => { try { pridejVlastniKurz(parsujKurz(r.result)); } catch (err) { toast(err.message); } }; r.readAsText(f); }
   });
   document.addEventListener("click", e => {
@@ -649,9 +652,10 @@
   function htmlPrehledu(tym, startupy) {
     if (!tym.length) return `<p class="tlum maly">${startupy ? "Zatím se žádný startup nezaregistroval." : "Zatím nikdo."}</p>`;
     const vse = window.JEZTOK_KURZY || [];
-    const pocty = {}; vse.forEach(k => { let n = 0; (k.temata || []).forEach(t => n += (t.karty || []).length); pocty[k.id] = { n, nazev: k.nazev, emoji: k.emoji }; });
-    const kurzyOsoby = t => (t.kurzy || vse.map(k => k.id)).filter(id => pocty[id] && pocty[id].n);
+    const pocty = {}; vse.forEach(k => { let n = 0; (k.temata || []).forEach(t => n += (t.karty || []).length); pocty[k.id] = { n, nazev: k.nazev, emoji: k.emoji, mimoMix: !!k.mimoMix }; });
     const pk = (t, id) => (t.postup.kurzy || {})[id] || { videno: 0, umim: 0 };
+    // knihovní kurzy (mimoMix, např. procurement po zemích) se počítají jen tomu, kdo v nich už něco viděl
+    const kurzyOsoby = t => (t.kurzy || vse.map(k => k.id)).filter(id => pocty[id] && pocty[id].n && (!pocty[id].mimoMix || pk(t, id).videno > 0));
     const tyden = Date.now() - 7 * DEN, aktivni = t => (t.postup.aktualizovano || 0) >= tyden;
     tym.sort((a, b) => (b.postup.aktualizovano || 0) - (a.postup.aktualizovano || 0));
     // souhrn po kurzech: součet přes lidi, kteří kurz mají

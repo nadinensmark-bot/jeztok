@@ -1,0 +1,198 @@
+{
+  "kod": "be",
+  "zeme": "Belgie",
+  "stav": "2026-11-04",
+  "clenstvi": "EU, NATO",
+  "kdo_nakupuje": {
+    "text": "Většinu veřejných zakázek a pořízení techniky pro belgickou obranu zadává Directorate-General Material Resources (DGMR) ministerstva obrany. Kontakty k mezinárodním programům podporuje National Armaments Director (NAD); Belgie hodně nakupuje i přes programy NATO, EU a OCCAR a mezinárodní konsorcia. Výzkum a inovace podporuje Royal Higher Institute for Defence (IRSD) a rozvoj průmyslové základny strategie DIRS.",
+    "instituce": [
+      {
+        "nazev": "Défense belge / Belgische Defensie, Directorate-General Material Resources",
+        "zkratka": "DGMR",
+        "url": "https://www.mil.be/media/35vdidrq/industrie_fr.pdf"
+      },
+      {
+        "nazev": "Défense belge, stránka L'industrie",
+        "zkratka": "",
+        "url": "https://www.mil.be/fr/a-propos-de-la-defense/lindustrie/"
+      }
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Obranné a bezpečnostní zakázky upravuje zvláštní zákon z 13. 8. 2011 o zakázkách na stavební práce, dodávky a služby v oblasti obrany a bezpečnosti (loi du 13 août 2011 relative aux marchés de travaux, de fournitures et de services dans les domaines de la défense et de la sécurité, název podle citace v královském výnosu z 2. 6. 2013), belgické provedení směrnice 2009/81/ES; jeho účinnost stanovil královský výnos z 24. 1. 2012. Návrh usnesení Sněmovny reprezentantů ze září 2025 ho popisuje jako základ pravidel pro nákupy belgické obrany a upozorňuje na množství výjimek v jeho čl. 18; mimo jeho rámec stojí nákupy s odvoláním na čl. 346 SFEU. Ministerstvo obrany uvádí, že nakupuje přes transparentní veřejné zakázky nebo mezinárodní programy spolupráce. Prahy jsem neověřila.",
+    "predpisy": [
+      {
+        "nazev": "Chambre des représentants, DOC 56 1104/001 (19. 9. 2025), popisuje zákon z 13. 8. 2011 a jeho výjimky",
+        "url": "https://www.dekamer.be/FLWB/PDF/56/1104/56K1104001.pdf"
+      },
+      {
+        "nazev": "Arrêté royal du 2 juin 2013 (cituje zákon z 13. 8. 2011 a královský výnos z 24. 1. 2012 o jeho účinnosti), Wallex",
+        "url": "https://wallex.wallonie.be/eli/arrete/2013/06/02/2013021062/2013/07/01"
+      }
+    ]
+  },
+  "kde_tendry": {
+    "text": "Belgičtí federální, regionální i místní zadavatelé zveřejňují zakázky na federální platformě e-Procurement (publicprocurement.be), kterou spravuje FPS BOSA; pro zadavatele i firmy je zdarma. Oznámení se hledají v modulu Bulletin des Adjudications (BDA) podle klíčových slov, CPV, NUTS a typu oznámení a lze si uložit profil s e-mailovými upozorněními. Nadlimitní zakázky jdou také na TED.",
+    "portaly": [
+      {
+        "nazev": "BOSA eProcurement",
+        "url": "https://www.publicprocurement.be/"
+      },
+      {
+        "nazev": "TED (Tenders Electronic Daily)",
+        "url": "https://ted.europa.eu"
+      }
+    ]
+  },
+  "registrace": {
+    "text": "Firma se registruje na publicprocurement.be zdarma (uživatelský účet jménem, e-mailem a heslem, pak profil firmy s číslem BCE, kontakty, oblastmi působnosti a CPV kódy). Nabídka se podává přes platformu: potvrzení účasti, výběr lotů, nahrání dokumentů, podpis oprávněnou osobou (statutár nebo zmocněnec s doloženým oprávněním) a odeslání; preferovaný podpis je belgickou eID, alternativně podpis externím softwarem a import podepsaného souboru. Jak se registruje zahraniční firma bez čísla BCE a jaké zahraniční kvalifikované podpisy platforma přijímá, návod neuvádí. Helpdesk: e.proc@publicprocurement.be, +32 2 740 80 00. Pro obranu má ministerstvo i kontaktní formulář pro průmysl.",
+    "kroky": [
+      "Na publicprocurement.be zvolit pokračování jako dodavatel a založit účet (jméno, e-mail, heslo; doporučen obecný firemní e-mail).",
+      "V části Gérer les entreprises přidat firmu: údaje (u belgických firem číslo BCE), kontakty, vizitka s regiony, typem zakázek a CPV kódy, označit firmu jako aktivní.",
+      "Uložit si vyhledávací profil v Bulletin des Adjudications a sledovat i TED.",
+      "Před podpisem nahrát doklad o podpisovém oprávnění, nabídku podepsat a odeslat před lhůtou; stáhnout potvrzení o podání.",
+      "Kontaktovat obranu přes formulář pro průmysl na mil.be (Formulaire de contact industrie)."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Oficiální offsetovou politiku stránky obrany nepopisují. Strategie DIRS (Defence, Industry & Research Strategy) ale cílí na posílení belgické BITD (obranné technologické a průmyslové základny) a ukotvení ekonomické aktivity a know-how v Belgii; ministerstvo od firem očekává, že v Belgii rozvinou nebo ukotví odbornost, výrobní kapacitu a know-how."
+  },
+  "bezpecnost": {
+    "text": "Národním bezpečnostním úřadem je Autorité nationale de Sécurité / Nationale Veiligheidsoverheid (ANS/NVO), od 1. 1. 2024 součást Státní bezpečnosti (VSSE) pod FPS Justice. Firemní prověrku (habilitation de sécurité d'entreprise) ANS vyřizuje jen pro firmy usazené v Belgii a zapsané v BCE; zahraniční firma se má obrátit na bezpečnostní úřad své země (pro ČR NBÚ). Pro belgické firmy: bezpečnostní ředitel musí být Belgičan s bydlištěm v Belgii, poplatky od 1. 1. 2026 činí 1 590 / 2 120 / 2 650 EUR (Confidentiel / Secret / Très Secret), řízení trvá 5 až 6 měsíců, platnost obvykle 5 let. Na seznamu ratifikovaných bilaterálních dohod ANS Česká republika není a v přehledu smluv MZV ČR jsem dohodu s Belgií nenašla."
+  },
+  "inovace": {
+    "text": "Obrana deklaruje přes 3 % rozpočtu na inovace a vývoj a priority jako cyber, elektronický boj, drony a anti-drony, AI a vojenský vesmír. Konkrétní národní program pro startupy s přihláškou stránky mil.be neuvádějí; jako vstup slouží kontaktní formulář pro průmysl. Web DIRS odkazuje na Hub for EU Defence Innovation (HEDI) agentury EDA, který je otevřen startupům i MSP bez omezení státní příslušnosti. NATO DIANA má v Belgii accelerator site IGNITY v Lutychu (původně první belgický ESA space inkubátor), který podle stránky DIANA z 19. 12. 2025 vede DIANA Accelerator Programme v roce 2026; zaměření vesmír, biotechnologie, kyberbezpečnost, pokročilé materiály, senzory a elektronika.",
+    "programy": [
+      {
+        "nazev": "DIRS (Defence, Industry & Research Strategy)",
+        "url": "https://dirs.be/",
+        "pro_zahranicni": "nejasné (cílem je belgická BITD, podmínky pro zahraniční firmy neuvedeny)"
+      },
+      {
+        "nazev": "EDA Hub for EU Defence Innovation (HEDI), odkazovaný z DIRS",
+        "url": "https://dirs.be/",
+        "pro_zahranicni": "ano, bez omezení státní příslušnosti (dle stránky DIRS o HEDI)"
+      },
+      {
+        "nazev": "IGNITY, NATO DIANA accelerator site (Liège)",
+        "url": "https://www.diana.nato.int/connect/ignity-nato-dianas-belgian-accelerator-site.html",
+        "pro_zahranicni": "ano v rámci DIANA programu (stránka uvádí podporu italské firmy)"
+      }
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "U utajovaných zakázek nečekejte prověrku od belgické ANS: zahraniční firma jde přes NBÚ, a protože bilaterální dohoda ČR a Belgie se mi nepotvrdila, ověřte si předem u NBÚ, na jakém základě se prověrka uzná.",
+    "Belgie tlačí ukotvení výroby a know-how v Belgii (DIRS): partnerství s belgickou firmou nebo pobočka zvyšuje šance.",
+    "Velkou část nákupů Belgie realizuje přes NATO, EU a OCCAR programy a konsorcia: sledujte i tyto kanály, nejen národní tendry.",
+    "Registrace na publicprocurement.be je zdarma, ale návod počítá s belgickým číslem BCE a podpisem belgickou eID: předem si u helpdesku (e.proc@publicprocurement.be) ověřte postup pro zahraniční firmu a přijímaný kvalifikovaný podpis."
+  ],
+  "prirucky": [
+    {
+      "nazev": "La Défense et l'industrie (souhrn pro firmy)",
+      "vydavatel": "Défense belge",
+      "url": "https://www.mil.be/media/35vdidrq/industrie_fr.pdf",
+      "jazyk": "fr",
+      "typ": "pdf"
+    },
+    {
+      "nazev": "Habilitation de sécurité d'entreprise",
+      "vydavatel": "ANS/NVO",
+      "url": "https://www.nvoans.be/fr/habilitations/habilitation-de-securite-dentreprise",
+      "jazyk": "fr",
+      "typ": "web"
+    },
+    {
+      "nazev": "TUTO Entreprises e-Procurement (návod pro firmy k federální platformě)",
+      "vydavatel": "Service public de Wallonie, marchespublics.wallonie.be (obsah podle FPS BOSA)",
+      "url": "https://marchespublics.wallonie.be/files/Outils/TUTO%20Entreprises%20e-Procurement.pdf",
+      "jazyk": "fr",
+      "typ": "pdf"
+    }
+  ],
+  "zdroje": [
+    {
+      "nazev": "Défense belge: L'industrie",
+      "url": "https://www.mil.be/fr/a-propos-de-la-defense/lindustrie/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Défense belge: La Défense et l'industrie (PDF)",
+      "url": "https://www.mil.be/media/35vdidrq/industrie_fr.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Défense belge: La recherche",
+      "url": "https://www.mil.be/fr/a-propos-de-la-defense/la-recherche/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Défense belge: Vision stratégique 2025",
+      "url": "https://www.mil.be/fr/a-propos-de-la-defense/vision-strategique-defense-2025/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "DIRS",
+      "url": "https://dirs.be/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "ANS/NVO úvod",
+      "url": "https://www.nvoans.be/fr",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "ANS/NVO: Habilitation de sécurité d'entreprise",
+      "url": "https://www.nvoans.be/fr/habilitations/habilitation-de-securite-dentreprise",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "ANS/NVO: Relations internationales",
+      "url": "https://www.nvoans.be/fr/cadre-legislatif/relations-internationales",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "BOSA eProcurement",
+      "url": "https://www.publicprocurement.be/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MZV ČR: smlouvy ČR a Belgie",
+      "url": "https://mzv.gov.cz/jnp/cz/encyklopedie_statu/evropa/belgie/smlouvy/index.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Chambre des représentants: DOC 56 1104/001",
+      "url": "https://www.dekamer.be/FLWB/PDF/56/1104/56K1104001.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Wallex: Arrêté royal du 2 juin 2013",
+      "url": "https://wallex.wallonie.be/eli/arrete/2013/06/02/2013021062/2013/07/01",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Wallonie marchés publics: TUTO Entreprises e-Procurement",
+      "url": "https://marchespublics.wallonie.be/files/Outils/TUTO%20Entreprises%20e-Procurement.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "be.brussels: Working with public institutions",
+      "url": "https://be.brussels/en/business-entrepreneurship/doing-business-brussels/working-public-institutions",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NATO DIANA: IGNITY",
+      "url": "https://www.diana.nato.int/connect/ignity-nato-dianas-belgian-accelerator-site.html",
+      "otevreno": "2026-11-04"
+    }
+  ],
+  "nejiste": [
+    "Plné znění zákona z 13. 8. 2011, prováděcí královský výnos o zadávání a prahy pro obranné zakázky: ejustice.just.fgov.be blokuje automatické čtení, EUR-Lex přehled transpozic se nenačetl; existenci a název zákona dokládá dokument Sněmovny a královský výnos z 2. 6. 2013 (Wallex).",
+    "Registrace zahraniční firmy bez čísla BCE a přijímané zahraniční kvalifikované podpisy na e-Procurement: manuály BOSA (bosa.d8.pr.belgium.be) jsou za ochranou proti botům, valonský návod to neřeší a není datovaný.",
+    "Zda DGMR zveřejňuje všechny národní obranné tendry na e-Procurement: neověřeno.",
+    "Zda Belgie chystá nebo zřídila novou akviziční agenturu místo DGMR: na oficiálních stránkách obrany jsem nic takového nenašla, neověřeno.",
+    "Bilaterální dohoda ČR a Belgie o ochraně utajovaných informací: na seznamu ANS ani v přehledu MZV ČR není, ověřit u NBÚ.",
+    "DEFRA a další výzkumné výzvy IRSD a jejich otevřenost zahraničním firmám: stránka defence-institute.be vrátila chybu.",
+    "DIANA test centres v Belgii: neověřeno; provozovatel IGNITY stránka DIANA nejmenuje."
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "kod": "fi",
+  "zeme": "Finsko",
+  "stav": "2026-11-04",
+  "clenstvi": "EU (od 1995), NATO (od 4. 4. 2023)",
+  "kdo_nakupuje": {
+    "text": "O nejvýznamnějších nákupech rozhoduje ministerstvo obrany (Puolustusministeriö), zakázky připravují a provádějí obranné síly (Puolustusvoimat). Jako zadavatel v oznámeních na TED vystupuje Puolustusvoimien logistiikkalaitos (Finnish Defence Forces Logistics Command, Tampere), který podepisuje i mezinárodní nákupy (např. společný severský nákup uniforem NCU v rámci NORDEFCO, 2022). Ministerstvo obrany je zároveň jedním z Designated Security Authorities a spolu s VTT připravovalo zapojení do NATO DIANA.",
+    "instituce": [
+      {
+        "nazev": "Puolustusministeriö (Ministry of Defence): Defence materiel and the defence industry",
+        "zkratka": "",
+        "url": "https://defmin.fi/en/areas-of-expertise/defence-materiel-and-the-defence-industry"
+      },
+      {
+        "nazev": "Puolustusvoimien logistiikkalaitos (Finnish Defence Forces Logistics Command), příklad oznámení na TED",
+        "zkratka": "",
+        "url": "https://ted.europa.eu/en/notice/312406-2026/html"
+      },
+      {
+        "nazev": "Puolustusvoimat: Supplier of the Nordic Combat Uniform has been chosen (role Logistics Command)",
+        "zkratka": "",
+        "url": "https://puolustusvoimat.fi/en/-/supplier-of-the-nordic-combat-uniform-has-been-chosen"
+      }
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Obranné a bezpečnostní zakázky upravuje Laki julkisista puolustus- ja turvallisuushankinnoista 1531/2011 (zákon o veřejných zakázkách v oblasti obrany a bezpečnosti, transpozice směrnice 2009/81/ES); ostatní nákupy obrany se řídí obecným zákonem 1397/2016 o veřejných zakázkách a koncesích. Ministerstvo obrany jako základní zásady uvádí soutěž, nejlepší ekonomickou hodnotu a rovné a důvěrné zacházení s uchazeči; smlouvy používají obecné podmínky JYSE 2014 (dodávky a služby, finsky). Text zákona 1531/2011, jeho novely a národní prahy se nepodařilo načíst. Unijní prahy pro směrnici 2009/81/ES od 1. 1. 2026: dodávky a služby 432 000 EUR, stavební práce 5 404 000 EUR (nařízení (EU) 2025/2487).",
+    "predpisy": [
+      {
+        "nazev": "Laki julkisista puolustus- ja turvallisuushankinnoista 1531/2011 (Finlex)",
+        "url": "https://www.finlex.fi/fi/laki/ajantasa/2011/20111531"
+      },
+      {
+        "nazev": "Puolustusministeriö: přehled předpisů a zásad obranných nákupů",
+        "url": "https://defmin.fi/en/areas-of-expertise/defence-materiel-and-the-defence-industry"
+      },
+      {
+        "nazev": "Commission Delegated Regulation (EU) 2025/2487 (prahy 2009/81/ES od 1. 1. 2026)",
+        "url": "https://eur-lex.europa.eu/eli/reg_del/2025/2487/oj/eng"
+      }
+    ]
+  },
+  "kde_tendry": {
+    "text": "Oznámení se zveřejňují v národní databázi HILMA (hankintailmoitukset.fi), odkud automaticky přecházejí do TED. Nabídky do soutěží Logistics Command se podávají elektronicky v systému Tarjouspalvelu (tarjouspalvelu.fi, profil zadavatele pvlogl), odkaz je přímo v oznámení. Jazyk nabídky se liší podle zakázky: např. soutěž na hyperspektrální měřicí systém (5/2026) připouštěla angličtinu a finštinu, soutěž na skladovací kontejnery (6/2026) jen finštinu.",
+    "portaly": [
+      {
+        "nazev": "Hilma (hankintailmoitukset.fi)",
+        "url": "https://www.hankintailmoitukset.fi/en/"
+      },
+      {
+        "nazev": "TED: oznámení Puolustusvoimien logistiikkalaitos (odkaz na Tarjouspalvelu, jazyky EN/FI)",
+        "url": "https://ted.europa.eu/en/notice/312406-2026/html"
+      },
+      {
+        "nazev": "TED: oznámení Puolustusvoimien logistiikkalaitos (jen finština)",
+        "url": "https://ted.europa.eu/en/notice/375386-2026/pdf"
+      }
+    ]
+  },
+  "registrace": {
+    "text": "Zvláštní registr dodavatelů obranných sil se ověřit nepodařilo. Ověřený postup: najít oznámení v HILMA nebo TED, nabídku podat elektronicky v Tarjouspalvelu podle odkazu v oznámení a dodržet jazyk, který oznámení připouští (často jen finština). Podmínky registrace v Tarjouspalvelu a požadavek NCAGE neověřeny.",
+    "kroky": [
+      "Sledovat HILMA a TED (zadavatel Puolustusvoimien logistiikkalaitos).",
+      "Podat nabídku elektronicky v Tarjouspalvelu (tarjouspalvelu.fi) přes odkaz v oznámení.",
+      "Zkontrolovat v oznámení povolené jazyky nabídky; u části zakázek je to jen finština, u jiných i angličtina.",
+      "U velkých nákupů s industrial participation kontaktovat sekretariát FCIP (fcip(at)gov.fi)."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Finsko industrial participation (teollinen yhteistyö) používá, ale jen u nákupů nejdůležitějších pro obranu a bezpečnost; zadavatel to posuzuje předem případ od případu a kritéria musí odpovídat článku 346 SFEU. Platí pravidla z roku 2012 (revize 2013, 2017 a 2018). Rozlišuje se přímá účast (spolupráce zahraničního a domácího průmyslu na dodávaném systému) a nepřímá (přenos technologií a know-how do finského průmyslu). Smluvní stranou je ministerstvo obrany; dohled má Finnish Committee on Industrial Participation (FCIP) se zástupci ministerstev obrany, zahraničí a hospodářství, schází se zhruba šestkrát ročně. Kontakt: sekretariát FCIP, fcip(at)gov.fi. Peněžní prahy stránka ministerstva neuvádí."
+  },
+  "bezpecnost": {
+    "text": "Národní bezpečnostní úřad (National Security Authority, NSA) je samostatná jednotka ministerstva zahraničí, podřízená přímo státnímu tajemníkovi. Podle zákona o mezinárodních povinnostech v oblasti informační bezpečnosti (588/2004) řídí ochranu mezinárodních utajovaných informací, vydává mezinárodní osvědčení Personnel Security Clearance a Facility Security Clearance a vyřizuje žádosti o návštěvy (Request for Visit). Jako Designated Security Authorities (DSA) působí ministerstvo obrany, velitelství obranných sil (Defence Command) a bezpečnostní služba SUPO. Služby NSA jsou od 1. 1. 2025 zpoplatněné (vyhláška 795/2024); kontakt nsa@formin.fi. Dohoda s ČR: Smlouva mezi Českou republikou a Finskou republikou o výměně a vzájemné ochraně utajovaných informací (podepsána 26. 5. 2008, v platnosti od 1. 10. 2009, 67/2009 Sb.m.s.), podle seznamu smluv MZV ČR."
+  },
+  "inovace": {
+    "text": "Finsko je v síti NATO DIANA: akcelerátor provozuje VTT (seznam akcelerátorů DIANA 2026); test centres podle seznamu 2026 jsou 6G Test Center (6GTC), Secure Connectivity, Space and Quantum (SCSQ) Test Centre (VTT) a University of Oulu. Business Finland vede program Defense and Digital Resilience (2024 až 2028, cíl 120 mil. EUR na výzkum a inovace) pro digitální řešení pro obranu, kritickou infrastrukturu a veřejnou bezpečnost; inovační financování mohou čerpat finské firmy a zahraniční firmy registrované ve Finsku. Ministerstvo obrany má poradní vědecký výbor MATINE, který financuje výzkum pro obranu a bezpečnost; kdo může žádat (firmy, zahraniční subjekty), stránka neuvádí. Národní inovační výzvy obranných sil se ověřit nepodařilo.",
+    "programy": [
+      {
+        "nazev": "NATO DIANA akcelerátor (VTT) a test centres ve Finsku (6GTC, SCSQ/VTT, University of Oulu)",
+        "url": "https://www.diana.nato.int/resources/site1/general/test%20centres/diana_test_centres_2026.pdf",
+        "pro_zahranicni": "nejasné, seznam DIANA to neuvádí (přístup se řídí výzvami DIANA)"
+      },
+      {
+        "nazev": "Business Finland: Defense and Digital Resilience",
+        "url": "https://www.businessfinland.fi/en/services/Programs-and-ecosystems/Programs/defense-digital-resilience/",
+        "pro_zahranicni": "jen zahraniční firmy registrované ve Finsku (inovační financování), podle stránky programu"
+      },
+      {
+        "nazev": "MATINE (Scientific Advisory Board for Defence): výzkum",
+        "url": "https://defmin.fi/en/scientific-advisory-board-for-defence/matine-s-research",
+        "pro_zahranicni": "nejasné, stránka to neuvádí"
+      },
+      {
+        "nazev": "VTT: NATO accelerator and two test centres to be established in Finland (14. 3. 2024)",
+        "url": "https://www.vttresearch.com/en/news-and-ideas/nato-accelerator-and-two-test-centres-be-established-finland",
+        "pro_zahranicni": "nejasné, článek to neuvádí"
+      }
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "Soutěže Logistics Command jdou přes HILMA/TED a nabídky přes Tarjouspalvelu; řada zakázek připouští jen finštinu, proto počítat s finským partnerem nebo překladem.",
+    "U velkých strategických nákupů Finsko požaduje industrial participation (článek 346 SFEU); pro českou firmu to může být příležitost stát se subdodavatelem zahraničního prime kontraktora, kontakt FCIP fcip(at)gov.fi.",
+    "Pro utajované projekty je vstupním bodem NSA na finském ministerstvu zahraničí (nsa@formin.fi) a ČR má s Finskem platnou smlouvu o ochraně utajovaných informací; služby NSA jsou od 2025 placené.",
+    "Firmy z oblasti komunikací, 6G, vesmíru a kvantových technologií mají ve Finsku DIANA infrastrukturu (VTT, 6GTC, University of Oulu); dotace Business Finland vyžadují registraci firmy ve Finsku."
+  ],
+  "prirucky": [
+    {
+      "nazev": "Defence materiel and the defence industry (zásady nákupů, industrial participation, kontakty)",
+      "vydavatel": "Puolustusministeriö (Ministry of Defence)",
+      "url": "https://defmin.fi/en/areas-of-expertise/defence-materiel-and-the-defence-industry",
+      "jazyk": "en",
+      "typ": "web"
+    }
+  ],
+  "zdroje": [
+    {
+      "nazev": "Finlex: 1531/2011 (titul zákona)",
+      "url": "https://www.finlex.fi/fi/laki/ajantasa/2011/20111531",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Ministerstvo zahraničí Finska: National Security Authority",
+      "url": "https://um.fi/national-security-authority",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "VTT: NATO accelerator and two test centres to be established in Finland (14. 3. 2024)",
+      "url": "https://www.vttresearch.com/en/news-and-ideas/nato-accelerator-and-two-test-centres-be-established-finland",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Hilma",
+      "url": "https://www.hankintailmoitukset.fi/en/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Commission Delegated Regulation (EU) 2025/2487 (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu/eli/reg_del/2025/2487/oj/eng",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Nařízení (EU) 2025/2487, text (kopie Úředního věstníku, BOE)",
+      "url": "https://boe.es/doue/2025/2487/L00001-00002.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NATO: Member countries",
+      "url": "https://www.nato.int/cps/en/natohq/topics_52044.htm",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "EU: Country profiles",
+      "url": "https://european-union.europa.eu/principles-countries-history/eu-countries_en",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MZV ČR: smlouvy ČR a Finsko",
+      "url": "https://mzv.gov.cz/jnp/cz/encyklopedie_statu/evropa/finsko/smlouvy/index.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Puolustusministeriö: Defence materiel and the defence industry",
+      "url": "https://defmin.fi/en/areas-of-expertise/defence-materiel-and-the-defence-industry",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "TED 312406-2026: Puolustusvoimien logistiikkalaitos, Hyperspectral measurement system",
+      "url": "https://ted.europa.eu/en/notice/312406-2026/html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "TED 375386-2026: Puolustusvoimien logistiikkalaitos, Varastokontit",
+      "url": "https://ted.europa.eu/en/notice/375386-2026/pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Puolustusvoimat: Supplier of the Nordic Combat Uniform has been chosen (8. 2. 2022)",
+      "url": "https://puolustusvoimat.fi/en/-/supplier-of-the-nordic-combat-uniform-has-been-chosen",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Business Finland: Defense and Digital Resilience",
+      "url": "https://www.businessfinland.fi/en/services/Programs-and-ecosystems/Programs/defense-digital-resilience/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Puolustusministeriö: MATINE's research",
+      "url": "https://defmin.fi/en/scientific-advisory-board-for-defence/matine-s-research",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NATO DIANA: Accelerator sites 2026",
+      "url": "https://www.diana.nato.int/resources/site1/general/accprog/accelerator-sites-2026.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NATO DIANA: Test centres 2026",
+      "url": "https://www.diana.nato.int/resources/site1/general/test%20centres/diana_test_centres_2026.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "TEM: Publication of contracts and thresholds",
+      "url": "https://tem.fi/en/publication-of-contracts-and-thresholds",
+      "otevreno": "2026-11-04"
+    }
+  ],
+  "nejiste": [
+    "Text zákona 1531/2011 (novely, národní prahy, výjimky) se nepodařilo načíst, Finlex zobrazuje text jen přes JavaScript. Stránka TEM o prazích a zveřejňování zmiňuje starší kanály (eNotices, Edita), působí zastarale, a proto z ní nic nepřebírám kromě toho, že HILMA je bezplatná a nadlimitní zakázky se v ní musí zveřejnit.",
+    "Hilma: zda je pro sledování (hakuvahti) nutná registrace, neověřeno.",
+    "Registrace v Tarjouspalvelu (poplatky, e-identifikace pro zahraniční firmy) a požadavek NCAGE neověřeny.",
+    "Ne všechny obranné zakázky jdou přes 1531/2011: obě ověřená oznámení Logistics Command z roku 2026 byla podle směrnice 2014/24/EU; podíl zakázek podle 2009/81/ES neověřen.",
+    "Stránky puolustusvoimat.fi o Logistics Command a tiskové zprávy defmin.fi se většinou nepodařilo načíst (chyba webu).",
+    "Kdo konkrétně provádí FSC pro obranný průmysl (ministerstvo obrany vs. Defence Command jako DSA), stránka NSA neuvádí.",
+    "MATINE: podmínky žádostí (firmy, zahraniční subjekty, termíny) neověřeny."
+  ]
+}

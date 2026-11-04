@@ -1,0 +1,157 @@
+{
+  "kod": "bg",
+  "zeme": "Bulharsko",
+  "stav": "2026-11-04",
+  "clenstvi": "EU, NATO",
+  "kdo_nakupuje": {
+    "text": "Nakupuje Министерство на отбраната (MO). Direktorát „Обществени поръчки в отбраната\" organizuje pořízení zboží a služeb pro budování a udržení obranných schopností (zadavatelem je ministr nebo pověřená osoba) a koordinuje a kontroluje plnění kompenzačních (offsetových) dohod. Na MO působí také direktorát „Политика по въоръженията\".",
+    "instituce": [
+      {
+        "nazev": "Министерство на отбраната, дирекция „Обществени поръчки в отбраната\"",
+        "zkratka": "MO",
+        "url": "https://www.mod.bg/str62"
+      }
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Direktorát MO uvádí jako základ Закон за обществените поръчки (ЗОП). Konkrétní ustanovení ZOP pro obranné a bezpečnostní zakázky, transpozici směrnice 2009/81/ES a prahy jsme z primárního zdroje neověřili (web Agentury pro veřejné zakázky aop.bg blokuje přístup).",
+    "predpisy": []
+  },
+  "kde_tendry": {
+    "text": "Podle mapy webu MO má ministerstvo profil kupujícího na centrální platformě ЦАИС ЕОП (app.eop.bg/buyer/1199). Starý profil pp.mod.bg obsahuje řízení jen do roku 2020.",
+    "portaly": [
+      {
+        "nazev": "MO: mapa webu (odkazy na profil kupujícího v ЦАИС ЕОП a pp.mod.bg)",
+        "url": "https://www.mod.bg/map_site"
+      },
+      {
+        "nazev": "MO: starý profil kupujícího (archiv do 2020)",
+        "url": "https://pp.mod.bg/"
+      }
+    ]
+  },
+  "registrace": {
+    "text": "Pro NATO tendry se firma registruje v databázi Ministerstva hospodářství (registrace pro aktuální rok je podmínkou žádosti o NATO certifikát u ДКСИ). Obecný registr dodavatelů MO jsme nenašli.",
+    "kroky": [
+      "Sledovat profil MO v ЦАИС ЕОП.",
+      "Pro NATO tendry se zaregistrovat v NATO databázi Ministerstva hospodářství.",
+      "U utajovaných zakázek počítat s tím, že prověrku iniciuje zadavatel u ДКСИ."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "MO uzavírá kompenzační (offsetové) dohody v zájmu ministerstva a armády a direktorát „Обществени поръчки в отбраната“ koordinuje a kontroluje plnění již uzavřených dohod. Historicky offsety upravovala Наредба за възлагане на специални обществени поръчки (ПМС № 233/2004): podle novely ПМС № 1/2007 byl offset povinný u zahraničního dodavatele nebo hlavního subdodavatele nad 10 mil. BGN bez DPH (nad 5 mil. BGN podle uvážení ministra hospodářství), poměr přímého a nepřímého offsetu 30 : 70, koeficienty 1 až 3, délka nejvýš 10 let; nepřímý offset spravovalo ministerstvo hospodářství, přímý zadavatel. Novela ПМС № 126/2010 stanovila hodnotu kompenzační dohody rovnou hodnotě smlouvy a zavedla předoffset (kredity platné 7 let). Zda je tento režim po transpozici směrnice 2009/81/ES a po novém ZOP dnes platný, jsme neověřili. MO propaguje domácí obranný průmysl přes výstavu ХЕМУС a Industrial forum."
+  },
+  "bezpecnost": {
+    "text": "Národním bezpečnostním úřadem je Държавна комисия по сигурността на информацията (ДКСИ). Průmyslovou bezpečnost upravuje Закон за защита на класифицираната информация (ЗЗКИ, čl. 95 odst. 1, čl. 97 a 98) a jeho prováděcí řád. Prověrku firmy zahajuje zadavatel veřejné zakázky s utajovanými informacemi, žádosti o osvědčení podává jen zadavatel; firma pro NATO tendry podává motivační dopis, doklad o registraci v NATO databázi Ministerstva hospodářství a žádost o NATO certifikát. Postup pro zahraniční firmy stránka nepopisuje. Dohoda s ČR existuje: Smlouva mezi ČR a Bulharskou republikou o vzájemné ochraně a výměně utajovaných informací, podepsána v Praze 3. 5. 2007, č. 34/2008 Sb. m. s. (seznam MZV ČR)."
+  },
+  "inovace": {
+    "text": "MO vede stránku k NATO DIANA: v Bulharsku jsou test centra GATE (Big Data for Smart Society při Sofijské univerzitě) a Институт по отбрана „Проф. Цветан Лазаров\". MO a Ministerstvo inovací a růstu pořádají informační setkání a vydávají bulharským žadatelům podpůrný dopis, který dává 20 % bodů hodnocení. Bulharsko se v roce 2022 zapojilo do NATO Innovation Fund. Seznam NATO z roku 2023 uvádí ještě R&D Innovation Consortium Sofia Tech Park a Námořní akademii Nikoly Vapcarova.",
+    "programy": [
+      {
+        "nazev": "MO: DIANA v Bulharsku",
+        "url": "https://www.mod.bg/view274",
+        "pro_zahranicni": "ano pro DIANA obecně; podpůrný dopis MO je pro bulharské žadatele"
+      }
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "U utajovaných zakázek nemůže firma žádat o osvědčení sama, prověrku zahajuje bulharský zadavatel přes ДКСИ.",
+    "MO stále spravuje uzavřené offsetové dohody: u velkých kontraktů lze hledat roli subdodavatele v rámci závazků hlavního dodavatele (současná pravidla offsetů ověřit, známý režim je z let 2004 až 2010).",
+    "Pro NATO tendry je nutná roční registrace v NATO databázi bulharského Ministerstva hospodářství (podle ДКСИ; zda platí i pro zahraniční firmy, ověřit).",
+    "Dohoda ČR a Bulharska o ochraně utajovaných informací existuje (34/2008 Sb. m. s.)."
+  ],
+  "prirucky": [
+    {
+      "nazev": "Индустриална сигурност",
+      "vydavatel": "ДКСИ",
+      "url": "https://www.dksi.bg/%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82/%D0%B8%D0%BD%D0%B4%D1%83%D1%81%D1%82%D1%80%D0%B8%D0%B0%D0%BB%D0%BD%D0%B0-%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82/",
+      "jazyk": "bg",
+      "typ": "web"
+    }
+  ],
+  "zdroje": [
+    {
+      "nazev": "MO: úvodní stránka",
+      "url": "https://www.mod.bg/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO: mapa webu",
+      "url": "https://www.mod.bg/map_site",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO: kontakty",
+      "url": "https://www.mod.bg/contacts",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO: дирекция „Обществени поръчки в отбраната\"",
+      "url": "https://www.mod.bg/str62",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO: starý profil kupujícího",
+      "url": "https://pp.mod.bg/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO: DIANA",
+      "url": "https://www.mod.bg/view274",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "ДКСИ: úvodní stránka",
+      "url": "https://www.dksi.bg/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "ДКСИ: Индустриална сигурност",
+      "url": "https://www.dksi.bg/%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82/%D0%B8%D0%BD%D0%B4%D1%83%D1%81%D1%82%D1%80%D0%B8%D0%B0%D0%BB%D0%BD%D0%B0-%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MZV ČR: seznam vyhlášených mezinárodních smluv (soubor Smlouvy leden 2018)",
+      "url": "https://mzv.gov.cz/public/4f/37/6/2714699_1860857_Smlouvy_leden_2018.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NATO: DIANA test centres (2023)",
+      "url": "https://nato.int/content/dam/nato/legacy-wcm/media_pdf/2023/6/pdf/230607-DIANA-test-centres.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Министерски съвет: ПМС № 1 от 5. 1. 2007 (novela Наредбы за възлагане на специални обществени поръчки), strategy.bg",
+      "url": "https://beta.strategy.bg/download/1109691",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Министерски съвет: ПМС № 126 от 21. 6. 2010 (novela téže Наредбы), strategy.bg",
+      "url": "https://beta.strategy.bg/download/1139027",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO: zákony (seznam)",
+      "url": "https://www.mod.bg/doc3",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO: podzákonné akty (seznam)",
+      "url": "https://www.mod.bg/doc4",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "strategy.bg: konzultace 12201 (přepočet částek z BGN na EUR, 2026)",
+      "url": "https://strategy.bg/bg/public-consultations/12201/export",
+      "otevreno": "2026-11-04"
+    }
+  ],
+  "nejiste": [
+    "Ustanovení ЗОП pro obranné a bezpečnostní zakázky, transpozice 2009/81/ES, prahy a jazyk nabídek (aop.bg blokuje přístup).",
+    "Profil MO v ЦАИС ЕОП (https://app.eop.bg/buyer/1199) jsme neotevřeli, adresa je jen z mapy webu MO.",
+    "Zda NATO databáze Ministerstva hospodářství přijímá i zahraniční firmy.",
+    "Web Industrial forum MO (https://iforum-bg.mod.bg/) zobrazil jen výzvu COSME, obsah fóra neověřen.",
+    "Současná pravidla offsetů: známe jen Наредба za specialní zakázky z roku 2004 a její novely z let 2007 a 2010; zda byla zrušena nebo nahrazena, neověřeno. Seznamy zákonů a podzákonných aktů na mod.bg (doc3, doc4) ZOP ani offsetový předpis neobsahují.",
+    "ZOP: plné znění z oficiálního zdroje se nepodařilo otevřít (aop.bg a lovech-os.justice.bg blokují přístup, FAOLEX má jen zákon z roku 1999, minfin.bg jen novelu bez obranných ustanovení). Ustanovení pro obranné zakázky a prahy proto zůstávají neověřeny; Bulharské předpisy se přepočítávají z BGN na EUR (příklad: konzultace 12201 na strategy.bg, 3/2026), prahy proto hledat v aktuálním znění v EUR."
+  ]
+}

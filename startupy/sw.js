@@ -2,9 +2,9 @@
 // Online: vždy nejdřív síť (aktuální verze hned po nasazení), odpověď se uloží do cache.
 // Offline nebo pomalá síť (> 4 s): uložená kopie. Appka tak funguje v letadle a přitom
 // po aktualizaci nikdy neukazuje starý obsah.
-const VERZE = "dhstart-v11";
+const VERZE = "dhstart-v12";
 const SOUBORY = ["./", "./index.html", "./config.js", "./manifest.webmanifest", "./brand.css", "./img/logo-dh-ci-white.png", "./img/logo-dh-white.png", "./ikona-dh-192.png", "./ikona-dh-512.png", "../css/style.css", "../js/slouceni.js", "../js/jezek.js", "../js/hudba.js", "../js/api.js", "../js/app.js",
-  "../obsah/kurz-startupy.js", "../obsah/kurz-eu-programy.js", "../obsah/kurz-nato-programy.js", "../obsah/kurz-slovnicek.js", "../obsah/vyuka.js", "../obsah/zapojit.js", "../img/ikona-192.png", "../img/ikona-512.png", "../img/hubik-klid.png", "../img/hubik-salut.png", "../img/hubik-radost.png", "../img/hubik-salut.webp"];
+  "../obsah/kurz-startupy.js", "../obsah/kurz-eu-programy.js", "../obsah/kurz-nato-programy.js", "../obsah/kurz-procurement.js", "../obsah/kurz-slovnicek.js", "../obsah/vyuka.js", "../obsah/zapojit.js", "../img/ikona-192.png", "../img/ikona-512.png", "../img/hubik-klid.png", "../img/hubik-salut.png", "../img/hubik-radost.png", "../img/hubik-salut.webp"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(VERZE).then(c => c.addAll(SOUBORY)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== VERZE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener("fetch", e => {

@@ -1,0 +1,88 @@
+{
+  "kod": "de",
+  "zeme": "Německo",
+  "stav": "2026-11-04",
+  "clenstvi": "EU, NATO",
+  "kdo_nakupuje": {
+    "text": "Hlavním nákupčím je BAAINBw (Bundesamt für Ausrüstung, Informationstechnik und Nutzung der Bundeswehr) v Koblenci pod ministerstvem obrany (BMVg); funguje jako centrální zadavatel pro studie, výzkum a vývoj, první i navazující pořízení a údržbu. Běžné civilní potřeby zadávají i civilní úřady správy Bundeswehru. Od 20. 5. 2026 běží reforma „Reformagenda Rüstung“: BAAINBw přechází na maticovou strukturu podle domén (land, sea, air, cyber/information space, space), poptávky dělí do tří režimů (Fast Track, Innovation, Komplex) a přibývají pobočky (Brémy, rozšířené Drážďany, plánovaná styčná kancelář v Bruselu).",
+    "instituce": [
+      {"nazev": "Bundesamt für Ausrüstung, Informationstechnik und Nutzung der Bundeswehr", "zkratka": "BAAINBw", "url": "https://www.bundeswehr.de/en/organization/equipment/contract-award"},
+      {"nazev": "Bundesministerium der Verteidigung", "zkratka": "BMVg", "url": "https://www.bmvg.de/de/presse/ruestung-beschaffungsstrukturen-innovationszentrum-6106222"}
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Obecný rámec tvoří GWB (část 4), VgV, pro obranu a bezpečnost VSVgV (Vergabeverordnung Verteidigung und Sicherheit, národní provedení směrnice 2009/81/ES), pod prahy UVgO a cenové předpisy PR Nr. 30/53. Klíčová novinka: nový BwBBG (Bundeswehrbeschaffungsbeschleunigungsgesetz) z 10. 2. 2026, BGBl. 2026 I Nr. 40, účinný od 14. 2. 2026, platný do 31. 12. 2035 (novelizován 12. 5. 2026). Ruší povinnost dělit zakázky na části (Lose), rozšiřuje výjimky z bezpečnostních důvodů (čl. 346 SFEU), umožňuje omezit účast na firmy usazené v EU (a vyloučit subdodavatele mimo EU), požadovat podíl původu z EU, zahájit tendr před zajištěním financí, zrychluje přezkum u spolkové Vergabekammer a výslovně umožňuje innovation partnership, funkční zadání a soutěž o návrh. Konkrétní finanční limity pro přímé zadání pod prahy se nepodařilo ověřit.",
+    "predpisy": [
+      {"nazev": "Bundeswehrbeschaffungsbeschleunigungsgesetz (BwBBG) 2026", "url": "https://www.gesetze-im-internet.de/bwbbg_2026/BJNR0280B0026.html"},
+      {"nazev": "Vergabeverordnung Verteidigung und Sicherheit (VSVgV)", "url": "http://www.gesetze-im-internet.de/vsvgv/index.html"},
+      {"nazev": "Gesetz gegen Wettbewerbsbeschränkungen (GWB)", "url": "https://www.gesetze-im-internet.de/gwb/BJNR252110998.html"},
+      {"nazev": "Přehled právních základů zadávání (BAAINBw)", "url": "https://www.bundeswehr.de/de/organisation/ausruestung-baainbw/vergabe/grundlagen-der-beschaffung"}
+    ]
+  },
+  "kde_tendry": {
+    "text": "Oznámení vycházejí podle typu řízení na portálu spolkové správy service.bund.de, na TED a na spolkové e-Vergabe platformě (evergabe-online.de), přes kterou se elektronicky podává. Bundeswehr nevede seznamy uchazečů, ale portály umožňují nastavit automatická upozornění. Nevyžádané nabídky mimo vypsaný tendr Bundeswehr nepřijímá.",
+    "portaly": [
+      {"nazev": "e-Vergabe (Vergabeplattform des Bundes)", "url": "https://www.evergabe-online.de/start.html"},
+      {"nazev": "Ausschreibungen der Bundeswehr (rozcestník BAAINBw)", "url": "https://www.bundeswehr.de/de/organisation/ausruestung-baainbw/vergabe/ausschreibungen-bundeswehr"},
+      {"nazev": "TED (Tenders Electronic Daily)", "url": "https://ted.europa.eu"}
+    ]
+  },
+  "registrace": {
+    "text": "Centrální registr dodavatelů pro obranu Bundeswehr nevede. Pro elektronické podání je nutná jednorázová bezplatná registrace na e-Vergabe (provozuje Beschaffungsamt des BMI) a instalace jejího softwaru; pro některé zakázky může být potřeba certifikát PKIBw. Informační stránky e-Vergabe jsou jen německy.",
+    "kroky": [
+      "Zaregistrovat se na evergabe-online.de (zdarma) a nainstalovat software pro podávání nabídek.",
+      "Nastavit si upozornění na tendry Bundeswehru na service.bund.de a e-Vergabe.",
+      "Prověřit, zda zakázka nevyžaduje certifikát PKIBw, technické dodací podmínky (TL), normy nebo systém jakosti podle stránek BAAINBw.",
+      "Stáhnout formuláře a podklady pro podání nabídky ze sekce Unterlagen zur Angebotsabgabe."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Spolková vláda v odpovědi Bundestagu z 26. 3. 2024 (Drucksache 20/10849) uvedla, že dosud nevede offsetovou politiku. Nový BwBBG (§ 11) ale vládě ukládá vydat do 30. 9. 2026 pokyny k offsetům a umožňuje zvýhodnit evropský průmysl (účast jen firem z EU, podíl původu z EU). Zda pokyny k offsetům už vyšly, se nepodařilo ověřit."
+  },
+  "bezpecnost": {
+    "text": "Průmyslovou bezpečnost (Geheimschutz in der Wirtschaft) firem spravuje spolkové ministerstvo hospodářství BMWE na základě zákona SÜG; služba je pro firmy bezplatná, informace a formuláře jsou na BMWE Sicherheitsforum. ČR a Německo mají dohodu vlád o vzájemné ochraně utajovaných skutečností (podepsána 25. 7. 2001, v platnosti od 1. 10. 2001, č. 95/2001 Sb.m.s., podle přehledu smluv MZV ČR). Postup pro zahraniční firmu (FSC přes NBÚ) jsem na německé straně neověřila."
+  },
+  "inovace": {
+    "text": "Vstupní body: Cyber Innovation Hub der Bundeswehr (CIHBw, od 2017, formálně součást BWI GmbH, přímo pod BMVg) propojuje Bundeswehr se startupy a preferuje dual-use (civilní řešení upravená pro armádu) produkty. Na začátku roku 2026 otevřelo Innovationszentrum der Bundeswehr v Erdingu (průmysl, startupy, věda a armáda), druhé centrum se plánuje v Kielu (stavba lodí, pozemní systémy, námořní elektronika). Reforma BAAINBw zavádí samostatný režim „Innovation“ pro budoucí technologie. Podmínky pro zahraniční firmy oficiální stránky neuvádějí.",
+    "programy": [
+      {"nazev": "Cyber Innovation Hub der Bundeswehr (CIHBw)", "url": "https://www.bmvg.de/de/themen/cybersicherheit/partnerschaften-zur-cybersicherheit/cyber-innovation-hub", "pro_zahranicni": "nejasné (podmínky státní příslušnosti na stránkách BMVg ani CIHBw uvedeny nejsou)"},
+      {"nazev": "Innovationszentrum der Bundeswehr (Erding, plánováno Kiel)", "url": "https://www.bmvg.de/de/presse/ruestung-beschaffungsstrukturen-innovationszentrum-6106222", "pro_zahranicni": "nejasné (tisková zpráva BMVg z 20. 5. 2026 to neřeší)"}
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "Bundeswehr nepřijímá nevyžádané nabídky a nevede seznam dodavatelů: vstup je přes vypsané tendry, proto si hned nastavte upozornění na service.bund.de a e-Vergabe.",
+    "BwBBG umožňuje omezit soutěž na firmy z EU: česká firma usazená v ČR je uvnitř, ale subdodavatelé mimo EU mohou být vyloučeni, takže si prověřte dodavatelský řetězec.",
+    "Zrušení povinnosti dělit zakázky na části (do konce platnosti zákona) zvýhodňuje velké dodavatele: pro malou firmu je reálnější cesta jako subdodavatel nebo přes innovation partnership a režim Innovation.",
+    "e-Vergabe a návody k ní jsou jen německy: počítejte s německou dokumentací i komunikací."
+  ],
+  "prirucky": [
+    {"nazev": "The Bundeswehr as a Customer (stav červen 2024, prahy platné do 31. 12. 2025)", "vydavatel": "BAAINBw", "url": "https://www.bundeswehr.de/resource/blob/954970/0dc84ef297a18eb6a42225abe73342c7/broschuere-auftraggeber-bundeswehr-en-data.pdf", "jazyk": "en", "typ": "pdf"},
+    {"nazev": "Contract award (anglická stránka pro dodavatele)", "vydavatel": "BAAINBw", "url": "https://www.bundeswehr.de/en/organization/equipment/contract-award", "jazyk": "en", "typ": "web"},
+    {"nazev": "e-Vergabe Informationsserver", "vydavatel": "Beschaffungsamt des BMI", "url": "http://www.evergabe-online.info/e-Vergabe/DE/Home/homepage_node.html", "jazyk": "de", "typ": "web"}
+  ],
+  "zdroje": [
+    {"nazev": "BwBBG 2026, gesetze-im-internet.de", "url": "https://www.gesetze-im-internet.de/bwbbg_2026/BJNR0280B0026.html", "otevreno": "2026-11-04"},
+    {"nazev": "Bundesregierung: Mehr Tempo für eine starke Bundeswehr", "url": "https://www.bundesregierung.de/breg-de/schwerpunkte/wirksam-regieren/bundeswehrbeschaffung-2367110", "otevreno": "2026-11-04"},
+    {"nazev": "BAAINBw Vergabe", "url": "https://www.bundeswehr.de/de/organisation/ausruestung-baainbw/vergabe", "otevreno": "2026-11-04"},
+    {"nazev": "BAAINBw Grundlagen der Beschaffung", "url": "https://www.bundeswehr.de/de/organisation/ausruestung-baainbw/vergabe/grundlagen-der-beschaffung", "otevreno": "2026-11-04"},
+    {"nazev": "BAAINBw Ausschreibungen der Bundeswehr", "url": "https://www.bundeswehr.de/de/organisation/ausruestung-baainbw/vergabe/ausschreibungen-bundeswehr", "otevreno": "2026-11-04"},
+    {"nazev": "BAAINBw Contract award (EN)", "url": "https://www.bundeswehr.de/en/organization/equipment/contract-award", "otevreno": "2026-11-04"},
+    {"nazev": "BAAINBw E-Tendering (EN)", "url": "https://www.bundeswehr.de/en/organization/equipment/contract-award/e-tendering", "otevreno": "2026-11-04"},
+    {"nazev": "The Bundeswehr as a Customer (PDF)", "url": "https://www.bundeswehr.de/resource/blob/954970/0dc84ef297a18eb6a42225abe73342c7/broschuere-auftraggeber-bundeswehr-en-data.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "e-Vergabe Informationsserver", "url": "http://www.evergabe-online.info/e-Vergabe/DE/Home/homepage_node.html", "otevreno": "2026-11-04"},
+    {"nazev": "Bundeswehr: Reformagenda Rüstung (20. 5. 2026)", "url": "https://www.bundeswehr.de/de/meldungen/reformagenda-ruestung-bundeswehr-stellt-sich-neu-auf-6105988", "otevreno": "2026-11-04"},
+    {"nazev": "BMVg: Rüstung, Beschaffungsstrukturen, Innovationszentrum (20. 5. 2026)", "url": "https://www.bmvg.de/de/presse/ruestung-beschaffungsstrukturen-innovationszentrum-6106222", "otevreno": "2026-11-04"},
+    {"nazev": "BMVg: Cyber Innovation Hub", "url": "https://www.bmvg.de/de/themen/cybersicherheit/partnerschaften-zur-cybersicherheit/cyber-innovation-hub", "otevreno": "2026-11-04"},
+    {"nazev": "BMWE: Sicherheit in der Wirtschaft", "url": "https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Artikel/Wirtschaft/sicherheit-in-der-wirtschaft.html", "otevreno": "2026-11-04"},
+    {"nazev": "Bundestag Drucksache 20/10849 (odpověď vlády k offsetům)", "url": "https://dserver.bundestag.de/btd/20/108/2010849.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "MZV ČR: smlouvy ČR a Německa", "url": "https://mzv.gov.cz/jnp/cz/encyklopedie_statu/evropa/nemecko/smlouvy/index.html", "otevreno": "2026-11-04"}
+  ],
+  "nejiste": [
+    "Konkrétní finanční limity pro přímé zadání pod prahy EU po reformě 2026 (Bundesregierung uvádí jen, že byly zvýšeny, bez čísel): https://www.bundesregierung.de/breg-de/schwerpunkte/wirksam-regieren/bundeswehrbeschaffung-2367110",
+    "Zda vláda podle § 11 BwBBG už vydala pokyny k offsetům (termín 30. 9. 2026), nenalezeno na oficiálních stránkách.",
+    "DIANA accelerator sites a test centres v Německu: oficiální mapa diana.nato.int/map nešla načíst, stránka NATO uvádí jen souhrnná čísla: https://www.nato.int/cps/en/natohq/topics_216199.htm",
+    "Jak CIHBw a Innovationszentrum Erding přijímají zahraniční (neněmecké) startupy, oficiální stránky to neuvádějí.",
+    "Jazyk nabídek: oficiální stránky BAAINBw ho výslovně neuvádějí, němčina je odvozena z jazyka platforem a dokumentace.",
+    "Postup Facility Security Clearance pro českou firmu u německé zakázky (role BMWE vs. NBÚ) nebyl na oficiálních stránkách ověřen."
+  ]
+}

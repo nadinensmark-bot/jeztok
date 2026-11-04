@@ -1,0 +1,147 @@
+{
+  "kod": "gr",
+  "zeme": "Řecko",
+  "stav": "2026-11-04",
+  "clenstvi": "EU, NATO",
+  "kdo_nakupuje": {
+    "text": "Obranné akvizice vede ministerstvo národní obrany (Υπουργείο Εθνικής Άμυνας, ΥΠΕΘΑ) přes General Directorate for Defence Investments and Armaments (GDDIA, řecky Γενική Διεύθυνση Αμυντικών Εξοπλισμών και Επενδύσεων, ΓΔΑΕΕ). Podle US International Trade Administration (2022) GDDIA plánuje obranné programy, uzavírá smlouvy a odpovídá i za offsety, zajištění kvality a obranný technologický výzkum. Velké zbrojní programy schvaluje Vládní rada pro národní bezpečnost (KYSEA) po stanovisku parlamentního výboru (podle návrhu novely ministerstva z května 2025).",
+    "instituce": [
+      {
+        "nazev": "Γενική Διεύθυνση Αμυντικών Εξοπλισμών και Επενδύσεων (General Directorate for Defence Investments and Armaments)",
+        "zkratka": "ΓΔΑΕΕ / GDDIA",
+        "url": "https://www.trade.gov/market-intelligence/greece-defense-sector"
+      }
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Směrnici 2009/81/ES transponuje zákon 3978/2011 (ΦΕΚ Α' 137, 16. 6. 2011), který řeší zakázky na stavební práce, dodávky a služby v oblasti obrany a bezpečnosti a zároveň upravuje záležitosti ministerstva obrany; byl opakovaně novelizován. Na tento zákon a na směrnici 2009/81/ES se jako na právní základ odkazuje i oficiální řecký registr správních postupů (mitos.gov.gr). Vedle něj platí pro zakázky ozbrojených sil zákon 3433/2006, od jehož pravidel se velké smlouvy (např. fregaty FDI v roce 2021) odchylují zvláštním zákonem. Registr dodavatelů upravuje prezidentský dekret 59/2025.",
+    "predpisy": [
+      {
+        "nazev": "Zákon 3978/2011 (ΦΕΚ Α' 137/16.06.2011), transpozice směrnice 2009/81/ES (konsolidované znění, neoficiální)",
+        "url": "https://www.taxheaven.gr/law/3978/2011"
+      },
+      {
+        "nazev": "Ενιαίο Μητρώο Επιχειρήσεων Αμυντικού Τομέα, právní základ: ν. 3978/2011 čl. 64, ΠΔ 59/2025 (Α' 113), směrnice 2009/81",
+        "url": "https://mitos.gov.gr/index.php/ΔΔ:Ενιαίο_Μητρώο_Επιχειρήσεων_Αμυντικού_Τομέα"
+      },
+      {
+        "nazev": "Návrh zákona ministerstva obrany o posílení obranyschopnosti (smlouvy na fregaty FDI, odkaz na ν. 3433/2006)",
+        "url": "https://www.hellenicparliament.gr/UserFiles/c8827c35-4399-4fbb-8ea6-aebdc768f4f7/11865173.pdf"
+      }
+    ]
+  },
+  "kde_tendry": {
+    "text": "Podle US International Trade Administration zveřejňuje GDDIA vypsané tendry a nákupy na svém anglickém webu (gdaee.mil.gr/en); web blokuje automatické čtení, přímo jsme ho neověřili. Konkrétní řecké oznámení na TED jsme nenačetli.",
+    "portaly": []
+  },
+  "registrace": {
+    "text": "Řecko vede Ενιαίο Μητρώο Επιχειρήσεων Αμυντικού Τομέα (ΕΜΕΑΤ, jednotný registr firem obranného sektoru), který nahradil dřívější registr výrobců obranného materiálu. Spravuje ho ΓΔΑΕΕ (Directorate of Defence Investments and Technological Research, ΔΑΕΤΕ). Zápis je povinný pro účast v tendrech a programech v režimu zákona 3978/2011 (s přechodnými ustanoveními dekretu 59/2025) a slouží i jako doklad technické a odborné způsobilosti. Firmy z jiných členských států EU mohou být zapsány na základě rovnocenných dokladů. Žádost se nepodává online, ale osobně, poštou nebo e-mailem; poplatek 300 EUR, vyřízení zhruba 3 až 4 měsíce, platnost 5 let. U výrobců následuje kontrola výrobních prostor komisí ΓΔΑΕΕ.",
+    "kroky": [
+      "Získat NCAGE kód přes Odbor katalogizace MO ČR (zdarma, přes portál NSPA)",
+      "Připravit podklady pro zápis do ΕΜΕΑΤ: mitos.gov.gr uvádí 16 dokladů (mj. výpis z obchodního rejstříku, potvrzení o bezdlužnosti vůči státu a sociálnímu pojištění, výpisy z rejstříku trestů statutárů, účetní závěrky za 3 roky, seznam zaměstnanců, pojištění odpovědnosti); zahraniční firma předkládá rovnocenné doklady",
+      "Zaplatit poplatek 300 EUR na účet podpůrné jednotky ministerstva (ΜΥ/ΥΠΕΘΑ) u Bank of Greece",
+      "Podat žádost osobně, poštou nebo e-mailem (industry.ditr@gdaee.mil.gr) podle návodu na webu ΓΔΑΕΕ; počítat s 3 až 4 měsíci",
+      "[DOPLNIT] jazyk nabídek a požadavky na úřední překlady dokladů"
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Podle US International Trade Administration (2022) patří správa offsetů mezi úkoly GDDIA; aktuální závaznou politiku průmyslové spolupráce (procento, právní základ) jsme v primárním zdroji neověřili. Média v roce 2026 píší o cíli alespoň 25 % řecké průmyslové účasti v nových programech, podle nich jde zatím o administrativní směrnici, ne o zákon (viz nejiste)."
+  },
+  "bezpecnost": {
+    "text": "Česko má s Řeckem bezpečnostní smlouvu o vzájemné ochraně vyměňovaných utajovaných informací (seznam NBÚ). Řecké příslušné bezpečnostní orgány uvádí například smlouva Řecka s Lotyšskem z roku 2002: Hellenic National Defence General Staff (B Branch, CI Security Section) a Armaments General Directorate (International Relations Department, Security Office). U utajovaných smluv musí příslušný orgán před podpisem potvrdit, že dodavatel má odpovídající bezpečnostní prověrku. Aktuální názvy útvarů a postup FSC pro zahraniční firmy jsme neověřili."
+  },
+  "inovace": {
+    "text": "Hlavním vstupním bodem pro inovativní firmy je ELKAK, Hellenic Centre for Defence Innovation (Ελληνικό Κέντρο Αμυντικής Καινοτομίας). Podle svého webu financuje výzkum a vývoj, propojuje startupy, výzkumníky a firmy s ozbrojenými silami a vypisuje open calls, Request for Proposals, Request for Information a Innovation Challenges; nabízí také matchmaking s hlavními dodavateli, přístup k test centres a cvičením, akcelerační programy a funguje jako EDF National Focal Point (národní kontaktní místo pro European Defence Fund). Podmínky pro zahraniční firmy web v načtené podobě neuvádí.",
+    "programy": [
+      {
+        "nazev": "ELKAK, open calls a Innovation Challenges",
+        "url": "https://elkak.gr/",
+        "pro_zahranicni": "nejasné, podmínky jsou v jednotlivých výzvách, které se nepodařilo načíst"
+      }
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "Zápis do řeckého registru ΕΜΕΑΤ je podmínkou účasti v obranných tendrech a trvá 3 až 4 měsíce: podat žádost s předstihem, ne až při vypsání konkrétního tendru.",
+    "Žádost do ΕΜΕΑΤ nejde podat online a vyžaduje řadu dokladů (rejstříky, bezdlužnost, závěrky): počítat s překlady a ověřením dokladů.",
+    "Pro startupy a dual-use firmy začít u ELKAK: sledovat open calls a Innovation Challenges a v konkrétní výzvě ověřit, zda je nutné sídlo nebo partner v Řecku.",
+    "Bezpečnostní smlouva ČR a Řecka existuje, u utajovaných zakázek řešit uznání prověrky přes NBÚ."
+  ],
+  "prirucky": [
+    {
+      "nazev": "Ενιαίο Μητρώο Επιχειρήσεων Αμυντικού Τομέα (popis postupu zápisu, doklady, poplatek)",
+      "vydavatel": "Řecká vláda, registr správních postupů mitos.gov.gr",
+      "url": "https://mitos.gov.gr/index.php/ΔΔ:Ενιαίο_Μητρώο_Επιχειρήσεων_Αμυντικού_Τομέα",
+      "jazyk": "el",
+      "typ": "web"
+    }
+  ],
+  "zdroje": [
+    {
+      "nazev": "ELKAK, hlavní stránka",
+      "url": "https://elkak.gr/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NBÚ, Documents (seznam bilaterálních smluv)",
+      "url": "https://nbu.gov.cz/en/documents",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NATO, member countries",
+      "url": "https://www.nato.int/cps/en/natohq/nato_countries.htm",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "EU, member countries",
+      "url": "https://european-union.europa.eu/principles-countries-history/eu-countries_en",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MO ČR, Odbor katalogizace: NCAGE",
+      "url": "https://okm.mo.gov.cz/en/node/284",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "mitos.gov.gr, Ενιαίο Μητρώο Επιχειρήσεων Αμυντικού Τομέα",
+      "url": "https://mitos.gov.gr/index.php/ΔΔ:Ενιαίο_Μητρώο_Επιχειρήσεων_Αμυντικού_Τομέα",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "US International Trade Administration, Greece Defense Sector (2022, aktualizace 2024)",
+      "url": "https://www.trade.gov/market-intelligence/greece-defense-sector",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Hellenic Parliament, návrh pozměňovacího návrhu ministerstva obrany (květen 2025)",
+      "url": "https://www.hellenicparliament.gr/UserFiles/bbb19498-1ec8-431f-82e6-023bb91713a9/12928099.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Hellenic Parliament, návrh zákona o posílení obranyschopnosti (smlouvy FDI)",
+      "url": "https://www.hellenicparliament.gr/UserFiles/c8827c35-4399-4fbb-8ea6-aebdc768f4f7/11865173.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "likumi.lv, smlouva Lotyšsko a Řecko o ochraně utajovaných informací (2002)",
+      "url": "https://likumi.lv/ta/en/starptautiskie-ligumi/id/64-agreement-between-the-government-of-the-republic-of-latvia-and-the-government-of-the-hellenic-republic-on-the-mutual-protection-of",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "taxheaven.gr, konsolidované znění zákona 3978/2011 (neoficiální, jen jako ukazatel)",
+      "url": "https://www.taxheaven.gr/law/3978/2011",
+      "otevreno": "2026-11-04"
+    }
+  ],
+  "nejiste": [
+    "Text zákona 3978/2011 jsme četli jen v neoficiální konsolidaci (taxheaven.gr); název, ΦΕΚ a čl. 5 (určení ΓΔΑΕΕ) ověřit v ΦΕΚ na et.gr. Existenci a platnost zákona potvrzují mitos.gov.gr a dokumenty řeckého parlamentu.",
+    "Web GDDIA (gddia.mod.mil.gr i gdaee.mil.gr) a ministerstva (mod.mil.gr) blokují automatické čtení; zveřejňování tendrů na webu GDDIA přebíráme z US ITA (2022).",
+    "Návrh novely z května 2025 (snížení limitu programu ΚΠΣΣΕ z 30 na 10 mil. EUR, schvalování zakázek od 10 mil. EUR v KYSEA) jsme četli jen jako návrh; zda byl přijat, neověřeno.",
+    "Offsety: sekundární zdroj (Lexology/GTDT 2024) uvádí, že obchodní offsety byly po transpozici směrnice zrušeny a staré závazky řeší zákon 4376/2016; v primárním zdroji neověřeno.",
+    "Pravidlo 25 % řecké průmyslové účasti: jen média (protothema.gr 27. 6. 2026, ot.gr 24. 5. 2026), podle nich zatím administrativní směrnice uplatňovaná GDDIA při vyjednávání, ne zákon.",
+    "Jazyk nabídek a požadavky na překlady dokladů pro ΕΜΕΑΤ neověřeny.",
+    "Řecké bezpečnostní orgány máme jen ze smlouvy s Lotyšskem z roku 2002; aktuální NSA a postup FSC neověřeny.",
+    "ELKAK: právní základ, nadřízený orgán a podmínky výzev jsou na podstránkách, které se načítají přes JavaScript a nešly přečíst (https://www.elkak.gr/about-us/legal-framework, https://www.elkak.gr/funding-opportunities/faqs).",
+    "DIANA accelerator sites a test centres v Řecku neověřeny (mapa diana.nato.int nešla otevřít).",
+    "EUR-Lex (NIM stránky ke směrnici 2009/81/ES) blokuje automatické čtení, transpozici jsme proto ověřovali přes národní zdroje; TED oznámení řeckých zadavatelů se nepodařilo načíst."
+  ]
+}

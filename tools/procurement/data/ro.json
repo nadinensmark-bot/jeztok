@@ -1,0 +1,126 @@
+{
+  "kod": "ro",
+  "zeme": "Rumunsko",
+  "stav": "2026-11-04",
+  "clenstvi": "EU, NATO",
+  "kdo_nakupuje": {
+    "text": "Nakupuje Ministerul Apărării Naționale (MApN) přes Direcția Generală pentru Armamente (DGArm), která podle MApN odpovídá za hlavní programy, akvizice a správu smluv. U programu SAFE DGArm podepisuje objednávky a smlouvy a rozesílá pozvánky schváleným hospodářským subjektům. Web DGArm (dpa.ro) blokuje automatický přístup.",
+    "instituce": [
+      {
+        "nazev": "Ministerul Apărării Naționale, Direcția Generală pentru Armamente (kontakty)",
+        "zkratka": "MApN / DGArm",
+        "url": "https://www.mapn.ro/contact/"
+      }
+    ]
+  },
+  "pravni_ramec": {
+    "text": "MApN v podkladech k SAFE odkazuje na OUG 114/2011 (zadávání zakázek v oblasti obrany a bezpečnosti). Pro SAFE platí OUG 62/2025 z 20. 11. 2025 (národní rámec k nařízení (EU) 2025/1106), schválená zákonem č. 4/2026, novelizovaná OUG 21/2026 (26. 3. 2026) a dále OUG 38/2026; úvěrovou smlouvu schválil parlament zákonem z projektu PL-x 520/2026, vyhlášeným 4. 8. 2026. Rumunsko má ze SAFE alokaci 16,68 mld. EUR (MApN plánuje 21 projektů za asi 9,6 mld. EUR). Plný text OUG 114/2011 a prahy jsme neotevřeli.",
+    "predpisy": [
+      {
+        "nazev": "MApN: Programul SAFE (přehled předpisů a kroků)",
+        "url": "https://www.mapn.ro/programul_safe/index.php"
+      }
+    ]
+  },
+  "kde_tendry": {
+    "text": "MApN odkazuje sekci Achiziții publice na web DGArm (dpa.ro), který se nepodařilo otevřít. Zakázky SAFE zadává DGArm jednacím řízením bez předchozího uveřejnění na pozvání schváleným subjektům (čl. 4 odst. 2 OUG 62/2025). Národní platformu SICAP (e-licitatie.ro) se nepodařilo načíst.",
+    "portaly": [
+      {
+        "nazev": "MApN: úvodní stránka (odkaz Achiziții publice na dpa.ro)",
+        "url": "https://www.mapn.ro/"
+      }
+    ]
+  },
+  "registrace": {
+    "text": "Postup registrace dodavatele u MApN ani v SEAP/SICAP jsme v otevřených zdrojích nenašli. U běžných (civilních) zakázek se nabídky podávají povinně elektronicky přes e-licitatie.ro a v rumunštině (příklad TED 393503-2026, zadavatel ze zdravotnictví); zda totéž platí pro obranné zakázky DGArm, neověřeno. NCAGE kódy v Rumunsku přiděluje Romanian Codification Bureau (ROU NCB) přes NCAGE Code Request Tool na portálu NSPA, zdarma, obvykle do 3 až 10 pracovních dnů; česká firma ale NCAGE získává v ČR (viz krizove.json).",
+    "kroky": [
+      "Získat NCAGE kód v ČR (Oddělení katalogizace, zdarma).",
+      "Zaregistrovat se v SEAP/SICAP (e-licitatie.ro); postup pro zahraniční firmy ověřit u provozovatele.",
+      "U utajovaných zakázek počítat s autorizací průmyslové bezpečnosti od ORNISS už pro účast v jednání (čl. 206 HG 585/2002) a s ověřením přes NBÚ.",
+      "Sledovat program SAFE a výzvy DGArm na mapn.ro."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "U SAFE musí aspoň 65 % odhadovaných nákladů konečného výrobku pocházet z komponent zúčastněných států a nákup musí být společný s dalším způsobilým státem (výjimka pro jediný stát platila jen pro smlouvy do května 2026). OUG 21/2026 zavedla dohodu o spolupráci (cooperation agreement) s průmyslovými závazky, dodávky jsou podmíněny certifikovaným splněním těchto závazků. Rozhodnutí CSAT č. 138 (24. 11. 2025) schválilo investiční plán obranného průmyslu. MApN uvádí lokální výrobu (loděnice Mangalia, IAR Brașov, Mediaș, Cugir, Sadu aj.) a velké zahraniční partnery (GDELS, IVECO, Rheinmetall, Airbus Helicopters, Thales). Obecný offsetový režim mimo SAFE jsme neověřili."
+  },
+  "bezpecnost": {
+    "text": "Pro utajované informace NATO a EU vykonává pravomoci Oficiul Registrului Național al Informațiilor Secrete de Stat (ORNISS) (OUG 153/2002); pro národní utajované informace působí jako Autoritate Desemnată de Securitate mj. Serviciul Român de Informații (SRI) (FAQ SRI). Podle HG 585/2002 (kapitola VII, průmyslová bezpečnost) musí firmy, které se účastní jednání o smlouvách s utajovanými informacemi, mít autorizație de securitate industrială vydanou ORNISS (čl. 206); vybraný dodavatel pak pro plnění smlouvy získá certificat de securitate industrială a zadavatel ke smlouvě přikládá bezpečnostní přílohu (čl. 201 až 202). Postup pro zahraniční firmy a uznání české FSC jsme neověřili. Dohoda s ČR platí: Smlouva mezi vládou České republiky a vládou Rumunska o vzájemné ochraně vyměněných utajovaných informací, podpis Bukurešť 31. 3. 2010, platnost od 1. 6. 2011, č. 43/2011 Sb. m. s. Na úrovni ministerstev obrany existuje i Dodatkový protokol k ujednání MO ČR a MApN o ochraně vojenských utajovaných skutečností z 17. 7. 2000 (podpis Praha 28. 2. 2006, č. 87/2006 Sb. m. s.) (zdroj MZV ČR)."
+  },
+  "inovace": {
+    "text": "Rada ředitelů NATO DIANA schválila 3. 6. 2026 v Madridu návrh zařadit pět nových rumunských DIANA test centres do rozpočtu příštího roku; na stejném jednání pokročila iniciativa národního DIANA akcelerátoru, který má hostit Universitatea POLITEHNICA din București (oznámení ICI București, 4. 6. 2026). Seznam NATO z roku 2023 uvádí v Rumunsku test centra INCAS a International Centre of Excellence in Artificial Intelligence při Politehnice Bukurešť.",
+    "programy": [
+      {
+        "nazev": "ICI București: pět nových DIANA test centres v Rumunsku",
+        "url": "https://www.ici.ro/ro/anunturi/propunerea-privind-includerea-a-cinci-noi-centre-de-testare-diana-%C3%AEn-rom%C3%A2nia-%C3%AEn-bugetul-de-anul-viitor-a-fost-aprobat%C4%83/",
+        "pro_zahranicni": "ano (síť DIANA)"
+      },
+      {
+        "nazev": "Seznam DIANA test centres (NATO, 2023)",
+        "url": "https://nato.int/content/dam/nato/legacy-wcm/media_pdf/2023/6/pdf/230607-DIANA-test-centres.pdf",
+        "pro_zahranicni": "ano (síť DIANA)"
+      }
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "SAFE v Rumunsku (16,68 mld. EUR) vyžaduje společné nákupy a 65 % komponent ze zúčastněných států: česká firma jako EU dodavatel komponent splňuje formální podmínku původu.",
+    "Zakázky SAFE šly jednacím řízením bez uveřejnění na pozvání DGArm a hlavními dodavateli jsou velké firmy (Rheinmetall, GDELS, IVECO, Airbus): realistická cesta je subdodávka pro tyto primes.",
+    "Průmyslové závazky v dohodách o spolupráci podmiňují dodávky, rumunský partner nebo výroba v Rumunsku proto může být výhodou.",
+    "Pro utajované zakázky je v Rumunsku potřeba bezpečnostní autorizace už ve fázi jednání, ne až po podpisu: řešte NBÚ a ORNISS s předstihem (smlouva ČR a Rumunska platí od 2011)."
+  ],
+  "prirucky": [],
+  "zdroje": [
+    {
+      "nazev": "MApN: úvodní stránka",
+      "url": "https://www.mapn.ro/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MApN: Programul SAFE",
+      "url": "https://www.mapn.ro/programul_safe/index.php",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MApN: Contact",
+      "url": "https://www.mapn.ro/contact/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "ICI București: pět nových DIANA test centres (4. 6. 2026)",
+      "url": "https://www.ici.ro/ro/anunturi/propunerea-privind-includerea-a-cinci-noi-centre-de-testare-diana-%C3%AEn-rom%C3%A2nia-%C3%AEn-bugetul-de-anul-viitor-a-fost-aprobat%C4%83/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NATO: DIANA test centres (2023)",
+      "url": "https://nato.int/content/dam/nato/legacy-wcm/media_pdf/2023/6/pdf/230607-DIANA-test-centres.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MZV ČR: smlouvy ČR s Rumunskem",
+      "url": "https://mzv.gov.cz/jnp/cz/encyklopedie_statu/evropa/rumunsko/smlouvy/index.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "SRI: Protecția informațiilor clasificate, întrebări și răspunsuri (2020)",
+      "url": "https://sri.ro/assets/files/informatii-clasificate/protectia-informatiilor-clasificate-intrebari-si-raspunsuri-2020.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Romanian Codification Bureau: NCAGE",
+      "url": "https://bnc.defense.ro/ncage_en.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "TED 393503-2026 (příklad rumunské civilní zakázky)",
+      "url": "https://ted.europa.eu/ro/notice/393503-2026/pdf",
+      "otevreno": "2026-11-04"
+    }
+  ],
+  "nejiste": [
+    "Web DGArm (https://www.dpa.ro/achizitii-publice/) a ORNISS (https://www.orniss.ro/) blokují automatický přístup; SICAP (https://www.e-licitatie.ro/) se nenačetl. Kde přesně se zveřejňují obranné tendry, registrace v SEAP/SICAP pro zahraniční firmy a jazyk obranných nabídek: neověřeno.",
+    "Role ORNISS a čl. 201, 202 a 206 HG 585/2002 jsou převzaty z FAQ SRI (bez data vydání); plný text HG 585/2002 jsme z oficiálního zdroje neotevřeli. Platnost autorizace a certifikátu a postup pro zahraniční firmy neověřeny.",
+    "Plný text OUG 114/2011 a jeho prahy (MApN na něj jen odkazuje).",
+    "Obecná offsetová pravidla Rumunska mimo SAFE.",
+    "Zda ujednání MO ČR a MApN z roku 2000 o ochraně vojenských utajovaných skutečností stále platí vedle smlouvy z roku 2010, neověřeno.",
+    "Názvy pěti nových DIANA test centres a termín spuštění národního akcelerátoru (oznámení ICI je neuvádí)."
+  ]
+}

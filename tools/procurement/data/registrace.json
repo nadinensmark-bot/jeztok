@@ -1,0 +1,405 @@
+[
+  {
+    "id": "datova-schranka",
+    "nazev": "Datová schránka (ISDS)",
+    "co_to_je": "Státní elektronická schránka pro úřední komunikaci, firmám zapsaným v rejstřících ji Digitální a informační agentura zřizuje automaticky.",
+    "proc_pomuze": "Přes ni chodí registrace a úřední komunikace, mimo jiné registrační údaje do katalogizačního portálu MO (WEB-KAT), takže bez ní se v obranném světě v ČR daleko nedostaneš.",
+    "kdo_vydava": "Digitální a informační agentura (DIA), provoz zajišťuje Česká pošta, s.p.",
+    "cena": "Komunikace s úřady zdarma (datovka.gov.cz, ověřeno 2026-11-04). Cenu zřízení ani odesílání poštovních datových zpráv mezi firmami oficiální stránka v otevřené části neuvádí.",
+    "lhuta": "",
+    "predpoklady": "Zápis firmy ve statutárních registrech (Registr osob / Registr práv a povinností), jinak se zřizuje na žádost.",
+    "url": "https://datovka.gov.cz/info/cs/66.html",
+    "priorita": "hned (většina s.r.o./a.s. ji už má automaticky, jen ji začít používat)",
+    "zdroje": [
+      "https://datovka.gov.cz/info/cs/",
+      "https://datovka.gov.cz/info/cs/66.html"
+    ],
+    "nejiste": "Zda je zřízení schránky pro právnickou osobu výslovně zdarma a kolik stojí poštovní datová zpráva (Kreditní systém) jsem na oficiální stránce neověřila; stránka jen odkazuje na Kreditní systém."
+  },
+  {
+    "id": "ncage",
+    "nazev": "NCAGE kód (NATO Commercial and Government Entity code)",
+    "co_to_je": "Pětimístný alfanumerický identifikátor výrobce/dodavatele v NATO Codification System (kodifikační systém NATO), uložený v databázi NATO H4 a trvale navázaný na IČO.",
+    "proc_pomuze": "Je to základní 'NATO občanka' firmy: chtějí ho SAM.gov pro zahraniční firmy a používá se při katalogizaci výrobků pro armády NATO.",
+    "kdo_vydava": "Oddělení katalogizace (OdK) Úřadu pro obrannou standardizaci, katalogizaci a státní ověřování jakosti (Úř OSK SOJ), které je českým National Codification Bureau (národní kodifikační úřad). Žádost se podává přes NSPA portál (NCAGE / CAGE Tool).",
+    "cena": "Zdarma, 'Přidělení NCAGE je bezplatné' (okm.mo.gov.cz, ověřeno 2026-11-04).",
+    "lhuta": "OdK pošle oznámení o přidělení e-mailem do 10 pracovních dnů (okm.mo.gov.cz). Pozor: americký GSA návod pro SAM.gov uvádí 'up to 3 business days', pro CZ ber vážně 10 pracovních dnů.",
+    "predpoklady": "IČO; nejdřív ověřit, jestli firma kód už nemá (vyhledání v H4 podle IČO). Při změně údajů poslat OdK formulář 'Žádost o změnu (doplnění) údajů o organizaci'.",
+    "url": "https://okm.mo.gov.cz/subjekty-kodifikace/vyrobcidodavatele/ncage-katalogizacni-kod-vyrobcedodavatele",
+    "priorita": "hned (zdarma, rychlé, je prerekvizitou pro SAM.gov a usnadňuje NATO procurement)",
+    "zdroje": [
+      "https://okm.mo.gov.cz/subjekty-kodifikace/vyrobcidodavatele/ncage-katalogizacni-kod-vyrobcedodavatele",
+      "https://okm.mo.gov.cz/",
+      "https://okm.mo.gov.cz/sites/okm/files/2025-03/vy%C5%BEadov%C3%A1n%C3%AD_NCAGE_2.pdf",
+      "https://files.simpler.grants.gov/opportunities/152956d5-8262-47b9-8b50-7ea17b453456/attachments/6c73bae4-51fd-4200-8667-0628bd155689/2.0_Quick_Start_Guide_for_International_Registrations.pdf"
+    ],
+    "nejiste": "NSPA portál https://eportal.nspa.nato.int/Codification/CageTool/home mi vrátil 'Request Rejected', samotný formulář jsem tedy neviděla. Kontakt na OdK: Ing. Helena Princová, +420 973 229 274 (e-mail stránka neuvádí). Starší dokument 'vyžadování NCAGE' popisuje postup přes databázi H4 / agenturu, aktuální stránka OdK odkazuje na NSPA portál; doporučuju si postup potvrdit u OdK."
+  },
+  {
+    "id": "web-kat",
+    "nazev": "WEB-KAT (katalogizační portál MO ČR, katalog.mo.gov.cz)",
+    "co_to_je": "Internetový portál Úř OSK SOJ pro katalogizaci výrobků podle zákona č. 309/2000 Sb. a NATO Codification System, s částí Workflow (smlouvy a katalogizační požadavky) a Katalog.",
+    "proc_pomuze": "Když dodáváš MO ČR výrobek, který se katalogizuje (NATO Stock Number), přes WEB-KAT s tím pracuješ a tvoje data jsou vidět v systému, se kterým armády NATO pracují.",
+    "kdo_vydava": "Úřad pro obrannou standardizaci, katalogizaci a státní ověřování jakosti (Úř OSK SOJ), MO ČR",
+    "cena": "Zdarma, 'Registrace je zdarma a registrační údaje jsou předávány cestou datové schránky' (okm.mo.gov.cz/web-kat, ověřeno 2026-11-04).",
+    "lhuta": "",
+    "predpoklady": "Žádost o přidělení uživatelského jména a hesla, datová schránka.",
+    "url": "https://okm.mo.gov.cz/web-kat",
+    "priorita": "až když máš smlouvu s MO ČR / dodávku, která se katalogizuje",
+    "zdroje": [
+      "https://okm.mo.gov.cz/web-kat",
+      "https://okm.mo.gov.cz/subjekty-katalogizace"
+    ],
+    "nejiste": "Lhůtu přidělení přístupu oficiální stránka neuvádí."
+  },
+  {
+    "id": "sam-gov",
+    "nazev": "SAM.gov registrace (System for Award Management) + UEI",
+    "co_to_je": "Oficiální registr dodavatelů vlády USA, při registraci dostaneš Unique Entity ID (UEI, jednoznačný identifikátor subjektu).",
+    "proc_pomuze": "Bez aktivní SAM registrace nedostaneš kontrakt ani grant od federální vlády USA (včetně DoD) a mnoho US partnerů ji chce vidět.",
+    "kdo_vydava": "U.S. General Services Administration (GSA)",
+    "cena": "Zdarma, 'There is NO charge to register or maintain your entity registration record in SAM.gov' (GSA Quick Start Guide for International Registrations, ověřeno 2026-11-04).",
+    "lhuta": "Počítej minimálně 10 pracovních dnů od odeslání, než je registrace aktivní (GSA návod). Obnova každých 365 dní (sam.gov).",
+    "predpoklady": "NCAGE kód pro každý registrovaný subjekt (povinné pro zahraniční firmy, viz položka ncage), firemní údaje.",
+    "url": "https://sam.gov/content/entity-registration",
+    "priorita": "až když míříš na americký trh (DoD, DIU, AFWERX apod.) nebo US prime chce UEI",
+    "zdroje": [
+      "https://sam.gov/content/entity-registration",
+      "https://files.simpler.grants.gov/opportunities/152956d5-8262-47b9-8b50-7ea17b453456/attachments/6c73bae4-51fd-4200-8667-0628bd155689/2.0_Quick_Start_Guide_for_International_Registrations.pdf",
+      "https://www.gsa.gov/about-us/organization/federal-acquisition-service/technology-transformation-services/integrated-award-environment-iae/iae-systems-information-kit/unique-entity-identifier-update",
+      "https://content.govdelivery.com/accounts/USSSATTW/bulletins/4054ec9"
+    ],
+    "nejiste": "GSA návod nemá datum verze (hostovaný na grants.gov). Požadavek notářsky ověřeného dopisu pro Entity Administrator jsem dnes neověřila, neuvádět. PAST: soukromé firmy nabízejí registraci/obnovu SAM 'za významný poplatek', vládní zdroj (SSA bulletin 30. 1. 2026) výslovně říká, že přes sam.gov je to zdarma a tyto služby nejsou potřeba. Login.gov jako prerekvizitu jsem v dnešních zdrojích výslovně neověřila."
+  },
+  {
+    "id": "duns",
+    "nazev": "D-U-N-S Number (Dun & Bradstreet)",
+    "co_to_je": "Devítimístný identifikátor firmy v databázi Dun & Bradstreet.",
+    "proc_pomuze": "Pro SAM.gov už není potřeba (od 4. 4. 2022 ho nahradil UEI), ale dál ho chtějí někteří soukromí partneři a platformy, takže ho má smysl řešit, až o něj někdo konkrétně požádá.",
+    "kdo_vydava": "Dun & Bradstreet (v ČR Dun & Bradstreet, tel. +420 274 000 800)",
+    "cena": "Globální stránka D&B: 'There is no cost to request and receive a D-U-N-S Number'; za příplatek existuje expresní varianta (cena neuvedena). Ověřeno 2026-11-04.",
+    "lhuta": "Standardně do 30 pracovních dnů, expres do 8 pracovních dnů (globální stránka D&B).",
+    "predpoklady": "Nejdřív zkontroluj, jestli už číslo nemáš (D&B lookup: dunsnumberlookup.dnb.com/cz-cz/home).",
+    "url": "https://www.dnb.com/cs-cz/smb/duns.html",
+    "priorita": "až když ho konkrétní partner/platforma vyžaduje (NE kvůli SAM.gov)",
+    "zdroje": [
+      "https://www.gsa.gov/about-us/organization/federal-acquisition-service/technology-transformation-services/integrated-award-environment-iae/iae-systems-information-kit/unique-entity-identifier-update",
+      "https://www.dnb.com/en-us/smb/duns/get-a-duns.html",
+      "https://www.dnb.com/cs-cz/smb/duns.html"
+    ],
+    "nejiste": "Česká stránka D&B neuvádí, zda je D-U-N-S pro CZ firmy zdarma, ani cenu či lhůtu, jen odkazuje na kontakt; tvrzení 'zdarma' platí ověřeně jen pro globální (US) stránku. Cenu expresu neuvádí žádná ze stránek. Které konkrétní firmy/primes D-U-N-S dnes vyžadují, jsem neověřila. Česká stránka produktu dnb.com/cs-cz/produkty/... se nenačetla. PAST: D&B prodává placené produkty kolem D-U-N-S, samotné číslo ale placené být nemusí, ptej se výslovně na bezplatnou variantu."
+  },
+  {
+    "id": "nspa-source-file",
+    "nazev": "NSPA Source File (registrace dodavatele NATO Support and Procurement Agency)",
+    "co_to_je": "Databáze dodavatelů NSPA, ze které agentura vybírá firmy, které obesílá s výzvami k podání nabídek.",
+    "proc_pomuze": "NSPA nakupuje pro NATO a spojence (logistika, munice, náhradní díly, služby) a bez registrace v Source File tě do soutěží nepozve.",
+    "kdo_vydava": "NATO Support and Procurement Agency (NSPA); způsobilost (eligibility) potvrzuje národní autorita, pro CZ MO ČR.",
+    "cena": "Zdarma podle manuálu MO ČR 'Jak obchodovat s NSPA' (srpen 2018): registrace 'probíhá zásadně zdarma'.",
+    "lhuta": "",
+    "predpoklady": "Sídlo nebo hlavní výrobní závod v členském státě NATO; vyplněný profil s katalogem produktů (ideálně NSN); potvrzení způsobilosti od MO ČR (NSPA posílá 'Eligibility Request', registrace je dokončena až po potvrzení). Instrukce NSPA OI-4200-02 (březen 2024) uvádí 'Declaration of Eligibility received from national authorities'.",
+    "url": "https://eportal.nspa.nato.int/Registration/default_4G.aspx",
+    "priorita": "až když máš produkt/službu, kterou NATO agentury nakupují (logistika, komponenty, služby), typicky po prvních referencích",
+    "zdroje": [
+      "https://www.mo.gov.cz/assets/nato/dokumenty/jak-obchodovat-s-nspa---manual.pdf",
+      "https://www.nspa.nato.int/resources/site1/General/business/procurement/General%20info/OI-4200-02.pdf",
+      "https://www.canada.ca/en/department-national-defence/services/doing-business-with-foreign-defence-markets/frequently-asked-questions-doing-business-with-nato.html"
+    ],
+    "nejiste": "Registrační portál NSPA i stránka nspa.nato.int/business mi vrátily 'Request Rejected', aktuální text jsem neviděla. 'Zdarma' je ověřeno jen z manuálu MO ČR z 2018 (OI-4200-02 z 2024 poplatky nezmiňuje). Lhůtu oficiální zdroj neuvádí (kanadská vláda píše cca 2 týdny pro kanadské firmy, pro CZ neověřeno). NCAGE je podle OI-4200-02 v záznamu Source File volitelný ('cage code (if any)'). Kdo přesně na MO ČR dnes eligibility potvrzuje, aktuálně neověřeno (manuál 2018 uvádí CZ Liaison Officer czlo@nspa.nato.int)."
+  },
+  {
+    "id": "ncia-nsip-doe",
+    "nazev": "NCIA / NATO soutěže přes Oddělení NSIP MO ČR (Declaration of Eligibility, databáze NSIP)",
+    "co_to_je": "Do soutěží NCIA (NATO Communications and Information Agency) a dalších mezinárodních NATO soutěží se firma nehlásí napřímo, ale přes národní autoritu, v ČR Oddělení NSIP Sekce vyzbrojování a akvizic MO, které vede databázi firem a zveřejňuje výzvy.",
+    "proc_pomuze": "Bez nominace přes MO ČR (Declaration of Eligibility, prohlášení o způsobilosti) se k NCIA tendrům (C4ISR, IT, kyber, AI) vůbec nedostaneš.",
+    "kdo_vydava": "Oddělení NSIP, Sekce vyzbrojování a akvizic MO ČR (kontakt Andrea Bernardová, Andrea.Bernardova@mo.gov.cz, 973 225 268)",
+    "cena": "",
+    "lhuta": "Pro každou soutěž zvlášť: 'Prohlášení ve věci zájmu o účast' e-mailem do termínu uvedeného u výzvy (např. NCIA 81-2026 do 29. 10. 2026).",
+    "predpoklady": "Zápis firmy do databáze NSIP podle podmínek v dokumentu program.docx na webu NSIP; pak pro každou výzvu zaslat prohlášení o zájmu (šablona prohlaseni_zajmu.doc). Podle NCIA DoE potvrzuje finanční, technickou a odbornou způsobilost firmy.",
+    "url": "https://oinsip.mo.gov.cz/jak-se-ucastnit",
+    "priorita": "až když máš řešení pro NATO C4ISR/IT a reference; databázi NSIP sleduj hned (výzvy chodí průběžně)",
+    "zdroje": [
+      "https://oinsip.mo.gov.cz/",
+      "https://oinsip.mo.gov.cz/jak-se-ucastnit",
+      "https://oinsip.mo.gov.cz/aktuality",
+      "https://oinsip.mo.gov.cz/kontakty",
+      "https://oinsip.mo.gov.cz/firmy-v-databazi-nsip",
+      "https://www.ncia.nato.int/about-us/newsroom/five-steps-to-doing-business-with-the-nci-agency.aspx",
+      "https://www.ncia.nato.int/business/procurement",
+      "https://www.canada.ca/en/department-national-defence/services/doing-business-with-foreign-defence-markets/frequently-asked-questions-doing-business-with-nato.html"
+    ],
+    "nejiste": "Podmínky zápisu do databáze NSIP (program.docx) se mi nepodařilo otevřít, poplatek ani požadované doklady tedy nevím. Web NSIP termín 'Declaration of Eligibility' nepoužívá, mluví o 'prohlášení ve věci zájmu o účast'. BOA (Basic Ordering Agreement, rámcová smlouva NCIA pro COTS): popis je z článku NCIA z roku 2019, aktuální stránka NCIA odkazuje na novou NATO Procurement Policy (NPP) a podmínky dle konkrétní výzvy (NPO), stav BOA programu dnes neověřen."
+  },
+  {
+    "id": "eu-pic",
+    "nazev": "PIC (Participant Identification Code) na EU Funding & Tenders Portal",
+    "co_to_je": "Devítimístný identifikační kód organizace v registru účastníků EU programů a zakázek Evropské komise.",
+    "proc_pomuze": "Bez PIC nepodáš projekt do European Defence Fund (EDF, Evropský obranný fond), Horizon Europe ani plnou žádost do EIC Accelerator.",
+    "kdo_vydava": "Evropská komise, validaci dělá Central Validation Service",
+    "cena": "",
+    "lhuta": "PIC dostaneš hned po dokončení registrace (provizorní do validace); validace probíhá až po dopisu o výsledku hodnocení.",
+    "predpoklady": "Nejdřív ověřit, že firma PIC už nemá (duplicity). Validace je nutná pro příjemce grantu, affiliated entities a dodavatele zakázek, ne pro associated partners a subdodavatele. Validace je podmínkou jmenování LEAR (Legal Entity Appointed Representative, oprávněný zástupce organizace).",
+    "url": "https://webgate.ec.europa.eu/funding-tenders-opportunities/display/OM/Registration+and+validation+of+your+organisation",
+    "priorita": "hned (pár minut práce, otevírá EDF, EIC i konsorcia jako partner)",
+    "zdroje": [
+      "https://webgate.ec.europa.eu/funding-tenders-opportunities/display/OM/Registration+and+validation+of+your+organisation",
+      "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/participant-register"
+    ],
+    "nejiste": "Cenu jsem na oficiální stránce výslovně neověřila (Online Manual cenu ani lhůty nezmiňuje), proto pole cena prázdné; nedoplňovat 'zdarma' bez zdroje. Délku validace oficiální stránka neuvádí. EU Login jako prerekvizitu jsem dnes výslovně neověřila."
+  },
+  {
+    "id": "nen",
+    "nazev": "NEN, Národní elektronický nástroj (registrace dodavatele)",
+    "co_to_je": "Státní elektronický nástroj pro zadávání veřejných zakázek, ve kterém soutěží mimo jiné MO ČR a další státní zadavatelé.",
+    "proc_pomuze": "Pro využití všech funkcí NEN (podávání nabídek) je nutná registrace dodavatele, bez ní se do zakázek zadávaných přes NEN nepřihlásíš.",
+    "kdo_vydava": "NIPEZ (Národní infrastruktura pro elektronické zadávání veřejných zakázek), MMR",
+    "cena": "",
+    "lhuta": "",
+    "predpoklady": "Registrace přes tlačítko Registrace, volba 'Zadavatel + Dodavatel', ověření přes CAAIS/NIA; nové subjekty se přihlašují přes Identita NIPEZ. Kvalifikovaný certifikát / elektronický podpis podle podpory NIPEZ souvisí s podpisem registračního formuláře.",
+    "url": "https://nen.nipez.cz/registrace",
+    "priorita": "hned, pokud chceš dodávat MO ČR nebo jiným státním zadavatelům v ČR",
+    "zdroje": [
+      "https://nen.nipez.cz/",
+      "https://nen.nipez.cz/registrace",
+      "https://podpora.nipez.cz/cs/registrace/latest",
+      "https://podpora.nipez.cz/cs/dodavatel/latest",
+      "https://www.prg.aero/sites/default/files/obsah/staticke-stranky/1397/soubory/Instructions%20for%20registration%20in%20NIPEZ_2026.pdf"
+    ],
+    "nejiste": "Že je registrace zdarma a trvá max. 48 hodin, uvádí jen návod Letiště Praha (zadavatel, sekundární zdroj), oficiální stránky NIPEZ/NEN cenu ani lhůtu neuvádějí ('Snadná registrace, rychlý schvalovací proces'). Zda je pro podání nabídky nutný kvalifikovaný certifikát, jsem na oficiálním zdroji neověřila. Že MO ČR zadává konkrétně přes NEN, jsem dnes výslovně neověřila. Podpora: hotline@nipez.cz, +420 272 680 985."
+  },
+  {
+    "id": "skd",
+    "nazev": "Seznam kvalifikovaných dodavatelů (SKD)",
+    "co_to_je": "Seznam vedený MMR podle § 224 a násl. zákona č. 134/2016 Sb., kam se zapíše dodavatel, který prokázal základní a profesní způsobilost.",
+    "proc_pomuze": "Výpis ze SKD nahrazuje doklady o základní a profesní způsobilosti v zakázkách a zadavatel ho musí uznat, pokud není starší 3 měsíců, takže šetří papírování u každého tendru.",
+    "kdo_vydava": "Ministerstvo pro místní rozvoj ČR (MMR)",
+    "cena": "Správní poplatek dle zákona 634/2004 Sb.: žádost o zápis 3 000 Kč, změna zápisu 1 000 Kč, výpis 15 Kč/strana; elektronický výpis zdarma (portal-vz.cz, stránka naposledy upravena 11. 8. 2025, ověřeno 2026-11-04).",
+    "lhuta": "",
+    "predpoklady": "Splnění základní (§ 74) a profesní (§ 77) způsobilosti, doložení dokladů, zaplacení poplatku; přístup přes IS VZ (skd.nipez.cz).",
+    "url": "https://portal-vz.cz/nipez/seznam-kvalifikovanych-dodavatelu/",
+    "priorita": "až když budeš pravidelně podávat nabídky do českých veřejných zakázek",
+    "zdroje": [
+      "https://portal-vz.cz/",
+      "https://portal-vz.cz/nipez/seznam-kvalifikovanych-dodavatelu/",
+      "https://portal-vz.cz/nezarazene/spravni-poplatky-skd/"
+    ],
+    "nejiste": "Lhůtu zápisu oficiální stránka neuvádí. 'Systém certifikovaných dodavatelů' jsem na portal-vz.cz nenašla (homepage ho nezmiňuje), proto ho do one-pageru nedávám bez dalšího ověření."
+  },
+  {
+    "id": "soj-aqap",
+    "nazev": "Státní ověřování jakosti (SOJ, Government Quality Assurance) a AQAP",
+    "co_to_je": "Proces, kdy odběratel (MO, jiné státní orgány, NATO a spojenci) přes Úř OSK SOJ ověřuje, že výrobek dodavatele splňuje smluvní požadavky na jakost; systém jakosti dodavatele se obvykle posuzuje podle ČOS zavádějící smluvní AQAP (Allied Quality Assurance Publications).",
+    "proc_pomuze": "Když se SOJ nebo AQAP objeví ve smlouvě, víš dopředu, co tě čeká (audit systému jakosti, kontrola výrobku), a systémové audity jakosti jsou pro dodavatele zdarma.",
+    "kdo_vydava": "Úřad pro obrannou standardizaci, katalogizaci a státní ověřování jakosti (Úř OSK SOJ), zákon č. 309/2000 Sb.",
+    "cena": "Systémové audity jakosti 'jsou u dodavatelů prováděny bezplatně' (ossoj.mo.gov.cz, ověřeno 2026-11-04). Cena vlastní certifikace ISO 9001 / AQAP u certifikačního orgánu: nemám podklady.",
+    "lhuta": "",
+    "predpoklady": "SOJ se provádí na základě smlouvy mezi odběratelem a dodavatelem, ve které musí být požadavky na SOJ zapracované.",
+    "url": "https://ossoj.mo.gov.cz/soj-vseobecne",
+    "priorita": "až když podepisuješ první dodavatelskou smlouvu s MO ČR / NATO s požadavkem na jakost",
+    "zdroje": [
+      "https://ossoj.mo.gov.cz/",
+      "https://ossoj.mo.gov.cz/soj-vseobecne",
+      "https://ossoj.mo.gov.cz/zakladni-dokumenty-k-soj/podminky-pozadavky-pro-statni-overovani-jakosti"
+    ],
+    "nejiste": "Není to registrace v pravém slova smyslu, zvaž, jestli to do one-pageru patří, nebo jen jako poznámka. Metodický pokyn MP_SOJ-2_24 (PDF) jsem neotevřela. Zda dodavatel musí mít certifikát ISO 9001 / AQAP 2110 předem, oficiální stránka neuvádí. Ceny za výstupní kontrolu a dozor nejsou uvedeny."
+  },
+  {
+    "id": "nbu-osvedceni-podnikatele",
+    "nazev": "Osvědčení podnikatele NBÚ (Facility Security Clearance)",
+    "co_to_je": "Osvědčení Národního bezpečnostního úřadu podle zákona č. 412/2005 Sb., že firma je způsobilá pracovat s utajovanými informacemi.",
+    "proc_pomuze": "Bez něj nedostaneš zakázky ani NATO soutěže s utajovanými informacemi (řada NCIA tendrů je NATO Secret).",
+    "kdo_vydava": "Národní bezpečnostní úřad (NBÚ)",
+    "cena": "Správní poplatek za přijetí žádosti (zákon 634/2004 Sb., sazebník položka 3 písm. h): 5 000 Kč, pokud utajovaná informace u podnikatele nevzniká ani mu není poskytnuta, ale mají k ní přístup jeho zaměstnanci; 10 000 Kč, pokud utajovaná informace u podnikatele vzniká nebo je mu poskytnuta (znění 01.09.2026, ověřeno 2026-11-04 na zakonyprolidi.cz).",
+    "lhuta": "",
+    "predpoklady": "Dle § 16 odst. 1 zákona 412/2005 Sb.: ekonomická stabilita, bezpečnostní spolehlivost, způsobilost zabezpečit ochranu utajovaných informací, odpovědná osoba s platným osvědčením fyzické osoby nejméně pro daný stupeň, bezúhonnost.",
+    "url": "https://www.nbu.gov.cz/",
+    "priorita": "až když míříš na zakázky s utajovanými informacemi (typicky ne jako první krok, ale řeš to dřív, než to budeš potřebovat)",
+    "zdroje": [
+      "https://www.zakonyprolidi.cz/cs/2005-412",
+      "https://www.zakonyprolidi.cz/cs/2005-412/zneni-20260701",
+      "https://www.zakonyprolidi.cz/cs/2004-634"
+    ],
+    "nejiste": "Web NBÚ i e-Sbírka mi přístup zablokovaly (robots), znění zákonů je ze zakonyprolidi.cz (neoficiální reprodukce), před tiskem ověř na e-sbirka.gov.cz. Lhůtu pro vydání osvědčení podnikatele a dobu platnosti (§ 55) jsem neověřila, text se mi načetl jen do § 42. Formuláře a postup podání na NBÚ neověřeny."
+  },
+  {
+    "id": "mpo-povoleni-vm",
+    "nazev": "Povolení k obchodu s vojenským materiálem (Licenční správa MPO)",
+    "co_to_je": "Povolení MPO podle zákona č. 38/1994 Sb., bez kterého firma nesmí obchodovat s vojenským materiálem (vývoz, dovoz, zprostředkování).",
+    "proc_pomuze": "Pokud tvůj produkt spadá pod vojenský materiál, bez povolení ho legálně neprodáš do zahraničí, a je to předpoklad pro jednotlivé licence.",
+    "kdo_vydava": "Ministerstvo průmyslu a obchodu (Licenční správa), na základě závazných stanovisek MZV, MV a MO",
+    "cena": "",
+    "lhuta": "MPO rozhodne do 60 dnů ode dne doručení žádosti (§ 12 odst. 1 zákona 38/1994 Sb.), rozklad proti rozhodnutí není přípustný.",
+    "predpoklady": "Právnická osoba se sídlem v ČR (fyzická podnikající osoba jen v zákonem stanovených případech); zahraniční kapitál max. 49 % (s výjimkami pro investory z EU); statutáři a členové dozorčích orgánů splňují osobní podmínky vč. bezpečnostní způsobilosti; obchod vlastním jménem a na vlastní účet; dostatečné finanční zajištění (§ 7). Žádost na elektronickém formuláři (§ 9 odst. 3).",
+    "url": "https://www.mpo.gov.cz/",
+    "priorita": "až když produkt spadá pod vojenský materiál a chystáš první export/import",
+    "zdroje": [
+      "https://www.zakonyprolidi.cz/cs/1994-38"
+    ],
+    "nejiste": "Web MPO mi přístup zablokoval (robots), nemám ověřenou výšku správního poplatku ani aktuální formulář/systém pro podání. Znění zákona je ze zakonyprolidi.cz (verze 15.07.2025, neoficiální reprodukce), ověř na e-sbirka.gov.cz. Pro dual-use zboží (zboží dvojího užití) platí jiný režim, který jsem dnes neověřovala."
+  },
+  {
+    "id": "uk-dsp",
+    "nazev": "UK Defence Sourcing Portal (DSP)",
+    "co_to_je": "Portál britského MOD, kde jsou všechny inzerované požadavky ministerstva a jde nastavit upozornění podle kategorií.",
+    "proc_pomuze": "Vidíš celou poptávku britského MOD na jednom místě a chodí ti upozornění na relevantní zakázky.",
+    "kdo_vydava": "UK Ministry of Defence",
+    "cena": "Zdarma, MOD uvádí 'free-to-access websites' (gov.uk, ověřeno 2026-11-04).",
+    "lhuta": "",
+    "predpoklady": "",
+    "url": "https://contracts.mod.uk/",
+    "priorita": "až když míříš na britský trh",
+    "zdroje": [
+      "https://www.gov.uk/government/organisations/ministry-of-defence/about/procurement"
+    ],
+    "nejiste": "Stránka contracts.mod.uk mi přístup zablokovala (robots), podmínky registrace pro zahraniční (ne-UK) firmy jsem neověřila; MOD stránka postup pro zahraniční dodavatele nepopisuje."
+  },
+  {
+    "id": "uk-cdp-find-a-tender",
+    "nazev": "UK Central Digital Platform + Find a Tender",
+    "co_to_je": "Centrální digitální platforma britské vlády, kde se registruješ před použitím Find a Tender (vysoce hodnotné zakázky ve veřejném a utilitním sektoru UK).",
+    "proc_pomuze": "Velké britské zakázky (obvykle nad 139 688 GBP vč. DPH) se hledají a podávají přes Find a Tender.",
+    "kdo_vydava": "Vláda UK",
+    "cena": "Zdarma, 'free-to-access websites' (gov.uk stránka MOD, ověřeno 2026-11-04).",
+    "lhuta": "",
+    "predpoklady": "GOV.UK One Login; registrace dodavatelské organizace na Central Digital Platform.",
+    "url": "https://www.find-tender.service.gov.uk/",
+    "priorita": "až když míříš na britský trh",
+    "zdroje": [
+      "https://www.gov.uk/government/organisations/ministry-of-defence/about/procurement",
+      "https://www.find-tender.service.gov.uk/"
+    ],
+    "nejiste": "Vazbu na Procurement Act 2023 a podmínky pro zahraniční dodavatele jsem na oficiálním zdroji dnes neověřila (stránka s guidance se nenačetla). Kdo platformu provozuje (Cabinet Office) jsem v dnešních zdrojích výslovně neověřila."
+  },
+  {
+    "id": "de-evergabe",
+    "nazev": "Německo: e-Vergabe (evergabe-online.de)",
+    "co_to_je": "Platforma pro elektronické zpracování veřejných zakázek německé spolkové správy.",
+    "proc_pomuze": "",
+    "kdo_vydava": "",
+    "cena": "",
+    "lhuta": "",
+    "predpoklady": "",
+    "url": "https://www.evergabe-online.de/",
+    "priorita": "až když míříš na německý trh (Bundeswehr / BAAINBw)",
+    "zdroje": [
+      "https://www.evergabe-online.de/"
+    ],
+    "nejiste": "Neověřeno skoro nic: z homepage nevyplývá, kdo platformu provozuje, zda je registrace zdarma, zda ji používá BAAINBw ani zda se mohou registrovat zahraniční firmy. Stránka BAAINBw o zakázkách se nenačetla. Oficiální dodavatelský registr BAAINBw jsem nenašla. Doporučuju buď vynechat, nebo doověřit přímo u BAAINBw."
+  },
+  {
+    "id": "eda-captech",
+    "nazev": "EDA Capability Technology Areas (CapTechs)",
+    "co_to_je": "Expertní sítě European Defence Agency pro jednotlivé technologické oblasti, kde sedí vlády, výzkum, průmysl, akademie i SMEs.",
+    "proc_pomuze": "Dostaneš se k tomu, kde se tvoří obranné R&T priority EU a budují konsorcia pro EDF a EDA projekty.",
+    "kdo_vydava": "European Defence Agency (EDA); členství nevládních expertů schvaluje národní koordinátor (CNC) za ČR",
+    "cena": "Stránka EDA žádný poplatek neuvádí.",
+    "lhuta": "",
+    "predpoklady": "Souhlas národního koordinátora (CNC); registrace přes moderátora dané CapTech (funkční e-mail na stránce CapTech) nebo přes EDA registrační portál.",
+    "url": "https://eda.europa.eu/what-we-do/research-technology/capability-technology-areas-(captechs)",
+    "priorita": "až když máš R&D tým a chceš do EDF konsorcií",
+    "zdroje": [
+      "https://eda.europa.eu/",
+      "https://eda.europa.eu/what-we-do/research-technology/capability-technology-areas-(captechs)"
+    ],
+    "nejiste": "Kdo je za ČR národní koordinátor CapTechs (CNC), jsem neověřila. 'Žádný poplatek uveden' neznamená výslovně 'zdarma'."
+  },
+  {
+    "id": "eda-b2b",
+    "nazev": "EDA B2B Platform",
+    "co_to_je": "Nástroj EDA pro vytváření přeshraničních partnerství v evropském obranném průmyslu.",
+    "proc_pomuze": "Pomáhá najít partnery do konsorcií (EDF apod.) napříč EU.",
+    "kdo_vydava": "European Defence Agency (EDA)",
+    "cena": "",
+    "lhuta": "",
+    "predpoklady": "",
+    "url": "https://b2bplatform.eda.europa.eu/",
+    "priorita": "až když skládáš mezinárodní konsorcium",
+    "zdroje": [
+      "https://b2bplatform.eda.europa.eu/",
+      "https://www.eda.europa.eu/what-we-do/industry-engagement/sme-corner",
+      "https://eda.europa.eu/what-we-do/industry-engagement/directories"
+    ],
+    "nejiste": "Kdo se může registrovat, za jakých podmínek a zda je to zdarma, stránka neuvádí (odkazuje na factsheet, který jsem neotevřela). Dotazy: smecorner@eda.europa.eu. HEDI (Hub for EU Defence Innovation) a jeho Innovators Forge registraci nepopisují, kontakt edadefenceinnovation@eda.europa.eu."
+  },
+  {
+    "id": "nato-diana",
+    "nazev": "NATO DIANA Challenge Programme (Challenge Portal)",
+    "co_to_je": "Akcelerační program NATO DIANA (Defence Innovation Accelerator for the North Atlantic), kam se startupy hlásí s řešením konkrétních challenges přes Challenge Portal.",
+    "proc_pomuze": "Vybraní dostanou contractual funding (smluvní financování, non-dilutive, bez vstupu do kapitálu), akcelerátor, přístup k 200+ test centres (testovacím centrům) a investorům; IP zůstává inovátorovi.",
+    "kdo_vydava": "NATO DIANA",
+    "cena": "FAQ DIANA žádný poplatek za přihlášku neuvádí (ověřeno 2026-11-04).",
+    "lhuta": "Podle výzvy; poslední uvedená uzávěrka v FAQ byla 5. 5. 2026 09:00 BST.",
+    "predpoklady": "Hlavní místo podnikání v členském státě NATO, firma ovládaná a většinově vlastněná občany NATO států; konsorcia jen pokud splňují všichni členové; univerzity, veřejný sektor a neziskovky vyloučeny.",
+    "url": "https://www.diana.nato.int/faq.html",
+    "priorita": "hned, jakmile je otevřená výzva a tvoje technologie sedí na challenge",
+    "zdroje": [
+      "https://www.diana.nato.int/",
+      "https://www.diana.nato.int/faq.html"
+    ],
+    "nejiste": "Částka 100k EUR v FAQ se vztahuje ke konkrétní challenge (demonstrace v cloudu), neber ji jako obecnou výši pro všechny výzvy. Přesnou URL Challenge Portal ani termíny další výzvy jsem neověřila."
+  },
+  {
+    "id": "dh-databaze-reseni",
+    "nazev": "Defence Hub CzechInvest: Databáze řešení",
+    "co_to_je": "",
+    "proc_pomuze": "",
+    "kdo_vydava": "Defence Hub CzechInvest",
+    "cena": "",
+    "lhuta": "",
+    "predpoklady": "",
+    "url": "https://defencehub.gov.cz/databaze-reseni/",
+    "priorita": "hned",
+    "zdroje": [],
+    "nejiste": "Stránka defencehub.gov.cz mi blokuje automatické načtení (robots), obsah jsem tedy dnes neověřila. Doplň popis, podmínky a cenu z interních podkladů DH."
+  },
+  {
+    "id": "nif",
+    "nazev": "NATO Innovation Fund (NIF), kontaktní / pitch formulář",
+    "co_to_je": "Venture fond NATO investující do deep tech a dual-use firem ve 24 zemích NATO; startupy se ozývají přes kontaktní formulář s profilem 'Startup'.",
+    "proc_pomuze": "Cesta k dilutive kapitálu (investice za podíl) od fondu, jehož účast je silný signál pro další investory.",
+    "kdo_vydava": "NATO Innovation Fund",
+    "cena": "Formulář je bez poplatku (žádný neuveden).",
+    "lhuta": "",
+    "predpoklady": "Formulář chce: název a popis firmy, zemi založení (Česká republika je v nabídce), web, stage (Pre-Seed až Late), technologickou oblast EDT (Emerging & Disruptive Technologies, nové a průlomové technologie), kontakt, volitelně deck (pdf/ppt/pptx/key/doc/docx, max. 20 MB).",
+    "url": "https://www.nif.fund/contact-us/",
+    "priorita": "až když zvedáš investiční kolo a máš deep tech / dual-use story",
+    "zdroje": [
+      "https://www.nif.fund/",
+      "https://www.nif.fund/contact-us/"
+    ],
+    "nejiste": "Že je ČR mezi 24 zeměmi NIF, jsem na stránce výslovně neověřila (je jen v rozbalovacím seznamu zemí); doplnit z oficiálního seznamu NIF."
+  },
+  {
+    "id": "eic-accelerator",
+    "nazev": "EIC Accelerator (European Innovation Council)",
+    "co_to_je": "Program EU pro startupy a SMEs: grant pod 2,5 mil. EUR na TRL 6 až 8 a/nebo investice 1 až 10 mil. EUR (equity / quasi-equity).",
+    "proc_pomuze": "Největší evropský zdroj kombinace non-dilutive (grant) a dilutive (equity) financování pro deep tech včetně dual-use.",
+    "kdo_vydava": "European Innovation Council (Evropská komise)",
+    "cena": "Stránka EIC žádný poplatek za podání neuvádí.",
+    "lhuta": "Step 1 (krátký návrh): cut-off první úterý v měsíci, feedback cca 4 až 6 týdnů. Step 2 (plný návrh přes Funding & Tenders Portal): výsledky 8 až 9 týdnů po cut-off; termíny 2026: 7. 1., 4. 3., 6. 5., 8. 7., 2. 9., 4. 11. Due diligence u investice 2 až 6 měsíců.",
+    "predpoklady": "Startup / SME (nebo jednotlivec zakládající SME), small mid-caps jen investice; Step 1: 12stránkový formulář, deck max. 10 slidů, video max. 3 min; pro Step 2 PIC (viz eu-pic). Najednou jen jedna žádost.",
+    "url": "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en",
+    "priorita": "až když máš TRL 6+ a ambici škálovat; PIC si udělej hned",
+    "zdroje": [
+      "https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en"
+    ],
+    "nejiste": "Kde přesně se podává Step 1 (EIC Platform účet) jsem na oficiální stránce neověřila, stránka 'how to apply' se nenačetla. Stav obranných / dual-use omezení v EIC jsem neověřovala."
+  },
+  {
+    "id": "brave1",
+    "nazev": "Brave1 (Ukrajina)",
+    "co_to_je": "Ukrajinská státní platforma pro obranné inovace, která výrobcům nabízí granty, expertní podporu, partnerství a pomoc s kodifikací podle NATO standardů.",
+    "proc_pomuze": "Přístup k testování a zpětné vazbě z bojového nasazení a k ukrajinským partnerům a investorům.",
+    "kdo_vydava": "Brave1 (s Ministerstvem obrany a Ministerstvem digitální transformace Ukrajiny)",
+    "cena": "",
+    "lhuta": "",
+    "predpoklady": "",
+    "url": "https://brave1.gov.ua/en/manufacturers",
+    "priorita": "až když máš produkt připravený na testování v reálném nasazení a řešíš export / export controls",
+    "zdroje": [
+      "https://brave1.gov.ua/en/",
+      "https://brave1.gov.ua/en/manufacturers"
+    ],
+    "nejiste": "Zda se mohou registrovat zahraniční (české) firmy, jaké jsou podmínky a cena, stránka neuvádí; žádost o grant vede na portal.usf.com.ua, který jsem neotevřela. DOT-Chain Defence: oficiální stránku se mi nepodařilo načíst, nic neověřeno, do one-pageru nedávat bez doověření."
+  }
+]

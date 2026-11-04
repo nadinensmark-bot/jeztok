@@ -1,0 +1,218 @@
+{
+  "kod": "se",
+  "zeme": "Švédsko",
+  "stav": "2026-11-04",
+  "clenstvi": "EU, NATO (od 7. 3. 2024)",
+  "kdo_nakupuje": {
+    "text": "Materiál a služby pro ozbrojené síly (Försvarsmakten) nakupuje, vyvíjí, testuje na vlastních zkušebních střediscích a dodává Försvarets materielverk (FMV), státní agentura pod ministerstvem obrany. Nakupuje jak složité dlouhodobé kontrakty, tak jednoduché objednávky z rámcových smluv a inovační výzvy. V roce 2025 FMV řídila 1 040 projektů (808 v roce 2024), část zakázek pro průmysl nově objednává a platí FMV místo Försvarsmakten. Jako další zdroj zakázek uvádí inovační příloha FM/FMV i samotnou Försvarsmakten (forsvarsmakten.se). V roce 2025 FMV zřídila kontaktní místo pro firmy a zveřejnila plán zakázek (upphandlingsplan), podle výroční zprávy FMV za rok 2025.",
+    "instituce": [
+      {
+        "nazev": "Försvarets materielverk (Swedish Defence Materiel Administration)",
+        "zkratka": "FMV",
+        "url": "https://www.fmv.se/om-fmv/"
+      },
+      {
+        "nazev": "FMV: Upphandling",
+        "zkratka": "FMV",
+        "url": "https://www.fmv.se/upphandling/"
+      },
+      {
+        "nazev": "FMV: För leverantörer och kunder",
+        "zkratka": "FMV",
+        "url": "https://www.fmv.se/om-fmv/for-leverantorer-och-kunder/"
+      }
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Obranné a bezpečnostní zakázky upravuje Lag (2011:1029) om upphandling på försvars- och säkerhetsområdet (LUFS), naposledy změněný zákonem 2026:1586. Zákon se vztahuje na zakázky od unijních prahů (od 1. 1. 2026 pro směrnici 2009/81/ES 432 000 EUR na dodávky a služby a 5 404 000 EUR na stavby, nařízení (EU) 2025/2487). Výjimky pro zbraně, munici a válečný materiál podle článku 346 SFEU uděluje případ od případu vláda; Försvarsmakten a FMV je mohou samy udělit mimo jiné u zakázek do 200 mil. SEK, u doplňků již vyjmutých zakázek a u zakázek podle mezivládních dohod. Od 1. 1. 2027 (zákon 2026:1586) tuto pravomoc získá i Sveriges utrikes underrättelsetjänst. Zákon dovoluje zadavateli požadovat po dodavateli i jeho subdodavatelích ochranu utajovaných informací a v oznámení nebo dokumentaci musí tyto požadavky přesně uvést (LUFS 7 kap. 13 až 15 §); zabezpečení dodávek upravuje 7 kap. 16 a 17 §. Jazyk nabídky stanoví zadavatel v každé výzvě (9 kap. 8 §), obecné jazykové pravidlo zákon nemá.",
+    "predpisy": [
+      {
+        "nazev": "Lag (2011:1029) om upphandling på försvars- och säkerhetsområdet (LUFS)",
+        "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-20111029-om-upphandling-pa-forsvars-och_sfs-2011-1029/"
+      },
+      {
+        "nazev": "Commission Delegated Regulation (EU) 2025/2487 (prahy 2009/81/ES od 1. 1. 2026)",
+        "url": "https://eur-lex.europa.eu/eli/reg_del/2025/2487/oj/eng"
+      }
+    ]
+  },
+  "kde_tendry": {
+    "text": "FMV zveřejňuje a řídí své soutěže přes systém e-Avrop (provozuje ho soukromá firma), kde lze nastavit upozornění podle oboru. Registrace v e-Avrop je zdarma; kdo si stáhne zadávací dokumentaci, dostává automaticky upozornění na změny, vysvětlení a odpovědi na dotazy. FMV odkazuje také na TED a na rámcové smlouvy státní nákupní koordinace (Statlig inköpssamordning). Inovační příloha Försvarsmakten/FMV jako zdroje zakázek uvádí fmv.se/upphandling, forsvarsmakten.se, kommersannons.se a TED. FMV od roku 2025 zveřejňuje plán připravovaných zakázek (upphandlingsplan).",
+    "portaly": [
+      {
+        "nazev": "FMV: Aktuella upphandlingar (odkaz na e-Avrop a TED)",
+        "url": "https://www.fmv.se/upphandling/aktuella-upphandlingar/"
+      }
+    ]
+  },
+  "registrace": {
+    "text": "Ověřený je krok registrace v e-Avrop (zdarma) kvůli upozorněním a stažení dokumentace. Jazyk nabídky určuje každá výzva zvlášť (LUFS 9 kap. 8 §), proto je nutné ho kontrolovat v dokumentaci. FMV má na webu pro firmy rozcestník „Så blir du leverantör“ a kontakt pro firmy (ústředna +46 8 782 40 00), obsah stránky „Så blir du leverantör“ se ale nepodařilo načíst. Požadavek NCAGE ani zvláštní registr dodavatelů FMV se ověřit nepodařilo.",
+    "kroky": [
+      "Zaregistrovat se zdarma v e-Avrop a nastavit upozornění na soutěže FMV v oboru.",
+      "Sledovat TED, kommersannons.se (zakázky Försvarsmakten) a plán zakázek FMV (upphandlingsplan).",
+      "V každé zadávací dokumentaci ověřit jazyk nabídky a případné požadavky na ochranu utajovaných informací (LUFS 7 kap. 13 až 15 §).",
+      "U utajovaných zakázek počítat s tím, že osvědčení ověřuje FMV přes NBÚ ČR (komunikace NSA/DSA mezi státy); Facility Security Clearance od NBÚ si zajistit předem (postup ověřit s NBÚ)."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Oficiální švédskou politiku offsetů se z primárních zdrojů ověřit nepodařilo; zákon LUFS požadavky na offsety (motköp) nezmiňuje a ani vládní Försvarsindustristrategi (skrivelse 2024/25:193, 12. 6. 2025) offsety neuvádí. Strategie místo toho počítá se strategickými partnerstvími státu a průmyslu ve vybraných oblastech (bojová letadla, podvodní systémy, část velení a řízení včetně elektronického boje a kryptografie, munice), s víceletými kontrakty, společnými objednávkami se spojenci, jednodušší inovační soutěží a se zpřísněním požadavků na bezpečnost dodavatelského řetězce. FMV má podle strategie nabídnout jasnější kontaktní místo pro firmy, které se chtějí ve Švédsku usadit."
+  },
+  "bezpecnost": {
+    "text": "FMV je švédský Designated Security Authority (DSA) pro průmyslovou bezpečnost podle 5. kapitoly Säkerhetsskyddslagen (2018:585). U zakázky s utajovanými informacemi uzavírá FMV s dodavatelem písemnou säkerhetsskyddsavtal (dohoda o bezpečnostní ochraně) ve třech úrovních: úroveň 1 (práce s utajovanými informacemi ve vlastních prostorách schválených FMV), úroveň 2 (práce v prostorách FMV nebo jí určených), úroveň 3 (bez přístupu k utajovaným informacím, ale s prověrkou personálu). Facility Security Clearance potvrzuje dohodu úrovně 1 a platí nejvýše rok. Mezinárodní žádosti o osvědčení vyřizuje FMV jen s národním NSA/DSA druhé země (v ČR NBÚ), ne přímo s firmou; například zahraniční zadavatel, který potřebuje prověřit švédskou firmu, jde přes svůj NSA. Pravidla pro firmy s dohodou shrnuje Industrisäkerhetsskyddsmanual (ISM, FMV, vydání 2022, švédsky); subdodavatel potřebuje vlastní dohodu na požadované úrovni a písemný souhlas FMV Säkerhetsskydd. Kontakt security@fmv.se. Dohoda s ČR existuje: Bezpečnostní smlouva mezi Českou republikou a Švédským královstvím o výměně a vzájemné ochraně utajovaných informací (podepsána 30. 5. 2008, v platnosti od 11. 8. 2009, 68/2009 Sb.m.s.). Mezi MO ČR a FMV navíc platí ujednání o vzájemném poskytování záruky za jakost u výrobků a služeb pro obranu (1998), obojí podle seznamu smluv MZV ČR."
+  },
+  "inovace": {
+    "text": "Hlavní vstupy pro firmy podle inovační přílohy Försvarsmakten/FMV: Militärt innovationsprogram (MIP) FMV hledá civilní technologie pro armádu přes TechDays (firmy prezentují nápady) a teknikutmaningar (technologické výzvy s výběrem jednoho řešení); financuje analýzy, testy a demonstrace, ne vývoj produktu. CMIP (Civil-militär innovation) společně vedou Försvarsmakten a Vinnova, výzvy vycházejí na vinnova.se a innovair.org; vláda jeho rozpočet od roku 2025 zdvojnásobila ze 60 na 120 mil. SEK ročně. Försvarsmaktens utvecklings-HUB nabízí rychlou cestu od nápadu ke schopnosti (pitching, koučink, vývoj s uživateli). Na rok 2026 se plánoval každoroční týden testů a demonstrací (FMV Test & Evaluation s FM, FOI a FHS), otevřený firmám z obranného i civilního sektoru, s možnou návaznou zakázkou. NATO DIANA: Försvarsmakten a Vinnova navrhly vládě zapojení jednoho akcelerátoru (Lead) a čtyř test centres (MAX IV, Marine Technology Center of Sweden, RISE, SSC/LTU/IRF); v seznamech DIANA na rok 2026 (akcelerátory i test centres) ale zatím žádné švédské místo není. Podmínky pro zahraniční firmy oficiální zdroje neuvádějí.",
+    "programy": [
+      {
+        "nazev": "Militärt Innovationsprogram (MIP), TechDay a teknikutmaningar (FMV)",
+        "url": "https://www.fmv.se/om-fmv/for-leverantorer-och-kunder/techday/",
+        "pro_zahranicni": "nejasné, stránka FMV to neuvádí"
+      },
+      {
+        "nazev": "Inovační příloha Försvarsmakten/FMV (MIP, CMIP, utvecklings-HUB, týden testů a demonstrací 2026, DIANA)",
+        "url": "https://www.fmv.se/globalassets/dokument/innovationsbilaga-omvarld-2025.pdf",
+        "pro_zahranicni": "nejasné, dokument výslovná pravidla pro zahraniční firmy neuvádí"
+      },
+      {
+        "nazev": "Regeringen: Försvarsinnovation (vládní iniciativa, úkoly FMV, spolupráce s Ukrajinou)",
+        "url": "https://www.regeringen.se/regeringens-politik/forsvarsinnovation/",
+        "pro_zahranicni": "nejasné"
+      }
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "Soutěže FMV jdou přes e-Avrop, registrace je zdarma; upozornění se vyplatí nastavit hned. Jazyk nabídky se určuje v každé výzvě, proto ho vždy ověřit v dokumentaci.",
+    "FMV a Försvarsmakten mohou samy vyjmout ze soutěže nákupy válečného materiálu do 200 mil. SEK (článek 346 SFEU), takže část zakázek se nikdy neobjeví v e-Avrop; to je důvod budovat vztah s FMV ještě před soutěží (kontaktní místo pro firmy od 2025, plán zakázek).",
+    "U utajovaných zakázek komunikuje FMV (DSA) s NBÚ ČR, ne přímo s firmou; ČR a Švédsko mají platnou bezpečnostní smlouvu (68/2009 Sb.m.s.). Pozor: každý subdodavatel potřebuje dohodu s FMV na požadované úrovni a písemný souhlas FMV.",
+    "Švédsko zatím nemá v síti DIANA žádné místo; inovační vstupy jsou národní (MIP/TechDay, CMIP s Vinnovou). Mezi MO ČR a FMV platí ujednání o vzájemné záruce za jakost (1998), což může zjednodušit státní ověřování jakosti (ověřit s MO ČR)."
+  ],
+  "prirucky": [
+    {
+      "nazev": "Industrisäkerhetsskyddsmanual (ISM)",
+      "vydavatel": "FMV",
+      "url": "https://www.fmv.se/globalassets/dokument/om-fmv/sakerhetsskydd/ism-2022.pdf",
+      "jazyk": "sv",
+      "typ": "pdf"
+    },
+    {
+      "nazev": "FMV: Säkerhetsskydd (průvodce dohodami o bezpečnostní ochraně, FSC, PSC)",
+      "vydavatel": "FMV",
+      "url": "https://www.fmv.se/om-fmv/for-leverantorer-och-kunder/sakerhetsskydd/",
+      "jazyk": "sv",
+      "typ": "web"
+    },
+    {
+      "nazev": "Innovationsbilaga omvärld 2025 (vstupy pro inovativní firmy)",
+      "vydavatel": "Försvarsmakten/FMV (vydavatel v dokumentu výslovně neuveden)",
+      "url": "https://www.fmv.se/globalassets/dokument/innovationsbilaga-omvarld-2025.pdf",
+      "jazyk": "sv",
+      "typ": "pdf"
+    }
+  ],
+  "zdroje": [
+    {
+      "nazev": "FMV: Om FMV",
+      "url": "https://www.fmv.se/om-fmv/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "FMV: English (úvod)",
+      "url": "https://www.fmv.se/english/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "FMV: Upphandling",
+      "url": "https://www.fmv.se/upphandling/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "FMV: Aktuella upphandlingar",
+      "url": "https://www.fmv.se/upphandling/aktuella-upphandlingar/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Riksdagen: Lag (2011:1029) LUFS",
+      "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-20111029-om-upphandling-pa-forsvars-och_sfs-2011-1029/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Commission Delegated Regulation (EU) 2025/2487 (EUR-Lex)",
+      "url": "https://eur-lex.europa.eu/eli/reg_del/2025/2487/oj/eng",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Nařízení (EU) 2025/2487, text (kopie Úředního věstníku, BOE)",
+      "url": "https://boe.es/doue/2025/2487/L00001-00002.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NATO: Member countries",
+      "url": "https://www.nato.int/cps/en/natohq/topics_52044.htm",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MZV ČR: smlouvy ČR a Švédsko",
+      "url": "https://mzv.gov.cz/jnp/cz/encyklopedie_statu/evropa/svedsko/smlouvy/index.html",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "FMV: För leverantörer och kunder",
+      "url": "https://www.fmv.se/om-fmv/for-leverantorer-och-kunder/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "FMV: Säkerhetsskydd",
+      "url": "https://www.fmv.se/om-fmv/for-leverantorer-och-kunder/sakerhetsskydd/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "FMV: Industrisäkerhetsskyddsmanual (ISM) 2022",
+      "url": "https://www.fmv.se/globalassets/dokument/om-fmv/sakerhetsskydd/ism-2022.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "FMV: Militärt Innovationsprogram / TechDay",
+      "url": "https://www.fmv.se/om-fmv/for-leverantorer-och-kunder/techday/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "FMV: Innovationsbilaga omvärld 2025",
+      "url": "https://www.fmv.se/globalassets/dokument/innovationsbilaga-omvarld-2025.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "FMV: Årsredovisning 2025",
+      "url": "https://www.fmv.se/globalassets/dokument/fmv_arsredovisning_2025.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Regeringen: Försvarsindustristrategi för ett starkare Sverige (12. 6. 2025)",
+      "url": "https://www.regeringen.se/regeringens-politik/militart-forsvar/forsvarsindustristrategi-for-ett-starkare-sverige--innovation-produktion-och-samarbete/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "Regeringen: Försvarsinnovation",
+      "url": "https://www.regeringen.se/regeringens-politik/forsvarsinnovation/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NATO DIANA: Accelerator sites 2026",
+      "url": "https://www.diana.nato.int/resources/site1/general/accprog/accelerator-sites-2026.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NATO DIANA: Test centres 2026",
+      "url": "https://www.diana.nato.int/resources/site1/general/test%20centres/diana_test_centres_2026.pdf",
+      "otevreno": "2026-11-04"
+    }
+  ],
+  "nejiste": [
+    "Stránky FMV „Så blir du leverantör“, „Kontakt för företag“, „Battleweek“ (týden demonstrací) a seminář pro švédské firmy v NATO DIANA 2026 se nepodařilo načíst (chyba webu); jejich obsah chybí.",
+    "Offsety / industrial participation: oficiální švédská politika neověřena; LUFS ani vládní strategie z 6/2025 offsety nezmiňují, což ale samo o sobě neznamená, že je FMV v jednotlivých případech nepožaduje.",
+    "Zda se týden testů a demonstrací 2026 skutečně konal a za jakých podmínek pro zahraniční firmy: neověřeno (dokument popisuje plán).",
+    "DIANA: návrh FM a Vinnovy (Lead + 4 test centres) je podle inovační přílohy jen návrh; seznamy DIANA 2026 žádné švédské místo neobsahují (stav dokumentů bez data).",
+    "Přesná URL e-Avrop a požadavek NCAGE neověřeny (FMV uvádí e-Avrop jen jako odkaz bez adresy).",
+    "Obsah změny LUFS zákonem 2026:883 neověřen (týká se mimo jiné 1 kap. 2 a §, 2 kap. 31 §, 11 kap. 1 § a 14 §); datum účinnosti stránka Riksdagen neuvádí.",
+    "Pravidlo ISM, že členové bezpečnostní organizace firmy musí být švédští občané, se týká firem s dohodou s FMV; jak se uplatní u zahraniční firmy prověřené přes vlastní NSA, dokument ve zpřístupněné části neřeší (část 5 ISM o mezinárodní činnosti se nenačetla)."
+  ]
+}

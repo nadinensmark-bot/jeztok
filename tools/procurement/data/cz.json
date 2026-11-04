@@ -1,0 +1,202 @@
+{
+ "kod": "cz",
+ "zeme": "Česká republika",
+ "stav": "2026-11-04",
+ "clenstvi": "EU, NATO",
+ "kdo_nakupuje": {
+  "text": "Vojenský materiál nakupuje Ministerstvo obrany ČR. Sekce vyzbrojování a akvizic (SVA MO) odpovídá za centrálně zadávané zakázky na nabývání vojenského materiálu a na služby pro jeho provoz, technické zhodnocení, údržbu a opravy; řídí také projekty vyzbrojování, NSIP (NATO Security Investment Programme, investiční program NATO) a koordinaci programů FMF/FMS (americká zahraniční vojenská pomoc a prodeje). Vrchní ředitel SVA je národním ředitelem pro vyzbrojování (NAD) vůči NATO, EU a V4. V sekci jsou mj. Odbor nabývání movitého majetku a Odbor vojenských technologií. Mezivládní (G2G) obchody řeší Agentura pro mezivládní obrannou spolupráci (AMOS).",
+  "instituce": [
+   {
+    "nazev": "Ministerstvo obrany ČR, Sekce vyzbrojování a akvizic",
+    "zkratka": "SVA MO",
+    "url": "https://mocr.mo.gov.cz/ministr-a-ministerstvo/struktura/sekce-vyzbrojovani-a-akvizic-105845/"
+   },
+   {
+    "nazev": "Sekce vyzbrojování a akvizic: web sekce",
+    "zkratka": "SVA MO",
+    "url": "https://vyzbrojovani.mo.gov.cz/"
+   },
+   {
+    "nazev": "Ministerstvo obrany ČR: struktura (vč. AMOS)",
+    "zkratka": "MO",
+    "url": "https://mocr.mo.gov.cz/scripts/detail.php?pgid=658"
+   }
+  ]
+ },
+ "pravni_ramec": {
+  "text": "Zákon č. 134/2016 Sb., o zadávání veřejných zakázek (účinný od 1. 10. 2016). Obranné zakázky upravuje část devátá „Postup pro zadávání veřejných zakázek v oblasti obrany nebo bezpečnosti“ (§ 187 až 208); část sedmá (§ 151 až 173) se týká sektorových zakázek. Obecné výjimky jsou v § 29 (mj. podstatné bezpečnostní zájmy státu, utajované informace a zboží obranného určení). Konsolidované znění platné od 3. 4. 2025 je podle zakonyprolidi.cz platné do 31. 12. 2026, od 1. 1. 2027 tedy přichází změna. Dále platí zákon č. 340/2015 Sb. o registru smluv a pro utajované informace zákon č. 412/2005 Sb.",
+  "predpisy": [
+   {
+    "nazev": "Zákon č. 134/2016 Sb., o zadávání veřejných zakázek (odkaz MO ČR na konsolidované znění)",
+    "url": "https://www.zakonyprolidi.cz/cs/2016-134"
+   },
+   {
+    "nazev": "Zákon č. 412/2005 Sb., o ochraně utajovaných informací a o bezpečnostní způsobilosti",
+    "url": "https://www.zakonyprolidi.cz/cs/2005-412"
+   },
+   {
+    "nazev": "Zákon č. 38/1994 Sb., o zahraničním obchodu s vojenským materiálem",
+    "url": "https://www.zakonyprolidi.cz/cs/1994-38"
+   }
+  ]
+ },
+ "kde_tendry": {
+  "text": "Aktivním profilem zadavatele MO je od 1. 2. 2018 profil v NEN (Národní elektronický nástroj, provozuje Ministerstvo pro místní rozvoj), se záložkami zahájené, uzavřené a plánované zakázky a dynamické nákupní systémy. Od 3. 4. 2023 se informace o zakázkách, včetně zakázek v oblasti obrany nebo bezpečnosti, uveřejňují ve Věstníku veřejných zakázek (VVZ). Uzavřené smlouvy jsou v registru smluv. Soutěže NATO financované ze společných zdrojů (např. NSIP) zveřejňuje MO na portálu oinsip.mo.gov.cz.",
+  "portaly": [
+   {
+    "nazev": "NEN: profil zadavatele Ministerstvo obrany",
+    "url": "https://nen.nipez.cz/profil/MO"
+   },
+   {
+    "nazev": "MO ČR: Veřejné zakázky",
+    "url": "https://mocr.mo.gov.cz/finance-a-zakazky/verejne-zakazky/_verejne-zakazky-51635/"
+   },
+   {
+    "nazev": "MO ČR: Mezinárodní soutěže NATO",
+    "url": "https://mocr.mo.gov.cz/nato/soutěž/mezinarodní-souteze-nato-229468/"
+   }
+  ]
+ },
+ "registrace": {
+  "text": "Pro zakázky MO je potřeba účet v NEN (registrace přes portál NIPEZ; podrobnosti postupu jsem neověřila). Dodavatel majetku pro MO vyplňuje Soubor základních informací o majetku (SZIM, formulář 2026 na stránce Veřejné zakázky MO). Pro zakázky NSPA (NATO Support and Procurement Agency) se firma zdarma registruje v databázi NSPA a MO ČR pak potvrzuje její způsobilost (eligibility); NCAGE kód k registraci podle MO potřeba není, o kód lze požádat formulářem NSPA. Soutěží NATO ze společných zdrojů se mohou účastnit jen firmy ze států NATO, které na danou zakázku přispívají.",
+  "kroky": [
+   "Zaregistrovat se v NEN a sledovat profil zadavatele MO, včetně plánovaných zakázek a dynamických nákupních systémů.",
+   "Pro NATO trh: registrace v databázi NSPA (zdarma), potvrzení eligibility přes MO ČR, případně NCAGE kód přes formulář NSPA.",
+   "Pro soutěže NSIP sledovat oinsip.mo.gov.cz a postup podle dokumentů program.doc a postup.doc (verze z února 2025).",
+   "Pokud zakázka pracuje s utajovanými informacemi stupně Důvěrné a výš, požádat NBÚ o osvědčení podnikatele s dostatečným předstihem.",
+   "Pro vývoz vojenského materiálu: povolení k obchodu a licence MPO podle zákona 38/1994 Sb."
+  ]
+ },
+ "prumyslova_spoluprace": {
+  "text": "Oficiální offsetovou politiku ani pravidla pro zapojení českého průmyslu jsem na stránkách MO, které jsem otevřela, nenašla (viz nejiste). Průmysl zastupuje Asociace obranného a bezpečnostního průmyslu ČR (AOBP): přes 290 členských firem s více než 25 000 zaměstnanci, MO je jejím strategickým partnerem; AOBP zastupuje zájmy průmyslu vůči státu a armádě a koordinuje společné účasti na veletrzích a misích."
+ },
+ "bezpecnost": {
+  "text": "Národním bezpečnostním úřadem je NBÚ. Podle zákona 412/2005 Sb. (aktuální znění k 1. 7. 2026) potřebuje podnikatel pro přístup k utajovaným informacím stupně Důvěrné a vyšší platné osvědčení podnikatele (§ 15 a 16), které vydává NBÚ; u stupně Vyhrazené stačí prohlášení podnikatele (§ 15a). Podmínkami jsou mj. ekonomická stabilita, bezpečnostní spolehlivost a způsobilost zajistit ochranu (§ 17 až 19). Pokud zaměstnanci pracují s utajovanými informacemi jen u zadavatele, stačí podle § 20 odst. 2 zajistit personální bezpečnost. NBÚ vede agendu uznávání zahraničních osvědčení a mezinárodních smluv; jeho web nebyl strojově čitelný, smlouvy s jednotlivými státy jsem proto ověřovala přes MZV ČR."
+ },
+ "inovace": {
+  "text": "Vstupním bodem pro obranné a dual-use startupy je Defence Hub CzechInvest, který v ČR hostí NATO DIANA accelerator (Defence Hub je hostitel, ne pobočka DIANA). Defence Hub je národní kontaktní bod pro obranné a dual-use inovace: buduje ekosystém, radí startupům a SME (od defence use-case přes výběr programu po přípravu přihlášky), propojuje firmy s armádou a koncovými uživateli, s primes, investory a partnery pro testování a nabízí konzultace zdarma. V SVA MO působí Odbor vojenských technologií. Pro firmy je dalším kontaktním bodem AOBP.",
+  "programy": [
+   {
+    "nazev": "Defence Hub CzechInvest (NATO DIANA accelerator v ČR)",
+    "url": "https://defencehub.gov.cz/",
+    "pro_zahranicni": "služby jsou určené pro český ekosystém (zdroj: web DH, sekce Naše mise)"
+   },
+   {
+    "nazev": "Asociace obranného a bezpečnostního průmyslu ČR (AOBP)",
+    "url": "https://aobp.cz/cs/",
+    "pro_zahranicni": "nejasné: podmínky členství jsou na podstránce Jak se stát členem, neověřeno"
+   }
+  ]
+ },
+ "tipy_pro_cz_firmy": [
+  "Hlavní kanál je profil MO v NEN; registrace v NEN je první krok a záložka Plánované zakázky ukazuje, co přijde.",
+  "MO vydalo pomůcku Obchodování s NSPA: registrace u NSPA je zdarma a eligibility potvrzuje MO ČR, takže cesta na NATO trh vede přes Prahu.",
+  "Osvědčení podnikatele od NBÚ je nutné od stupně Důvěrné a jeho vyřízení není otázka dnů; firmy s ambicí na utajované zakázky doma i v zahraničí by ho měly řešit předem.",
+  "Od 1. 1. 2027 se mění znění zákona 134/2016 Sb.; před podáním nabídky ověřit aktuální text části deváté."
+ ],
+ "prirucky": [
+  {
+   "nazev": "Obchodování s NSPA (verze 1.0/2024)",
+   "vydavatel": "Ministerstvo obrany ČR",
+   "url": "https://vyzbrojovani.mo.gov.cz/sites/vyzbrojovani/files/2024-04/Obchodov%C3%A1n%C3%AD%20s%20NSPA.pdf",
+   "jazyk": "cs",
+   "typ": "pdf"
+  },
+  {
+   "nazev": "Metodiky a manuály SVA MO",
+   "vydavatel": "Ministerstvo obrany ČR, SVA",
+   "url": "https://vyzbrojovani.mo.gov.cz/informace-o-verejnych-zakazkach/metodiky-manualy",
+   "jazyk": "cs",
+   "typ": "web"
+  }
+ ],
+ "zdroje": [
+  {
+   "nazev": "MO ČR: Sekce vyzbrojování a akvizic (aktualizace 23. 7. 2026)",
+   "url": "https://mocr.mo.gov.cz/ministr-a-ministerstvo/struktura/sekce-vyzbrojovani-a-akvizic-105845/",
+   "otevreno": "2026-11-04"
+  },
+  {
+   "nazev": "SVA MO: web sekce (O nás)",
+   "url": "https://vyzbrojovani.mo.gov.cz/",
+   "otevreno": "2026-11-04"
+  },
+  {
+   "nazev": "SVA MO: Informace o veřejných zakázkách",
+   "url": "https://vyzbrojovani.mo.gov.cz/informace-o-verejnych-zakazkach",
+   "otevreno": "2026-11-04"
+  },
+  {
+   "nazev": "SVA MO: Metodiky a manuály",
+   "url": "https://vyzbrojovani.mo.gov.cz/informace-o-verejnych-zakazkach/metodiky-manualy",
+   "otevreno": "2026-11-04"
+  },
+  {
+   "nazev": "MO ČR: Obchodování s NSPA (PDF)",
+   "url": "https://vyzbrojovani.mo.gov.cz/sites/vyzbrojovani/files/2024-04/Obchodov%C3%A1n%C3%AD%20s%20NSPA.pdf",
+   "otevreno": "2026-11-04"
+  },
+  {
+   "nazev": "MO ČR: Veřejné zakázky (aktualizace 13. 4. 2026)",
+   "url": "https://mocr.mo.gov.cz/finance-a-zakazky/verejne-zakazky/_verejne-zakazky-51635/",
+   "otevreno": "2026-11-04"
+  },
+  {
+   "nazev": "MO ČR: struktura ministerstva",
+   "url": "https://mocr.mo.gov.cz/scripts/detail.php?pgid=658",
+   "otevreno": "2026-11-04"
+  },
+  {
+   "nazev": "MO ČR: Mezinárodní soutěže NATO (14. 2. 2025)",
+   "url": "https://mocr.mo.gov.cz/nato/soutěž/mezinarodní-souteze-nato-229468/",
+   "otevreno": "2026-11-04"
+  },
+  {
+   "nazev": "NEN: úvodní stránka",
+   "url": "https://nen.nipez.cz/",
+   "otevreno": "2026-11-04"
+  },
+  {
+   "nazev": "NEN: profil zadavatele MO",
+   "url": "https://nen.nipez.cz/profil/MO",
+   "otevreno": "2026-11-04"
+  },
+  {
+   "nazev": "Zákon č. 134/2016 Sb. (konsolidované znění, zakonyprolidi.cz)",
+   "url": "https://www.zakonyprolidi.cz/cs/2016-134",
+   "otevreno": "2026-11-04"
+  },
+  {
+   "nazev": "Zákon č. 412/2005 Sb. (konsolidované znění, zakonyprolidi.cz)",
+   "url": "https://www.zakonyprolidi.cz/cs/2005-412",
+   "otevreno": "2026-11-04"
+  },
+  {
+   "nazev": "Zákon č. 38/1994 Sb. (konsolidované znění, zakonyprolidi.cz)",
+   "url": "https://www.zakonyprolidi.cz/cs/1994-38",
+   "otevreno": "2026-11-04"
+  },
+  {
+   "nazev": "AOBP: úvodní stránka",
+   "url": "https://aobp.cz/cs/",
+   "otevreno": "2026-11-04"
+  },
+  {
+   "nazev": "Defence Hub CzechInvest, úvodní stránka (Naše mise, Rozcestník)",
+   "url": "https://defencehub.gov.cz/",
+   "otevreno": "2026-11-04"
+  }
+ ],
+ "nejiste": [
+  "OPRAVA ZADÁNÍ: obranné zakázky nejsou v části sedmé zákona 134/2016 Sb. (ta upravuje sektorové zakázky, § 151 až 173), ale v části deváté (§ 187 až 208). Ověřeno na konsolidovaném znění, na které odkazuje i SVA MO.",
+  "Text zákonů jsem četla na zakonyprolidi.cz (komerční vydání Sbírky, na které odkazuje SVA MO); e-sbirka.gov.cz se strojově nenačetla. Před publikací doporučuji porovnat s e-Sbírkou.",
+  "Co přesně se mění v zákoně 134/2016 Sb. od 1. 1. 2027 (konec platnosti znění od 3. 4. 2025): neověřeno, zda se změna týká části deváté.",
+  "Transpozici směrnice 2009/81/ES do části deváté jsem v otevřeném zdroji výslovně neověřila.",
+  "Postup registrace v NEN (NIPEZ), poplatky a registrace zahraničních dodavatelů: neověřeno.",
+  "Kdo v ČR přiděluje NCAGE kódy (pravděpodobně úřad MO pro katalogizaci, web uosk.mo.gov.cz blokuje strojové čtení): neověřeno.",
+  "Offsety / průmyslová spolupráce a bezpečnost dodávek u zakázek MO: oficiální politiku jsem na otevřených stránkách MO nenašla.",
+  "Web NBÚ (nbu.gov.cz) blokuje strojové čtení; postup uznání zahraničních osvědčení a seznam smluv NBÚ jsem neotevřela (smlouvy ověřeny přes MZV ČR).",
+  "MO ČR přešlo na doménu mocr.mo.gov.cz (mocr.army.cz přesměrovává); starší odkazy v dokumentech MO na army.cz mohou vést na přesměrování.",
+  "Popis služeb Defence Hubu převzat z vlastního webu DH (defencehub.gov.cz, lokální kopie stránky Defence Hub.html, 4. 11. 2026). Konzultace zdarma podle stránky Konzultace v obsah/vyuka.js appky."
+ ]
+}

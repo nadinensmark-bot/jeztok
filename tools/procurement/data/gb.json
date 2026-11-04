@@ -1,0 +1,101 @@
+{
+  "kod": "gb",
+  "zeme": "Spojené království",
+  "stav": "2026-11-04",
+  "clenstvi": "NATO (není v EU)",
+  "kdo_nakupuje": {
+    "text": "Nakupuje Ministry of Defence (MOD) přes několik akvizičních organizací. Od března 2025 je většina z nich sloučena do National Armaments Director (NAD) Group: bývalé Defence Equipment and Support (DE&S, velké zbrojní a podpůrné projekty) dnes vystupuje jako National Armaments Materiel, dále sem patří Defence Digital (IT a digitální služby), Defence Infrastructure Organisation (DIO, infrastruktura a nemovitosti) a Dstl spolu s UK Defence Innovation (věda, technologie, inovace). Vlastní nákupy mají také Strategic Command a jednotlivé složky ozbrojených sil; běžné zboží a služby MOD bere i přes rámcové smlouvy Crown Commercial Service.",
+    "instituce": [
+      {"nazev": "Ministry of Defence, Procurement at MOD", "zkratka": "MOD", "url": "https://www.gov.uk/government/organisations/ministry-of-defence/about/procurement"},
+      {"nazev": "National Armaments Director Group", "zkratka": "NAD Group", "url": "https://www.gov.uk/government/groups/national-armaments-director-nad-group"},
+      {"nazev": "Defence Equipment and Support (dnes National Armaments Materiel)", "zkratka": "DE&S / NA-M", "url": "https://des.mod.uk/new-defence-sourcing-portal"},
+      {"nazev": "UK Defence Innovation", "zkratka": "UKDI", "url": "https://www.gov.uk/guidance/how-to-work-with-uk-defence-innovation-ukdi"}
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Od 24. 2. 2025 platí Procurement Act 2023, který zrušil dřívější Defence and Security Public Contracts Regulations 2011 (DSPCR) a obranné zakázky zahrnul do jednoho režimu se zvláštními pravidly. Pro defence and security contracts (zakázky na vojenský a citlivý materiál a související služby) zákon mimo jiné umožňuje rámcové smlouvy až na 8 let, další důvody pro přímé zadání, zvláštní výjimky (např. government-to-government, výzkum a vývoj, mezinárodní organizace jako NATO či OCCAR) a hlavně možnost vyloučit dodavatele mimo Spojené království, korunní závislá území a zámořská území. Novela také upravila Single Source Contract Regulations (zakázky bez soutěže). Prahy pro defence and security contracts od 1. 1. 2026: zboží a služby 415 440 GBP, stavební práce 5 193 000 GBP (PPN 023).",
+    "predpisy": [
+      {"nazev": "Procurement Act 2023, Guidance: Defence and Security Contracts", "url": "https://www.gov.uk/government/publications/procurement-act-2023-guidance-documents-plan-phase/guidance-defence-and-security-contracts-html"},
+      {"nazev": "The Procurement Act 2023 (Commencement No. 3 and Transitional and Saving Provisions) (Amendment) Regulations 2024 (SI 2024/959), účinnost od 24. 2. 2025", "url": "https://www.legislation.gov.uk/uksi/2024/959/made"},
+      {"nazev": "PPN 023: 2026 Threshold Amounts", "url": "https://www.gov.uk/government/publications/ppn-023-2026-threshold-amounts/ppn-023-2026-threshold-amounts-html"}
+    ]
+  },
+  "kde_tendry": {
+    "text": "Všechny inzerované požadavky MOD jsou na Defence Sourcing Portal (DSP), kde jdou nastavit upozornění podle kódů kategorií. Zakázky celé státní správy nad 12 000 GBP jsou na Contracts Finder, nadlimitní na Find a Tender (přístup přes Central Digital Platform). MOD navíc zveřejňuje MOD Acquisition Pipeline (výhled plánovaných zakázek a rámců). Registrace na DSP i na Central Digital Platform je zdarma. Od 1. 1. 2021 už Spojené království nepoužívá evropský TED.",
+    "portaly": [
+      {"nazev": "Defence Sourcing Portal (DSP)", "url": "https://des.mod.uk/new-defence-sourcing-portal"},
+      {"nazev": "Find a Tender", "url": "https://www.gov.uk/find-tender"},
+      {"nazev": "Central Digital Platform / Find a Tender service (registrace dodavatele)", "url": "https://www.find-tender.service.gov.uk/Search"},
+      {"nazev": "Procurement at MOD (rozcestník: DSP, Contracts Finder, MOD Acquisition Pipeline)", "url": "https://www.gov.uk/government/organisations/ministry-of-defence/about/procurement"}
+    ]
+  },
+  "registrace": {
+    "text": "MOD nevede seznam preferovaných dodavatelů. Firma se registruje zdarma na DSP a na Central Digital Platform (jeden účet pro Find a Tender). Pro inovační soutěže UKDI je potřeba účet v UKDI submission service; UKDI uvádí, že nespolupracuje s organizacemi, které nejsou zapsané v Companies House (britský obchodní rejstřík). U zakázek s kybernetickými požadavky (DEFCON 658) musí dodavatel splnit DEFSTAN 05-138; jako doklad slouží Defence Cyber Certification (DCC, úrovně 0 až 3, spuštěno 5/2025).",
+    "kroky": [
+      "Registrovat firmu na Central Digital Platform (Find a Tender), zdarma.",
+      "Registrovat se na Defence Sourcing Portal a nastavit upozornění podle kategorií, zdarma.",
+      "Sledovat MOD Acquisition Pipeline kvůli plánovaným zakázkám.",
+      "Pro UKDI: založit účet v UKDI submission service; počítat s nutností zápisu v Companies House (britská entita).",
+      "Připravit se na kybernetické požadavky DEFSTAN 05-138 a případně získat Defence Cyber Certification v úrovni, kterou zakázka vyžaduje."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Nová politika offsetů: 30. 10. 2026 MOD a HM Treasury oznámily Defence Offsets Policy pro zámořské (nebritské) dodavatele velkých zakázek, zhruba od 50 mil. GBP. Od dubna 2027 se bude uplatňovat u vybraných zakázek případ od případu; dodavatel může mít povinnost vrátit do britské ekonomiky přínos až do plné hodnoty zakázky (pracovní místa, investice, transfer technologií, nákupy u britských subdodavatelů). Dohody bude uzavírat a kontrolovat nový centrální Offset Authority. Defence Industrial Strategy 2025 navíc slibuje zvýšit výdaje MOD u SME o 2,5 mld. GBP do května 2028."
+  },
+  "bezpecnost": {
+    "text": "Průmyslovou bezpečnost pro MOD řeší Industry Security Assurance Centre (ISAC) v rámci DE&S. Facility Security Clearance (FSC, dříve List X) nelze žádat přímo, musí ji sponzorovat zadavatel, a týká se zakázek SECRET a výš s prací nebo uložením utajovaných informací v objektu firmy. U zakázek s prvky OFFICIAL-SENSITIVE a výš dostane dodavatel Security Aspects Letter. Návštěvy zahraničních osob v objektech MOD a FSC firem jdou přes International Visits Control Office (IVCO), žádost podává bezpečnostní úřad (NSA) nebo velvyslanectví země návštěvníka. Dohoda s ČR: Bezpečnostní dohoda mezi vládou ČR a vládou Spojeného království o ochraně utajovaných skutečností z oblasti obrany (podepsána 6. 4. 2001, v platnosti od 1. 2. 2004, 18/2004 Sb.m.s.), podle seznamu smluv MZV ČR."
+  },
+  "inovace": {
+    "text": "UK Defence Innovation (UKDI) vznikla 1. 7. 2025 sloučením DASA, Defence Innovation Unit, Command Innovation Hubs a DE&S Future Capability Innovation, s rozpočtem nejméně 400 mil. GBP ročně; plný provoz od 7/2026. Nabízí Open Call for Innovation, tematické soutěže, Defence Innovation Loans a Ideas Marketplace. Pro zahraniční firmy se podmínky zpřísnily: od 17. 7. 2026 UKDI neposkytuje podporu Innovation Partnerů firmám mimo Spojené království, většina soutěží vyžaduje projektovou práci ve Spojeném království a zahraniční firmy se mohou zapojit hlavně jako subdodavatel nebo člen konsorcia; o způsobilosti rozhoduje dokumentace každé soutěže. Spojené království má v síti NATO DIANA pět test centres (NPL, Digital Catapult, Satellite Applications Catapult, High Value Manufacturing Catapult, T3E od QinetiQ). MOD dále uvádí Defence Office for Small Business Growth (od 1/2026) a Dstl SME Searchlight.",
+    "programy": [
+      {"nazev": "UK Defence Innovation (Open Call, tematické soutěže, Defence Innovation Loans)", "url": "https://www.gov.uk/guidance/how-to-work-with-uk-defence-innovation-ukdi", "pro_zahranicni": "omezeně: zahraniční firmy hlavně jako subdodavatel/konsorcium s prací ve Spojeném království, podle konkrétní soutěže (gov.uk, How to work with UKDI a Advice for UKDI prospective applicants)"},
+      {"nazev": "UKDI: Advice for prospective applicants", "url": "https://www.gov.uk/guidance/advice-for-uk-defence-innovation-ukdi-prospective-applicants", "pro_zahranicni": "omezeně: od 17. 7. 2026 bez podpory Innovation Partnerů pro firmy mimo Spojené království, nutný zápis v Companies House"},
+      {"nazev": "Apply for funding (DASA, nyní součást UKDI)", "url": "https://www.gov.uk/government/collections/apply-for-funding", "pro_zahranicni": "nejasné, stránka to neuvádí"},
+      {"nazev": "NATO DIANA test centres ve Spojeném království", "url": "https://www.gov.uk/government/news/nato-diana-expansion", "pro_zahranicni": "nejasné, stránka to neuvádí"}
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "Zadavatel může u většiny defence and security contracts vyloučit dodavatele mimo Spojené království, proto počítat spíš se subdodávkou pro britského prime nebo s britskou entitou.",
+    "Pro inovační soutěže UKDI je prakticky nutná firma zapsaná v Companies House a práce na projektu ve Spojeném království; od 17. 7. 2026 UKDI zahraničním firmám nepomáhá přes Innovation Partnery.",
+    "Od dubna 2027 budou zahraniční dodavatelé velkých zakázek (zhruba od 50 mil. GBP) plnit offsety přes nákupy u britských firem, což může otevřít subdodávky i naopak; sledovat seznam strategických dodavatelů MOD a jejich supplier portály.",
+    "Registrace na DSP a Central Digital Platform je zdarma, vyplatí se ji udělat hned a nastavit upozornění; počítat s požadavky DEFSTAN 05-138 a certifikací DCC."
+  ],
+  "prirucky": [
+    {"nazev": "Guidance: Defence and Security Contracts (Procurement Act 2023)", "vydavatel": "Cabinet Office", "url": "https://www.gov.uk/government/publications/procurement-act-2023-guidance-documents-plan-phase/guidance-defence-and-security-contracts-html", "jazyk": "en", "typ": "web"},
+    {"nazev": "Procurement Act 2023: Defence and security summary document", "vydavatel": "Cabinet Office", "url": "https://www.gov.uk/government/publications/the-official-procurement-act-2023-e-learning/defence-and-security-summary-document", "jazyk": "en", "typ": "web"},
+    {"nazev": "Procurement at MOD", "vydavatel": "Ministry of Defence", "url": "https://www.gov.uk/government/organisations/ministry-of-defence/about/procurement", "jazyk": "en", "typ": "web"},
+    {"nazev": "How to work with UK Defence Innovation (UKDI)", "vydavatel": "UK Defence Innovation", "url": "https://www.gov.uk/guidance/how-to-work-with-uk-defence-innovation-ukdi", "jazyk": "en", "typ": "web"},
+    {"nazev": "ISN 2026/02 Use of Defence Cyber Certification (DCC) under DEFCON 658", "vydavatel": "Ministry of Defence", "url": "https://assets.publishing.service.gov.uk/media/69cba72ba60a12ca3913c610/ISN_2026-02_Use_of_Defence_Cyber_Certification__DCC__as_assurance_of_control_requirements_under_DEFCON_658.pdf", "jazyk": "en", "typ": "pdf"}
+  ],
+  "zdroje": [
+    {"nazev": "Guidance: Defence and Security Contracts (gov.uk)", "url": "https://www.gov.uk/government/publications/procurement-act-2023-guidance-documents-plan-phase/guidance-defence-and-security-contracts-html", "otevreno": "2026-11-04"},
+    {"nazev": "SI 2024/959 (commencement 24. 2. 2025)", "url": "https://www.legislation.gov.uk/uksi/2024/959/made", "otevreno": "2026-11-04"},
+    {"nazev": "PPN 023: 2026 Threshold Amounts", "url": "https://www.gov.uk/government/publications/ppn-023-2026-threshold-amounts/ppn-023-2026-threshold-amounts-html", "otevreno": "2026-11-04"},
+    {"nazev": "Procurement Act 2023 guidance documents (collection)", "url": "https://www.gov.uk/government/collections/procurement-act-2023-guidance-documents", "otevreno": "2026-11-04"},
+    {"nazev": "Defence and security summary document", "url": "https://www.gov.uk/government/publications/the-official-procurement-act-2023-e-learning/defence-and-security-summary-document", "otevreno": "2026-11-04"},
+    {"nazev": "Procurement at MOD", "url": "https://www.gov.uk/government/organisations/ministry-of-defence/about/procurement", "otevreno": "2026-11-04"},
+    {"nazev": "Ministry of Defence procurement organisations", "url": "https://www.gov.uk/guidance/ministry-of-defence-procurement-organisations", "otevreno": "2026-11-04"},
+    {"nazev": "National Armaments Director Group", "url": "https://www.gov.uk/government/groups/national-armaments-director-nad-group", "otevreno": "2026-11-04"},
+    {"nazev": "NAD Group fully established as Deputy NAD Andy Start retires", "url": "https://www.gov.uk/government/news/nad-group-fully-established-as-deputy-nad-andy-start-retires", "otevreno": "2026-11-04"},
+    {"nazev": "Find a Tender (gov.uk)", "url": "https://www.gov.uk/find-tender", "otevreno": "2026-11-04"},
+    {"nazev": "DE&S: New Defence Sourcing Portal and Supplier Registration", "url": "https://des.mod.uk/new-defence-sourcing-portal", "otevreno": "2026-11-04"},
+    {"nazev": "A new era for defence innovation: DASA, DIU and DE&S FCI unite under UKDI", "url": "https://www.gov.uk/guidance/a-new-era-for-defence-innovation-dasa-diu-and-des-fci-unite-under-uk-defence-innovation-ukdi", "otevreno": "2026-11-04"},
+    {"nazev": "How to work with UK Defence Innovation (UKDI)", "url": "https://www.gov.uk/guidance/how-to-work-with-uk-defence-innovation-ukdi", "otevreno": "2026-11-04"},
+    {"nazev": "Advice for UKDI prospective applicants", "url": "https://www.gov.uk/guidance/advice-for-uk-defence-innovation-ukdi-prospective-applicants", "otevreno": "2026-11-04"},
+    {"nazev": "Apply for funding (UKDI/DASA)", "url": "https://www.gov.uk/government/collections/apply-for-funding", "otevreno": "2026-11-04"},
+    {"nazev": "Defence contracts to prioritise British jobs and skills (Offsets Policy, 30. 10. 2026)", "url": "https://www.gov.uk/government/news/defence-contracts-to-prioritise-british-jobs-and-skills", "otevreno": "2026-11-04"},
+    {"nazev": "Defence Industrial Strategy 2025, two-pager", "url": "https://assets.publishing.service.gov.uk/media/68bea465223d92d088f01d6a/Defence_Industrial_Strategy_2025_-_two-pager.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "ISN 2026/02 Defence Cyber Certification", "url": "https://assets.publishing.service.gov.uk/media/69cba72ba60a12ca3913c610/ISN_2026-02_Use_of_Defence_Cyber_Certification__DCC__as_assurance_of_control_requirements_under_DEFCON_658.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "DE&S Principal Security Advisor / ISAC (FSC, SAL, IVCO)", "url": "https://www.gov.uk/guidance/defence-equipment-and-support-principal-security-advisor", "otevreno": "2026-11-04"},
+    {"nazev": "NATO DIANA expansion (UK test centres)", "url": "https://www.gov.uk/government/news/nato-diana-expansion", "otevreno": "2026-11-04"},
+    {"nazev": "MZV ČR: smlouvy ČR a Spojené království", "url": "https://mzv.gov.cz/jnp/cz/encyklopedie_statu/evropa/velka_britanie/smlouvy/index.html", "otevreno": "2026-11-04"}
+  ],
+  "nejiste": [
+    "Samotný text Defence Offsets Policy (30. 10. 2026) se nepodařilo dohledat, tisková zpráva na něj neodkazuje; přesný práh (nad 50 mil. GBP vs. od 50 mil. GBP) je v tiskové zprávě formulován nejednotně: https://www.gov.uk/government/news/defence-contracts-to-prioritise-british-jobs-and-skills",
+    "Rozpor v pravidlech UKDI pro zahraniční firmy: jedna stránka uvádí, že většina soutěží je otevřená mezinárodně, druhá že většina vyžaduje práci a provozní kapacitu ve Spojeném království; rozhoduje dokumentace konkrétní soutěže: https://www.gov.uk/guidance/advice-for-uk-defence-innovation-ukdi-prospective-applicants a https://www.gov.uk/guidance/how-to-work-with-uk-defence-innovation-ukdi",
+    "PPN 023 neuvádí, zda jsou prahy včetně DPH; starší souhrn uvádí prahy včetně DPH.",
+    "Neověřeno, zda MOD po zahraničním dodavateli vyžaduje NCAGE kód a jaký je postup FSC pro firmu sídlící mimo Spojené království (stránka ISAC to nepopisuje, PDF politiky FSC nebylo otevřeno).",
+    "Neověřeno, které DIANA accelerator sites jsou aktuálně ve Spojeném království (mapa diana.nato.int se nepodařila načíst).",
+    "Stránka DE&S o DSP (2021) neuvádí, zda je registrace zdarma; to uvádí až stránka Procurement at MOD. Vládní seznam akvizičních organizací MOD je z 2021 a neodráží vznik NAD Group."
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "kod": "ch",
+  "zeme": "Švýcarsko",
+  "stav": "2026-11-04",
+  "clenstvi": "není členem EU ani NATO",
+  "kdo_nakupuje": {
+    "text": "Obranné nákupy dělá armasuisse, Federal Office for Defence Procurement (spolkový úřad pro vyzbrojování) v resortu Federal Department of Defence, Civil Protection and Sport (DDPS, německy VBS). Jeho ředitel je zároveň National Armaments Director. armasuisse spravuje i offsetovou politiku a má výzkumnou část armasuisse Science and Technology (S+T).",
+    "instituce": [
+      {"nazev": "armasuisse (Federal Office for Defence Procurement)", "zkratka": "ar", "url": "https://www.ar.admin.ch/en"}
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Platí Bundesgesetz über das öffentliche Beschaffungswesen (BöB, anglicky Federal Act on Public Procurement, SR 172.056.1, přijat 21. 6. 2019, účinný od 1. 1. 2021) a prováděcí Verordnung über das öffentliche Beschaffungswesen (VöB). Zákon se nevztahuje na zakázky nutné k ochraně vnější či vnitřní bezpečnosti nebo veřejného pořádku (čl. 10 odst. 4 písm. a). Zbraně, munici, válečný materiál a další nezbytné obranné a bezpečnostní dodávky lze zadat výzvou omezenému okruhu uchazečů bez ohledu na limity (čl. 20 odst. 3) a přímo tam, kde je to důležité pro domácí firmy podstatné pro obranu země (čl. 21 odst. 3). Limity podle přílohy 4 (znění k 1. 1. 2024, pro roky 2024 a 2025): v režimu mezinárodních smluv otevřené či užší řízení u zboží a služeb od 230 000 nebo 700 000 CHF podle zadavatele, u stavebních prací od 8,7 mil. CHF; mimo smlouvy výzva od 150 000 CHF u zboží a služeb, pod tím přímé zadání.",
+    "predpisy": [
+      {"nazev": "Federal Act on Public Procurement (BöB / PPA), SR 172.056.1, anglický překlad, znění k 1. 1. 2024", "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2020/126/20240101/en/pdf-a/fedlex-data-admin-ch-eli-cc-2020-126-20240101-en-pdf-a.pdf"},
+      {"nazev": "Verordnung über das öffentliche Beschaffungswesen (VöB), odkaz z webu armasuisse", "url": ""}
+    ]
+  },
+  "kde_tendry": {
+    "text": "Podle čl. 48 BöB se oznámení otevřených a užších řízení zveřejňují na internetové platformě, kterou společně provozují Konfederace a kantony (simap.ch; samotný portál jsem kvůli cookie zdi neotevřela). Výzvy a výsledky u dodávek a služeb musí vyjít alespoň ve dvou úředních jazycích a uchazeči smějí podat nabídku v kterémkoli úředním jazyce (němčina, francouzština, italština). armasuisse má stránku „How do I become a supplier?“ (26. 7. 2023) s odkazy na právní předpisy.",
+    "portaly": [
+      {"nazev": "armasuisse: How do I become a supplier?", "url": "https://www.ar.admin.ch/en/become-supplier"}
+    ]
+  },
+  "registrace": {
+    "text": "Zahraniční uchazeči se mohou účastnit v rozsahu mezinárodních smluv, pokud jejich země poskytuje Švýcarsku vzájemný přístup na trh; mimo tento rozsah jen při reciprocitě nebo se svolením zadavatele. Seznam zemí s takovým závazkem vede Spolková rada (čl. 6 BöB). Samostatný registr dodavatelů armasuisse ani přidělování NCAGE jsem v otevřených zdrojích nenašla. Beschaffungskonferenz des Bundes (BKB) vydává pro uchazeče listy k poddodavatelům, konsorciím a referencím a formulář vlastního prohlášení uchazeče.",
+    "kroky": [
+      "Sledovat oznámení armasuisse na společné platformě Konfederace a kantonů (simap.ch).",
+      "Ověřit, zda konkrétní zakázka spadá pod mezinárodní smlouvy (pro přístup zahraničního uchazeče podle čl. 6 BöB).",
+      "Nabídku připravit v němčině, francouzštině nebo italštině.",
+      "U zakázek nad 20 mil. CHF počítat předem s offsetovým závazkem (viz prumyslova_spoluprace)."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Švýcarsko offsety vyžaduje. Offset Policy armasuisse (aktuální verze účinná od 1. 11. 2022, opírá se o zásady Spolkové rady pro vyzbrojovací politiku DDPS a Armaments Strategy DDPS) ukládá zahraničním dodavatelům od objemu 20 mil. CHF (podíl zahraničního dodavatele, loty se sčítají) průmyslovou spolupráci se švýcarskou Security-relevant Technology and Industry Base (STIB), zpravidla ve výši 100 % smluvní ceny bez DPH. Rozlišuje direct offset (spojený s nakupovaným materiálem, řídí armasuisse) a indirect offset (bez přímé vazby, řídí Offset Office Bern, který provozuje sdružení ASIPRO). Cílové regionální rozdělení: 65 % německy, 30 % francouzsky a 5 % italsky a rétorománsky mluvící Švýcarsko. Uznává se jen švýcarská přidaná hodnota: pod 20 % nic, 20 až 61 % skutečný podíl, nad 61 % celá hodnota objednávky; armasuisse může použít multiplikátor 1 až 3. Zahraniční dodavatel si švýcarské partnery vybírá sám, nová offsetová transakce se hlásí každých šest měsíců (do 12 měsíců od objednávky) a švýcarský příjemce platí u indirect offsetu poplatek 0,1 %. Offset register se od roku 2024 aktualizuje čtvrtletně."
+  },
+  "bezpecnost": {
+    "text": "ČR a Švýcarsko mají Smlouvu o výměně a vzájemné ochraně utajovaných informací (podepsána 26. 1. 2011 v Praze, platná od 1. 9. 2011, č. 86/2011 Sb. m. s.; zdroj MZV ČR). Švýcarský úřad pro průmyslovou bezpečnost a postup Facility Security Clearance pro zahraniční firmy jsem z primárního zdroje neověřila; stránka armasuisse pro dodavatele odkazuje jen na nařízení o ochraně informací Konfederace."
+  },
+  "inovace": {
+    "text": "Výzkumnou a inovační část tvoří armasuisse Science and Technology (S+T), která vydává magazín Inside S+T (čísla 02/24 Innovation, 01/25 Artificial Intelligence). Konkrétní programy pro startupy a podmínky pro zahraniční firmy jsem z primárních zdrojů neověřila. NATO DIANA se Švýcarska netýká, protože není členem NATO.",
+    "programy": []
+  },
+  "tipy_pro_cz_firmy": [
+    "BöB zaručuje podání nabídky v kterémkoli úředním jazyce (němčina, francouzština, italština); zda zadavatel připustí i angličtinu, záleží na zadávací dokumentaci.",
+    "Jako přímý zahraniční dodavatel nad 20 mil. CHF musíte kompenzovat zpravidla 100 % ceny objednávkami ve Švýcarsku, rozložené i regionálně (65/30/5 %). To je potřeba zahrnout do ceny a partnerské sítě předem.",
+    "Pro menší české firmy je offsetový systém spíš příležitost nepřímo: zahraniční dodavatel si ale vybírá švýcarské partnery a započte se jen švýcarská přidaná hodnota, takže česká subdodávka do offsetu sama nespadá.",
+    "Pro utajované zakázky existuje smlouva ČR a Švýcarska z roku 2011; postup uznání osvědčení ověřit u NBÚ a u armasuisse."
+  ],
+  "prirucky": [
+    {"nazev": "Offset Policy 2022 (Version 2025)", "vydavatel": "armasuisse", "url": "https://www.ar.admin.ch/dam/en/sd-web/u49GHCYZ19gp/Offset%20Policy%202022%20en%20neu.pdf", "jazyk": "en", "typ": "pdf"},
+    {"nazev": "Offset business (přehled, dokumenty, kontakty)", "vydavatel": "armasuisse", "url": "https://www.ar.admin.ch/en/offset-en", "jazyk": "en", "typ": "web"},
+    {"nazev": "Hilfsmittel BKB (listy k poddodavatelům, konsorciím, referencím, e-podpisu)", "vydavatel": "Beschaffungskonferenz des Bundes", "url": "https://www.bkb.admin.ch/de/hilfsmittel", "jazyk": "de", "typ": "web"}
+  ],
+  "zdroje": [
+    {"nazev": "armasuisse: úvodní stránka", "url": "https://www.ar.admin.ch/en", "otevreno": "2026-11-04"},
+    {"nazev": "armasuisse: How do I become a supplier?", "url": "https://www.ar.admin.ch/en/become-supplier", "otevreno": "2026-11-04"},
+    {"nazev": "armasuisse: Offset business", "url": "https://www.ar.admin.ch/en/offset-en", "otevreno": "2026-11-04"},
+    {"nazev": "armasuisse: Offset Policy 2022 (PDF)", "url": "https://www.ar.admin.ch/dam/en/sd-web/u49GHCYZ19gp/Offset%20Policy%202022%20en%20neu.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "armasuisse: Offset key figures 2025", "url": "https://www.ar.admin.ch/en/offset-key-figures-2025", "otevreno": "2026-11-04"},
+    {"nazev": "armasuisse: Publications S+T", "url": "https://www.ar.admin.ch/en/publications-st-en", "otevreno": "2026-11-04"},
+    {"nazev": "Fedlex: Federal Act on Public Procurement (PDF, znění k 1. 1. 2024)", "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2020/126/20240101/en/pdf-a/fedlex-data-admin-ch-eli-cc-2020-126-20240101-en-pdf-a.pdf", "otevreno": "2026-11-04"},
+    {"nazev": "BKB: úvodní stránka", "url": "https://www.bkb.admin.ch/bkb/de/home.html", "otevreno": "2026-11-04"},
+    {"nazev": "BKB: Hilfsmittel", "url": "https://www.bkb.admin.ch/de/hilfsmittel", "otevreno": "2026-11-04"},
+    {"nazev": "MZV ČR: Smlouvy se Švýcarskem", "url": "https://mzv.gov.cz/jnp/cz/encyklopedie_statu/evropa/svycarsko/smlouvy/index.html", "otevreno": "2026-11-04"}
+  ],
+  "nejiste": [
+    "Portál simap.ch jsem neotevřela (cookie zeď); BöB platformu jménem neuvádí. Registrace na simap, poplatky a jazyk rozhraní neověřeny.",
+    "Limity pro rok 2026: mám jen přílohu 4 ve znění k 1. 1. 2024 (hodnoty pro 2024 a 2025); Spolková rada je upravuje periodicky.",
+    "Zda konkrétní zakázka armasuisse spadá pod mezinárodní smlouvy, a tedy zda má český uchazeč nárok na přístup podle čl. 6 BöB: posoudit případ od případu, seznam zemí Spolkové rady jsem neotevřela.",
+    "Švýcarský úřad pro průmyslovou bezpečnost a FSC: neověřeno. armasuisse odkazuje na starší URL nařízení o ochraně informací (admin.ch/opc ... 20070574), aktuálnost právního základu neověřena.",
+    "VöB (SR 172.056.11): odkaz https://www.fedlex.admin.ch/eli/cc/2020/127/de mám z webu armasuisse, obsah stránky (JavaScript) jsem nepřečetla.",
+    "Inovační programy armasuisse S+T pro startupy (např. testovací centra, challenge programy) a podmínky pro zahraniční firmy: neověřeno.",
+    "Konkrétní čísla z Offset key figures 2025 (13. 1. 2026) jsou jen v interaktivních grafech, nepřečetla jsem je."
+  ]
+}

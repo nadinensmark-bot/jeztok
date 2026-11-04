@@ -1,0 +1,151 @@
+{
+  "kod": "hr",
+  "zeme": "Chorvatsko",
+  "stav": "2026-11-04",
+  "clenstvi": "EU, NATO",
+  "kdo_nakupuje": {
+    "text": "Nakupuje Ministarstvo obrane Republike Hrvatske (MORH); zadávací řízení vede Samostalni sektor za postupke javne nabave v Záhřebu.",
+    "instituce": [
+      {
+        "nazev": "Ministarstvo obrane RH, Javna nabava",
+        "zkratka": "MORH",
+        "url": "https://www.morh.hr/javna-nabava/"
+      }
+    ]
+  },
+  "pravni_ramec": {
+    "text": "Obranné a bezpečnostní zakázky upravuje Uredba o javnoj nabavi u području obrane i sigurnosti (NN 19/18) ve vazbě na Zakon o javnoj nabavi; MORH se dále opírá o čl. 13 odst. 5 Zakona o obrani (NN 73/13 až 136/25). Pro malé zakázky platí Pravilnik o provedbi postupaka jednostavne nabave u Ministarstvu obrane a Uputa o provedbi jednostavne nabave u području obrane i sigurnosti (zveřejněna 4. 9. 2026). Prahy jsme neověřili.",
+    "predpisy": [
+      {
+        "nazev": "MORH: Uputa o provedbi jednostavne nabave u području obrane i sigurnosti (cituje Uredbu NN 19/18 a Zakon o obrani)",
+        "url": "https://www.morh.hr/uputa-o-provedbi-jednostavne-nabave-u-podrucju-obrane-i-sigurnosti/"
+      }
+    ]
+  },
+  "kde_tendry": {
+    "text": "MORH zveřejňuje výzvy a dokumentaci na webu (Objave natječaja), plán zakázek (Plan nabave) a průzkumy trhu (Ispitivanje tržišta). Národní platformou je Elektronički oglasnik javne nabave RH (EOJN RH); nový EOJN vyžaduje novou registraci uživatelů, přihlašovací údaje ze starého systému neplatí. Odkaz na zakázky EDA je na webu MORH.",
+    "portaly": [
+      {
+        "nazev": "MORH: Objave natječaja",
+        "url": "https://www.morh.hr/kategorija/javna-nabava/objave-natjecaja/"
+      },
+      {
+        "nazev": "MORH: Plan nabave",
+        "url": "https://www.morh.hr/kategorija/javna-nabava/plan-nabave/"
+      },
+      {
+        "nazev": "EOJN RH",
+        "url": "https://eojn.hr/"
+      }
+    ]
+  },
+  "registrace": {
+    "text": "Zvláštní registr dodavatelů MORH jsme nenašli. Pro elektronická řízení je potřeba registrace v novém EOJN RH.",
+    "kroky": [
+      "Zaregistrovat se v novém EOJN RH.",
+      "Sledovat Plan nabave a Ispitivanje tržišta na webu MORH.",
+      "U utajovaných zakázek řešit Certifikat poslovne sigurnosti u UVNS."
+    ]
+  },
+  "prumyslova_spoluprace": {
+    "text": "Offsety upravuje Naputak o načinu i uvjetima primjene „Offset programa“ (NN 26/14, platný od 25. 2. 2014), který společně vydali ministr hospodářství a ministr obrany a který nahradil předpis z roku 2004. Offsetová dohoda se uzavírá u obranných zakázek od 2 mil. EUR a jen u nových zbraňových systémů; bez offsetu jen se souhlasem obou ministrů. Celková hodnota offsetu má odpovídat 100 % hodnoty smlouvy, přímý offset aspoň 25 %. Zahraniční dodavatel skládá bankovní záruku 20 % závazků, při neplnění platí smluvní pokutu 20 % nesplněných závazků, dohoda trvá nejvýš 10 let a náklady nese dodavatel. Dohodu podepisuje ministr hospodářství se souhlasem ministra obrany; odborně ji připravuje desetičlenná Povjerenstvo za Offset program (zástupci ministerstev hospodářství, obrany a financí, HGK a agentury ALAN). V NN 78/2016 vyšel předpis se stejným názvem, jeho obsah jsme neotevřeli: pravidla z roku 2014 proto mohou být změněna. MORH podle vlastního článku z března 2025 podporuje domácí průmysl hlavně nákupem chorvatských výrobků pro armádu a představováním chorvatských firem agenturám NATO (NSPA, NCIA) a EDA (Croatian Industry Day v Bruselu, 11. 3. 2025)."
+  },
+  "bezpecnost": {
+    "text": "Národním bezpečnostním úřadem (NSA) je Ured Vijeća za nacionalnu sigurnost (UVNS), ústřední státní orgán pro informační bezpečnost. Pro firmy vydává Certifikat poslovne sigurnosti (obdoba FSC), na webu jsou dotazníky pro prověrky a formulář žádosti o návštěvu (visit request); postup pro zahraniční firmy nepopisuje. Dohoda s ČR existuje: Ugovor između Vlade RH i Vlade Češke Republike o uzajamnoj zaštiti klasificiranih podataka, ratifikace NN MU 3/10, oznámení o vstupu v platnost NN MU 8/11; podle seznamu MZV ČR podepsána v Praze 1. 2. 2010, č. 56/2011 Sb. m. s."
+  },
+  "inovace": {
+    "text": "Samostatný inovační, challenge nebo startupový program MORH jsme nenašli (vyhledávání na morh.hr pro inovace i DIANA nic takového nevrátilo). MORH v článku o Croatian Industry Day (2025) uvádí DIANA a Evropský obranný fond (EDF) jako zdroje financování projektů obranného průmyslu. Na webu MORH jsou jen starší výzvy EDA Defence Innovation Prize (2018, 2020). Seznam NATO z roku 2023 neuvádí v Chorvatsku žádné DIANA test centre.",
+    "programy": [
+      {
+        "nazev": "MORH: Croatian Industry Day u Bruxellesu (DIANA a EDF jako zdroje financování)",
+        "url": "https://www.morh.hr/croatian-industry-day-u-bruxellesu-morh-pruza-potporu-hrvatskoj-obrambenoj-industriji/",
+        "pro_zahranicni": "ne, akce pro chorvatské firmy (článek MORH)"
+      }
+    ]
+  },
+  "tipy_pro_cz_firmy": [
+    "Plan nabave a Ispitivanje tržišta na webu MORH ukazují, co se chystá, a průzkum trhu je vhodný první kontakt.",
+    "Obsah zakázek MORH je jen v chorvatštině (anglická verze webu zakázky neobsahuje), počítejte s překladem.",
+    "Před prvním tendrem se registrujte v novém EOJN RH, staré účty neplatí.",
+    "Dohoda ČR a Chorvatska o ochraně utajovaných informací platí od roku 2011.",
+    "Kdo dodává nový zbraňový systém nad 2 mil. EUR, musí počítat s požadavkem offsetu (100 % hodnoty, aspoň 25 % přímý podle předpisu z 2014; aktuální znění z NN 78/2016 ověřte)."
+  ],
+  "prirucky": [
+    {
+      "nazev": "Uputa o provedbi jednostavne nabave u području obrane i sigurnosti",
+      "vydavatel": "MORH",
+      "url": "https://www.morh.hr/uputa-o-provedbi-jednostavne-nabave-u-podrucju-obrane-i-sigurnosti/",
+      "jazyk": "hr",
+      "typ": "web"
+    }
+  ],
+  "zdroje": [
+    {
+      "nazev": "MORH: úvodní stránka",
+      "url": "https://www.morh.hr/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MORH: Javna nabava",
+      "url": "https://www.morh.hr/javna-nabava/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MORH: Uputa o provedbi jednostavne nabave u području obrane i sigurnosti",
+      "url": "https://www.morh.hr/uputa-o-provedbi-jednostavne-nabave-u-podrucju-obrane-i-sigurnosti/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MORH: Objave natječaja",
+      "url": "https://www.morh.hr/kategorija/javna-nabava/objave-natjecaja/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "EOJN RH",
+      "url": "https://eojn.hr/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "UVNS: úvodní stránka",
+      "url": "https://www.uvns.hr/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "UVNS: Međunarodni ugovori",
+      "url": "https://www.uvns.hr/hr/normativni-akti/informacijska-sigurnost/medjunarodni-ugovori",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MZV ČR: seznam vyhlášených mezinárodních smluv (soubor Smlouvy leden 2018)",
+      "url": "https://mzv.gov.cz/public/4f/37/6/2714699_1860857_Smlouvy_leden_2018.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "NATO: DIANA test centres (2023)",
+      "url": "https://nato.int/content/dam/nato/legacy-wcm/media_pdf/2023/6/pdf/230607-DIANA-test-centres.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MORH: Naputak o načinu i uvjetima primjene Offset programa (NN 26/14), PDF",
+      "url": "https://www.morh.hr/wp-content/uploads/2017/10/naputak__primjena_ofset_programa_26-25.02.pdf",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MORH: Croatian Industry Day u Bruxellesu (12. 3. 2025)",
+      "url": "https://www.morh.hr/croatian-industry-day-u-bruxellesu-morh-pruza-potporu-hrvatskoj-obrambenoj-industriji/",
+      "otevreno": "2026-11-04"
+    },
+    {
+      "nazev": "MORH: vyhledávání na webu (inovacij, DIANA, offset)",
+      "url": "https://www.morh.hr/?s=offset",
+      "otevreno": "2026-11-04"
+    }
+  ],
+  "nejiste": [
+    "Zda MORH zveřejňuje obranná řízení i v EOJN RH a TED (oznámení na webu MORH to neuvádějí).",
+    "Prahy podle Uredby NN 19/18 a jazyk nabídek.",
+    "Postup UVNS pro zahraniční firmy (PDF Certifikat poslovne sigurnosti jsme neotevřeli: https://www.uvns.hr/UserDocsImages/dokumenti/preuzimanje-dokumenata/CERTIFIKAT%20POSLOVNE%20SIGURNOSTI.pdf).",
+    "Obsah předpisu se stejným názvem v NN 78/2016 (https://narodne-novine.nn.hr/clanci/sluzbeni/2016_08_78_1793.html) jsme neotevřeli (robots): zda pravidla NN 26/14 (prah 2 mil. EUR, 100 %, 25 % přímý) stále platí, neověřeno. Název předpisu známe jen z výsledku vyhledávání.",
+    "Aktuální DIANA přítomnost v Chorvatsku (seznam NATO je z roku 2023, mapa na diana.nato.int se automaticky nenačte) a případné inovační programy MORH mimo web."
+  ]
+}

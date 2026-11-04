@@ -42,7 +42,7 @@
     S.kurzy.forEach(k => {
       k.pocet = 0;
       (k.temata || []).forEach(t => (t.karty || []).forEach(c => {
-        c.gid = k.id + ":" + t.id + ":" + c.id; c.kurz = k; c.tema = t;
+        c.gid = k.id + ":" + t.id + ":" + c.id; c.kurz = k; c.tema = t; if (!c.zapojit && window.JEZTOK_ZAPOJIT && window.JEZTOK_ZAPOJIT[c.gid]) c.zapojit = window.JEZTOK_ZAPOJIT[c.gid];
         if (S.karty[c.gid]) console.warn("[DefLearn] duplicitní id karty", c.gid);
         S.karty[c.gid] = c; k.pocet++;
       }));

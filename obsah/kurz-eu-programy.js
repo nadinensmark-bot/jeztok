@@ -29,7 +29,7 @@ window.JEZTOK_KURZY.push({
           "titulek": "PESCO a CARD: plánování států, kontext pro firmy",
           "text": "PESCO (Permanent Structured Cooperation, od 2017) je rámec, ve kterém skupiny členských států společně vyvíjejí schopnosti v desítkách projektů; peníze dávají státy, ne EU. CARD (Coordinated Annual Review on Defence, od 2019) je roční přehled EDA o tom, co státy plánují, aby se plány sladily.",
           "zdroj": "pesco.europa.eu; eda.europa.eu (CARD)",
-          "vysvetleni": "Firma se do PESCO přímo nehlásí, zve ji stát. Smysl pro startup: projekty PESCO ukazují, kam státy míří, a účast na PESCO projektu zvyšuje bonus v EDF."
+          "vysvetleni": "Firma se do PESCO přímo nehlásí, o zapojení rozhodují státy v projektu. Smysl pro startup: projekty PESCO ukazují, kam státy míří; vývojová akce v EDF, která PESCO projekt realizuje, může dostat o 10 procentních bodů vyšší míru financování (automaticky to ale neplatí)."
         },
         {
           "id": "f3",
@@ -37,7 +37,7 @@ window.JEZTOK_KURZY.push({
           "titulek": "EDIS a EDIP: strategie a její peníze",
           "text": "European Defence Industrial Strategy (EDIS, březen 2024) je strategie Komise s cíli do roku 2030: nakupovat víc společně a víc v Evropě. European Defence Industry Programme (EDIP) je nařízení, které ji financuje (1,5 mld. € na 2025 až 2027) a zavádí nástroje jako European Military Sales Mechanism a režim bezpečnosti dodávek.",
           "zdroj": "defence-industry-space.ec.europa.eu (EDIS, EDIP); nařízení (EU) 2025/2643",
-          "vysvetleni": "Pozor na záměnu EDIP a EDIDP (starší program 2019 až 2020). Pro startup je v EDIP hlavní fond FAST (equity) a BraveTech EU; výroba komponent a společné nákupy jsou spíš pro větší výrobce."
+          "vysvetleni": "Pozor na záměnu EDIP a EDIDP (starší program 2019 až 2020). Pro startup je v EDIP zajímavý FAST (equity přes VC fondy podpořené z Defence Equity Facility 2.0) a BraveTechEU; výroba komponent a společné nákupy jsou spíš pro větší výrobce."
         },
         {
           "id": "k1",
@@ -137,60 +137,58 @@ window.JEZTOK_KURZY.push({
           "id": "f3",
           "typ": "fakt",
           "titulek": "EUDIS – EU Defence Innovation Scheme",
-          "text": "SME větev EDF (cca 120 mil. € v programu 2026) pro startupy a MSP z EU a Norska. Dvě části: EUDIS Accelerator, 6měsíční program s business coachingem, matchmakingem s primes a možností Test in Ukraine, pro jednotlivé firmy; a EUDIS Open Call s granty do 6 mil. € na vývoj a do 4 mil. € na výzkum pro menší konsorcia (3 firmy ze 3 států, od TRL 4).",
+          "text": "SME větev EDF (cca 120 mil. € v programu 2026) pro startupy a MSP z EU a Norska. Dvě části: EUDIS Business Accelerator, 8měsíční program s tréninkem, coachingem a matchmakingem pro jednotlivé firmy; a SME calls s granty do 6 mil. € na vývoj (konsorcium aspoň 3 firem ze 3 států) a do 5 mil. € na výzkum (konsorcium SME a výzkumných organizací, koordinátor SME).",
           "vysvetleni": "Jednodušší než plný EDF. Je to cesta k EDF: přes EUDIS získáš reference a partnery pro pozdější velká konsorcia. Nevhodné, když hledáš jednorázově velký objem financí.",
           "zdroj": "defence-industry-space.ec.europa.eu (EDF, EUDIS, EDIP); eda.europa.eu (HEDI); katalog programů defencehub.gov.cz"
         },
         {
           "id": "k2",
           "typ": "kviz",
-          "otazka": "Jaký je strop grantu EUDIS Open Call na vývoj?",
+          "otazka": "Jaký je strop grantu EUDIS SME call na vývoj?",
           "moznosti": [
             "2,5 mil. €",
             "4 mil. €",
             "6 mil. €"
           ],
           "spravne": 2,
-          "vysvetleni": "Do 6 mil. € na vývoj, do 4 mil. € na výzkum. 2,5 mil. € je grantová část EIC Acceleratoru."
+          "vysvetleni": "Do 6 mil. € na vývoj, do 5 mil. € na výzkum. 2,5 mil. € je grantová část EIC Acceleratoru."
         },
         {
           "id": "d1",
           "typ": "doplnit",
-          "text": "EUDIS Accelerator nabízí kromě coachingu a matchmakingu i možnost Test in ___.",
+          "text": "EUDIS Business Accelerator je program na ___ měsíců s tréninkem, coachingem a matchmakingem.",
           "odpoved": [
-            "Ukraine",
-            "Ukrajině",
-            "Ukrajina",
-            "ukraine"
+            "8",
+            "osm"
           ],
-          "vysvetleni": "Test in Ukraine: testování technologie v reálných podmínkách."
+          "vysvetleni": "8 měsíců, pro startupy a scale-upy z EU a Norska; firmy z Ukrajiny se mohou zapojit do matchmakingu. Zdroj: eudis.europa.eu, Business Accelerator (stav 11/2026)."
         },
         {
           "id": "f4",
           "typ": "fakt",
           "titulek": "EDIP – European Defence Industry Programme",
-          "text": "Přemosťující nástroj EU do roku 2027 pro obranné výrobní kapacity, společné nákupy a standardizaci; od 2028 navazuje EDF. Pracovní program 1,5 mld. € (2026–27). Rozdělení: 700+ mil. € výroba klíčových komponent (counter-drony, rakety, munice), 325 mil. € projekty společného zájmu, 260 mil. € podpora Ukrajiny, 240 mil. € společný nákup (grant až 20 mil. € na projekt), 100 mil. € equity pro startupy/SME (fond FAST), 35,3 mil. € BraveTech EU.",
-          "vysvetleni": "Pro startupy jsou hlavní fond FAST (equity, 100 mil. €) a inovační program BraveTech EU (50 mil. € EU + 50 mil. € Ukrajina, fáze Seed a Scale Up). Vhodné pro hotový produkt a škálování výroby (TRL 6–9); ve vývojové fázi začni u EDF, EUDIS nebo DIANA.",
+          "text": "Přemosťující nástroj EU do roku 2027 pro obranné výrobní kapacity, společné nákupy a standardizaci; od 2028 navazuje EDF. Pracovní program 1,5 mld. € (2026–27). Rozdělení: 700+ mil. € výroba klíčových komponent (counter-drony, rakety, munice), 325 mil. € projekty společného zájmu, 300 mil. € Ukraine Support Instrument (nástroj na podporu Ukrajiny), 240 mil. € společný nákup (grant až 20 mil. € na projekt), 100 mil. € FAST do Defence Equity Facility 2.0 (fond fondů EIF), z USI 35,3 mil. € na inovační akci BraveTechEU.",
+          "vysvetleni": "Startup do FAST sám nežádá: 100 mil. € jde do Defence Equity Facility 2.0, o peníze žádají správci VC fondů a startup pak pitchuje těmto fondům. BraveTechEU (35,3 mil. € z nástroje pro Ukrajinu) míří na ukrajinské a evropské startupy a SME. Výrobní výzvy EDIP jsou pro firmy s hotovým produktem; ve vývojové fázi začni u EDF, EUDIS nebo DIANA.",
           "zdroj": "defence-industry-space.ec.europa.eu (EDF, EUDIS, EDIP); eda.europa.eu (HEDI); katalog programů defencehub.gov.cz"
         },
         {
           "id": "k3",
           "typ": "kviz",
-          "otazka": "Která část EDIP je určena startupům jako equity podpora?",
+          "otazka": "Jak se startup dostane k equity penězům z EDIP fondu FAST?",
           "moznosti": [
-            "Fond FAST",
-            "Projekty společného zájmu",
-            "Společný nákup"
+            "Pitchuje VC fondům, do kterých FAST investuje přes Defence Equity Facility 2.0",
+            "Podá žádost přímo Komisi na Funding & Tenders Portal",
+            "Přihlásí se do společného nákupu ministerstev"
           ],
           "spravne": 0,
-          "vysvetleni": "FAST = 100 mil. € equity pro startupy a SME. Druhá cesta pro startupy je BraveTech EU."
+          "vysvetleni": "FAST (100 mil. €) jde do Defence Equity Facility 2.0, fondu fondů, který spravuje EIF. Žádají správci fondů, startup jedná s fondy. Druhá cesta pro startupy je BraveTechEU."
         },
         {
           "id": "f5",
           "typ": "fakt",
           "titulek": "AGILE Initiative (spuštění 2027)",
-          "text": "Připravovaný nástroj EU pro rychlou obrannou inovaci: rozpočet 115 mil. €, do 5 mil. € na projekt, sólo žadatel (hlavně SME a startupy), bez povinného konsorcia, cíl grant do 4 měsíců od podání. Má podpořit 20–30 projektů se 100% financováním způsobilých nákladů.",
-          "vysvetleni": "Politická dohoda Parlamentu a Rady z července 2026, schválen 12. 10. 2026; první výzva se čeká začátkem 2027. Podmínka: jeden žadatel se sídlem a řízením v EU. Až se rozjede, bude to nejrychlejší evropská cesta k obrannému grantu bez konsorcia. Kdo potřebuje peníze letos, má použít EUDIS, EIC nebo PRODEF.",
+          "text": "Připravovaný nástroj EU pro rychlou obrannou inovaci: rozpočet 115 mil. €, do 5 mil. € na projekt, sólo žadatel (hlavně SME a startupy), bez povinného konsorcia, cíl grant do 4 měsíců od podání. Podpora 1 až 5 mil. € na projekt formou grantu, ceny nebo zakázky.",
+          "vysvetleni": "Politická dohoda Parlamentu a Rady z července 2026, schválen 12. 10. 2026; první výzva se čeká začátkem 2027. Žádá jedna firma, hlavně SME z EU, zemí EHP/ESVO a Ukrajiny. Až se rozjede, bude to nejrychlejší evropská cesta k obrannému grantu bez konsorcia. Kdo potřebuje peníze letos, má použít EUDIS, EIC nebo PRODEF.",
           "zdroj": "Nařízení o AGILE (politická dohoda 7/2026, schválení 12. 10. 2026); defence-industry-space.ec.europa.eu"
         },
         {
@@ -278,8 +276,8 @@ window.JEZTOK_KURZY.push({
           "id": "f1",
           "typ": "fakt",
           "titulek": "EIC Accelerator (dual-use)",
-          "text": "Vlajkový nástroj EU pro deep tech: blended finance, tedy grant do 2,5 mil. € (non-dilutive) plus equity investice do 10 mil. € přes EIC Fund. Od 17. 6. 2026 poprvé otevřen obranným a dual-use technologiím. Pro jednotlivé startupy a MSP z EU s technologií TRL 6–8.",
-          "vysvetleni": "Cílové oblasti otevření obraně: protivzdušná a protiraketová obrana, drony a counter-drony, další kritické obranné technologie; plus AI, kvantové technologie, pokročilé materiály a robotika s dual-use využitím.",
+          "text": "Vlajkový nástroj EU pro deep tech: blended finance, tedy grant do 2,5 mil. € (non-dilutive) plus equity investice do 10 mil. € přes EIC Fund. Od 17. 6. 2026 otevřen i dual-use projektům (obranné oblasti má samostatná výzva STEP Scale Up Defence). Pro jednotlivé startupy a MSP z EU s technologií TRL 6–8.",
+          "vysvetleni": "Pozor na záměnu: Accelerator přijímá dual-use business cases. Výslovně obranné oblasti (protivzdušná a protiraketová obrana, drony a counter-drony) patří do EIC STEP Scale Up Defence, ne do Acceleratoru.",
           "zdroj": "eic.ec.europa.eu (Accelerator, STEP Scale Up, Pathfinder, Transition); katalog programů defencehub.gov.cz"
         },
         {
@@ -310,7 +308,7 @@ window.JEZTOK_KURZY.push({
           "id": "f2",
           "typ": "fakt",
           "titulek": "EIC STEP Scale Up Defence",
-          "text": "Nový nástroj EIC pro velké obranné scale-upy: čistá equity 10–30 mil. €, bez grantu, rozpočet 100 mil. €. Pro scale-upy v kritických obranných technologiích z EU, zemí EHP asociovaných k Horizontu Evropa a Ukrajiny, TRL 7–9. Vyžaduje pre-commitment (předběžný závazek) soukromého investora.",
+          "text": "Nový nástroj EIC pro velké obranné scale-upy: čistá equity 10–30 mil. €, bez grantu, rozpočet 100 mil. €. Pro scale-upy v kritických obranných technologiích z EU, zemí EHP asociovaných k Horizontu Evropa a Ukrajiny. Vyžaduje pre-commitment (předběžný závazek) jednoho investora aspoň na 20 % cílového kola.",
           "vysvetleni": "STEP = Strategic Technologies for Europe Platform. EIC investuje 10–30 mil. € jako součást většího investičního kola vedle soukromých investorů; očekává se celkové kolo min. 3–5× vyšší. Co pro to umí udělat Defence Hub: napojení na investory přes síť DH a DIANA.",
           "zdroj": "eic.ec.europa.eu (Accelerator, STEP Scale Up, Pathfinder, Transition); katalog programů defencehub.gov.cz"
         },
@@ -400,7 +398,7 @@ window.JEZTOK_KURZY.push({
           "typ": "fakt",
           "titulek": "OP TAK – Aplikace DEEP TECH",
           "text": "Dotace MPO na průmyslový výzkum a experimentální vývoj ve firmách: 2–100 mil. Kč na projekt. Operační program Technologie a aplikace pro konkurenceschopnost (2021–27), financovaný z fondů EU. Civilní program, který nově pokrývá i obranný průmysl, tedy vhodný pro dual-use vývoj v ČR.",
-          "vysvetleni": "Podniky (zvýhodnění pro SME), i ve spolupráci s výzkumnými organizacemi. Čistě vojenský projekt s utajením patří do PRODEF nebo EDF. Doplňkové civilní programy TAČR: SIGMA a TREND. Co pro to umí udělat Defence Hub: regionální kancelář CzechInvest.",
+          "vysvetleni": "Podniky (zvýhodnění pro SME), i ve spolupráci s výzkumnými organizacemi. Čistě vojenský projekt s utajením patří do PRODEF nebo EDF. Doplňkové civilní programy TAČR: SIGMA a TREND. Konzultace dělají regionální kanceláře Agentury pro podnikání a inovace (API). Výzva DEEP TECH IV skončila 19. 2. 2026, novou API k 11/2026 nevypsala.",
           "zdroj": "tacr.cz (PRODEF); mpo.gov.cz / OP TAK (Aplikace); katalog programů defencehub.gov.cz"
         },
         {
@@ -425,7 +423,7 @@ window.JEZTOK_KURZY.push({
           "id": "f1",
           "typ": "fakt",
           "titulek": "SAFE – Security Action for Europe",
-          "text": "Úvěrový nástroj EU do 150 mld. € pro společné pořizování vojenského materiálu. Nástroj pro členské státy, ne pro firmy: firmy profitují nepřímo jako dodavatelé do zakázek financovaných ze SAFE. Max. 35 % nákladů komponent smí pocházet mimo EU/Ukrajinu/EHP.",
+          "text": "Úvěrový nástroj EU do 150 mld. € pro pořizování vojenského materiálu, hlavně společné (dočasně i nákupy jednoho státu). Nástroj pro členské státy, ne pro firmy: firmy profitují nepřímo jako dodavatelé do zakázek financovaných ze SAFE. Max. 35 % nákladů komponent smí pocházet mimo EU/Ukrajinu/EHP.",
           "vysvetleni": "Nařízení v platnosti od 29. 5. 2025, financováno z výpůjční kapacity EU (EU-bonds). Ukrajina a země EHP/ESVO se mohou účastnit společných nákupů. Pro startup: sledovat, kam poteče poptávka států, a pozicovat se v dodavatelských řetězcích (přes primes nebo národní nákupy).",
           "zdroj": "Nařízení (EU) 2025/1106 (SAFE); defence-industry-space.ec.europa.eu"
         },
@@ -439,7 +437,7 @@ window.JEZTOK_KURZY.push({
             "Konsorcia firem ze 3 zemí"
           ],
           "spravne": 1,
-          "vysvetleni": "Přímo pouze členské státy. Firmy se účastní jako dodavatelé. Kdo hledá přímé financování vývoje, má jít na EIC, EUDIS, EDIP FAST nebo BraveTech."
+          "vysvetleni": "Přímo pouze členské státy. Firmy se účastní jako dodavatelé. Kdo hledá přímé financování vývoje, má jít na EIC, EUDIS, BraveTechEU nebo k VC fondům podpořeným z EDIP FAST."
         },
         {
           "id": "a1",
@@ -461,11 +459,11 @@ window.JEZTOK_KURZY.push({
           "kroky": [
             "Raný výzkum, před prototypem (TRL 1–4): EIC Pathfinder / Transition; v ČR PRODEF PP2 (výzkum pro AČR) nebo OP TAK.",
             "Prototyp, dual-use, jedna firma (TRL 4–7): NATO DIANA (grant až 400 000 €, non-dilutive), EUDIS Accelerator, od 2027 AGILE (do 5 mil. €, bez konsorcia).",
-            "Menší konsorcium 3 firem ze 3 států: EUDIS Open Call (do 6 mil. € vývoj / 4 mil. € výzkum).",
+            "Menší konsorcium 3 firem ze 3 států: EUDIS SME calls (do 6 mil. € vývoj / 5 mil. € výzkum).",
             "Velký obranný R&D s partnery: EDF (konsorcium 3 subjektů ze 3 zemí) + v ČR souběžně PRODEF PP1.",
             "Validovaná technologie na trh (TRL 6–8), jedna firma: EIC Accelerator (grant do 2,5 mil. € + equity do 10 mil. €).",
-            "Hotový produkt, škálování výroby (TRL 6–9): EDIP (výroba komponent, FAST, BraveTech EU), EIC STEP Scale Up Defence (equity 10–30 mil. €).",
-            "Investor místo grantu: NATO Innovation Fund (Seed až Series B, do cca 15 mil. €).",
+            "Hotový produkt, škálování výroby (TRL 6–9): EDIP (výrobní výzvy, BraveTechEU; FAST přes VC fondy), EIC STEP Scale Up Defence (equity 10–30 mil. €).",
+            "Investor místo grantu: NATO Innovation Fund (Seed až Series B, úvodní investice 3 až 15 mil. €).",
             "Civilní bezpečnost bez vojenského výstupu: Horizont Evropa Klastr 3. Dodávky do státních nákupů: SAFE nepřímo jako dodavatel."
           ]
         },
@@ -479,7 +477,7 @@ window.JEZTOK_KURZY.push({
             "EIC STEP Scale Up Defence"
           ],
           "spravne": 1,
-          "vysvetleni": "DIANA: dual-use, TRL 4+, non-dilutive grant, mentoring a testovací centra. NIF bere podíl, STEP je čistá equity pro scale-upy TRL 7–9."
+          "vysvetleni": "DIANA: dual-use, TRL 4+, non-dilutive grant, mentoring a testovací centra. NIF bere podíl, STEP je čistá equity pro velké scale-upy."
         },
         {
           "id": "k2",
@@ -511,23 +509,23 @@ window.JEZTOK_KURZY.push({
           "otazka": "Univerzitní spin-off má průlomový nápad na nový materiál, zatím jen laboratorní ověření principu (TRL 2). Kam patří?",
           "moznosti": [
             "EIC Pathfinder",
-            "EDIP fond FAST",
+            "EDIP FAST (přes VC fondy)",
             "NATO DIANA"
           ],
           "spravne": 0,
-          "vysvetleni": "Pathfinder financuje raný vysoce rizikový výzkum TRL 1–4. DIANA chce prototyp (TRL 4+), FAST je equity pro firmy s produktem."
+          "vysvetleni": "Pathfinder financuje raný vysoce rizikový výzkum TRL 1–4. DIANA chce prototyp (TRL 4+), FAST jde přes VC fondy do firem s produktem."
         },
         {
           "id": "k5",
           "typ": "kviz",
           "otazka": "Firma chce grant na vývoj do 6 mil. €, má dva partnery z jiných států EU a TRL 4, ale plný EDF je pro ni moc velký. Co zvolit?",
           "moznosti": [
-            "EUDIS Open Call",
+            "EUDIS SME call",
             "SAFE",
             "Horizont Evropa Klastr 3"
           ],
           "spravne": 0,
-          "vysvetleni": "EUDIS Open Call: menší konsorcium 3 firem ze 3 států, od TRL 4, do 6 mil. € na vývoj. Jednodušší než EDF a cesta k němu."
+          "vysvetleni": "EUDIS SME call na vývoj: konsorcium aspoň 3 firem ze 3 členských států, do 6 mil. €. Jednodušší než plný EDF a cesta k němu."
         },
         {
           "id": "k6",
@@ -580,7 +578,7 @@ window.JEZTOK_KURZY.push({
             "STEP",
             "step"
           ],
-          "vysvetleni": "Dilutive = investor dostane podíl: NIF, EIC STEP Scale Up Defence, equity část EIC Acceleratoru a EDIP fond FAST."
+          "vysvetleni": "Dilutive = investor dostane podíl: NIF, EIC STEP Scale Up Defence, equity část EIC Acceleratoru a VC fondy podpořené z EDIP FAST."
         }
       ]
     }

@@ -264,7 +264,7 @@ window.JEZTOK_KURZY.push({
         { id: "f2", typ: "fakt", titulek: "Obrat u EIB",
           text: "Evropská investiční banka v květnu 2024 rozšířila definici dual-use projektů (zrušila podmínku, že většina výnosů musí být civilní) a otevřela Security and Defence Office jako kontaktní místo. V březnu 2025 rozšířila způsobilost na obranné projekty obecně; vyloučeny zůstávají zbraně a munice.",
           zdroj: "eib.org, tiskové zprávy 8. 5. 2024 a 21. 3. 2025 (Security and Defence)",
-          vysvetleni: "EIB nepůjčuje startupům přímo; její peníze jdou přes národní banky (úvěrové linky) a přes Evropský investiční fond do VC fondů. Pro firmu je to signál, že banky mají menší důvod říkat ne, a argument do jednání s vlastní bankou." },
+          vysvetleni: "Většina startupů se k penězům EIB dostane přes banky s úvěrovou linkou EIB (pro SME až 12,5 mil. €) nebo přes VC fondy s penězi EIF; napřímo jen venture debt pro rychle rostoucí firmy, které už mají profesionální investory (typicky 10 až 50 mil. €). Pro firmu je to signál, že banky mají menší důvod říkat ne, a argument do jednání s vlastní bankou." },
         { id: "k1", typ: "kviz", otazka: "Co EIB i po změnách pravidel nefinancuje?",
           moznosti: ["Dual-use technologie", "Zbraně a munici", "Kybernetickou bezpečnost"], spravne: 1,
           vysvetleni: "Zbraně a munice zůstávají na seznamu vyloučených činností. Dual-use a od roku 2025 i další obranné projekty EIB financovat může." },
@@ -276,7 +276,7 @@ window.JEZTOK_KURZY.push({
           kroky: [
             "Fáze výzkum a prototyp: granty a smluvní financování bez podílu (non-dilutive): TA ČR PRODEF, OP TAK Aplikace, EIC Pathfinder/Transition, NATO DIANA (100 000 € + až 300 000 € v Mission Track), EUDIS, EDF Cascade Funding.",
             "Fáze produkt a první zákazník: kombinace grant + equity: EIC Accelerator (grant do 2,5 mil. € + equity do 10 mil. €), AGILE (od 2027, do 5 mil. €, bez konsorcia), EUDIS Open Call v konsorciu.",
-            "Fáze růst: investor (dilutive): NATO Innovation Fund (Seed až Series B), fondy podpořené z Defence Equity Facility, EDIP fond FAST, EIC STEP Scale Up Defence (equity 10 až 30 mil. €), soukromé VC s obranným zaměřením.",
+            "Fáze růst: investor (dilutive): NATO Innovation Fund (Seed až Series B), fondy podpořené z Defence Equity Facility, VC fondy z EDIP FAST, EIC STEP Scale Up Defence (equity 10 až 30 mil. €), soukromé VC s obranným zaměřením.",
             "Fáze výroba a dodávky: zakázky (MO, NSPA, primes), úvěry přes banky s linkami EIB, SAFE nepřímo jako dodavatel státních nákupů.",
             "Zásada: peníze z programu nejsou cíl. Cílem je zákazník; program má zaplatit cestu k němu a nic víc. Detaily programů jsou v kurzech EU programy a NATO programy."
           ] },

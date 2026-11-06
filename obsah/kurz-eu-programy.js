@@ -10,6 +10,7 @@ window.JEZTOK_KURZY.push({
   "emoji": "🇪🇺",
   "barva": "#0058A8",
   "popis": "Granty a nástroje EU pro obranné a dual-use firmy: EDF, EUDIS, EDIP, AGILE, EIC, plus české kofinancování. Co nabízejí, pro koho jsou a jak se v nich zorientovat.",
+  stav: "11/2026",
   "temata": [
     {
       "id": "ramec",

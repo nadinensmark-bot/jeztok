@@ -37,7 +37,7 @@ const { start } = require("./server");
   // omezený uživatel dostane seznam povolených kurzů
   { const t = token; token = ""; r = await api("/api/registrace", "POST", { email: "Omezeny@b.cz", heslo: "tajneheslo1", jmeno: "Kolega" }); assert.deepEqual(r.d.uzivatel.kurzy, ["programy", "slovnicek"]); token = t; }
   r = await api("/api/postup", "PUT", { stav: { xp: 10, karty: { "u:f1": { sila: 1, kdy: 5 } }, dny: { "2026-10-31": { xp: 10, karet: 1 } }, aktualizovano: 5 } }); assert.equal(r.d.stav.xp, 10);
-  r = await api("/api/postup", "PUT", { stav: { xp: 8, karty: { "u:f1": { sila: 3, kdy: 9 }, "u:k1": { sila: 1, kdy: 1 } }, aktualizovano: 9 } });
+  r = await api("/api/postup", "PUT", { stav: { xp: 8, karty: { "u:f1": { sila: 3, kdy: 9, spravne: 1 }, "u:k1": { sila: 3, kdy: 1 } }, aktualizovano: 9 } });
   assert.equal(r.d.stav.xp, 10); assert.equal(r.d.stav.karty["u:f1"].sila, 3); assert.ok(r.d.stav.karty["u:k1"]); assert.equal(r.d.stav.dny["2026-10-31"].xp, 10);
   r = await api("/api/testy", "POST", { id: "t1", kurz: "uceni", skore: 7, celkem: 10, kdy: 1, odpovedi: [] }); assert.equal(r.status, 200);
   r = await api("/api/testy"); assert.equal(r.d.testy.length, 1);

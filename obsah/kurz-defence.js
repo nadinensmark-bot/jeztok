@@ -8,6 +8,7 @@ window.JEZTOK_KURZY.push({
   emoji: "🛡️",
   barva: "#1d4ed8",
   popis: "Vojenské technologie, regulace, EU/NATO programy, business development – podle kurzu Dr. Helm.",
+  stav: "10/2026",
   temata: [
     // =================================================================
     {

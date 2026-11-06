@@ -9,6 +9,7 @@ window.JEZTOK_KURZY.push({
   emoji: "🧭",
   barva: "#0f766e",
   popis: "Programy NATO, EU a ČR: co nabízejí, pro koho jsou a kdy je doporučit. Plus co dělá Defence Hub.",
+  stav: "11/2026",
   temata: [
     // =================================================================
     {

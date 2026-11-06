@@ -10,6 +10,7 @@ window.JEZTOK_KURZY.push({
   emoji: "🚀",
   barva: "#0f766e",
   popis: "Co musí vědět firma, která chce do obrany: jak trh funguje, co smí, kde jsou zákazníci a peníze. Krátce, ověřeně, se zdroji.",
+  stav: "11/2026",
   temata: [
     // =================================================================
     {

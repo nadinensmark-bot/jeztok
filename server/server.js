@@ -80,7 +80,7 @@ function souhrnPostupu(stav) {
     const kurz = String(gid).split(":")[0]; if (!kurz) continue;
     const k = kurzy[kurz] || (kurzy[kurz] = { videno: 0, umim: 0 });
     if (p && p.videno) k.videno++;
-    if (p && p.sila >= 3) k.umim++;
+    if (p && p.sila >= 3 && (p.spravne > 0 || p.ulozeno)) k.umim++; // naučeno = prokázáno (správná odpověď nebo „Už umím“), stejně jako v appce
   }
   return { xp: Number(s.xp) || 0, dny: Object.keys(s.dny || {}).sort(), aktualizovano: Number(s.aktualizovano) || 0, kurzy };
 }

@@ -12,6 +12,8 @@ body { background: var(--bg); }
 .hlava { background: linear-gradient(rgba(6,24,56,.95), rgba(6,24,56,0)); }
 .hlava .logo img.logo-dh { height: 30px; width: auto; display: block; }
 .hlava .logo #jezek-hlava { display: none; }
+/* Hubík se v hlavičce ukáže jen, když mluví nebo reaguje (jinak je tam logo DH) */
+body.hubik-mluvi .hlava .logo #jezek-hlava, .hlava .logo #jezek-hlava.reaguje { display: inline-block; }
 .hlava .logo { gap: 10px; }
 .wordmark { display: flex; flex-direction: column; line-height: 1; }
 .wordmark b { font-weight: 700; font-size: 19px; letter-spacing: -.3px; color: #fff; }

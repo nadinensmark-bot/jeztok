@@ -10,6 +10,7 @@ window.JEZTOK_KURZY.push({
   emoji: "🛡️",
   barva: "#1d4ed8",
   popis: "DIANA, NATO Innovation Fund, zakázky přes NSPA a NCIA, standardy a vědecká síť: kudy vede cesta firmy do Aliance.",
+  stav: "11/2026",
   temata: [
     // =================================================================
     {

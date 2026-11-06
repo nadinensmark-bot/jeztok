@@ -51,6 +51,8 @@
   // kurz s mimoMix (např. procurement po zemích) není ve feedu, dokud si ho uživatel nezapne; jde ale projít přes Témata
   function vybrany(k) { const v = S.stav.vybraneKurzy; return v ? v.includes(k.id) : !k.mimoMix; }
   function aktivniKurzy() { return S.kurzy.filter(vybrany); }
+  function temaZapnute(k, t) { return !(S.stav.vypnutaTemata || []).includes(k.id + ":" + t.id); }
+  function zapnutaTemata(k) { return (k.temata || []).filter(t => temaZapnute(k, t)); }
   function jeOtazka(c) { return c.typ === "kviz" || c.typ === "anone" || c.typ === "doplnit"; }
 
   // ------------------------------------------------------------------
@@ -92,9 +94,12 @@
     if (xp) pridejXp(xp, karet);
     ulozStav();
   }
+  // „naučeno“: síla 3+ a k tomu aspoň jedna správná odpověď nebo ruční „Už umím“. Pouhé opakované
+  // přečtení faktu kartu posouvá v plánu opakování, ale za naučenou se nepočítá (stejná definice je na serveru).
+  function jeNauceno(p) { return !!p && p.sila >= 3 && (p.spravne > 0 || !!p.ulozeno); }
   function statistikaKurzu(k) {
     let videno = 0, umim = 0;
-    (k.temata || []).forEach(t => (t.karty || []).forEach(c => { const p = S.stav.karty[c.gid]; if (p && p.videno) videno++; if (p && p.sila >= 3) umim++; }));
+    (k.temata || []).forEach(t => (t.karty || []).forEach(c => { const p = S.stav.karty[c.gid]; if (p && p.videno) videno++; if (jeNauceno(p)) umim++; }));
     return { videno, umim, pocet: k.pocet, procent: k.pocet ? Math.round(100 * umim / k.pocet) : 0 };
   }
 
@@ -110,11 +115,11 @@
     const now = Date.now(), kurzy = aktivniKurzy(), vyl = new Set(vyloucit || []);
     const at = aktualniTema(); // režim „projít téma“: karty jednoho tématu v autorském pořadí, nic náhodně
     if (at) return (at.t.karty || []).filter(c => !vyl.has(c.gid)).slice(0, n);
-    const vse = []; kurzy.forEach(k => (k.temata || []).forEach(t => (t.karty || []).forEach(c => vse.push(c))));
+    const vse = []; kurzy.forEach(k => zapnutaTemata(k).forEach(t => (t.karty || []).forEach(c => vse.push(c))));
     const due = vse.filter(c => { const p = S.stav.karty[c.gid]; return p && p.dalsi && p.dalsi <= now && !vyl.has(c.gid); })
       .sort((a, b) => S.stav.karty[a.gid].dalsi - S.stav.karty[b.gid].dalsi);
     // nové karty po kurzech, v autorském pořadí (fakt → kvíz), po trojicích střídáme kurzy
-    const fronty = kurzy.map(k => { const f = []; (k.temata || []).forEach(t => (t.karty || []).forEach(c => { const p = S.stav.karty[c.gid]; if (!(p && p.videno) && !vyl.has(c.gid)) f.push(c); })); return f; }).filter(f => f.length);
+    const fronty = kurzy.map(k => { const f = []; zapnutaTemata(k).forEach(t => (t.karty || []).forEach(c => { const p = S.stav.karty[c.gid]; if (!(p && p.videno) && !vyl.has(c.gid)) f.push(c); })); return f; }).filter(f => f.length);
     const nove = [];
     let ki = 0;
     while (fronty.some(f => f.length) && nove.length < n * 2) {
@@ -162,7 +167,7 @@
     if (c && S.stav.hudba.auto !== false) { const nid = HUDBA.proKartu(c.typ); if (nid) S.stav.hudba.vibe = nid; }
     if (c && (c.typ === "fakt")) S.videnoTimer = setTimeout(() => { zaznamenej(c, "videno"); }, 1800);
     if (idx >= S.feed.length - 4) vykresliFeed(false);
-    const at = aktualniTema(); if (at && c) { const poz = $("#tema-pozice"); if (poz) poz.textContent = ((at.t.karty || []).indexOf(S.karty[c.gid] || c) + 1) + "/" + (at.t.karty || []).length; }
+    const at = aktualniTema(); if (at && c) { const i = (at.t.karty || []).indexOf(S.karty[c.gid] || c); const poz = $("#tema-pozice"); if (poz) poz.textContent = (i + 1) + "/" + (at.t.karty || []).length; if (S.stav.tema && i >= 0 && S.stav.tema.poz !== i) { S.stav.tema.poz = i; API.ulozStavLokalne(S.stav); } }
     if (idx > 30) { clearTimeout(S.prorezTimer); S.prorezTimer = setTimeout(prorezFeed, 400); }
     if (new Date().getHours() >= 23 && Math.random() < 0.08) jezekRekni(JEZEK.hlaska("nocni"), "spi", 4000);
   }
@@ -174,12 +179,22 @@
   }
   function zapniTema(kurz, tema) {
     S.tema = { kurz, tema }; const at = aktualniTema(); if (!at) { S.tema = null; return; }
+    // stejné téma jako posledně → pokračovat tam, kde jsem skončil/a; jiné → od začátku
+    const poz = S.stav.tema && S.stav.tema.kurz === kurz && S.stav.tema.tema === tema ? Math.min(S.stav.tema.poz || 0, (at.t.karty || []).length - 1) : 0;
+    S.stav.tema = { kurz, tema, poz }; ulozStav();
     let lista = $("#tema-lista");
     if (!lista) { lista = document.createElement("div"); lista.id = "tema-lista"; lista.className = "tema-lista"; $(".hlava").insertAdjacentElement("afterend", lista); }
-    lista.innerHTML = `<span class="tema-lista-text">📍 <b>${esc(at.t.nazev)}</b> <span class="tlum" id="tema-pozice">1/${(at.t.karty || []).length}</span></span><button data-tema-akce="mix" aria-label="Zpět do mixu všech kurzů">✕ mix</button>`;
-    document.body.classList.add("v-tematu"); zavriSheet(); prepni("feed"); vykresliFeed(true); $("#feed").scrollTop = 0;
+    lista.innerHTML = `<span class="tema-lista-text">📍 <b>${esc(at.t.nazev)}</b> <span class="tlum" id="tema-pozice">${poz + 1}/${(at.t.karty || []).length}</span></span><button data-tema-akce="mix" aria-label="Zpět do mixu všech kurzů">✕ mix</button>`;
+    document.body.classList.add("v-tematu"); zavriSheet(); prepni("feed"); vykresliFeed(true);
+    const feed = $("#feed"); feed.scrollTop = 0;
+    if (poz > 0) { let n = -1; while (S.feed.length <= poz && S.feed.length !== n) { n = S.feed.length; vykresliFeed(false); } const cil = $$(".karta", feed)[poz]; if (cil) feed.scrollTop = cil.offsetTop; }
   }
-  function vypniTema() { S.tema = null; document.body.classList.remove("v-tematu"); vykresliFeed(true); $("#feed").scrollTop = 0; }
+  function vypniTema() { S.tema = null; S.stav.tema = null; ulozStav(); document.body.classList.remove("v-tematu"); vykresliFeed(true); $("#feed").scrollTop = 0; }
+  function htmlPokracovat() {
+    const t = S.stav.tema; if (!t) return "";
+    const k = S.kurzy.find(x => x.id === t.kurz), tm = k && (k.temata || []).find(x => x.id === t.tema); if (!tm) return "";
+    return `<button class="btn pokracovat" data-tema-otevri="${esc(k.id)}" data-tema="${esc(tm.id)}">▶ Pokračovat: ${esc(tm.nazev)} <span class="tlum">${(t.poz || 0) + 1}/${(tm.karty || []).length}</span></button>`;
+  }
   document.addEventListener("click", e => {
     const o = e.target.closest("[data-tema-otevri]"); if (o) { e.preventDefault(); zapniTema(o.dataset.temaOtevri, o.dataset.tema); return; }
     const a = e.target.closest("[data-tema-akce]"); if (!a) return;
@@ -206,7 +221,7 @@
   function txt(v) { return esc(v).replace(/(^|[\s(„])([kKsSvVzZoOuUaAiI]) (?=\S)/g, "$1$2\u00a0"); }
   function htmlKarty(c, test) {
     const k = c.kurz, p = postupKarty(c.gid);
-    const stitky = `<div class="stitky"><span class="stitek" style="background:${esc(k.barva)}">${esc(k.emoji)} ${esc(k.nazev)}</span>${test ? `<span class="stitek-cesta">${esc(c.tema.nazev)}</span>` : `<button class="stitek-cesta" data-tema-otevri="${esc(k.id)}" data-tema="${esc(c.tema.id)}" title="Projít celé téma popořadě">${esc(c.tema.nazev)} ›</button>`}${p.dalsi && p.videno && !test ? '<span class="stitek stitek-opak">🔁 opakování</span>' : ""}</div>`;
+    const stitky = `<div class="stitky"><span class="stitek" style="background:${esc(k.barva)}">${esc(k.emoji)} ${esc(k.nazev)}</span>${test || (S.tema && S.tema.kurz === k.id && S.tema.tema === c.tema.id) ? `<span class="stitek-cesta">${esc(c.tema.nazev)}</span>` : `<button class="stitek-cesta" data-tema-otevri="${esc(k.id)}" data-tema="${esc(c.tema.id)}" title="Projít celé téma popořadě">${esc(c.tema.nazev)} ›</button>`}${p.dalsi && p.videno && !test ? '<span class="stitek stitek-opak">🔁 opakování</span>' : ""}</div>`;
     let telo = "";
     switch (c.typ) {
       case "fakt": telo = `<h2>${txt(c.titulek)}</h2><p class="text">${txt(c.text)}</p>${c.zapojit ? htmlZapojit(c.zapojit) : ""}${c.zdroj || c.odkazy ? `<p class="zdroj">${c.zdroj ? htmlZdroje(c.zdroj) : ""}${htmlOdkazu(c.odkazy, !!c.zdroj)}</p>` : ""}`; break;
@@ -222,9 +237,23 @@
         <button class="rail-btn" data-akce="pozdeji" title="Později"><span>🔁</span><small>Později</small></button>
         ${window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.bezSdileni ? "" : `<button class="rail-btn" data-akce="sdilet" title="Sdílet"><span>↗️</span><small>Sdílet</small></button>`}
       </div>`;
-    return `<section class="karta typ-${esc(c.typ)}" data-gid="${esc(c.gid)}" style="--b:${esc(k.barva)}"><div class="pozadi"><span class="pozadi-emoji">${esc(k.emoji)}</span></div><div class="obsah">${stitky}${telo}</div>${rail}</section>`;
+    return `<section class="karta typ-${esc(c.typ)}" data-gid="${esc(c.gid)}" style="--b:${esc(k.barva)}"><div class="pozadi"><span class="pozadi-emoji">${esc(k.emoji)}</span></div><div class="obsah">${stitky}${telo}${htmlStav(c)}</div>${rail}</section>`;
   }
 
+  // Karty s konkrétním datem dostanou „Stav k MM/RRRR“ (datum ověření kurzu, pole kurz.stav) a upozornění, když termín už proběhl.
+  const MESICE = { ledna: 0, února: 1, března: 2, dubna: 3, května: 4, června: 5, července: 6, srpna: 7, září: 8, října: 9, listopadu: 10, prosince: 11 };
+  function datumyV(t) {
+    const out = []; let m;
+    const re = /(\d{1,2})\.\s?(\d{1,2})\.\s?(20\d\d)/g; while ((m = re.exec(t))) out.push(new Date(+m[3], +m[2] - 1, +m[1]).getTime());
+    const re2 = /(?:(\d{1,2})\.\s)?(ledna|února|března|dubna|května|června|července|srpna|září|října|listopadu|prosince) (20\d\d)/g; while ((m = re2.exec(t))) out.push(new Date(+m[3], MESICE[m[2]], m[1] ? +m[1] : 28).getTime());
+    return out;
+  }
+  function htmlStav(c) {
+    const stav = c.kurz && c.kurz.stav; if (!stav) return "";
+    const dat = datumyV(textKarty(c) + " " + (c.vysvetleni || "")); if (!dat.length) return "";
+    const prosle = dat.some(d => d < Date.now());
+    return `<p class="zdroj stav-k">Stav k ${esc(stav)}${prosle ? " · některé termíny už proběhly, ověř aktuální stav" : ""}</p>`;
+  }
   // Zdroj jako klikací odkazy: weby, české předpisy (e-Sbírka), předpisy EU (EUR-Lex, české znění).
   function celexUrl(c) { return "https://eur-lex.europa.eu/legal-content/CS/TXT/?uri=CELEX:" + c; }
   function htmlZdroje(z) {
@@ -283,11 +312,11 @@
   }
   function ukazVysledek(el, c, ok, extra) {
     const v = $(".vysledek", el);
-    v.innerHTML = `<div class="vysl ${ok ? "ok" : "ne"}"><strong>${ok ? "Správně!" : "Vedle."}</strong> ${esc(extra || "")} ${c.vysvetleni ? `<span class="vysl-text">${esc(c.vysvetleni)}</span>` : ""}</div>`;
+    v.innerHTML = `<div class="vysl ${ok ? "ok" : "ne"}"><strong>${ok ? "Správně!" : "Vedle."}</strong> ${esc(extra || "")} ${c.vysvetleni ? `<span class="vysl-text">${txt(c.vysvetleni)}</span>` : ""}${S.test ? "" : `<button class="btn btn-sek btn-dalsi" data-akce="dalsi-karta">Další karta ↓</button>`}</div>`;
     vibrace(ok ? [20] : [60, 40, 60]); HUDBA.sting(ok ? "ok" : "ne");
     if (S.test) { testOdpoved(c, ok); return; }
     zaznamenej(c, ok ? "spravne" : "spatne");
-    jezekRekni(JEZEK.hlaska(ok ? "spravne" : "spatne"), ok ? "radost" : "smutek", 2600);
+    hubikNalada(ok ? "radost" : "smutek", 2200); // Hubík jen zareaguje v hlavičce, přes obsah karty nic
     if (ok) hvezdicky(el);
   }
   function lekceDal(el, c, i) {
@@ -363,7 +392,7 @@
     return "";
   }
   async function sdilet(c) {
-    const text = textKarty(c) + "\n\n— z aplikace DefLearn Hub";
+    const text = textKarty(c) + "\n\n- z aplikace DefLearn Hub";
     if (navigator.share) { try { await navigator.share({ title: c.kurz.nazev, text }); } catch (e) {} }
     else { try { await navigator.clipboard.writeText(text); toast("Zkopírováno do schránky"); } catch (e) { toast("Sdílení tu nejde"); } }
   }
@@ -373,18 +402,20 @@
   // ------------------------------------------------------------------
   function otevriVysvetleni(c) {
     S.vysvetlovana = c;
+    // u otázky se správná odpověď, vysvětlení i AI ukážou až po odpovědi (jinak by kvíz ztratil smysl)
+    const odpovezeno = !jeOtazka(c) || $$(`.karta[data-gid="${CSS.escape(c.gid)}"]`).some(k => k.dataset.hotovo);
     const lekce = (c.tema.karty || []).find(x => x.typ === "lekce" && x !== c);
     const sheet = $("#sheet");
     sheet.innerHTML = `<div class="sheet-obsah"><div class="sheet-hlava"><div class="jezek-mini">${JEZEK.svg({ nalada: "premysli", uroven: uroven() })}</div><div><strong>${esc(S.stav.jezek)}</strong><div class="sheet-pod">${esc(JEZEK.hlaska("vysvetleni"))}</div></div><button class="zavrit" data-akce="zavrit-sheet" aria-label="zavřít">✕</button></div>
       <div class="sheet-telo">
         <p class="sheet-karta">${esc(textKarty(c).split("\n")[0])}</p>
-        ${c.vysvetleni ? `<div class="bublina">${txt(c.vysvetleni)}</div>` : `<div class="bublina tlum">K této kartě autor nenapsal delší vysvětlení.</div>`}
-        ${c.typ === "kviz" ? `<div class="bublina tlum">Správná odpověď: <b>${esc(c.moznosti[c.spravne])}</b></div>` : c.typ === "anone" ? `<div class="bublina tlum">Správně: <b>${c.spravne ? "pravda" : "lež"}</b></div>` : c.typ === "doplnit" ? `<div class="bublina tlum">Správně: <b>${esc(Array.isArray(c.odpoved) ? c.odpoved[0] : c.odpoved)}</b></div>` : ""}
+        ${!odpovezeno ? `<div class="bublina tlum">Nejdřív zkus odpovědět. Vysvětlení a správnou odpověď ti ukážu hned potom.</div>` : c.vysvetleni ? `<div class="bublina">${txt(c.vysvetleni)}</div>` : `<div class="bublina tlum">K této kartě autor nenapsal delší vysvětlení.</div>`}
+        ${!odpovezeno ? "" : c.typ === "kviz" ? `<div class="bublina tlum">Správná odpověď: <b>${esc(c.moznosti[c.spravne])}</b></div>` : c.typ === "anone" ? `<div class="bublina tlum">Správně: <b>${c.spravne ? "pravda" : "lež"}</b></div>` : c.typ === "doplnit" ? `<div class="bublina tlum">Správně: <b>${esc(Array.isArray(c.odpoved) ? c.odpoved[0] : c.odpoved)}</b></div>` : ""}
         ${lekce ? `<button class="btn btn-sek" data-akce="skoc-lekce" data-gid="${esc(lekce.gid)}">📖 Otevřít lekci: ${esc(lekce.titulek)}</button>` : ""}
         <div id="ai-chat"></div>
         ${c.zapojit ? `<div class="bublina tlum"><b>Jak se k tomu dostat:</b> ${esc(c.zapojit.text)}${c.zapojit.url ? ` <a class="zdroj-odkaz" href="${esc(c.zapojit.url)}" target="_blank" rel="noopener">${esc(domenaUrl(c.zapojit.url))} ↗</a>` : ""}</div>` : ""}
         ${c.zdroj || c.odkazy ? `<p class="zdroj">Zdroj: ${c.zdroj ? htmlZdroje(c.zdroj) : ""}${htmlOdkazu(c.odkazy, !!c.zdroj)}</p>` : ""}
-        ${API.maAI() && API.prihlasen() ? `<form id="ai-form" class="ai-form"><input type="text" placeholder="Zeptej se ježka (např. „vysvětli to na příkladu“)" aria-label="dotaz"><button class="btn" type="submit">Vysvětli jinak ✨</button></form>` : API.maAI() ? `<p class="tlum maly">Pro AI dovysvětlení se přihlas v záložce <b>Já</b>.</p>` : ""}
+        ${!odpovezeno ? "" : API.maAI() && API.prihlasen() ? `<form id="ai-form" class="ai-form"><input type="text" placeholder="Zeptej se ježka (např. „vysvětli to na příkladu“)" aria-label="dotaz"><button class="btn" type="submit">Vysvětli jinak ✨</button></form>` : API.maAI() ? `<p class="tlum maly">Pro AI dovysvětlení se přihlas v záložce <b>Já</b>.</p>` : ""}
       </div></div>`;
     sheet.classList.add("otevreno"); document.body.classList.add("sheet-open");
   }
@@ -409,6 +440,7 @@
       case "kurzy": prepni("kurzy"); break;
       case "ja": prepni("ja"); break;
       case "obnovit": vykresliFeed(true); break;
+      case "dalsi-karta": dalsiKartaVeFeedu(1); break;
     }
   });
   $("#sheet").addEventListener("click", e => { if (e.target.id === "sheet") zavriSheet(); });
@@ -429,11 +461,11 @@
     const el = $("#testy");
     if (API.zamceno()) { el.innerHTML = HTML_ZAMCENO(); return; }
     const testy = API.testyLokalne();
-    el.innerHTML = `<div class="stranka"><h1>Testy</h1><p class="tlum">10 otázek z kurzu. Výsledek se uloží do postupu${API.prihlasen() ? " i na server" : ""}.</p>
+    el.innerHTML = `<div class="stranka"><h1>Testy</h1><p class="tlum">Až 10 otázek z kurzu (méně, když jich téma tolik nemá). Výsledek se uloží do postupu${API.prihlasen() ? " i na server" : ""}.</p>
       <div class="seznam">${S.kurzy.map(k => { const ot = pocetOtazek(k); const st = statistikaKurzu(k); const posl = testy.find(t => t.kurz === k.id);
         const temata = (k.temata || []).map(t => ({ t, n: (t.karty || []).filter(jeOtazka).length })).filter(x => x.n >= 2);
-        return `<div class="radek" style="--b:${esc(k.barva)}"><div class="radek-ikona">${esc(k.emoji)}</div><div class="radek-text"><strong>${esc(k.nazev)}</strong><div class="tlum maly">${ot} otázek · naučeno ${st.procent} %${posl ? ` · poslední test ${posl.skore}/${posl.celkem}` : ""}</div>${temata.length > 1 ? `<details class="test-temata"><summary class="tlum maly">Jen jedno téma</summary><div class="chipy-temata">${temata.map(x => `<button class="chip-tema" data-test="${esc(k.id)}" data-tema="${esc(x.t.id)}">${esc(x.t.nazev)} <span class="tlum">${x.n}</span></button>`).join("")}</div></details>` : ""}</div><button class="btn" data-test="${esc(k.id)}" ${ot < 3 ? "disabled" : ""}>Spustit</button></div>`; }).join("")}
-        ${S.kurzy.length > 1 ? `<div class="radek" style="--b:#f59e0b"><div class="radek-ikona">🎲</div><div class="radek-text"><strong>Mix ze všech kurzů</strong><div class="tlum maly">Interleaving v praxi</div></div><button class="btn" data-test="*">Spustit</button></div>` : ""}
+        return `<div class="radek" style="--b:${esc(k.barva)}"><div class="radek-ikona">${esc(k.emoji)}</div><div class="radek-text"><strong>${esc(k.nazev)}</strong><div class="tlum maly">${ot} otázek · naučeno ${st.procent} %${posl ? ` · poslední test ${posl.skore}/${posl.celkem}` : ""}</div>${temata.length > 1 ? `<details class="test-temata"><summary class="tlum maly">▸ Vybrat jedno téma</summary><div class="chipy-temata">${temata.map(x => `<button class="chip-tema" data-test="${esc(k.id)}" data-tema="${esc(x.t.id)}">${esc(x.t.nazev)} <span class="tlum">${x.n}</span></button>`).join("")}</div></details>` : ""}</div><button class="btn" data-test="${esc(k.id)}" ${ot < 3 ? "disabled" : ""}>Spustit</button></div>`; }).join("")}
+        ${S.kurzy.length > 1 ? `<div class="radek" style="--b:#f59e0b"><div class="radek-ikona">🎲</div><div class="radek-text"><strong>Mix ze všech kurzů</strong><div class="tlum maly">Otázky napříč všemi zapnutými kurzy</div></div><button class="btn" data-test="*">Spustit</button></div>` : ""}
       </div>
       ${testy.length ? `<h2>Historie</h2><div class="seznam">${testy.slice(0, 15).map(t => { const k = S.kurzy.find(x => x.id === t.kurz); return `<div class="radek maly-radek"><div class="radek-ikona">${k ? esc(k.emoji) : "🎲"}</div><div class="radek-text"><strong>${k ? esc(k.nazev) : "Mix"}${t.tema && k ? ` <span class="tlum">· ${esc(((k.temata || []).find(x => x.id === t.tema) || {}).nazev || t.tema)}</span>` : ""}</strong><div class="tlum maly">${new Date(t.kdy).toLocaleString("cs-CZ")}</div></div><div class="skore ${t.skore / t.celkem >= 0.8 ? "ok" : t.skore / t.celkem >= 0.5 ? "stred" : "ne"}">${t.skore}/${t.celkem}</div></div>`; }).join("")}</div>` : ""}
     </div>`;
@@ -441,7 +473,7 @@
   function pocetOtazek(k) { let n = 0; (k.temata || []).forEach(t => (t.karty || []).forEach(c => { if (jeOtazka(c)) n++; })); return n; }
   function spustTest(kurzId, temaId) {
     const kurzy = kurzId === "*" ? S.kurzy : S.kurzy.filter(k => k.id === kurzId);
-    let ot = []; kurzy.forEach(k => (k.temata || []).forEach(t => { if (temaId && t.id !== temaId) return; (t.karty || []).forEach(c => { if (jeOtazka(c)) ot.push(c); }); }));
+    let ot = []; kurzy.forEach(k => (k.temata || []).forEach(t => { if (temaId ? t.id !== temaId : !temaZapnute(k, t)) return; (t.karty || []).forEach(c => { if (jeOtazka(c)) ot.push(c); }); }));
     for (let i = ot.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [ot[i], ot[j]] = [ot[j], ot[i]]; }
     ot = ot.slice(0, 10);
     S.test = { kurz: kurzId, tema: temaId || null, otazky: ot, i: 0, odpovedi: [], zacatek: Date.now() };
@@ -466,10 +498,9 @@
     await API.ulozTest(vysl); ulozStav();
     const nal = pomer >= 0.8 ? "party" : pomer >= 0.5 ? "radost" : "smutek";
     if (pomer >= 0.8) konfety();
-    jezekRekni(JEZEK.hlaska(pomer >= 0.8 ? "testSkvely" : pomer >= 0.5 ? "testDobry" : "testSlaby"), nal, 4000);
     const spatne = t.odpovedi.filter(o => !o.spravne).map(o => S.karty[o.karta]);
-    $("#testy").innerHTML = `<div class="stranka test-vysledek"><div class="jezek-velky">${JEZEK.svg({ nalada: nal, uroven: uroven() })}</div><h1>${skore} / ${celkem}</h1><p class="tlum">${pomer >= 0.8 ? "Výborně." : pomer >= 0.5 ? "Dobrý základ." : "Trénink. Chyby máš níž."} +${XP.test + skore * 2} XP</p>
-      ${spatne.length ? `<h2>Co se vrátí do feedu</h2><div class="seznam">${spatne.map(c => `<div class="radek" style="--b:${esc(c.kurz.barva)}"><div class="radek-ikona">${esc(c.kurz.emoji)}</div><div class="radek-text"><strong>${esc(textKarty(c).split("\n")[0])}</strong>${c.vysvetleni ? `<div class="tlum maly">${esc(c.vysvetleni)}</div>` : ""}</div></div>`).join("")}</div>` : `<p>Bez chyby. ${esc(S.stav.jezek)} nemá co dodat.</p>`}
+    $("#testy").innerHTML = `<div class="stranka test-vysledek"><div class="jezek-velky">${JEZEK.svg({ nalada: nal, uroven: uroven() })}</div><h1>${skore} / ${celkem}</h1><p class="tlum">${esc(JEZEK.hlaska(pomer >= 0.8 ? "testSkvely" : pomer >= 0.5 ? "testDobry" : "testSlaby"))} +${XP.test + skore * 2} XP</p>
+      ${spatne.length ? `<h2>Co se vrátí do feedu</h2><div class="seznam">${spatne.map(c => `<div class="radek" style="--b:${esc(c.kurz.barva)}"><div class="radek-ikona">${esc(c.kurz.emoji)}</div><div class="radek-text"><strong>${txt(textKarty(c).split("\n")[0])}</strong>${c.vysvetleni ? `<div class="tlum maly">${txt(c.vysvetleni)}</div>` : ""}</div></div>`).join("")}</div>` : `<p>Bez chyby. ${esc(S.stav.jezek)} nemá co dodat.</p>`}
       <div class="tlacitka"><button class="btn" data-test-akce="znovu" data-kurz="${esc(t.kurz)}" ${t.tema ? `data-tema="${esc(t.tema)}"` : ""}>Ještě jednou</button><button class="btn btn-sek" data-test-akce="konec">Zpět na testy</button></div></div>`;
     S.test = null;
   }
@@ -494,8 +525,8 @@
       const mat = materialy.filter(m => m.kurz === k.id || m.kurz === "*");
       if (!lekce.length && !mat.length) return "";
       return `<h2 style="--b:${esc(k.barva)}">${esc(k.emoji)} ${esc(k.nazev)}</h2>
-        ${mat.length ? `<div class="seznam">${mat.map(m => `<a class="radek vyuka-material" style="--b:${esc(k.barva)}" href="${esc(m.url)}" target="_blank" rel="noopener"><div class="radek-ikona">${esc((TYP_MATERIALU[m.typ] || "🔗").split(" ")[0])}</div><div class="radek-text"><strong>${esc(m.nazev)}</strong><div class="tlum maly">${esc(m.popis || "")}</div><div class="tlum maly">${esc((TYP_MATERIALU[m.typ] || "Odkaz").split(" ").slice(1).join(" "))} · otevře se v prohlížeči</div></div></a>`).join("")}</div>` : ""}
-        ${lekce.length ? `<div class="seznam vyuka-lekce">${lekce.map(({ c, t }) => { const p = S.stav.karty[c.gid] || {}; return `<details class="radek vyuka-lekce-radek" style="--b:${esc(k.barva)}"><summary><div class="radek-ikona">📖</div><div class="radek-text"><strong>${esc(c.titulek)}</strong><div class="tlum maly">${esc(t.nazev)} · ${c.kroky.length} kroků${p.videno ? " · přečteno" : ""}</div></div></summary><div class="lekce-text">${c.kroky.map(kr => `<p>${esc(kr)}</p>`).join("")}<div class="tlacitka"><button class="btn btn-sek" data-vyuka-feed="${esc(c.gid)}">Projít ve feedu (+XP)</button></div></div></details>`; }).join("")}</div>` : ""}`;
+        ${mat.length ? `<div class="seznam">${mat.map(m => `<a class="radek vyuka-material" style="--b:${esc(k.barva)}" href="${esc(m.url)}" target="_blank" rel="noopener"><div class="radek-ikona">${esc((TYP_MATERIALU[m.typ] || "🔗").split(" ")[0])}</div><div class="radek-text"><strong>${esc(m.nazev)}</strong><div class="tlum maly">${txt(m.popis || "")}</div><div class="tlum maly">${esc((TYP_MATERIALU[m.typ] || "Odkaz").split(" ").slice(1).join(" "))} · otevře se v prohlížeči</div></div></a>`).join("")}</div>` : ""}
+        ${lekce.length ? `<div class="seznam vyuka-lekce">${lekce.map(({ c, t }) => { const p = S.stav.karty[c.gid] || {}; return `<details class="radek vyuka-lekce-radek" style="--b:${esc(k.barva)}"><summary><div class="radek-ikona">📖</div><div class="radek-text"><strong>${esc(c.titulek)}</strong><div class="tlum maly">${esc(t.nazev)} · ${c.kroky.length} kroků${p.videno ? " · přečteno" : ""}</div></div></summary><div class="lekce-text">${c.kroky.map(kr => `<p>${txt(kr)}</p>`).join("")}<div class="tlacitka"><button class="btn btn-sek" data-vyuka-feed="${esc(c.gid)}">Projít ve feedu (+XP)</button></div></div></details>`; }).join("")}</div>` : ""}`;
     }).join("");
     el.innerHTML = `<div class="stranka"><h1>Výuka</h1><p class="tlum">Souvislé výklady z kurzů a materiály k přečtení: průvodci, one-pagery a odkazy Defence Hubu. Karty a kvízy k tomu najdeš ve feedu.</p>${sekce || `<p class="tlum maly">Zatím žádné materiály.</p>`}</div>`;
   }
@@ -511,26 +542,27 @@
   function vykresliKurzy() {
     if (API.zamceno()) { $("#kurzy").innerHTML = HTML_ZAMCENO(); return; }
     const v = S.stav.vybraneKurzy;
-    $("#kurzy").innerHTML = `<div class="stranka"><h1>Kurzy</h1><p class="tlum">Zapni, co chceš mít ve feedu, karty z kurzů se v něm míchají. Chceš jít popořadě? Rozbal u kurzu <b>Témata</b> a vyber oblast.</p>
+    $("#kurzy").innerHTML = `<div class="stranka"><h1>Kurzy</h1><p class="tlum">Zapni kurzy, které chceš mít ve feedu. U každého kurzu můžeš rozbalit <b>Témata</b>, nechat zapnutá jen některá, nebo téma projít popořadě.</p>${htmlPokracovat()}
       <div class="seznam">${S.kurzy.map(k => { const st = statistikaKurzu(k); const on = vybrany(k);
-        return htmlMapyTemat(k, `<div class="radek" style="--b:${esc(k.barva)}"><div class="radek-ikona">${esc(k.emoji)}</div><div class="radek-text"><strong>${esc(k.nazev)}</strong><div class="tlum maly">${esc(k.popis || "")}</div><div class="bar"><div style="width:${st.procent}%;background:${esc(k.barva)}"></div></div><div class="tlum maly">${k.pocet} karet · viděno ${st.videno} · naučeno ${st.umim}${k.vlastni ? ' · <a href="#" data-kurz-akce="smazat" data-id="' + esc(k.id) + '">smazat</a>' : ""}</div></div><label class="prepinac"><input type="checkbox" data-kurz-prepni="${esc(k.id)}" ${on ? "checked" : ""}><span></span></label></div>`); }).join("")}</div>
+        return htmlMapyTemat(k, `<div class="radek" style="--b:${esc(k.barva)}"><div class="radek-ikona">${esc(k.emoji)}</div><div class="radek-text"><strong>${esc(k.nazev)}</strong><div class="tlum maly">${txt(k.popis || "")}</div><div class="bar"><div style="width:${st.procent}%;background:${esc(k.barva)}"></div></div><div class="tlum maly">${k.pocet} karet · viděno ${st.videno} · naučeno ${st.umim}${k.vlastni ? ' · <a href="#" data-kurz-akce="smazat" data-id="' + esc(k.id) + '">smazat</a>' : ""}</div></div><label class="prepinac"><input type="checkbox" data-kurz-prepni="${esc(k.id)}" ${on ? "checked" : ""}><span></span></label></div>`); }).join("")}</div>
       ${window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.bezVlastnichKurzu ? "" : `<h2>Přidat kurz</h2>
       <div class="box">
-        <p class="maly">Vlož JSON ve formátu DefLearn Hubu (viz <code>obsah/_sablona.js</code>) – nebo nahraj soubor.</p>
+        <p class="maly">Vlož JSON ve formátu DefLearn Hubu (viz <code>obsah/_sablona.js</code>), nebo nahraj soubor.</p>
         <textarea id="import-json" rows="5" placeholder='{"id":"muj","nazev":"Můj kurz","emoji":"📚","barva":"#0ea5e9","temata":[…]}'></textarea>
         <div class="tlacitka"><button class="btn" data-kurz-akce="import">Přidat z JSON</button><label class="btn btn-sek">Nahrát soubor<input type="file" id="import-soubor" accept=".json,.js,.txt" hidden></label></div>
       </div>
       <div class="box">
-        <p class="maly"><b>Vytvořit kurz z poznámek ✨</b> – vlož text ze skript, prezentace nebo vlastní poznámky a ježek z nich udělá karty, kvízy a vysvětlení.</p>
-        ${API.maAI() && !API.prihlasen() ? `<p class="tlum maly">Pro generování kurzů se přihlas v záložce <b>Já</b>.</p>` : API.maAI() ? `<input type="text" id="gen-nazev" placeholder="Název kurzu (např. Makroekonomie – 3. přednáška)"><textarea id="gen-text" rows="7" placeholder="Sem vlož poznámky (až ~30 000 znaků)…"></textarea><div class="tlacitka"><button class="btn" data-kurz-akce="generuj">Vygenerovat karty ✨</button></div><div id="gen-vysledek"></div>` : `<p class="tlum maly">${API.maBackend() ? "Zapne se, až bude na serveru nastavený ANTHROPIC_API_KEY." : "Vyžaduje nasazený backend s AI (server/README.md). Do té doby jde kurz přidat ručně jako JSON výše."}</p>`}
+        <p class="maly"><b>Vytvořit kurz z poznámek ✨</b>, vlož text ze skript, prezentace nebo vlastní poznámky a ježek z nich udělá karty, kvízy a vysvětlení.</p>
+        ${API.maAI() && !API.prihlasen() ? `<p class="tlum maly">Pro generování kurzů se přihlas v záložce <b>Já</b>.</p>` : API.maAI() ? `<input type="text" id="gen-nazev" placeholder="Název kurzu (např. Makroekonomie, 3. přednáška)"><textarea id="gen-text" rows="7" placeholder="Sem vlož poznámky (až ~30 000 znaků)…"></textarea><div class="tlacitka"><button class="btn" data-kurz-akce="generuj">Vygenerovat karty ✨</button></div><div id="gen-vysledek"></div>` : `<p class="tlum maly">${API.maBackend() ? "Zapne se, až bude na serveru nastavený ANTHROPIC_API_KEY." : "Vyžaduje nasazený backend s AI (server/README.md). Do té doby jde kurz přidat ručně jako JSON výše."}</p>`}
       </div>`}</div>`;
   }
   function htmlMapyTemat(k, radek) {
     const temata = (k.temata || []).filter(t => (t.karty || []).length);
     if (!temata.length) return radek;
-    return `<div class="kurz-blok">${radek}<details class="mapa-temat"><summary>🗺️ Témata (${temata.length}) · projít popořadě</summary><div class="mapa-seznam">${temata.map(t => {
-      const n = t.karty.length; let videno = 0, umim = 0; t.karty.forEach(c => { const p = S.stav.karty[c.gid]; if (p && p.videno) videno++; if (p && p.sila >= 3) umim++; });
-      return `<button class="mapa-tema" data-tema-otevri="${esc(k.id)}" data-tema="${esc(t.id)}">${prstenec(100 * umim / n, 100 * videno / n, 34, `${t.nazev}: naučeno ${umim} z ${n}, viděno ${videno} z ${n}`)}<span class="mapa-tema-text"><strong>${esc(t.nazev)}</strong><span class="tlum maly">${n} karet · viděno ${videno}</span></span><span class="mapa-sipka">›</span></button>`; }).join("")}</div></details></div>`;
+    const zap = temata.filter(t => temaZapnute(k, t)).length;
+    return `<div class="kurz-blok">${radek}<details class="mapa-temat"><summary>🗺️ Témata (${zap < temata.length ? `${zap} z ${temata.length} zapnutých` : temata.length}) · projít popořadě</summary><div class="mapa-seznam">${temata.map(t => {
+      const n = t.karty.length; let videno = 0, umim = 0; t.karty.forEach(c => { const p = S.stav.karty[c.gid]; if (p && p.videno) videno++; if (jeNauceno(p)) umim++; }); const on = temaZapnute(k, t);
+      return `<div class="mapa-radek${on ? "" : " vypnuto"}"><button class="mapa-tema" data-tema-otevri="${esc(k.id)}" data-tema="${esc(t.id)}">${prstenec(100 * umim / n, 100 * videno / n, 34, `${t.nazev}: naučeno ${umim} z ${n}, viděno ${videno} z ${n}`)}<span class="mapa-tema-text"><strong>${esc(t.nazev)}</strong><span class="tlum maly">${n} karet · viděno ${videno}</span></span><span class="mapa-sipka">›</span></button><label class="prepinac" title="Téma ve feedu"><input type="checkbox" data-tema-prepni="${esc(k.id)}:${esc(t.id)}" ${on ? "checked" : ""} aria-label="Téma ${esc(t.nazev)} ve feedu"><span></span></label></div>`; }).join("")}</div></details></div>`;
   }
   function pridejVlastniKurz(k, nahradit) {
     if (!k || typeof k !== "object" || !k.id || !k.nazev || !Array.isArray(k.temata)) throw new Error("Chybí id, nazev nebo temata.");
@@ -554,7 +586,7 @@
   async function generujKurz() {
     const nazev = $("#gen-nazev").value.trim(), text = $("#gen-text").value.trim(), out = $("#gen-vysledek");
     if (!nazev || text.length < 100) { toast("Dej kurzu název a vlož aspoň pár odstavců poznámek."); return; }
-    out.innerHTML = `<div class="bublina"><span class="spinner"></span> Ježek čte poznámky a vymýšlí karty… (20–60 s)</div>`;
+    out.innerHTML = `<div class="bublina"><span class="spinner"></span> Ježek čte poznámky a vymýšlí karty… (20-60 s)</div>`;
     try {
       const d = await API.generujKurz(nazev, text);
       const k = d.kurz; let n = 0; k.temata.forEach(t => n += (t.karty || []).length);
@@ -563,6 +595,8 @@
     } catch (e) { out.innerHTML = `<div class="bublina tlum">Nepovedlo se: ${esc(e.message)}</div>`; }
   }
   document.addEventListener("change", e => {
+    const tp = e.target.closest("[data-tema-prepni]");
+    if (tp) { const id = tp.dataset.temaPrepni; let v = (S.stav.vypnutaTemata || []).filter(x => x !== id); if (!tp.checked) v.push(id); S.stav.vypnutaTemata = v; ulozStav(); tp.closest(".mapa-radek").classList.toggle("vypnuto", !tp.checked); const d = tp.closest("details"); const sm = d && $("summary", d); const k = S.kurzy.find(x => x.id === id.split(":")[0]); if (sm && k) { const vsech = (k.temata || []).filter(t => (t.karty || []).length).length, zap = zapnutaTemata(k).filter(t => (t.karty || []).length).length; sm.textContent = `🗺️ Témata (${zap < vsech ? `${zap} z ${vsech} zapnutých` : vsech}) · projít popořadě`; } vykresliFeed(true); return; }
     const p = e.target.closest("[data-kurz-prepni]");
     if (p) { const id = p.dataset.kurzPrepni; const vychozi = S.kurzy.filter(k => !k.mimoMix).map(k => k.id); let v = S.stav.vybraneKurzy ? S.stav.vybraneKurzy.slice() : vychozi.slice(); v = p.checked ? [...new Set([...v, id])] : v.filter(x => x !== id); S.stav.vybraneKurzy = (v.length === vychozi.length && vychozi.every(x => v.includes(x))) ? null : v; ulozStav(); vykresliFeed(true); return; }
     if (e.target.id === "import-soubor") { const f = e.target.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => { try { pridejVlastniKurz(parsujKurz(r.result)); } catch (err) { toast(err.message); } }; r.readAsText(f); }
@@ -582,7 +616,7 @@
   function uroven() { return JEZEK.urovenPodleXp(S.stav.xp); }
   function vykresliJa() {
     const u = uroven(), U = JEZEK.UROVNE[u], dalsi = JEZEK.UROVNE[u + 1];
-    const nauceno = Object.values(S.stav.karty).filter(p => p.sila >= 3).length, videno = Object.values(S.stav.karty).filter(p => p.videno).length;
+    const nauceno = Object.values(S.stav.karty).filter(jeNauceno).length, videno = Object.values(S.stav.karty).filter(p => p.videno).length;
     const dny = []; for (let i = 13; i >= 0; i--) { const d = dnes(i); dny.push({ d, akt: !!S.stav.dny[d] }); }
     const uz = API.uzivatel(), z = API.zdravi() || {};
     $("#ja").innerHTML = `<div class="stranka">
@@ -599,8 +633,8 @@
         : uz ? `<p>Přihlášen/a jako <b>${esc(uz.jmeno || uz.email)}</b> <span class="tlum maly">(${esc(uz.email)})</span></p><p class="tlum maly">Postup se synchronizuje automaticky. ${z.ai ? "AI dovysvětlení je zapnuté ✨" : "AI dovysvětlení není na serveru zapnuté."}</p><div class="tlacitka"><button class="btn btn-sek" data-ja-akce="sync">Synchronizovat teď</button><button class="btn btn-sek" data-ja-akce="odhlasit">Odhlásit</button></div>
           <details class="heslo"><summary class="maly">Změnit heslo</summary>
           <form id="heslo-form" class="auth"><input type="password" name="stare" placeholder="Současné heslo" required autocomplete="current-password"><input type="password" name="nove" placeholder="Nové heslo (min. 8 znaků)" required minlength="8" autocomplete="new-password"><input type="password" name="nove2" placeholder="Nové heslo znovu" required minlength="8" autocomplete="new-password"><div class="tlacitka"><button class="btn" type="submit">Uložit nové heslo</button></div><div id="heslo-chyba" class="chyba"></div></form></details>`
-        : `<p class="maly">Přihlas se, aby se postup ukládal na server a šel sledovat na více zařízeních. ${z.ok ? "" : API.probouzi() ? '<span class="tlum">Server se probouzí, chvilku to potrvá…</span>' : '<span class="tlum">Server teď neodpovídá – zkus to později.</span>'}</p>
-          <form id="auth-form" class="auth"><input type="text" name="jmeno" placeholder="Jméno (jen při registraci)" autocomplete="name"><input type="email" name="email" placeholder="E-mail" required autocomplete="email"><input type="password" name="heslo" placeholder="Heslo (min. 8 znaků)" required minlength="8" autocomplete="current-password">${window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.registraceKod ? `<input type="text" name="kod" placeholder="Pozvánkový kód (jen při registraci, pokud ho máš)" autocomplete="off" autocapitalize="characters">` : ""}<div class="tlacitka"><button class="btn" type="submit" data-rezim="prihlasit">Přihlásit</button><button class="btn btn-sek" type="submit" data-rezim="registrovat">Registrovat</button></div><div id="auth-chyba" class="chyba"></div></form>`}</div>
+        : `<p class="maly">Přihlas se, aby se postup ukládal na server a šel sledovat na více zařízeních. ${z.ok ? "" : API.probouzi() ? '<span class="tlum">Server se probouzí, chvilku to potrvá…</span>' : '<span class="tlum">Server teď neodpovídá, zkus to později.</span>'}</p>
+          <form id="auth-form" class="auth"><input type="text" name="jmeno" placeholder="Jméno (jen při registraci)" autocomplete="name"><input type="email" name="email" placeholder="E-mail" required autocomplete="email"><input type="password" name="heslo" placeholder="Heslo (min. 8 znaků)" required minlength="8" autocomplete="current-password">${window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.registraceKod ? `<input type="text" name="kod" placeholder="Pozvánkový kód (jen při registraci, pokud ho máš)" autocomplete="off" autocapitalize="characters">` : ""}<div class="tlacitka"><button class="btn" type="submit" data-rezim="prihlasit">Přihlásit</button><button class="btn btn-sek" type="submit" data-rezim="registrovat">Registrovat</button></div><div id="auth-chyba" class="chyba"></div><p class="tlum maly udaje">${esc(CFG_TEXT("textUdaje", "Co vidí správce z Defence Hubu: jméno, e-mail, XP, počet viděných a naučených karet po kurzech, dny aktivity, počet testů a skóre posledního testu. Ne jednotlivé karty ani odpovědi. [DOPLNIT: odkaz na zásady zpracování osobních údajů CzechInvestu, schválí DPO]"))}</p></form>`}</div>
       ${API.jeSpravce() ? `<h2>Tým</h2><div id="tym" class="box"><p class="tlum maly">Načítám přehled…</p></div>${API.vidiStartupy() ? `<h2>Startupy</h2><div id="tym-startupy" class="box"><p class="tlum maly">Načítám přehled…</p></div>` : ""}` : ""}
       <h2>Hudba</h2>
       <div class="box"><label class="radek-prepinac"><span><b>Měnit styl s každou kartou</b><br><span class="tlum maly">Klidnější styly u faktů, nakopnutí u kvízů. Vypni, když chceš jeden styl napořád.</span></span><span class="prepinac"><input type="checkbox" id="hudba-auto" ${S.stav.hudba.auto !== false ? "checked" : ""}><span></span></span></label>
@@ -703,7 +737,7 @@
     try {
       if (rezim === "registrovat") await API.registrace(email, heslo, jmeno, kod); else await API.prihlaseni(email, heslo);
       clearTimeout(cekani); ch.textContent = "";
-      await poPrihlaseni(); toast("Přihlášeno"); jezekRekni("Vítej zpátky. Postup je v bezpečí na serveru.", "radost", 3000); vykresliJa();
+      await poPrihlaseni(); toast(rezim === "registrovat" ? "Účet je hotový. Postup se ukládá na server." : "Přihlášeno"); vykresliJa();
     } catch (err) { clearTimeout(cekani); ch.textContent = err.message; $$("button", f).forEach(b => b.disabled = false); }
   });
   document.addEventListener("submit", e => {
@@ -749,14 +783,26 @@
   }
   $$(".nav button").forEach(b => b.addEventListener("click", () => prepni(b.dataset.o)));
   function aktualizujChipy() { const s = streak(); $("#chip-streak").textContent = "🔥 " + s; $("#chip-xp").textContent = "⚡ " + S.stav.xp; $("#chip-streak").classList.toggle("zhasnuto", !S.stav.dny[dnes()]); }
-  function xpBublina(n) { const el = document.createElement("div"); el.className = "xp-bublina"; el.textContent = "+" + n + " XP"; document.body.appendChild(el); setTimeout(() => el.remove(), 1200); }
+  function xpBublina(n) { const el = document.createElement("div"); el.className = "xp-bublina"; el.textContent = "+" + n + " XP"; $("#app").appendChild(el); setTimeout(() => el.remove(), 1200); }
 
+  // Hubík mluví jen ve feedu, a to v hlavičce vedle své hlavy (nikdy přes obsah karty). Na ostatních
+  // obrazovkách jde hláška jako obyčejný toast.
   let jezekTimer = null;
   function jezekRekni(text, nalada, ms) {
-    const el = $("#jezek-bublina"); el.innerHTML = `<div class="jezek-mini">${JEZEK.svg({ nalada: nalada || "klid", uroven: uroven() })}</div><div class="bublina">${esc(text)}</div>`;
-    el.classList.add("videt"); clearTimeout(jezekTimer); jezekTimer = setTimeout(() => el.classList.remove("videt"), ms || 3000);
+    if (S.obrazovka !== "feed") { toast(text); return; }
+    const el = $("#jezek-bublina"); el.innerHTML = `<div class="bublina">${esc(text)}</div>`;
+    hubikNalada(nalada, ms || 3000); document.body.classList.add("hubik-mluvi");
+    el.classList.add("videt"); clearTimeout(jezekTimer); jezekTimer = setTimeout(jezekMlc, ms || 3000);
   }
-  $("#jezek-bublina").addEventListener("click", () => $("#jezek-bublina").classList.remove("videt"));
+  function jezekMlc() { $("#jezek-bublina").classList.remove("videt"); document.body.classList.remove("hubik-mluvi"); }
+  $("#jezek-bublina").addEventListener("click", jezekMlc);
+  // reakce bez textu: Hubík v hlavičce na chvíli změní náladu (po odpovědi, po označení karty)
+  let naladaTimer = null;
+  function hubikNalada(nalada, ms) {
+    const h = $("#jezek-hlava"); if (!h) return;
+    h.innerHTML = JEZEK.svg({ nalada: nalada || "klid", uroven: uroven() }); h.classList.add("reaguje");
+    clearTimeout(naladaTimer); naladaTimer = setTimeout(() => { h.innerHTML = JEZEK.svg({ nalada: "klid", uroven: uroven() }); h.classList.remove("reaguje"); }, ms || 2000);
+  }
   function toast(t) { const el = $("#toast"); el.textContent = t; el.classList.add("videt"); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("videt"), 2600); }
   function vibrace(v) { try { if (navigator.vibrate) navigator.vibrate(v); } catch (e) {} }
   function srdce(x, y) { const el = document.createElement("div"); el.className = "srdce-let"; el.textContent = "❤️"; el.style.left = x + "px"; el.style.top = y + "px"; document.body.appendChild(el); setTimeout(() => el.remove(), 900); }
@@ -853,8 +899,9 @@
     nactiKurzy();
     $("#jezek-hlava").innerHTML = JEZEK.svg({ nalada: "klid", uroven: uroven() });
     aktualizujChipy(); aplikujPlaylist(); hudbaBar(); vykresliFeed(true); prepni("feed");
+    if (S.stav.tema && !API.zamceno()) zapniTema(S.stav.tema.kurz, S.stav.tema.tema); // rozdělané téma pokračuje
     const prvni = !API.nactiStav();
-    setTimeout(() => jezekRekni(JEZEK.hlaska("vitej", { j: S.stav.jezek }), "radost", prvni ? 6000 : 3500), 600);
+    if (!API.zamceno()) setTimeout(() => jezekRekni(JEZEK.hlaska("vitej", { j: S.stav.jezek }), "radost", prvni ? 6000 : 3500), 600);
     const s = streak(); if (s >= 3 && S.stav.dny[dnes()] === undefined) setTimeout(() => jezekRekni(JEZEK.hlaska("streak", { n: s }), "party", 4000), 7000);
     API.health().then(() => { if (API.prihlasen()) poPrihlaseni(); poProbuzeni(); });
     // po návratu do appky (server mezitím mohl usnout) ho probudit dřív, než uživatel klikne na přihlášení nebo sync

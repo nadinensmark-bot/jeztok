@@ -8,6 +8,7 @@
  "barva": "#6d28d9",
  "mimoMix": true,
  "popis": "Kdo nakupuje, kde jsou tendry, jak se registrovat a na co si dát pozor: 37 zemí a EU. Z oficiálních zdrojů, stav 11/2026. Projdi zemi přes Témata.",
+ stav: "11/2026",
  "temata": [
   {
    "id": "eu",

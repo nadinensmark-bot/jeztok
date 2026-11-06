@@ -6,7 +6,7 @@
 (function (root) {
   "use strict";
   function prazdnyStav() {
-    return { verze: 1, xp: 0, karty: {}, dny: {}, jezek: "Hubík", vybraneKurzy: null,
+    return { verze: 1, xp: 0, karty: {}, dny: {}, jezek: "Hubík", vybraneKurzy: null, vypnutaTemata: [], tema: null,
       hudba: { vibe: "lofi", volume: 0.7, zapnuto: true, auto: true }, aktualizovano: 0 };
   }
   function sloucStavy(a, b) {
@@ -16,6 +16,8 @@
     const novejsi = (a.aktualizovano || 0) >= (b.aktualizovano || 0) ? a : b;
     v.jezek = novejsi.jezek || a.jezek || b.jezek || v.jezek;
     v.vybraneKurzy = novejsi.vybraneKurzy !== undefined ? novejsi.vybraneKurzy : null;
+    v.vypnutaTemata = Array.isArray(novejsi.vypnutaTemata) ? novejsi.vypnutaTemata.slice() : [];
+    v.tema = novejsi.tema && typeof novejsi.tema === "object" ? novejsi.tema : null; // rozdělané téma (kurz, tema, poz)
     v.hudba = Object.assign({}, v.hudba, a.hudba || {}, b.hudba || {}, novejsi.hudba || {});
     const ids = new Set([...Object.keys(a.karty || {}), ...Object.keys(b.karty || {})]);
     ids.forEach(id => {

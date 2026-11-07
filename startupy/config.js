@@ -13,6 +13,8 @@ window.JEZTOK_CONFIG = {
   bezVlastnichKurzu: true,
   // pole „Pozvánkový kód“ v registraci (server: REGISTRACE_KODY)
   registraceKod: true,
+  // na konci úvodního školení otázka „Co teď řešíš?“ (předvybere kurz, ostatní zůstávají v Kurzech)
+  uvodVyber: true,
   // bez tlačítka Sdílet na kartách (méně prvků na obrazovce)
   bezSdileni: true,
   // texty zámku pro nepřihlášené: startupy se registrují samy

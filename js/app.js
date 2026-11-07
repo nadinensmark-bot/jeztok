@@ -165,11 +165,31 @@
     const idx = S.feed.findIndex(c => c.gid === gid); const c = S.feed[idx];
     S.aktivni = c; clearTimeout(S.videnoTimer);
     if (c && S.stav.hudba.auto !== false) { const nid = HUDBA.proKartu(c.typ); if (nid) S.stav.hudba.vibe = nid; }
-    if (c && (c.typ === "fakt")) S.videnoTimer = setTimeout(() => { zaznamenej(c, "videno"); }, 1800);
+    if (c && (c.typ === "fakt")) S.videnoTimer = setTimeout(() => { const prvni = !postupKarty(c.gid).videno; zaznamenej(c, "videno"); if (prvni) prisunOtazku(c); }, 1800);
     if (idx >= S.feed.length - 4) vykresliFeed(false);
     const at = aktualniTema(); if (at && c) { const i = (at.t.karty || []).indexOf(S.karty[c.gid] || c); const poz = $("#tema-pozice"); if (poz) poz.textContent = (i + 1) + "/" + (at.t.karty || []).length; if (S.stav.tema && i >= 0 && S.stav.tema.poz !== i) { S.stav.tema.poz = i; API.ulozStavLokalne(S.stav); } }
     if (idx > 30) { clearTimeout(S.prorezTimer); S.prorezTimer = setTimeout(prorezFeed, 400); }
     if (new Date().getHours() >= 23 && Math.random() < 0.08) jezekRekni(JEZEK.hlaska("nocni"), "spi", 4000);
+  }
+  // Fakt se po pár kartách vrátí jako otázka (aktivní vybavování): po prvním přečtení faktu se v mixu
+  // jeho otázka (první kvíz nebo doplnění za ním v tématu, než přijde další fakt) přisune o 4 karty dál.
+  function otazkaKFaktu(c) {
+    const karty = (c.tema && c.tema.karty) || []; const i = karty.indexOf(S.karty[c.gid] || c); if (i < 0) return null;
+    for (let j = i + 1; j < karty.length; j++) { const d = karty[j]; if (d.typ === "fakt" || d.typ === "lekce") return null; if (jeOtazka(d)) return d; }
+    return null;
+  }
+  function prisunOtazku(c) {
+    if (aktualniTema() || S.test) return;
+    const q = otazkaKFaktu(c); if (!q || jeNauceno(S.stav.karty[q.gid])) return;
+    const feed = $("#feed"), idx = S.feed.findIndex(x => x.gid === c.gid); if (idx < 0) return;
+    const kde = S.feed.findIndex(x => x.gid === q.gid);
+    if (kde >= 0 && kde < idx) return; // už byla před faktem, nechat být
+    if (kde >= idx + 3 && kde <= idx + 6) return; // už je tam, kde má být
+    if (kde >= 0) { S.feed.splice(kde, 1); const st = $(`.karta[data-gid="${CSS.escape(q.gid)}"]`, feed); if (st) { if (io) io.unobserve(st); st.remove(); } }
+    const cil = Math.min(idx + 4, S.feed.length); S.feed.splice(cil, 0, q);
+    const pred = $$(".karta", feed)[cil], html = htmlKarty(q, false);
+    if (pred) pred.insertAdjacentHTML("beforebegin", html); else feed.insertAdjacentHTML("beforeend", html);
+    const nov = $(`.karta[data-gid="${CSS.escape(q.gid)}"]`, feed); if (nov && io) { nov.dataset.io = "1"; io.observe(nov); }
   }
   function htmlKonecTematu() {
     const at = aktualniTema(); if (!at) return "";
@@ -312,7 +332,7 @@
   }
   function ukazVysledek(el, c, ok, extra) {
     const v = $(".vysledek", el);
-    v.innerHTML = `<div class="vysl ${ok ? "ok" : "ne"}"><strong>${ok ? "Správně!" : "Vedle."}</strong> ${esc(extra || "")} ${c.vysvetleni ? `<span class="vysl-text">${txt(c.vysvetleni)}</span>` : ""}${S.test ? "" : `<button class="btn btn-sek btn-dalsi" data-akce="dalsi-karta">Další karta ↓</button>`}</div>`;
+    v.innerHTML = `<div class="vysl ${ok ? "ok" : "ne"}"><strong>${ok ? "Správně!" : "Vedle."}</strong> ${esc(extra || "")} ${c.vysvetleni ? `<span class="vysl-text">${txt(c.vysvetleni)}</span>` : ""}${S.test ? "" : `${ok ? `<div class="jistota"><span class="tlum maly">Věděl/a jsi to, nebo tip?</span><button class="btn-mini" data-akce="jistota" data-j="vedel">Věděl/a jsem</button><button class="btn-mini" data-akce="jistota" data-j="tip">Tipoval/a jsem</button></div>` : ""}<button class="btn btn-sek btn-dalsi" data-akce="dalsi-karta">Další karta ↓</button>`}</div>`;
     vibrace(ok ? [20] : [60, 40, 60]); HUDBA.sting(ok ? "ok" : "ne");
     if (S.test) { testOdpoved(c, ok); return; }
     zaznamenej(c, ok ? "spravne" : "spatne");
@@ -419,6 +439,45 @@
       </div></div>`;
     sheet.classList.add("otevreno"); document.body.classList.add("sheet-open");
   }
+  // Mini školení při prvním přihlášení: 4 obrazovky, jak appka funguje; ve variantě s uvodVyber (startupy)
+  // navíc „Co teď řešíš?“, které předvybere kurz (ostatní zůstávají v Kurzech).
+  const ZAMERENI = [
+    { id: "trh", e: "🎯", t: "Pochopit, jak obranný trh funguje", p: "Kdo nakupuje, co smím, kde jsou peníze.", kurzy: ["startupy", "slovnicek"], tema: { kurz: "startupy", tema: "trh" } },
+    { id: "eu", e: "🇪🇺", t: "Žádost do EU programu", p: "EDF, EUDIS, EDIP, EIC a jak se do nich dostat.", kurzy: ["eu", "slovnicek"] },
+    { id: "nato", e: "🛡️", t: "NATO: DIANA, NIF, NSPA", p: "Akcelerátor, fond a zakázky NATO.", kurzy: ["nato", "slovnicek"] },
+    { id: "tendr", e: "🏛️", t: "Tendr nebo zahraniční trh", p: "Obranné zakázky v ČR, Evropě a USA.", kurzy: ["procurement", "startupy", "slovnicek"], tema: { kurz: "startupy", tema: "trh" } },
+    { id: "export", e: "📦", t: "Export, licence, dual-use", p: "Co smím vyvézt a co k tomu potřebuju.", kurzy: ["startupy", "slovnicek"], tema: { kurz: "startupy", tema: "export" } },
+    { id: "vse", e: "🎲", t: "Všechno, dej mi mix", p: "Karty ze všech kurzů, které mám k dispozici.", kurzy: null },
+  ];
+  function uvodKroky() {
+    const j = esc(S.stav.jezek || "Hubík");
+    const kroky = [
+      { h: `Ahoj, já jsem ${j}`, obr: JEZEK.svg({ nalada: "radost", uroven: uroven() }), t: `<p>Učíš se po kartách, jako ve feedu na TikToku. <b>Projeď prstem nahoru</b> a přijde další karta. Žádné dlouhé texty, žádné lekce na hodinu.</p><p>Stačí pár karet denně. Já hlídám, co se má vrátit.</p>` },
+      { h: "Tři druhy karet", obr: "🃏", t: `<ul><li><b>Fakt</b>: přečti, jdi dál.</li><li><b>Otázka</b>: odpověz, hned vidíš výsledek a vysvětlení.</li><li><b>Lekce</b>: krok za krokem, delší téma.</li></ul><p>Tlačítka vpravo: <b>✓ Už umím</b> (karta se vrátí, až bys ji zapomínal/a), <b>💬 Vysvětli</b> (zdroje, delší vysvětlení), <b>🔁 Později</b>.</p>` },
+      { h: "Appka si pamatuje, co umíš", obr: "🧠", t: `<p>Co odpovíš správně, vrátí se za delší dobu. Co spleteš, vrátí se za chvíli. Fakt, který jsi přečetl/a, se po pár kartách vrátí jako otázka.</p><p><b>Naučeno</b> je jen to, co jsi správně zodpověděl/a nebo označil/a „Už umím“. Za učení sbíráš XP a ${j} roste.</p>` },
+      { h: "Kurzy, témata, testy", obr: "🗺️", t: `<p>V <b>Kurzech</b> zapínáš, co chceš mít ve feedu. Každý kurz má témata: můžeš je projít popořadě, nebo některá vypnout.</p><p>V <b>Testech</b> si ověříš, co umíš. Ve <b>Výuce</b> jsou materiály ke stažení.</p>` },
+    ];
+    if (window.JEZTOK_CONFIG && window.JEZTOK_CONFIG.uvodVyber) {
+      const moz = ZAMERENI.filter(z => !z.kurzy || z.kurzy.some(id => id !== "slovnicek" && S.kurzy.some(k => k.id === id)));
+      kroky.push({ h: "Co teď řešíš?", vyber: true, t: `<p class="tlum maly">Předvyberu ti kurz. Ostatní najdeš kdykoli v Kurzech.</p><div class="zamereni">${moz.map(z => `<button class="zam" data-akce="uvod-vyber" data-v="${z.id}"><span class="zam-e">${z.e}</span><span><b>${esc(z.t)}</b><span class="tlum maly">${esc(z.p)}</span></span></button>`).join("")}</div>` });
+    }
+    return kroky;
+  }
+  function otevriUvod(krok) {
+    const kroky = uvodKroky(); S.uvodKrok = Math.max(0, Math.min(kroky.length - 1, krok || 0)); const k = kroky[S.uvodKrok], posledni = S.uvodKrok === kroky.length - 1;
+    let el = $("#uvod"); if (!el) { el = document.createElement("div"); el.id = "uvod"; $("#app").appendChild(el); }
+    el.innerHTML = `<div class="uvod-karta">${k.obr ? `<div class="uvod-obr">${k.obr}</div>` : ""}<h2>${k.h}</h2><div class="uvod-text">${k.t}</div>
+      <div class="uvod-tecky">${kroky.map((_, i) => `<span class="${i === S.uvodKrok ? "akt" : ""}"></span>`).join("")}</div>
+      <div class="uvod-tlacitka">${S.uvodKrok > 0 ? `<button class="btn btn-sek" data-akce="uvod-zpet">Zpět</button>` : `<button class="btn btn-sek" data-akce="uvod-zavrit">Přeskočit</button>`}${k.vyber ? "" : `<button class="btn" data-akce="${posledni ? "uvod-zavrit" : "uvod-dalsi"}">${posledni ? "Jedem" : "Další"}</button>`}</div></div>`;
+    document.body.classList.add("uvod-open");
+  }
+  function zavriUvod() { const el = $("#uvod"); if (el) el.remove(); document.body.classList.remove("uvod-open"); if (!S.stav.uvod) { S.stav.uvod = true; ulozStav(); } }
+  function vyberZamereni(id) {
+    const z = ZAMERENI.find(x => x.id === id); if (!z) return;
+    S.stav.vybraneKurzy = z.kurzy ? z.kurzy.filter(k => S.kurzy.some(x => x.id === k)) : null; ulozStav(); aktualizujChipy(); zavriUvod();
+    if (z.tema && S.kurzy.some(k => k.id === z.tema.kurz && (k.temata || []).some(t => t.id === z.tema.tema))) zapniTema(z.tema.kurz, z.tema.tema); else { vypniTema(); prepni("feed"); }
+    toast(z.kurzy ? "Nastaveno. Další kurzy zapneš v Kurzech." : "Mix všech kurzů");
+  }
   function zavriSheet() { $("#sheet").classList.remove("otevreno"); document.body.classList.remove("sheet-open"); }
   async function aiDotaz(dotaz) {
     const c = S.vysvetlovana; if (!c) return;
@@ -441,6 +500,15 @@
       case "ja": prepni("ja"); break;
       case "obnovit": vykresliFeed(true); break;
       case "dalsi-karta": dalsiKartaVeFeedu(1); break;
+      case "jistota": { // tip = správná odpověď se nepočítá jako posun, karta se vrátí za 10 minut
+        const el = a.closest(".karta"), c = el && S.karty[el.dataset.gid], box = a.closest(".jistota"); if (!c || !box) return;
+        if (a.dataset.j === "tip") { const p = postupKarty(c.gid); p.sila = Math.max(0, p.sila - 1); p.dalsi = Date.now() + 10 * MIN; S.stav.karty[c.gid] = p; ulozStav(); }
+        box.innerHTML = `<span class="tlum maly">${a.dataset.j === "tip" ? "Jasně. Vrátím to za chvíli, ať se to usadí." : "Super, posouvám dál."}</span>`; break; }
+      case "uvod": otevriUvod(0); break;
+      case "uvod-dalsi": otevriUvod(S.uvodKrok + 1); break;
+      case "uvod-zpet": otevriUvod(S.uvodKrok - 1); break;
+      case "uvod-zavrit": zavriUvod(); break;
+      case "uvod-vyber": vyberZamereni(a.dataset.v); break;
     }
   });
   $("#sheet").addEventListener("click", e => { if (e.target.id === "sheet") zavriSheet(); });
@@ -629,6 +697,7 @@
       <div class="dny">${dny.map(x => `<span class="den ${x.akt ? "akt" : ""}" title="${x.d}"></span>`).join("")}</div>
       <h2>Kurzy</h2><div class="seznam">${S.kurzy.map(k => { const st = statistikaKurzu(k); return `<div class="radek maly-radek" style="--b:${esc(k.barva)}"><div class="radek-ikona">${esc(k.emoji)}</div><div class="radek-text"><strong>${esc(k.nazev)}</strong><div class="bar"><div style="width:${st.procent}%;background:${esc(k.barva)}"></div></div></div><div class="skore">${st.procent} %</div></div>`; }).join("")}</div>
       <h2>Účet</h2>
+      <p><button class="btn btn-sek" data-akce="uvod">📖 Jak appka funguje</button></p>
       <div class="box">${!API.maBackend() ? `<p class="maly">Běžíš <b>bez účtu</b>: postup se ukládá jen do tohoto telefonu. Pro přihlášení a sledování postupu napříč zařízeními je potřeba nasadit backend (návod v <code>server/README.md</code>) a vyplnit adresu v <code>config.js</code>.</p>`
         : uz ? `<p>Přihlášen/a jako <b>${esc(uz.jmeno || uz.email)}</b> <span class="tlum maly">(${esc(uz.email)})</span></p><p class="tlum maly">Postup se synchronizuje automaticky. ${z.ai ? "AI dovysvětlení je zapnuté ✨" : "AI dovysvětlení není na serveru zapnuté."}</p><div class="tlacitka"><button class="btn btn-sek" data-ja-akce="sync">Synchronizovat teď</button><button class="btn btn-sek" data-ja-akce="odhlasit">Odhlásit</button></div>
           <details class="heslo"><summary class="maly">Změnit heslo</summary>
@@ -738,6 +807,7 @@
       if (rezim === "registrovat") await API.registrace(email, heslo, jmeno, kod); else await API.prihlaseni(email, heslo);
       clearTimeout(cekani); ch.textContent = "";
       await poPrihlaseni(); toast(rezim === "registrovat" ? "Účet je hotový. Postup se ukládá na server." : "Přihlášeno"); vykresliJa();
+      if (!S.stav.uvod) { prepni("feed"); otevriUvod(0); }
     } catch (err) { clearTimeout(cekani); ch.textContent = err.message; $$("button", f).forEach(b => b.disabled = false); }
   });
   document.addEventListener("submit", e => {
@@ -900,6 +970,7 @@
     $("#jezek-hlava").innerHTML = JEZEK.svg({ nalada: "klid", uroven: uroven() });
     aktualizujChipy(); aplikujPlaylist(); hudbaBar(); vykresliFeed(true); prepni("feed");
     if (S.stav.tema && !API.zamceno()) zapniTema(S.stav.tema.kurz, S.stav.tema.tema); // rozdělané téma pokračuje
+    if (!S.stav.uvod && !API.zamceno() && API.prihlasen()) otevriUvod(0); // mini školení, dokud ho člověk neprojde
     const prvni = !API.nactiStav();
     if (!API.zamceno()) setTimeout(() => jezekRekni(JEZEK.hlaska("vitej", { j: S.stav.jezek }), "radost", prvni ? 6000 : 3500), 600);
     const s = streak(); if (s >= 3 && S.stav.dny[dnes()] === undefined) setTimeout(() => jezekRekni(JEZEK.hlaska("streak", { n: s }), "party", 4000), 7000);

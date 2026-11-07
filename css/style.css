@@ -298,6 +298,19 @@ details.mapa-temat summary::-webkit-details-marker { display: none; }
 .pokracovat { display: flex; width: 100%; justify-content: space-between; gap: 10px; margin: 0 0 14px; text-align: left; } .pokracovat .tlum { color: rgba(255,255,255,.75); font-weight: 600; }
 .vysl .btn-dalsi { display: block; margin-top: 10px; }
 .stav-k { opacity: .75; }
+.jistota { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 8px; }
+.btn-mini { background: rgba(255,255,255,.14); color: var(--fg); border: 0; border-radius: 10px; padding: 6px 10px; font-weight: 700; font-size: 12px; }
+#uvod { position: absolute; inset: 0; z-index: 45; background: rgba(4,10,24,.86); backdrop-filter: blur(6px); display: flex; padding: 20px; padding-top: calc(20px + var(--sat)); padding-bottom: calc(20px + var(--sab)); overflow-y: auto; }
+.uvod-karta { margin: auto; width: 100%; max-width: 420px; background: var(--karta-pod, rgba(20,24,40,.98)); border-radius: 22px; padding: 22px 20px 18px; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+.uvod-obr { font-size: 56px; line-height: 1; text-align: center; margin-bottom: 10px; } .uvod-obr .hubik { width: 96px; height: 96px; margin: 0 auto; display: block; }
+.uvod-karta h2 { font-size: 22px; margin: 0 0 8px; text-align: center; }
+.uvod-text { font-size: 15px; line-height: 1.45; } .uvod-text p { margin: 0 0 10px; } .uvod-text ul { margin: 0 0 10px; padding-left: 18px; } .uvod-text li { margin-bottom: 4px; }
+.uvod-tecky { display: flex; justify-content: center; gap: 6px; margin: 6px 0 14px; } .uvod-tecky span { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.25); } .uvod-tecky span.akt { background: var(--fg); }
+.uvod-tlacitka { display: flex; justify-content: space-between; gap: 10px; } .uvod-tlacitka .btn { flex: 1; }
+.zamereni { display: flex; flex-direction: column; gap: 8px; margin-bottom: 6px; }
+.zam { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; background: rgba(255,255,255,.08); color: var(--fg); border: 0; border-radius: 14px; padding: 10px 12px; }
+.zam:active { transform: scale(.98); } .zam .zam-e { font-size: 26px; } .zam > span:last-child { display: flex; flex-direction: column; gap: 2px; } .zam b { font-size: 14px; }
+body.uvod-open .hlava, body.uvod-open .rail { visibility: hidden; }
 .mapa-tema-text strong { font-size: 14px; }
 .mapa-sipka { font-size: 20px; color: var(--tlum); }
 .tema-lista { display: none; position: absolute; top: calc(52px + var(--sat)); left: 12px; right: 12px; z-index: 6; align-items: center; justify-content: space-between; gap: 8px; background: var(--panel); border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 6px 6px 6px 12px; font-size: 13px; }
